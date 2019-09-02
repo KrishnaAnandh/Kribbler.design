@@ -1,0 +1,290 @@
+*, body{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+a{
+    color: #1b1486;
+    text-decoration: none;
+    transition: all .4s cubic-bezier(0.21, 0.05, 0, 1.01);
+    
+}
+a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #30f9dd;
+    top: 120%;
+    transition: all .2s ease;
+}
+a:hover{
+    letter-spacing: 2px;
+}
+/*
+a:hover::after{
+   top: 100%; 
+}
+*/
+.btn::after, .btn a::after{
+    background-color: transparent;
+}
+
+.heads p{
+    font-size: 40px;
+    line-height: 50px;
+    margin: 20px 0;
+    font-family: "Syncopate";
+    font-weight: 700;
+    width: 150%;
+}
+
+.header{
+    display: none;
+}
+
+.hero{
+    position: relative;
+    width: 100%;
+    height: 650px;
+    left: 0;
+    right: 0;
+    
+}
+
+.hero-container{
+    position: relative;
+    width: 960px;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin:auto;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: stretch;
+}
+.hero-details{
+    position: relative;
+    left: 0;
+    width: 30%;
+    height: fit-content;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.hero-image{
+    position: relative;
+    width: 45%;
+    height: 100%;
+    z-index: 5;
+}
+.hero-hint{
+    position: relative;
+    width: 30%;
+    right: 0;
+}
+
+.hero-logo img{
+    margin: 20px 0;
+}
+.hero-name h1{
+    font-size: 52px;
+    line-height: 50px;
+    margin: 20px 0;
+    font-family: "Syncopate";
+    font-weight: 700;
+    width: 150%;
+}
+.hero-desc h2{
+    font-size: 22px;
+    line-height: 29px;
+    font-weight: 300;
+    margin: 20px 0;
+    padding-right: 20px;
+}
+.hero-cta{
+    margin-top: 40px;
+}
+.hero-cta a{
+    padding: 15px 30px;
+    color: #1b1486;
+    background-color: #30f9dd;
+    border-radius: 60px;
+    margin-top: 40px;
+    text-decoration: none;
+}
+.hero-image-holder{
+    width: 100%;
+    height: 250px;
+    background: #382fc5;
+    height: 100%;
+    overflow: hidden;
+}
+.hero-image-holder img{
+    height: 100%;
+    left: 50%;
+    transform:translateX(-50%);
+}
+.hero-image-holder p{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 10px;
+    color: rgba(255,255,255,0.7);
+}
+
+.hero-image-holder a{
+    color: rgba(255,255,255,0.9);
+}
+.hero-hinttemp{
+    padding: 20px;
+}
+
+
+
+
+.works{
+    position: relative;
+    width: 100%;
+}
+.works-container{
+    position: relative;
+    width: 960px;
+    left: 0;
+    right: 0;
+    margin:auto;
+    padding: 100px 0;
+}
+.works-head{
+    margin: 60px 40px;
+}
+.work{
+    width: 100%;
+    margin-top: 140px; 
+}
+.work-image-holder{
+    width:100%;
+    height: 380px;
+    overflow: hidden;
+    background-color: #382fc5;
+}
+.work-image-holder img{
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.work-desc{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: stretch;
+    margin-top: 60px;
+}
+.work-left{
+    width: 100%;
+    
+}
+.work-right{
+    flex-grow: 1;
+}
+
+.work-title{
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.work-link{
+    margin-top: 20px;
+}
+
+.work-1{
+    margin-top: 0;
+}
+
+
+.blogs{
+    position: relative;
+    width: 100%;
+}
+.blogs-container{
+    position: relative;
+    width: 960px;
+    left: 0;
+    right: 0;
+    margin:auto;
+    padding: 100px 0;
+}
+.blogs-head{
+    margin: 60px 40px;
+}
+
+.blogs-box{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: stretch;
+}
+.blogs-left{
+    width: 50%;
+}
+.blogs-right{
+    width: 50%;
+    margin-left: 60px;
+}
+.blog-1{
+    height: 100%;
+    width: 100%;
+}
+.blog-2,
+.blog-3{
+    height: 50%;
+    width: 100%;
+}
+
+.blog-1 .blog-image{
+    width: 100%;
+    height: 260px;
+    background-color: #382fc5;
+}
+
+.blog-2 .blog-image, .blog-3 .blog-image, .blog-4 .blog-image{
+    width: 150px;
+    height: 80px;
+    background-color: #382fc5;
+    display: none;
+}
+
+.blog-desc .blog-title{
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 500;
+}
+.blog-2, .blog-3{
+    border-bottom: 1px solid #ddd;
+}
+.blog-2, .blog-3, .blog-4{
+    padding: 20px 0;
+}
+
+.blog-1 .blog-title
+{ margin: 20px 0;}
+
+.blog-2 .blog-title, .blog-3 .blog-title, .blog-4 .blog-title
+{ 
+    font-size: 18px;
+    line-height: 20px;
+    margin: 10px 0;
+}
+.blog-2 .blog-cont, .blog-3 .blog-cont, .blog-4 .blog-cont
+{ 
+    font-size: 14px;
+    margin: 10px 0;
+    font-weight: 300;
+}
