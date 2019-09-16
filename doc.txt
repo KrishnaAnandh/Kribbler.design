@@ -1,0 +1,158 @@
+LucidScroll is a lightweight plugin and is very easy to use...
+
+First step is to upload the lucid.js file to the server.
+Then this would need to be pasted in between the <head></head> tags of the document:
+
+	<script src="file-directory/jquery.js"></script>
+	<script src="file-directory/lucid.js"></script>
+
+	<script>
+	$(window).on('load', function() {
+	  $(this).impulse();
+	});
+	</script>
+
+Making sure to also use the jQuery library (the first line) if it's not already linked to and to change the file paths to the appropriate directory.
+If the document is not HTML5, type="text/javascript" would have to be added to the script tags.
+
+Alternatively, place the scripts at the bottom of the document before the closing </body> tag which is advantageous for page speed.
+The documentation page (web address below) also describes an even faster and more modern approach that uses the defer script attribute.
+
+That's it! The page should now be good for smooth scrolling.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Advanced documentation can be found on the download page:
+
+http://ataredo.com/morphology/lucidscroll
+
+Most settings can be tested beforehand on the special console available here:
+
+http://ataredo.com/morphology/lucidtest
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Version 3.4.3 (June 2019)
+
+- Elements that are initialised simultaneously can now be amended individually
+
+Version 3.4.2
+
+- Tempo setting accepts a function as value
+- Major overhaul of variables without affecting functionality
+
+Version 3.4.1
+
+- Fixed fluid option being mistakenly applied to evoke method
+- Other minor code improvements
+
+Version 3.4
+
+- Much improved recognition and processing of the top level elements on the page
+- Range setting now allows a function as the value for dynamic updates
+
+Version 3.3.1
+
+- Fluid option default value set to true
+- Changes made to account for potential subpixel precision
+- Several minor code improvements
+
+Version 3.3 (May 2019)
+
+- Eliminated idle time between accumulative mousewheel frame sequence initiations
+- Adaptation to use a single parameter and only pass the percentage of completion to the easing equation
+- Some general restructuring for optimisation
+
+Version 3.2.4
+
+- Now using the more compact equation functions from jQuery UI instead of the easing plugin
+- Reset option made accessible for evoke method
+
+Version 3.2.3
+
+- Adjustment made for cases where a value of zero is passed for range or tempo
+
+Version 3.2.2
+
+- Fixed a chaining issue with the demit method caused by asynchronous behaviour
+- Glitch at edge when using delay corrected
+- Reformatting of several variables
+
+Version 3.2.1
+
+- Target setting now accepts a selector string instead of a jQuery object
+- All default values made accessible
+- Small adaptation to easing plugin default
+
+Version 3.2
+
+- Mostly reverted to using a jQuery event listener to take advantage of the additional capabilities
+- Auxiliary methods created to stop, manipulate and trigger the animation and its properties
+- Overall minor code optimisations
+
+Version 3.1 (April 2019)
+
+- Settings are now attached to the element itself with a data object and alterable after initialisation
+- More refactoring was needed to deal with event propagation
+- For reasons of brevity, the settings constrain and propagate were renamed to curb and occur
+- Passive event listener detection corrected for Internet Explorer
+- Keen option added
+
+Version 3.0 (March 2019)
+
+- Legacy mousewheel plugin dropped in favour of wheel event and passive event listener detection
+
+Version 2.5.4 (November 2015)
+
+- Delay option tweaked
+
+Version 2.5.3 (August 2015)
+
+- Checking support for requestAnimationFrame corrected
+
+Version 2.5.2 (July 2015)
+
+- Minor code changes
+- Fluid option added
+
+Version 2.5
+
+- Addition from version 2.4 tweaked
+- More accurate delay option
+- Default settings made accessible
+- Streamlined analysis function
+- Propagate option appended
+
+Version 2.4
+
+- Now fully supporting multiple element selection
+
+Version 2.3
+
+- Major recoding and much improved element overflow calculation
+- Unbinding and creating new instances from version 2.1.1 corrected
+
+Version 2.2 (June 2015)
+
+- General code rearrangement and minor adjustments
+- Automated height detection implemented
+
+Version 2.1.1
+
+- Lines added for unbinding attached events
+
+Version 2.1 (May 2015)
+
+- Several variable name tweaks
+- Delay option added
+
+Version 2.0
+
+- Now a proper plugin and chainable method!
+- Based on requestAnimationFrame for low impact on device resources
+- Using the jQuery animate method as a legacy browser fallback
+
+Version 1.2.5
+
+- Updated function for smoother page resizing
+- Minor code tweaks

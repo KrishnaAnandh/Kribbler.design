@@ -3,6 +3,8 @@
     padding: 0;
     position: relative;
     font-family: "Poppins", Arial, sans-serif;
+    transition: all 0.5s cubic-bezier(0.71, 0.01, 0.13, 1.03), color 0s ease;
+    scroll-behavior: smooth;
 }
 
 a{
@@ -99,6 +101,12 @@ a:hover::after{
     font-family: "Syncopate";
     font-weight: 700;
     width: 150%;
+}
+.hero-name h1 span{
+    font-family: inherit;
+    letter-spacing: -20px;
+    transition: all 0.2s ease-in;
+    
 }
 .hero-desc h2{
     font-size: 22px;
@@ -208,6 +216,39 @@ a:hover::after{
     margin-top: 0;
 }
 
+.shots{
+    position: relative;
+    width: 100%;
+}
+.shots-container{
+    position: relative;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin:auto;
+    padding: 100px 0;
+}
+.shots-row{
+    position: relative;
+    width: 2800px;
+    height: 300px;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: stretch;
+}
+.shots-item{
+    position: relative;
+    width: 600px;
+    background: #ddd;
+/*    float: left;*/
+    margin: 0 10px;
+    height: 100%;
+}
+.shots-row-2{
+    left: -300px;
+}
 
 .blogs{
     position: relative;
@@ -287,4 +328,64 @@ a:hover::after{
     font-size: 14px;
     margin: 10px 0;
     font-weight: 300;
+}
+
+
+
+
+.background-black{
+    background: #000;
+    color: #fff;
+}
+.background-black a{
+    color: #fff !important;
+}
+
+.char-1{
+    transform: matrix(0, 0, 0, 0, 0, 0);
+}
+.char-2{
+    transform: matrix(0, 0, 0, 0, 0, 0);
+}
+.char-3{
+    transform: matrix(0, 0, 0, 0, 0, 0);
+}
+.char-4{
+    transform: matrix(0, 0, 0, 0, 0, 0);
+}
+.char-5{
+    transform: matrix(0, 0, 0, 0, 0, 0);
+}
+.char-6{
+    transform: matrix(0, 0, 0, 0, 0, 0);
+}
+.char-7{
+    transform: matrix(0, 0, 0, 0, 0, 0);
+}
+.char-8{
+    transform: matrix(0, 0, 0, 0, 0, 0);
+}
+.char-9{
+    transform: matrix(0, 0, 0, 0, 0, 0);
+}
+.char-10{
+    transform: matrix(0, 0, 0, 0, 0, 0);
+}
+.char-11{
+    transform: matrix(0, 0, 0, 0, 0, 0);
+}
+.char-12{
+    transform: matrix(0, 0, 0, 0, 0, 0);
+}
+.char-13{
+    transform: matrix(0, 0, 0, 0, 0, 0);
+}
+.char-14{
+    transform: matrix(0, 0, 0, 0, 0, 0);
+}
+.char-15{
+    transform: matrix(0, 0, 0, 0, 0, 0);
+}
+.char-16{
+    transform: matrix(0, 0, 0, 0, 0, 0);
 }

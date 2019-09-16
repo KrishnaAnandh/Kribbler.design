@@ -7,8 +7,52 @@
 -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/lucid.js"></script>
+    
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Syncopate:700" rel="stylesheet">
+    
+    
+    <script>
+	$(window).on('load', function() {
+	  $(this).impulse();
+	});
+	</script>
+    
+    <script>
+        $(window).scroll(function (event) {
+    var scroll = $(window).scrollTop();
+    console.log(scroll);
+            if(scroll > 580 && scroll < 3230){
+                $('body').addClass("background-black");
+            }
+            else{
+                $('body').removeClass("background-black");
+            }
+   
+        });
+        $(function(){
+            var $window = $(window);		
+            var scrollTime = 1.2;			
+            var scrollDistance = 170;		
+            $window.on("mousewheel DOMMouseScroll", function(event){
+            event.preventDefault();								
+            var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
+            var scrollTop = $window.scrollTop();
+            var finalScroll = scrollTop - parseInt(delta*scrollDistance);
+
+            TweenMax.to($window, scrollTime, {
+                scrollTo : { y: finalScroll, autoKill:true },
+                    ease: Power1.easeOut,	//For more easing functions see https://api.greensock.com/js/com/greensock/easing/package-detail.html
+                    autoKill: true,
+                    overwrite: 5							
+                });
+					
+	   });
+	
+});
+    </script>
 </head>
 <body>
     <section class="header">
@@ -24,7 +68,24 @@
         <div class="hero-container">
             <div class="hero-details">
                 <div class="hero-logo"><img src="img/kribbler-logo.svg"/></div>
-                <div class="hero-name"><h1>Anandha-<br/>krishnan</h1></div>
+                <div class="hero-name"><h1>
+                    <span class="char-1">A</span>
+                    <span class="char-2">n</span>
+                    <span class="char-3">a</span>
+                    <span class="char-4">n</span>
+                    <span class="char-5">d</span>
+                    <span class="char-6">h</span>
+                    <span class="char-7">a</span>
+                    <span class="char-8">-</span><br/>
+                    <span class="char-9">k</span>
+                    <span class="char-10">r</span>
+                    <span class="char-11">i</span>
+                    <span class="char-12">s</span>
+                    <span class="char-13">h</span>
+                    <span class="char-14">n</span>
+                    <span class="char-15">a</span>
+                    <span class="char-16">n</span>
+                </h1></div>
                 <div class="hero-desc"><h2>I'm a digital product designer specialised in interaction design</h2></div>
                 <div class="hero-cta btn"><a href="#">contact me</a></div>
             </div>
@@ -72,6 +133,33 @@
                 </div>
             </div>
         </div>
+    </section>
+    <section class="shots">
+    <div class="shots-container">
+        <div class="shots-row shots-row-1">
+            <div class="shots-item">i</div>
+            <div class="shots-item">i</div>
+            <div class="shots-item">i</div>
+            <div class="shots-item">i</div>
+            <div class="shots-item">i</div>
+        </div>
+        <div class="shots-row shots-row-2">
+            <div class="shots-item">i</div>
+            <div class="shots-item">i</div>
+            <div class="shots-item">i</div>
+            <div class="shots-item">i</div>
+            <div class="shots-item">i</div>
+        
+        </div>
+        <div class="shots-row shots-row-3">
+            <div class="shots-item">i</div>
+            <div class="shots-item">i</div>
+            <div class="shots-item">i</div>
+            <div class="shots-item">i</div>
+            <div class="shots-item">i</div>
+        </div>  
+        
+    </div>
     </section>
     
     
