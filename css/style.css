@@ -216,6 +216,9 @@ a:hover::after{
     margin-top: 0;
 }
 
+
+
+
 .shots{
     position: relative;
     width: 100%;
@@ -241,7 +244,7 @@ a:hover::after{
 .shots-item{
     position: relative;
     width: 600px;
-    background: #ddd;
+    background: rgba(200,200,200,0.15);
 /*    float: left;*/
     margin: 0 10px;
     height: 100%;
@@ -249,6 +252,10 @@ a:hover::after{
 .shots-row-2{
     left: -300px;
 }
+
+
+
+
 
 .blogs{
     position: relative;
@@ -308,7 +315,7 @@ a:hover::after{
     font-weight: 500;
 }
 .blog-2, .blog-3{
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid rgba(175, 175, 175, 0.3);
 }
 .blog-2, .blog-3, .blog-4{
     padding: 20px 0;
@@ -331,6 +338,46 @@ a:hover::after{
 }
 
 
+.footer{
+    position: relative;
+    width: 960px;
+    left: 0;
+    right: 0;
+    margin:auto;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: stretch;
+    border-top: 1px solid rgba(175, 175, 175, 0.3);
+}
+.footer a{
+    padding: 5px 10px;
+    font-size: 12px;
+}
+.footer a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 10%;
+    background-color: transparent;
+    top: 120%;
+    transition: all .2s ease;
+}
+.footer a:hover::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 4px;
+    background-color: #30f9dd;
+    top: 120%;
+    transition: all .2s ease;
+}
 
 
 .background-black{
