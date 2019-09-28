@@ -85,10 +85,11 @@ a:hover::after{
     height: 100%;
     z-index: 5;
 }
-.hero-hint{
+.hero-summary{
     position: relative;
     width: 30%;
     right: 0;
+    padding: 20px;
 }
 
 .hero-logo img{
@@ -149,9 +150,21 @@ a:hover::after{
 .hero-image-holder a{
     color: rgba(255,255,255,0.9);
 }
-.hero-hinttemp{
-    padding: 20px;
+.hero-summary-bio{
+    padding: 20px 0;
 }
+.hero-summary-fig{
+    display: flex;
+}
+.hero-summary-num{
+    font-size: 32px;
+    
+}
+.hero-summary-numtxt{
+    font-size: 14px;
+    padding-left: 10px;
+}
+
 
 
 
