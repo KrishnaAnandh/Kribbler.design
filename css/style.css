@@ -42,7 +42,7 @@ a:hover::after{
     margin: 20px 0;
     font-family: "Syncopate";
     font-weight: 700;
-    width: 150%;
+    width: 100%;
 }
 
 .header{
@@ -243,6 +243,7 @@ a:hover::after{
     right: 0;
     margin:auto;
     padding: 100px 0;
+    overflow: hidden;
 }
 .shots-row{
     position: relative;
