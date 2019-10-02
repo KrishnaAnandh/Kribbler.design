@@ -44,13 +44,21 @@
                 $('.header').removeClass("show");
             }
             
-            if(scroll > 580 && scroll < 3230){
+            if(scroll > 480 && scroll < 999){
+                $('body').removeClass("background-black");
+                $('body').addClass("background-turq");
+                $('.header').css("background","#1b1486");
+                $('.header-logo').css("filter", "invert(100%)");
+            }
+            else if(scroll > 1000 && scroll < 3900){
+                $('body').removeClass("background-turq");
                 $('body').addClass("background-black");
                 $('.header').css("background","#000");
                 $('.header-logo').css("filter", "invert(100%)");
             }
             else{
                 $('body').removeClass("background-black");
+                $('body').removeClass("background-turq");
                 $('.header').css("background","#fff");
                 $('.header-logo').css("filter", "invert(0%)");
             }
@@ -79,7 +87,7 @@
             <li>Works</li><li>Blogs</li><li>About</li><li>Contact</li>
         </ul>
     </div>
-    <div class="header-cta"><a href="#">Contact me</a></div>
+    <div class="header-cta btn"><a href="#">Contact me</a></div>
     </section>
     
     <section class="hero">
@@ -110,14 +118,20 @@
             <div class="hero-image">
                 <div class="hero-image-holder"><img src="img/anandhakrishnan-kribbler.jpg"/><p>Photo credit: <a href="#">Dipin Das</a></p></div>
             </div>
-            <div class="hero-summary">
-                <div class="hero-summary-bio">I am a computer engineer and an artist who is so much into making technologies easy to use, also beautiful.</div>
-                <div class="hero-summary-fig"><div class="hero-summary-num">05+</div><div class="hero-summary-numtxt">years of experience</div></div>
-                <div class="hero-summary-fig"><div class="hero-summary-num">25+</div><div class="hero-summary-numtxt">projects of experience</div></div>
-            </div>
         </div>
     </section>
     
+    
+    <section class="bio">
+        <div class="bio-container container">
+            <div class="bio-summary">I am a computer engineer and an artist who is so much into making technologies easy to use, also beautiful.</div>
+            <div class="bio-figures">
+                <div class="bio-fig-item"><div class="bio-fignum">05+</div><div class="bio-figtxt">years of experience</div></div>
+                <div class="bio-fig-item"><div class="bio-fignum">25+</div><div class="bio-figtxt">Digital products</div></div>
+            </div>
+        </div>
+    
+    </section>
     <section class="clientele">
         <div class="client-holder">
             

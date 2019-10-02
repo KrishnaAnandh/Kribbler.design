@@ -9,6 +9,9 @@
 
 a{
     color: #1b1486;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     text-decoration: none;
     transition: all .4s cubic-bezier(0.21, 0.05, 0, 1.01);
     
@@ -25,15 +28,44 @@ a::after {
     transition: all .2s ease;
 }
 a:hover{
-    letter-spacing: 2px;
+    letter-spacing: 4px;
 }
 /*
 a:hover::after{
    top: 100%; 
 }
 */
-.btn::after, .btn a::after{
-    background-color: transparent;
+.btn{
+    background: transparent;
+    border: 2px solid #30f9dd;
+    color: #1b1486;
+    padding: 15px 20px;
+    width: fit-content;
+    overflow: hidden;
+}
+.btn:hover, .btn a:hover{
+    letter-spacing: 2px;
+}
+.btn a::after{
+    background: transparent;
+}
+.btn::after{
+    background-color: #30f9dd;
+    content: "";
+    position: absolute;
+    transform: skewX(20deg);
+    top: 0%;
+    bottom: 0;
+    left: -125%;
+    height: 100%;
+    width: 115%;
+    z-index: -2;
+    transition: all .8s cubic-bezier(0.2, 0, 0, 1); 
+}
+
+.btn:hover::after, .btn a:hover::after{
+    transform: skewX(-20deg);
+    left: -5%;
 }
 
 .heads p{
@@ -43,6 +75,7 @@ a:hover::after{
     font-family: "Syncopate";
     font-weight: 700;
     width: 100%;
+    text-transform: uppercase;
 }
 
 .header{
@@ -60,17 +93,21 @@ a:hover::after{
 
 
 .header .header-menu ul{
-    display: flex;
-    flex-direction: row;
-    margin-left: 40px;
+    list-style-type: none;
+    margin-left: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
+
 .header .header-logo{
     padding: 0 20px;
-    
+    opacity: 0;
+    transition: all .4s cubic-bezier(0.21, 0.05, 0, 1.01);
 }
 li{
     display: inline-block;
-    padding: 16px 10px;
+    padding: 18px 10px;
     transform: translateY(-60px);
     transition: transform .4s cubic-bezier(0.21, 0.05, 0, 1.01);
 }
@@ -95,6 +132,9 @@ li:nth-child(4){
 
 .header.show{
     visibility: visible;
+}
+.header.show .header-logo{
+    opacity: 1;
 }
 .header.show li{
     transform: translateY(0);
@@ -152,6 +192,7 @@ li:nth-child(4){
     font-family: "Syncopate";
     font-weight: 700;
     width: 150%;
+    text-transform: uppercase;
 }
 .hero-name h1 span{
     font-family: inherit;
@@ -170,10 +211,6 @@ li:nth-child(4){
     margin-top: 40px;
 }
 .hero-cta a{
-    padding: 15px 30px;
-    color: #1b1486;
-    background-color: #30f9dd;
-    border-radius: 60px;
     margin-top: 40px;
     text-decoration: none;
 }
@@ -183,6 +220,7 @@ li:nth-child(4){
     background: #382fc5;
     height: 100%;
     overflow: hidden;
+    visibility: hidden;
 }
 .hero-image-holder img{
     height: 100%;
@@ -200,19 +238,54 @@ li:nth-child(4){
 .hero-image-holder a{
     color: rgba(255,255,255,0.9);
 }
-.hero-summary-bio{
+
+
+.bio{
+    position: relative;
+    width: 100%;
+}
+.bio-container{
+    position: relative;
+    padding: 200px 0;
+}
+.bio-summary{
+    font-family: 'Syncopate';
+    font-size: 32px;
+    line-height: 46px;
+    text-align: center;
     padding: 20px 0;
 }
-.hero-summary-fig{
+.bio-figures{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    max-width: 540px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 50px;
+}
+.bio-fig-item{
     display: flex;
 }
-.hero-summary-num{
+.bio-fignum{
     font-size: 32px;
     
 }
-.hero-summary-numtxt{
+.bio-figtxt{
     font-size: 14px;
-    padding-left: 10px;
+    padding: 12px 0;
+    padding-left: 50px;
+}
+.bio-figtxt::before{
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 20px;
+    background: #fff;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 
@@ -403,7 +476,7 @@ li:nth-child(4){
 }
 .footer a{
     padding: 5px 10px;
-    font-size: 12px;
+    font-size: 14px;
 }
 .footer a::after {
     content: "";
@@ -429,7 +502,9 @@ li:nth-child(4){
     transition: all .2s ease;
 }
 
-
+.footer .copyrights{
+    font-size: 12px;
+}
 
 
 .container{
@@ -454,6 +529,17 @@ li:nth-child(4){
 }
 .background-black a{
     color: #fff !important;
+}
+
+.background-turq{
+    background: #1b1486;
+    color: #30f9dd;
+}
+.background-turq a{
+    color: #30f9dd;
+}
+.background-turq a:hover{
+    color: #1b1486;
 }
 
 .char-1{
