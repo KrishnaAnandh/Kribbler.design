@@ -1,82 +1,89 @@
 <head>
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-<!--
-    <link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
-    
-    <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap" rel="stylesheet">
--->
+
+    <title>Anandhakrishnan - Digital Product Designer - Kribbler</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/lucid.js"></script>
     
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-51091796-4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-51091796-4');
-</script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     
+    <!--<link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap" rel="stylesheet">-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Syncopate:700" rel="stylesheet">
     
     
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51091796-4"></script>
     <script>
-	$(window).on('load', function() {
-//	  $(this).impulse();
-	});
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-51091796-4');
+    </script>
+
+    <script>
+        $(window).on('load', function() {
+            $(this).impulse();
+        });
 	</script>
     
     <script>
         $(window).scroll(function (event) {
-    var scroll = $(window).scrollTop();
-    console.log(scroll);
+            var scroll = $(window).scrollTop();
+            console.log(scroll);
+            if(scroll > 580){
+                $('.header').addClass("show");
+            }
+            else{
+                $('.header').removeClass("show");
+            }
+            
             if(scroll > 580 && scroll < 3230){
                 $('body').addClass("background-black");
+                $('.header').css("background","#000");
+                $('.header-logo').css("filter", "invert(100%)");
             }
             else{
                 $('body').removeClass("background-black");
+                $('.header').css("background","#fff");
+                $('.header-logo').css("filter", "invert(0%)");
             }
-   
-        });
-        $(function(){
-            var $window = $(window);		
-            var scrollTime = 1.2;			
-            var scrollDistance = 170;		
-            $window.on("mousewheel DOMMouseScroll", function(event){
-            event.preventDefault();								
-            var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
-            var scrollTop = $window.scrollTop();
-            var finalScroll = scrollTop - parseInt(delta*scrollDistance);
+            
+            
 
-            TweenMax.to($window, scrollTime, {
-                scrollTo : { y: finalScroll, autoKill:true },
-                    ease: Power1.easeOut,	//For more easing functions see https://api.greensock.com/js/com/greensock/easing/package-detail.html
-                    autoKill: true,
-                    overwrite: 5							
-                });
-					
-	   });
-	
-});
+            
+            var layer_top = scroll*2;
+            var layer_middle = scroll*1.5;
+            var layer_bottom = scroll
+            
+//            $('.layer-top').css("transfom","translateY(" . layer_top . ")");
+            
+            
+            console.log(layer_top);
+        });
     </script>
+    
+    
 </head>
 <body>
-    <section class="header">
-    <div class="header-logo">kribbler</div>
-        <div class="heder-menu">
-            <ul>
-                <li>Works</li><li>Blogs</li><li>About</li><li>Contact</li>
-            </ul>
-        </div>
+    <section class="header container-full">
+    <div class="header-logo"><img src="img/kribbler-logo.svg"/></div>
+    <div class="header-menu">
+        <ul>
+            <li>Works</li><li>Blogs</li><li>About</li><li>Contact</li>
+        </ul>
+    </div>
+    <div class="header-cta"><a href="#">Contact me</a></div>
     </section>
     
     <section class="hero">
-        <div class="hero-container">
+        <div class="hero-container container">
             <div class="hero-details">
                 <div class="hero-logo"><img src="img/kribbler-logo.svg"/></div>
                 <div class="hero-name"><h1>
@@ -118,7 +125,7 @@
     </section>
     
     <section class="works">
-        <div class="works-container">
+        <div class="works-container container">
             <div class="works-head heads"><p>works</p></div>
             <div class="work work-1">
                 <div class="work-image-holder"><img src="img/foodmates-cover.png"/></div>
@@ -148,7 +155,7 @@
         </div>
     </section>
     <section class="shots">
-    <div class="shots-container">
+    <div class="shots-container container-full">
         <div class="shots-row shots-row-1">
             <div class="shots-item"></div>
             <div class="shots-item"></div>
@@ -177,7 +184,7 @@
     
     
     <section class="blogs">
-        <div class="blogs-container">
+        <div class="blogs-container container">
             <div class="blogs-head heads"><p>blogs</p></div>
             <div class="blogs-box">
                 <div class="blogs-left">
@@ -210,7 +217,7 @@
     </section>
     
     
-    <section class="footer">
+    <section class="footer container">
         <div class="socials"><a href="#">dribbble</a><a href="#">behance</a><a href="#">instagram</a><a href="#">linkedIn</a><a href="#">twitter</a></div>
         <div class="copyrights">Copyrighted</div>
     

@@ -4,7 +4,7 @@
     position: relative;
     font-family: "Poppins", Arial, sans-serif;
     transition: all 0.5s cubic-bezier(0.71, 0.01, 0.13, 1.03), color 0s ease;
-    scroll-behavior: smooth;
+/*    scroll-behavior: smooth;*/
 }
 
 a{
@@ -46,8 +46,62 @@ a:hover::after{
 }
 
 .header{
-    display: none;
+/*    display: none;*/
+    display: inline-block;
+    position: fixed;
+     display: flex;
+    flex-direction: row;
+    padding: 10px 0;
+    z-index: 9999;
+    background: #fff;
+    visibility: hidden;
+    transition: all .4s cubic-bezier(0.21, 0.05, 0, 1.01);
 }
+
+
+.header .header-menu ul{
+    display: flex;
+    flex-direction: row;
+    margin-left: 40px;
+}
+.header .header-logo{
+    padding: 0 20px;
+    
+}
+li{
+    display: inline-block;
+    padding: 16px 10px;
+    transform: translateY(-60px);
+    transition: transform .4s cubic-bezier(0.21, 0.05, 0, 1.01);
+}
+li:nth-child(1){
+    transition-delay: 0s;
+}
+li:nth-child(2){
+    transition-delay: 0.3s;
+}
+li:nth-child(3){
+    transition-delay: 0.6s;
+}
+li:nth-child(4){
+    transition-delay: 0.9s;
+}
+.header-cta{
+    position: absolute;
+    right: 20px;
+}
+
+
+
+.header.show{
+    visibility: visible;
+}
+.header.show li{
+    transform: translateY(0);
+}
+
+
+
 
 .hero{
     position: relative;
@@ -60,11 +114,7 @@ a:hover::after{
 
 .hero-container{
     position: relative;
-    width: 960px;
     height: 100%;
-    left: 0;
-    right: 0;
-    margin:auto;
     display: flex;
     flex-direction: row;
     justify-content:space-between;
@@ -175,10 +225,6 @@ a:hover::after{
 }
 .works-container{
     position: relative;
-    width: 960px;
-    left: 0;
-    right: 0;
-    margin:auto;
     padding: 100px 0;
 }
 .works-head{
@@ -238,10 +284,6 @@ a:hover::after{
 }
 .shots-container{
     position: relative;
-    width: 100%;
-    left: 0;
-    right: 0;
-    margin:auto;
     padding: 100px 0;
     overflow: hidden;
 }
@@ -277,10 +319,6 @@ a:hover::after{
 }
 .blogs-container{
     position: relative;
-    width: 960px;
-    left: 0;
-    right: 0;
-    margin:auto;
     padding: 100px 0;
 }
 .blogs-head{
@@ -299,6 +337,8 @@ a:hover::after{
 .blogs-right{
     width: 50%;
     margin-left: 60px;
+    display: flex;
+    flex-direction: column;
 }
 .blog-1{
     height: 100%;
@@ -336,7 +376,7 @@ a:hover::after{
 }
 
 .blog-1 .blog-title
-{ margin: 20px 0;}
+{ margin: 30px 0 20px;}
 
 .blog-2 .blog-title, .blog-3 .blog-title, .blog-4 .blog-title
 { 
@@ -354,10 +394,6 @@ a:hover::after{
 
 .footer{
     position: relative;
-    width: 960px;
-    left: 0;
-    right: 0;
-    margin:auto;
     padding: 40px 0;
     display: flex;
     flex-direction: row;
@@ -391,6 +427,24 @@ a:hover::after{
     background-color: #30f9dd;
     top: 120%;
     transition: all .2s ease;
+}
+
+
+
+
+.container{
+    max-width: 1440px;
+    left: 0;
+    right: 0;
+    margin:auto;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.container-full{
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin:auto;
 }
 
 
@@ -450,3 +504,18 @@ a:hover::after{
 .char-16{
     transform: matrix(0, 0, 0, 0, 0, 0);
 }
+
+
+@media screen and (min-width:1024px) and (max-width:1600px){
+    .container{
+        max-width: 960px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1023px){
+    .hero-container{
+        
+    }
+}
+
+
