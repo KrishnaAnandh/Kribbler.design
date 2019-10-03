@@ -1,82 +1,109 @@
 <head>
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-<!--
-    <link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
-    
-    <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap" rel="stylesheet">
--->
+
+    <title>Anandhakrishnan - Digital Product Designer - Kribbler</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/lucid.js"></script>
     
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-51091796-4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-51091796-4');
-</script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     
+    <!--<link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap" rel="stylesheet">-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Syncopate:700" rel="stylesheet">
     
     
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51091796-4"></script>
     <script>
-	$(window).on('load', function() {
-//	  $(this).impulse();
-	});
-	</script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-51091796-4');
+    </script>
     
     <script>
+        $(window).on('load', function() {
+            $(this).impulse({
+                range: 80,
+                tempo: 700,
+                effect: 'easeOutBack',
+                fluid: false
+            });
+        });
+        
+        
+        
         $(window).scroll(function (event) {
-    var scroll = $(window).scrollTop();
-    console.log(scroll);
-            if(scroll > 580 && scroll < 3230){
+            var scroll = $(window).scrollTop();
+            console.log(scroll);
+            if(scroll > 580){
+                $('.header').addClass("show");
+            }
+            else{
+                $('.header').removeClass("show");
+            }
+            
+            if(scroll > 480 && scroll < 999){
+                $('body').removeClass("background-black");
+                $('body').addClass("background-turq");
+                $('.header').css("background","#1b1486");
+                $('.header-logo').css("filter", "invert(100%)");
+            }
+            else if(scroll > 1000 && scroll < 3900){
+                $('body').removeClass("background-turq");
                 $('body').addClass("background-black");
+                $('.header').css("background","#000");
+                $('.header-logo').css("filter", "invert(100%)");
             }
             else{
                 $('body').removeClass("background-black");
+                $('body').removeClass("background-turq");
+                $('.header').css("background","#fff");
+                $('.header-logo').css("filter", "invert(0%)");
             }
-   
+            
+            
+            var row1_pos = -(scroll-2200);
+            var row2_pos = (scroll-2200)-1500;
+            var row3_pos = -(scroll-2800);
+            
+            $('.shots-row-1').css("left",row1_pos);
+            $('.shots-row-2').css("left",row2_pos);
+            $('.shots-row-3').css("left",row3_pos);
+            
+            
+            var layer_top = scroll*2;
+            var layer_middle = scroll*1.5;
+            var layer_bottom = scroll
+            
+//            $('.layer-top').css("transfom","translateY(" . layer_top . ")");
+            
+            
+            console.log(layer_top);
         });
-        $(function(){
-            var $window = $(window);		
-            var scrollTime = 1.2;			
-            var scrollDistance = 170;		
-            $window.on("mousewheel DOMMouseScroll", function(event){
-            event.preventDefault();								
-            var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
-            var scrollTop = $window.scrollTop();
-            var finalScroll = scrollTop - parseInt(delta*scrollDistance);
-
-            TweenMax.to($window, scrollTime, {
-                scrollTo : { y: finalScroll, autoKill:true },
-                    ease: Power1.easeOut,	//For more easing functions see https://api.greensock.com/js/com/greensock/easing/package-detail.html
-                    autoKill: true,
-                    overwrite: 5							
-                });
-					
-	   });
-	
-});
     </script>
+    
+    
 </head>
 <body>
-    <section class="header">
-    <div class="header-logo">kribbler</div>
-        <div class="heder-menu">
-            <ul>
-                <li>Works</li><li>Blogs</li><li>About</li><li>Contact</li>
-            </ul>
-        </div>
+    <section class="header container-full">
+    <div class="header-logo"><img src="img/kribbler-logo.svg"/></div>
+    <div class="header-menu">
+        <ul>
+            <li>Works</li><li>Blogs</li><li>About</li><li>Contact</li>
+        </ul>
+    </div>
+    <div class="header-cta btn"><a href="#">Contact me</a></div>
     </section>
     
     <section class="hero">
-        <div class="hero-container">
+        <div class="hero-container container">
             <div class="hero-details">
                 <div class="hero-logo"><img src="img/kribbler-logo.svg"/></div>
                 <div class="hero-name"><h1>
@@ -100,17 +127,25 @@
                 <div class="hero-desc"><h2>I'm a digital product designer specialised in interaction design</h2></div>
                 <div class="hero-cta btn"><a href="#">contact me</a></div>
             </div>
-            <div class="hero-image">
-                <div class="hero-image-holder"><img src="img/anandhakrishnan-kribbler.jpg"/><p>Photo credit: <a href="#">Dipin Das</a></p></div>
+            <div class="hero-artwork">
+                <img src="img/artwork.png"/>
             </div>
-            <div class="hero-summary">
-                <div class="hero-summary-bio">I am a computer engineer and an artist who is so much into making technologies easy to use, also beautiful.</div>
-                <div class="hero-summary-fig"><div class="hero-summary-num">05+</div><div class="hero-summary-numtxt">years of experience</div></div>
-                <div class="hero-summary-fig"><div class="hero-summary-num">25+</div><div class="hero-summary-numtxt">projects of experience</div></div>
-            </div>
+            
         </div>
     </section>
     
+    
+    <section class="bio">
+        <div class="bio-container container">
+            <div class="bio-head"><p>short bio</p></div>
+            <div class="bio-summary">I am a computer engineer and an artist who is so much into making technologies easy to use, also beautiful.</div>
+            <div class="bio-figures">
+                <div class="bio-fig-item"><div class="bio-fignum">05+</div><div class="bio-figtxt">years of experience</div></div>
+                <div class="bio-fig-item"><div class="bio-fignum">25+</div><div class="bio-figtxt">Digital products</div></div>
+            </div>
+        </div>
+    
+    </section>
     <section class="clientele">
         <div class="client-holder">
             
@@ -118,7 +153,7 @@
     </section>
     
     <section class="works">
-        <div class="works-container">
+        <div class="works-container container">
             <div class="works-head heads"><p>works</p></div>
             <div class="work work-1">
                 <div class="work-image-holder"><img src="img/foodmates-cover.png"/></div>
@@ -148,8 +183,9 @@
         </div>
     </section>
     <section class="shots">
-    <div class="shots-container">
+    <div class="shots-container container-full">
         <div class="shots-row shots-row-1">
+            <div class="shots-item"></div>
             <div class="shots-item"></div>
             <div class="shots-item"></div>
             <div class="shots-item"></div>
@@ -157,6 +193,7 @@
             <div class="shots-item"></div>
         </div>
         <div class="shots-row shots-row-2">
+            <div class="shots-item"></div>
             <div class="shots-item"></div>
             <div class="shots-item"></div>
             <div class="shots-item"></div>
@@ -170,6 +207,7 @@
             <div class="shots-item"></div>
             <div class="shots-item"></div>
             <div class="shots-item"></div>
+            <div class="shots-item"></div>
         </div>  
         
     </div>
@@ -177,7 +215,7 @@
     
     
     <section class="blogs">
-        <div class="blogs-container">
+        <div class="blogs-container container">
             <div class="blogs-head heads"><p>blogs</p></div>
             <div class="blogs-box">
                 <div class="blogs-left">
@@ -210,10 +248,16 @@
     </section>
     
     
-    <section class="footer">
+    <section class="footer container">
         <div class="socials"><a href="#">dribbble</a><a href="#">behance</a><a href="#">instagram</a><a href="#">linkedIn</a><a href="#">twitter</a></div>
         <div class="copyrights">Copyrighted</div>
     
     </section>
+    
+    
+    
+    <div class="hero-image">
+                <div class="hero-image-holder"><img src="img/anandhakrishnan-kribbler.jpg"/><p>Photo credit: <a href="#">Dipin Das</a></p></div>
+            </div>
              
 </body>

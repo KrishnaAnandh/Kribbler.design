@@ -4,11 +4,16 @@
     position: relative;
     font-family: "Poppins", Arial, sans-serif;
     transition: all 0.5s cubic-bezier(0.71, 0.01, 0.13, 1.03), color 0s ease;
-    scroll-behavior: smooth;
+/*    scroll-behavior: smooth;*/
 }
-
+*::-webkit-scrollbar {
+display: none;
+}
 a{
     color: #1b1486;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     text-decoration: none;
     transition: all .4s cubic-bezier(0.21, 0.05, 0, 1.01);
     
@@ -25,15 +30,44 @@ a::after {
     transition: all .2s ease;
 }
 a:hover{
-    letter-spacing: 2px;
+    letter-spacing: 4px;
 }
 /*
 a:hover::after{
    top: 100%; 
 }
 */
-.btn::after, .btn a::after{
-    background-color: transparent;
+.btn{
+    background: transparent;
+    border: 2px solid #30f9dd;
+    color: #1b1486;
+    padding: 15px 20px;
+    width: fit-content;
+    overflow: hidden;
+}
+.btn:hover, .btn a:hover{
+    letter-spacing: 2px;
+}
+.btn a::after{
+    background: transparent;
+}
+.btn::after{
+    background-color: #30f9dd;
+    content: "";
+    position: absolute;
+    transform: skewX(20deg);
+    top: 0%;
+    bottom: 0;
+    left: -125%;
+    height: 100%;
+    width: 115%;
+    z-index: -2;
+    transition: all .8s cubic-bezier(0.2, 0, 0, 1); 
+}
+
+.btn:hover::after, .btn a:hover::after{
+    transform: skewX(-20deg);
+    left: -5%;
 }
 
 .heads p{
@@ -42,12 +76,74 @@ a:hover::after{
     margin: 20px 0;
     font-family: "Syncopate";
     font-weight: 700;
-    width: 150%;
+    width: 100%;
+    text-transform: uppercase;
 }
 
 .header{
-    display: none;
+/*    display: none;*/
+    display: inline-block;
+    position: fixed;
+     display: flex;
+    flex-direction: row;
+    padding: 10px 0;
+    z-index: 9999;
+    background: #fff;
+    visibility: hidden;
+    transition: all .4s cubic-bezier(0.21, 0.05, 0, 1.01);
 }
+
+
+.header .header-menu ul{
+    list-style-type: none;
+    margin-left: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header .header-logo{
+    padding: 0 20px;
+    opacity: 0;
+    transition: all .4s cubic-bezier(0.21, 0.05, 0, 1.01);
+}
+li{
+    display: inline-block;
+    padding: 18px 10px;
+    transform: translateY(-60px);
+    transition: transform .4s cubic-bezier(0.21, 0.05, 0, 1.01);
+}
+li:nth-child(1){
+    transition-delay: 0s;
+}
+li:nth-child(2){
+    transition-delay: 0.3s;
+}
+li:nth-child(3){
+    transition-delay: 0.6s;
+}
+li:nth-child(4){
+    transition-delay: 0.9s;
+}
+.header-cta{
+    position: absolute;
+    right: 20px;
+}
+
+
+
+.header.show{
+    visibility: visible;
+}
+.header.show .header-logo{
+    opacity: 1;
+}
+.header.show li{
+    transform: translateY(0);
+}
+
+
+
 
 .hero{
     position: relative;
@@ -60,11 +156,7 @@ a:hover::after{
 
 .hero-container{
     position: relative;
-    width: 960px;
     height: 100%;
-    left: 0;
-    right: 0;
-    margin:auto;
     display: flex;
     flex-direction: row;
     justify-content:space-between;
@@ -73,25 +165,21 @@ a:hover::after{
 .hero-details{
     position: relative;
     left: 0;
-    width: 30%;
+    width: 45%;
     height: fit-content;
     z-index: 10;
     top: 50%;
     transform: translateY(-50%);
 }
-.hero-image{
+.hero-artwork{
     position: relative;
-    width: 45%;
+    width: 55%;
     height: 100%;
     z-index: 5;
 }
-.hero-summary{
-    position: relative;
-    width: 30%;
-    right: 0;
-    padding: 20px;
+.hero-artwork img{
+    width: 620px;
 }
-
 .hero-logo img{
     margin: 20px 0;
 }
@@ -102,6 +190,7 @@ a:hover::after{
     font-family: "Syncopate";
     font-weight: 700;
     width: 150%;
+    text-transform: uppercase;
 }
 .hero-name h1 span{
     font-family: inherit;
@@ -120,10 +209,6 @@ a:hover::after{
     margin-top: 40px;
 }
 .hero-cta a{
-    padding: 15px 30px;
-    color: #1b1486;
-    background-color: #30f9dd;
-    border-radius: 60px;
     margin-top: 40px;
     text-decoration: none;
 }
@@ -133,6 +218,7 @@ a:hover::after{
     background: #382fc5;
     height: 100%;
     overflow: hidden;
+display: none;
 }
 .hero-image-holder img{
     height: 100%;
@@ -150,19 +236,76 @@ a:hover::after{
 .hero-image-holder a{
     color: rgba(255,255,255,0.9);
 }
-.hero-summary-bio{
-    padding: 20px 0;
+
+
+.bio{
+    position: relative;
+    width: 100%;
 }
-.hero-summary-fig{
+.bio-container{
+    position: relative;
+    padding: 200px 0;
+    text-align: center;
+    
+}
+.bio-head{
+    font-size: 12px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+}
+.bio-head::after{
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 8px;
+    top: 160%;
+    left: 50%;
+    background: #30f9dd;
+    transform: skewX(-30deg);
+}
+
+.bio-summary{
+    font-family: 'Syncopate';
+    font-size: 32px;
+    line-height: 46px;
+    text-align: center;
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 60px;
+}
+.bio-figures{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    max-width: 540px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 50px;
+}
+.bio-fig-item{
     display: flex;
 }
-.hero-summary-num{
+.bio-fignum{
     font-size: 32px;
     
 }
-.hero-summary-numtxt{
+.bio-figtxt{
     font-size: 14px;
-    padding-left: 10px;
+    padding: 12px 0;
+    padding-left: 50px;
+}
+.bio-figtxt::before{
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 20px;
+    background: #fff;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 
@@ -175,10 +318,6 @@ a:hover::after{
 }
 .works-container{
     position: relative;
-    width: 960px;
-    left: 0;
-    right: 0;
-    margin:auto;
     padding: 100px 0;
 }
 .works-head{
@@ -238,11 +377,8 @@ a:hover::after{
 }
 .shots-container{
     position: relative;
-    width: 100%;
-    left: 0;
-    right: 0;
-    margin:auto;
     padding: 100px 0;
+    overflow: hidden;
 }
 .shots-row{
     position: relative;
@@ -253,6 +389,7 @@ a:hover::after{
     flex-direction: row;
     justify-content:space-between;
     align-items: stretch;
+    transition: none;
 }
 .shots-item{
     position: relative;
@@ -263,7 +400,7 @@ a:hover::after{
     height: 100%;
 }
 .shots-row-2{
-    left: -300px;
+    left: -3000px;
 }
 
 
@@ -276,17 +413,15 @@ a:hover::after{
 }
 .blogs-container{
     position: relative;
-    width: 960px;
-    left: 0;
-    right: 0;
-    margin:auto;
     padding: 100px 0;
+    height: 100%;
 }
 .blogs-head{
     margin: 60px 40px;
 }
 
 .blogs-box{
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content:space-between;
@@ -296,8 +431,12 @@ a:hover::after{
     width: 50%;
 }
 .blogs-right{
+    position: relative;
     width: 50%;
+    height: 100%;
     margin-left: 60px;
+    display: flex;
+    flex-direction: column;
 }
 .blog-1{
     height: 100%;
@@ -335,7 +474,7 @@ a:hover::after{
 }
 
 .blog-1 .blog-title
-{ margin: 20px 0;}
+{ margin: 30px 0 20px;}
 
 .blog-2 .blog-title, .blog-3 .blog-title, .blog-4 .blog-title
 { 
@@ -353,10 +492,6 @@ a:hover::after{
 
 .footer{
     position: relative;
-    width: 960px;
-    left: 0;
-    right: 0;
-    margin:auto;
     padding: 40px 0;
     display: flex;
     flex-direction: row;
@@ -366,7 +501,7 @@ a:hover::after{
 }
 .footer a{
     padding: 5px 10px;
-    font-size: 12px;
+    font-size: 14px;
 }
 .footer a::after {
     content: "";
@@ -392,6 +527,26 @@ a:hover::after{
     transition: all .2s ease;
 }
 
+.footer .copyrights{
+    font-size: 12px;
+}
+
+
+.container{
+    max-width: 1440px;
+    left: 0;
+    right: 0;
+    margin:auto;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.container-full{
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin:auto;
+}
+
 
 .background-black{
     background: #000;
@@ -399,6 +554,17 @@ a:hover::after{
 }
 .background-black a{
     color: #fff !important;
+}
+
+.background-turq{
+    background: #1b1486;
+    color: #30f9dd;
+}
+.background-turq a{
+    color: #30f9dd;
+}
+.background-turq a:hover{
+    color: #1b1486;
 }
 
 .char-1{
@@ -449,3 +615,18 @@ a:hover::after{
 .char-16{
     transform: matrix(0, 0, 0, 0, 0, 0);
 }
+
+
+@media screen and (min-width:1024px) and (max-width:1600px){
+    .container{
+        max-width: 960px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1023px){
+    .hero-container{
+        
+    }
+}
+
+
