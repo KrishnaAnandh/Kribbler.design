@@ -5,6 +5,8 @@
     font-family: "Poppins", Arial, sans-serif;
     transition: all 0.5s cubic-bezier(0.71, 0.01, 0.13, 1.03), color 0s ease;
 /*    scroll-behavior: smooth;*/
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
 }
 *::-webkit-scrollbar {
 display: none;
