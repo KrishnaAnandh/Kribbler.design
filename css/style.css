@@ -60,11 +60,7 @@ a:hover::after{
 
 .hero-container{
     position: relative;
-    width: 960px;
     height: 100%;
-    left: 0;
-    right: 0;
-    margin:auto;
     display: flex;
     flex-direction: row;
     justify-content:space-between;
@@ -106,7 +102,8 @@ a:hover::after{
 .hero-name h1 span{
     font-family: inherit;
     letter-spacing: -20px;
-    transition: all 0.2s ease-in;
+    transition: all 0.8s cubic-bezier(0.26, 0.01, 0, 1.21);
+    display: inline-block;
     
 }
 .hero-desc h2{
@@ -175,10 +172,6 @@ a:hover::after{
 }
 .works-container{
     position: relative;
-    width: 960px;
-    left: 0;
-    right: 0;
-    margin:auto;
     padding: 100px 0;
 }
 .works-head{
@@ -238,10 +231,6 @@ a:hover::after{
 }
 .shots-container{
     position: relative;
-    width: 100%;
-    left: 0;
-    right: 0;
-    margin:auto;
     padding: 100px 0;
 }
 .shots-row{
@@ -276,10 +265,6 @@ a:hover::after{
 }
 .blogs-container{
     position: relative;
-    width: 960px;
-    left: 0;
-    right: 0;
-    margin:auto;
     padding: 100px 0;
 }
 .blogs-head{
@@ -298,6 +283,8 @@ a:hover::after{
 .blogs-right{
     width: 50%;
     margin-left: 60px;
+    display: flex;
+    flex-direction: column;
 }
 .blog-1{
     height: 100%;
@@ -353,10 +340,6 @@ a:hover::after{
 
 .footer{
     position: relative;
-    width: 960px;
-    left: 0;
-    right: 0;
-    margin:auto;
     padding: 40px 0;
     display: flex;
     flex-direction: row;
@@ -402,50 +385,120 @@ a:hover::after{
 }
 
 .char-1{
-    transform: matrix(0, 0, 0, 0, 0, 0);
+    transform: translateY(0);
 }
 .char-2{
-    transform: matrix(0, 0, 0, 0, 0, 0);
+    transform: translateY(0);
 }
 .char-3{
-    transform: matrix(0, 0, 0, 0, 0, 0);
+    transform: translateY(0);
 }
 .char-4{
-    transform: matrix(0, 0, 0, 0, 0, 0);
+    transform: translateY(0);
 }
 .char-5{
-    transform: matrix(0, 0, 0, 0, 0, 0);
+    transform: translateY(0);
 }
 .char-6{
-    transform: matrix(0, 0, 0, 0, 0, 0);
+    transform: translateY(0);
 }
 .char-7{
-    transform: matrix(0, 0, 0, 0, 0, 0);
+    transform: translateY(0);
 }
 .char-8{
-    transform: matrix(0, 0, 0, 0, 0, 0);
+    transform: translateY(0);
 }
 .char-9{
-    transform: matrix(0, 0, 0, 0, 0, 0);
+    transform: translateY(0);
 }
 .char-10{
-    transform: matrix(0, 0, 0, 0, 0, 0);
+    transform: translateY(0);
 }
 .char-11{
-    transform: matrix(0, 0, 0, 0, 0, 0);
+    transform: translateY(0);
 }
 .char-12{
-    transform: matrix(0, 0, 0, 0, 0, 0);
+    transform: translateY(0);
 }
 .char-13{
-    transform: matrix(0, 0, 0, 0, 0, 0);
+    transform: translateY(0);
 }
 .char-14{
-    transform: matrix(0, 0, 0, 0, 0, 0);
+    transform: translateY(0);
 }
 .char-15{
-    transform: matrix(0, 0, 0, 0, 0, 0);
+    transform: translateY(0);
 }
 .char-16{
-    transform: matrix(0, 0, 0, 0, 0, 0);
+    transform: translateY(0);
 }
+
+
+.hero-name h1:hover .char-1{
+    transform: translateY(-10px);
+}
+.hero-name h1:hover .char-2{
+    transform: translateY(6px);
+}
+.hero-name h1:hover .char-3{
+    transform: translateY(-14px);
+}
+.hero-name h1:hover .char-4{
+    transform: translateY(-6px);
+}
+.hero-name h1:hover .char-5{
+    transform: translateY(-12px);
+}
+.hero-name h1:hover .char-6{
+    transform: translateY(6px);
+}
+.hero-name h1:hover .char-7{
+    transform: translateY(-16px);
+}
+.hero-name h1:hover .char-8{
+    transform: translateY(10px);
+}
+.hero-name h1:hover .char-9{
+    transform: translateY(-10px);
+}
+.hero-name h1:hover .char-10{
+    transform: translateY(16px);
+}
+.hero-name h1:hover .char-11{
+    transform: translateY(6px);
+}
+.hero-name h1:hover .char-12{
+    transform: translateY(14px);
+}
+.hero-name h1:hover .char-13{
+    transform: translateY(-12px);
+}
+.hero-name h1:hover .char-14{
+    transform: translateY(10px);
+}
+.hero-name h1:hover .char-15{
+    transform: translateY(-6px);
+}
+.hero-name h1:hover .char-16{
+    transform: translateY(12px);
+}
+
+
+
+
+
+.container{
+    max-width:1400px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.container-full{
+    width:100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
