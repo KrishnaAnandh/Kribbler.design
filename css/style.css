@@ -6,7 +6,9 @@
     transition: all 0.5s cubic-bezier(0.71, 0.01, 0.13, 1.03), color 0s ease;
 /*    scroll-behavior: smooth;*/
 }
-
+*::-webkit-scrollbar {
+display: none;
+}
 a{
     color: #1b1486;
     font-size: 12px;
@@ -243,13 +245,35 @@ display: none;
 .bio-container{
     position: relative;
     padding: 200px 0;
+    text-align: center;
+    
 }
+.bio-head{
+    font-size: 12px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+}
+.bio-head::after{
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 8px;
+    top: 160%;
+    left: 50%;
+    background: #30f9dd;
+    transform: skewX(-30deg);
+}
+
 .bio-summary{
     font-family: 'Syncopate';
     font-size: 32px;
     line-height: 46px;
     text-align: center;
+    color: #fff;
     padding: 20px 0;
+    margin-top: 60px;
 }
 .bio-figures{
     display: flex;
@@ -390,12 +414,14 @@ display: none;
 .blogs-container{
     position: relative;
     padding: 100px 0;
+    height: 100%;
 }
 .blogs-head{
     margin: 60px 40px;
 }
 
 .blogs-box{
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content:space-between;
@@ -405,7 +431,9 @@ display: none;
     width: 50%;
 }
 .blogs-right{
+    position: relative;
     width: 50%;
+    height: 100%;
     margin-left: 60px;
     display: flex;
     flex-direction: column;

@@ -29,7 +29,12 @@
     
     <script>
         $(window).on('load', function() {
-            $(this).impulse();
+            $(this).impulse({
+                range: 80,
+                tempo: 700,
+                effect: 'easeOutBack',
+                fluid: false
+            });
         });
         
         
@@ -132,6 +137,7 @@
     
     <section class="bio">
         <div class="bio-container container">
+            <div class="bio-head"><p>short bio</p></div>
             <div class="bio-summary">I am a computer engineer and an artist who is so much into making technologies easy to use, also beautiful.</div>
             <div class="bio-figures">
                 <div class="bio-fig-item"><div class="bio-fignum">05+</div><div class="bio-figtxt">years of experience</div></div>
