@@ -263,7 +263,7 @@ display: none;
     top: 160%;
     left: 50%;
     background: #30f9dd;
-    transform: skewX(-30deg);
+    transform: translateX(-55%) skewX(-30deg);
 }
 
 .bio-summary{
