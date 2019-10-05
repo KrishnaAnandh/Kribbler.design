@@ -109,22 +109,22 @@ a:hover::after{
     opacity: 0;
     transition: all .4s cubic-bezier(0.21, 0.05, 0, 1.01);
 }
-li{
+.header li{
     display: inline-block;
     padding: 18px 10px;
     transform: translateY(-60px);
     transition: transform .4s cubic-bezier(0.21, 0.05, 0, 1.01);
 }
-li:nth-child(1){
+.header li:nth-child(1){
     transition-delay: 0s;
 }
-li:nth-child(2){
+.header li:nth-child(2){
     transition-delay: 0.3s;
 }
-li:nth-child(3){
+.header li:nth-child(3){
     transition-delay: 0.6s;
 }
-li:nth-child(4){
+.header li:nth-child(4){
     transition-delay: 0.9s;
 }
 .header-cta{
@@ -180,7 +180,7 @@ li:nth-child(4){
     z-index: 5;
 }
 .hero-artwork img{
-    width: 620px;
+    width: 100%;
 }
 .hero-logo img{
     margin: 20px 0;
@@ -401,6 +401,12 @@ display: none;
 /*    float: left;*/
     margin: 0 10px;
     height: 100%;
+    overflow: hidden;
+}
+.shots-item img{
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .shots-row-2{
     left: -3000px;
