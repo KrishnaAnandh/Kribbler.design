@@ -243,6 +243,7 @@ display: none;
 .bio{
     position: relative;
     width: 100%;
+    opacity: 0;
 }
 .bio-container{
     position: relative;
@@ -568,7 +569,9 @@ display: none;
 .background-turq a:hover{
     color: #1b1486;
 }
-
+.appear{
+    opacity: 1;
+}
 .char-1{
     transform: matrix(0, 0, 0, 0, 0, 0);
 }
