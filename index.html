@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js/lucid.js"></script>
     
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="js/lucid.js"></script>
 
     
     <!--<link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
@@ -29,12 +29,13 @@
     
     <script>
         $(window).on('load', function() {
-            $(this).impulse({
-                range: 60,
-                tempo: 1200,
-                effect: 'easeOutBack',
-                fluid: true
-            });
+            $('.hero').addClass("appear");
+//            $(this).impulse({
+//                range: 60,
+//                tempo: 1200,
+//                effect: 'easeOutBack',
+//                fluid: true
+//            });
         });
         
         
@@ -48,27 +49,64 @@
             else{
                 $('.header').removeClass("show");
             }
-            
-            if(scroll > 480 && scroll < 999){
+            //hero section
+            if(scroll > 0 && scroll < 480){
+                $('body').removeClass("background-black");
+                $('body').removeClass("background-turq");
+                $('.header').css("background","#fff");
+                $('.header-logo').css("filter", "invert(0%)");
+                
+                $('.hero').addClass("appear");
+                $('.bio').removeClass("appear");
+                $('.works').removeClass("appear");
+                $('.shots').removeClass("appear");
+                $('.blogs').removeClass("appear");
+            }
+            //bio section
+            else if(scroll > 480 && scroll < 999){
                 $('body').removeClass("background-black");
                 $('body').addClass("background-turq");
                 $('.header').css("background","#1b1486");
                 $('.header-logo').css("filter", "invert(100%)");
+                
+                $('.hero').removeClass("appear");
                 $('.bio').addClass("appear");
+                $('.works').removeClass("appear");
+                $('.shots').removeClass("appear");
+                $('.blogs').removeClass("appear");
             }
+            //works section
             else if(scroll > 1000 && scroll < 3900){
                 $('body').removeClass("background-turq");
                 $('body').addClass("background-black");
                 $('.header').css("background","#000");
                 $('.header-logo').css("filter", "invert(100%)");
+                
+                $('.hero').removeClass("appear");
                 $('.bio').removeClass("appear");
+                $('.works').addClass("appear");
+                $('.shots').addClass("appear");
+                $('.blogs').removeClass("appear");
+            }
+            
+            //blogs-section
+            else if(scroll > 3900){
+                $('body').removeClass("background-black");
+                $('body').removeClass("background-turq");
+                $('.header').css("background","#fff");
+                $('.header-logo').css("filter", "invert(0%)");
+                
+                $('.hero').removeClass("appear");
+                $('.bio').removeClass("appear");
+                $('.works').removeClass("appear");
+                $('.shots').removeClass("appear");
+                $('.blogs').addClass("appear");
             }
             else{
                 $('body').removeClass("background-black");
                 $('body').removeClass("background-turq");
                 $('.header').css("background","#fff");
                 $('.header-logo').css("filter", "invert(0%)");
-                $('.bio').removeClass("appear");
             }
             
             
@@ -145,7 +183,7 @@
             <div class="bio-summary">I am a computer engineer and an artist who is so much into making technologies easy to use, also beautiful.</div>
             <div class="bio-figures">
                 <div class="bio-fig-item"><div class="bio-fignum">05+</div><div class="bio-figtxt">years of experience</div></div>
-                <div class="bio-fig-item"><div class="bio-fignum">25+</div><div class="bio-figtxt">Digital products</div></div>
+                <div class="bio-fig-item"><div class="bio-fignum">25+</div><div class="bio-figtxt">digital products</div></div>
             </div>
         </div>
     
