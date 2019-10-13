@@ -278,10 +278,10 @@ display: none;
     content: "";
     width: 30px;
     height: 8px;
-    top: 160%;
+    top: 200%;
     left: 50%;
     background: #30f9dd;
-    transform: translateX(-55%) skewX(-30deg);
+    transform: translateX(-50%) skewY(-15deg);
 }
 .bio-head p{
     font-size: 12px;
@@ -407,18 +407,17 @@ display: none;
 }
 .shots-row{
     position: relative;
-    width: 2800px;
-    height: 300px;
+    width: fit-content;
+    height: 280px;
     padding: 10px 0;
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
     align-items: stretch;
     transition: none;
 }
 .shots-item{
     position: relative;
-    width: 600px;
+    width: 380px;
     background: rgba(200,200,200,0.15);
 /*    float: left;*/
     margin: 0 10px;
@@ -601,6 +600,7 @@ display: none;
 }
 .appear{
     opacity: 1;
+    transition-delay: 0s;
 }
 .char-1{
     transform: translateY(-30px);
@@ -785,6 +785,13 @@ display: none;
     .work-desc {
         flex-direction: column;
     }
+    .shots-row{
+        height: 160px;
+    }
+    .shots-item{
+        width: 240px;
+    }
+        
     .blogs-box {
         flex-direction: column;
     }
