@@ -11,6 +11,24 @@
 *::-webkit-scrollbar {
 display: none;
 }
+h1{
+    font-family: "Syncopate", "Arial", sans-serif;
+    font-size: 52px;
+    font-weight: 700;
+}
+h3, .heads p{
+    font-size: 40px;
+    line-height: 50px;
+    margin: 20px 0;
+    font-family: "Syncopate";
+    font-weight: 700;
+    width: 100%;
+    text-transform: uppercase;
+}
+p{
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 16px;
+}
 a{
     color: #1b1486;
     font-size: 12px;
@@ -72,15 +90,7 @@ a:hover::after{
     left: -5%;
 }
 
-.heads p{
-    font-size: 40px;
-    line-height: 50px;
-    margin: 20px 0;
-    font-family: "Syncopate";
-    font-weight: 700;
-    width: 100%;
-    text-transform: uppercase;
-}
+
 
 .header{
 /*    display: none;*/
@@ -179,11 +189,8 @@ a:hover::after{
     margin: 20px 0;
 }
 .hero-name h1{
-    font-size: 52px;
     line-height: 50px;
     margin: 20px 0;
-    font-family: "Syncopate";
-    font-weight: 700;
     width: 150%;
     text-transform: uppercase;
 }
@@ -690,17 +697,58 @@ display: none;
     transform: translateY(0px);
 }
 
-
+/*1024 - 1600*/
 @media screen and (min-width:1024px) and (max-width:1600px){
     .container{
         max-width: 960px;
     }
 }
 
-@media screen and (min-width:768px) and (max-width:1023px){
+
+/*769-1023*/
+@media screen and (min-width:769px) and (max-width:1023px){
     .hero-container{
         
     }
 }
 
+
+/*481-768*/
+@media screen and (min-width:481px) and (max-width:768px){
+    h1{
+        font-size: 40px;
+    }
+}
+
+
+/*0-480*/
+@media screen and (max-width:480px){
+    h1{
+        font-size: 40px;
+    }
+    .container{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    
+    .hero-container{
+        display: block;
+    }
+    
+    .hero-details{
+        width: 100%;
+        text-align: center;
+    }
+    .hero-name h1{
+        width: 100%;
+    }
+    .hero-desc h2{
+        padding: 0;
+    }
+    .hero-details .btn{
+        width: auto;
+    }
+    
+}
 
