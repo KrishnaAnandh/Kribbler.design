@@ -189,14 +189,16 @@ a:hover::after{
     margin: 20px 0;
 }
 .hero-name h1{
-    line-height: 50px;
+    line-height: 32px;
+    font-size: 0;
     margin: 20px 0;
     width: 150%;
     text-transform: uppercase;
 }
 .hero-name h1 span{
     font-family: inherit;
-    letter-spacing: -20px;
+    font-size: 52px;
+    letter-spacing: -2px;
     transition: all 0.2s ease-in;
     display: inline-block;
     transition: transform 2s .6s cubic-bezier(0.2, 0.0, 0, 1.0);
@@ -749,7 +751,7 @@ display: none;
     }
     .hero-name h1{
         width: 100%;
-        margin: 14px;
+        margin: 14px 0;
     }
     .hero-desc h2{
         font-size: 18px;
