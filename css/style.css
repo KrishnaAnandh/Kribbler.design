@@ -13,7 +13,7 @@ display: none;
 }
 h1{
     font-family: "Syncopate", "Arial", sans-serif;
-    font-size: 52px;
+    font-size: 72px;
     font-weight: 700;
 }
 h3, .heads p{
@@ -189,7 +189,7 @@ a:hover::after{
     margin: 20px 0;
 }
 .hero-name h1{
-    line-height: 32px;
+    line-height: 56px;
     letter-spacing: -4px;
     font-size: 0;
     margin: 20px 0;
@@ -198,7 +198,7 @@ a:hover::after{
 }
 .hero-name h1 span{
     font-family: inherit;
-    font-size: 52px;
+    font-size: 88px;
     transition: all 0.2s ease-in;
     display: inline-block;
     transition: transform 2s .6s cubic-bezier(0.2, 0.0, 0, 1.0);
