@@ -76,7 +76,7 @@
                 $('.blogs').removeClass("appear");
             }
             //works section
-            else if(scroll > 1000 && scroll < 3900){
+            else if(scroll > 1000 && scroll < 3400){
                 $('body').removeClass("background-turq");
                 $('body').addClass("background-black");
                 $('.header').css("background","#000");
@@ -90,7 +90,7 @@
             }
             
             //blogs-section
-            else if(scroll > 3900){
+            else if(scroll > 3400){
                 $('body').removeClass("background-black");
                 $('body').removeClass("background-turq");
                 $('.header').css("background","#fff");
@@ -147,7 +147,7 @@
     <section class="hero">
         <div class="hero-container container">
             <div class="hero-details">
-                <div class="hero-logo"><img src="img/kribbler-logo.svg"/></div>
+                <div class="hero-logo"><img src="img/kribbler-logo.svg"/><span>aka</span><span>Anandhakrishnan</span></div>
                 <div class="hero-name"><h1>
                     <span class="char-1">D</span>
                     <span class="char-2">i</span>
@@ -176,7 +176,8 @@
                 <div class="hero-cta btn"><a href="#">contact me</a></div>
             </div>
             <div class="hero-artwork">
-                <img src="img/artwork.png"/>
+                <img src="img/video-thumbnail.jpeg"/>
+                <div class="play-button"></div>
             </div>
             
         </div>
@@ -202,34 +203,48 @@
     
     <section class="works">
         <div class="works-container container">
-            <div class="works-head heads"><p>works</p></div>
-            <div class="work work-1">
-                <div class="work-image-holder"><img src="img/foodmates-cover.png"/></div>
-                <div class="work-desc">
-                    <div class="work-left">
+            <div class="works-head heads"><p>Featured Works</p></div>
+
+            <div class="work-row-1">
+                <div class="work work-1">
+                    
+                    <div class="work-desc">
                         <div class="work-title">Foodmates by bigbasket</div>
+                        <div class="work-content">Foodmates by bigbasket is Indian based mobile application for home cooking, meal planning and grocery planning. </div>
                         <div class="work-link"><a href="#">view project</a></div>
+                        <!-- <div class="work-link-mobile"><a href="#">view project</a></div> -->
                     </div>
-                    <div class="work-right">
-                        <div class="work-content">Foodmates by bigbasket is Indian based mobile application for home cooking, meal planning and grocery planning. Foodmates by bigbasket is Indian based mobile application for home cooking, meal planning and grocery planning. </div>
-                    </div>
-                    <div class="work-link-mobile"><a href="#">view project</a></div>
+                    <div class="work-image-holder"><img src="img/foodmates-cover.png"/></div>
                 </div>
             </div>
+
+            <div class="work-row-2">
+                <div class="work work-2">
+                    
+                    <div class="work-desc">
+                        <div class="work-title">Run small business with hassle-free</div>
+                        <div class="work-content">Small & medium business brought-in online
+                            and managed at one place</div>
+                        <div class="work-link"><a href="#">view project</a></div>
+                        <!-- <div class="work-link-mobile"><a href="#">view project</a></div> -->
+                    </div>
+                    <div class="work-image-holder"><img src="img/unibook_cover.png"/></div>
+                </div>
+                <div class="work work-3">
+                    
+                    <div class="work-desc">
+                        <div class="work-title">Meaningful Flexible Jobs for Women</div>
+                        <div class="work-content">Women can work in roles matched with their experience and skills, with the flexibility that they need.</div>
+                        <div class="work-link"><a href="#">view project</a></div>
+                        <!-- <div class="work-link-mobile"><a href="#">view project</a></div> -->
+                    </div>
+                        <div class="work-image-holder"><img src="img/flexibees_cover.png"/></div>
+                </div>
+            </div>
+        </div>
+        
                 
-            <div class="work work-2">
-                <div class="work-image-holder"><img src="img/foodmates-cover.png"/></div>
-                <div class="work-desc">
-                    <div class="work-left">
-                        <div class="work-title">Foodmates by bigbasket</div>
-                        <div class="work-link"><a href="#">view project</a></div>
-                    </div>
-                    <div class="work-right">
-                        <div class="work-content">Foodmates by bigbasket is Indian based mobile application for home cooking, meal planning and grocery planning. Foodmates by bigbasket is Indian based mobile application for home cooking, meal planning and grocery planning. </div>
-                    </div>
-                    <div class="work-link-mobile"><a href="#">view project</a></div>
-                </div>
-            </div>
+        
         </div>
     </section>
     <section class="shots">
