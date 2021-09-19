@@ -389,19 +389,22 @@ display: none;
     margin: 10px; 
     position: relative;
     z-index: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
 }
 .work-image-holder{
-    width:100%;
+    width:70%;
     height: 100%;
     overflow: hidden;
     /* background-color: #2ab46f; */
-    position: absolute;
+    /* position: absolute; */
     top: 0;
     z-index: 1;
 }
 .work-image-holder img{
     
-    height: 70%;
+    width: 100%;
     top: 50%;
     transform: translateY(-50%);
     right: 0;
@@ -410,11 +413,11 @@ display: none;
 .work-desc{
     position: relative;
     width: 30%;
+    min-width: 200px;
     display: flex;
     flex-direction: column;
     justify-content:space-between;
     align-items: stretch;
-    margin-top: 60px;
     padding: 50px;
     z-index: 2;
 }
@@ -794,7 +797,8 @@ display: none;
 /*0-480*/
 @media screen and (max-width:480px){
     h1{
-        font-size: 42px;
+        font-size: 52px;
+        line-height: 20px;
     }
     h3, .heads p{
         font-size: 32px;
@@ -805,6 +809,11 @@ display: none;
     .container{
         padding-left: 20px;
         padding-right: 20px;
+        padding-bottom: 0;
+    }
+
+    .header-menu{
+        display: none;
     }
     
     
@@ -814,14 +823,18 @@ display: none;
     
     .hero-details{
         top: 0;
-        margin-top: 140px;
+        margin-top: 20px;
         transform: translateY(0);
         width: 100%;
         text-align: center;
     }
     .hero-name h1{
         width: 100%;
-        margin: 14px 0;
+        margin: 14px 0;        
+    }
+    .hero-name h1 span{
+        font-size: 52px;
+        line-height: 10px;
     }
     .hero-desc h2{
         font-size: 18px;
@@ -835,8 +848,7 @@ display: none;
     .hero-details .btn{
         left: 0;
         right: 0;
-        margin: auto;
-        margin-top: 24px;
+        margin: 24px auto;
     }
     .hero-artwork{
         width: 100%;
@@ -851,14 +863,28 @@ display: none;
         width: fit-content;
     }
     .work{
-        margin: 80px 0;
+        margin: 10px 0;
+        flex-direction: column;
     }
     .work-image-holder{
-        height: 260px;
+        width: 100%;
+    }
+    .work-image-holder img{
+        top: 0;
+        transform: translateY(0%);
+    }
+    .work-desc{
+        width: calc(100% - 100px);
+    }
+    .work-row-2{
+        flex-direction: column;
+    }
+    .work-2, .work-3{
+        width:100%
     }
     .work-desc {
         flex-direction: column;
-        margin-top: 30px;
+        /* margin-top: 30px; */
     }
     .work-title {
         font-size: 24px;
