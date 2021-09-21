@@ -36,8 +36,13 @@
 //                effect: 'easeOutBack',
 //                fluid: true
 //            });
+
         });
-        
+        $(document).ready(function(){
+            $("#menu-icon").on('click', function(){
+                $("#menu-cont").addClass("open");
+            });
+        });
         
         
         $(window).scroll(function (event) {
@@ -128,7 +133,7 @@
             
             console.log(layer_top);
         });
-
+        
     </script>
     
     
@@ -136,12 +141,14 @@
 <body>
     <section class="header container-full">
     <div class="header-logo"><img src="img/kribbler-logo.svg"/></div>
-    <div class="header-menu">
+    <div class="header-menu-icon" id="menu-icon"><div></div><div></div></div>
+    <div class="header-menu" id="menu-cont">
         <ul>
             <li>Works</li><li>Blogs</li><li>About</li><li>Contact</li>
         </ul>
+        <div class="header-cta btn"><a href="#">Contact me</a></div>
     </div>
-    <div class="header-cta btn"><a href="#">Contact me</a></div>
+    
     </section>
     
     <section class="hero">
@@ -165,12 +172,12 @@
                     <span class="char-14">t</span><br/>
                     <span class="char-15">D</span>
                     <span class="char-16">i</span>
-                    <span class="char-16">s</span>
-                    <span class="char-16">i</span>
-                    <span class="char-16">g</span>
-                    <span class="char-16">n</span>
-                    <span class="char-16">e</span>
-                    <span class="char-16">r</span>
+                    <span class="char-17">s</span>
+                    <span class="char-18">i</span>
+                    <span class="char-19">g</span>
+                    <span class="char-20">n</span>
+                    <span class="char-21">e</span>
+                    <span class="char-22">r</span>
                 </h1></div>
                 <div class="hero-desc"><h2>I'm a digital product designer specialised in interaction design</h2></div>
                 <div class="hero-cta btn"><a href="#">contact me</a></div>
@@ -292,17 +299,17 @@
                 </div>
                 <div class="blogs-right">
                     <div class="blog blog-2">
-                        <div class="blog-image">i</div>
+                        <div class="blog-image"></div>
                         <div class="blog-desc"><p class="blog-title">7 design psychologies every designers should know</p>
                         <p class="blog-cont">Beyond an enriched interaction design, a designer role is to persuade an user/visitor</p></div>
                     </div>
                     <div class="blog blog-3">
-                        <div class="blog-image">i</div>
+                        <div class="blog-image"></div>
                         <div class="blog-desc"><p class="blog-title">7 design psychologies every designers should know</p>
                         <p class="blog-cont">Beyond an enriched interaction design, a designer role is to persuade an user/visitor</p></div>
                     </div>
                     <div class="blog blog-4">
-                        <div class="blog-image">i</div>
+                        <div class="blog-image"></div>
                         <div class="blog-desc"><p class="blog-title">7 design psychologies every designers should know</p>
                         <p class="blog-cont">Beyond an enriched interaction design, a designer role is to persuade an user/visitor</p></div>
                     </div>
