@@ -169,7 +169,7 @@ a:hover::after{
 .hero{
     position: relative;
     width: 100%;
-    height: 800px;
+    height: 100vh;
     left: 0;
     right: 0;
     opacity: 0;
@@ -211,7 +211,7 @@ a:hover::after{
     color: #0008;
 }
 
-.hero-name h1{
+.hero-name h1, .hero-name-special{
     line-height: 56px;
     letter-spacing: -4px;
     font-size: 0;
@@ -219,7 +219,14 @@ a:hover::after{
     width: 150%;
     text-transform: uppercase;
 }
-.hero-name h1 span{
+.hero-name-special{
+    font-family: "Syncopate", "Arial", sans-serif;
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: -16px;
+    margin: 0;
+}
+.hero-name h1 span, .hero-name-special span{
     font-family: inherit;
     font-size: 88px;
     transition: all 0.2s ease-in;
@@ -244,7 +251,6 @@ a:hover::after{
     position: relative;
     width: 55%;
     height: 100%;
-    height:700px;
     z-index: 5;
     text-align: center;
     display: flex;
@@ -254,33 +260,34 @@ a:hover::after{
 .hero-artwork img{
     /* width: 100%; */
     height:700px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
 }
 .hero-artwork .play-button{
-    
-    top: -70px;
-    left: -300px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    margin: 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.hero-artwork .play-button .play{
     width: 30px;
     height: 30px;
-    background-color: #0000;    
-    border: 2px solid #fff;
+    background-color: #0000;
+    border: 2px solid #ccc;
+    margin-right: 20px;
 }
 
 .hero-image-holder{
-    width: 100%;
-    height: 250px;
-    background: #382fc5;
+    width: auto;
     height: 100%;
+
     overflow: hidden;
-display: none;
 }
 .hero-image-holder img{
     /* height: 100%; */
-    height:300px;
-    left: 50%;
-    transform:translateX(-50%);
+    height:100%;
 }
 .hero-image-holder p{
     position: absolute;
@@ -727,7 +734,27 @@ display: none;
 .char-16{
     transform: translateY(-20px);
 }
-
+.char-17{
+    transform: translateY(-36px);
+}
+.char-18{
+    transform: translateY(-60px);
+}
+.char-19{
+    transform: translateY(-44px);
+}
+.char-20{
+    transform: translateY(-70px);
+}
+.char-21{
+    transform: translateY(-52px);
+}
+.char-22{
+    transform: translateY(-40px);
+}
+.char-23{
+    transform: translateY(-36px);
+}
 
 .appear .char-1{
     transform: translateY(0px);
@@ -775,6 +802,27 @@ display: none;
     transform: translateY(0px);
 }
 .appear .char-16{
+    transform: translateY(0px);
+}
+.appear .char-17{
+    transform: translateY(0px);
+}
+.appear .char-18{
+    transform: translateY(0px);
+}
+.appear .char-19{
+    transform: translateY(0px);
+}
+.appear .char-20{
+    transform: translateY(0px);
+}
+.appear .char-21{
+    transform: translateY(0px);
+}
+.appear .char-22{
+    transform: translateY(0px);
+}
+.appear .char-23{
     transform: translateY(0px);
 }
 
