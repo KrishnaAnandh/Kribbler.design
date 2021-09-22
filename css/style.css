@@ -903,6 +903,7 @@ a:hover::after{
         padding: 120px 20px 0;
         width: calc(100% - 40px);
         backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
     }
     .header .header-menu.open{
         transform: translate(0, 0);
