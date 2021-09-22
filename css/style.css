@@ -1040,6 +1040,16 @@ a:hover::after{
         width: 100%;
         margin-left: 0;
     }
+
+
+    .footer .socials{
+        font-size: 14px;
+    }
+    
+    .footer .copyrights{
+        font-size: 12px;
+    }
+
 }
 
 
