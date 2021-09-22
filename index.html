@@ -86,6 +86,7 @@
                 $('body').addClass("background-turq");
                 $('.header').css("background","#1b1486");
                 $('.header-logo').css("filter", "invert(100%)");
+                $('.header-menu-icon div').css("background", "#fff");
                 
                 $('.hero').removeClass("appear");
                 $('.bio').addClass("appear");
@@ -100,6 +101,7 @@
                 $('body').addClass("background-black");
                 $('.header').css("background","#000");
                 $('.header-logo').css("filter", "invert(100%)");
+                $('.header-menu-icon div').css("background", "#fff");
                 
                 $('.hero').removeClass("appear");
                 $('.bio').removeClass("appear");
@@ -116,6 +118,7 @@
                 $('body').removeClass("background-turq");
                 $('.header').css("background","#fff");
                 $('.header-logo').css("filter", "invert(0%)");
+                $('.header-menu-icon div').css("background", "#000");
                 
                 $('.hero').removeClass("appear");
                 $('.bio').removeClass("appear");
@@ -129,6 +132,7 @@
                 $('body').removeClass("background-turq");
                 $('.header').css("background","#fff");
                 $('.header-logo').css("filter", "invert(0%)");
+                $('.header-menu-icon div').css("background", "#000");
             }
             
             
@@ -203,8 +207,10 @@
                 <div class="hero-cta btn"><a href="#">contact me</a></div>
             </div>
             <div class="hero-artwork">
-                <div class="hero-image-holder"><img class="hero-image" src="img/video-thumbnail.jpeg"/>
-                    <div class="play-button"><div class="play"></div><div>Watch my intro</div></div></div>
+
+                <div class="hero-image-holder"><img class="hero-image" src="img/video-thumbnail.png"/>
+                    <div class="hero-image-overlay"></div>
+                <div class="play-button"><img class="play" src="img/play-icon.svg"/><div>Watch my intro</div></div></div>
                 
             </div>
             

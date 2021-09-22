@@ -265,35 +265,40 @@ a:hover::after{
     bottom: 0;
     left: 0;
     position: absolute;
-    margin: 20px;
+    margin: 20px 30px;
     color: #fff;
     display: flex;
     align-items: center;
 }
 
 .hero-artwork .play-button .play{
-    width: 30px;
-    height: 30px;
     background-color: #0000;
-    border: 2px solid #ccc;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .hero-image-holder{
     width: auto;
     height: 100%;
-
+    font-weight: 300;
     overflow: hidden;
 }
 .hero-image-holder img{
     /* height: 100%; */
     height:100%;
 }
+.hero-image-overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20%;
+    width: 100%;
+    background: linear-gradient(0deg, #222739, transparent);}
 .hero-image-holder p{
     position: absolute;
     right: 10px;
     bottom: 10px;
     font-size: 10px;
+    
     color: rgba(255,255,255,0.7);
 }
 
@@ -899,7 +904,7 @@ a:hover::after{
         flex-direction: column;
         height: 1000%;
         position: absolute;
-        background: #000d;
+        background: #000a;
         padding: 120px 20px 0;
         width: calc(100% - 40px);
         backdrop-filter: blur(12px);
@@ -938,8 +943,12 @@ a:hover::after{
         font-size:24px;
         font-weight: 500;
     }
+    .hero{
+        height: auto;
+    }
     .hero-container{
         flex-direction: column;
+        height: auto;
     }
     
     .hero-details{
@@ -973,6 +982,7 @@ a:hover::after{
     }
     .hero-artwork{
         width: 100%;
+        height: 500px;
     }
 
     .bio-summary {
