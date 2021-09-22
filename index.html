@@ -40,7 +40,8 @@
         });
         $(document).ready(function(){
             $("#menu-icon").on('click', function(){
-                $("#menu-cont").addClass("open");
+                $("#menu-cont").toggleClass("open");
+                $(this).toggleClass("close");
             });
         });
         
