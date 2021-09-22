@@ -995,7 +995,9 @@ a:hover::after{
         transform: translateY(0%);
     }
     .work-desc{
-        width: calc(100% - 100px);
+        width: calc(100% - 80px);
+        padding: 40px;
+        flex-direction: column;
     }
     .work-row-2{
         flex-direction: column;
@@ -1003,10 +1005,7 @@ a:hover::after{
     .work-2, .work-3{
         width:100%
     }
-    .work-desc {
-        flex-direction: column;
-        /* margin-top: 30px; */
-    }
+
     .work-title {
         font-size: 24px;
         line-height: 32px;
