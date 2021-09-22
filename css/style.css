@@ -684,7 +684,7 @@ a:hover::after{
 }
 .appear{
     opacity: 1;
-    transition-delay: 0.4s;
+    transition-delay: 0.1s;
 }
 .char-1{
     transform: translateY(-30px);

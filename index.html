@@ -37,6 +37,8 @@
 //                fluid: true
 //            });
 
+
+
         });
         $(document).ready(function(){
             $("#menu-icon").on('click', function(){
@@ -49,6 +51,15 @@
         $(window).scroll(function (event) {
             var scroll = $(window).scrollTop();
             console.log(scroll);
+            var heroEnds = $(".hero").height(),
+            bioEnds = $(".bio").height()+heroEnds,
+            worksEnds = $(".works").height()+bioEnds,
+            shotsEnds = $(".shots").height()+worksEnds,
+            blogsEnds = $(".blogs").height()+shotsEnds;
+            console.log("work edns", worksEnds);
+            console.log("shots ends", shotsEnds);
+            console.log("shots height", $(".shots").height());
+            
             if(scroll > 580){
                 $('.header').addClass("show");
             }
@@ -56,7 +67,7 @@
                 $('.header').removeClass("show");
             }
             //hero section
-            if(scroll > 0 && scroll < 480){
+            if(scroll > 0 && scroll < heroEnds){
                 $('body').removeClass("background-black");
                 $('body').removeClass("background-turq");
                 $('.header').css("background","#fff");
@@ -67,9 +78,10 @@
                 $('.works').removeClass("appear");
                 $('.shots').removeClass("appear");
                 $('.blogs').removeClass("appear");
+                console.log("hero");
             }
             //bio section
-            else if(scroll > 480 && scroll < 999){
+            else if(scroll > heroEnds && scroll < bioEnds){
                 $('body').removeClass("background-black");
                 $('body').addClass("background-turq");
                 $('.header').css("background","#1b1486");
@@ -80,9 +92,10 @@
                 $('.works').removeClass("appear");
                 $('.shots').removeClass("appear");
                 $('.blogs').removeClass("appear");
+                console.log("bio");
             }
             //works section
-            else if(scroll > 1000 && scroll < 3400){
+            else if(scroll > bioEnds && scroll < shotsEnds){
                 $('body').removeClass("background-turq");
                 $('body').addClass("background-black");
                 $('.header').css("background","#000");
@@ -93,10 +106,12 @@
                 $('.works').addClass("appear");
                 $('.shots').addClass("appear");
                 $('.blogs').removeClass("appear");
+
+                console.log("works");
             }
             
             //blogs-section
-            else if(scroll > 3400){
+            else if(scroll > shotsEnds){
                 $('body').removeClass("background-black");
                 $('body').removeClass("background-turq");
                 $('.header').css("background","#fff");
@@ -107,6 +122,7 @@
                 $('.works').removeClass("appear");
                 $('.shots').removeClass("appear");
                 $('.blogs').addClass("appear");
+                console.log("blogs");
             }
             else{
                 $('body').removeClass("background-black");
