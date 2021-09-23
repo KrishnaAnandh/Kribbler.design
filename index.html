@@ -47,7 +47,7 @@
             });
         });
         
-        
+        var lastScrollTop = 0;
         $(window).scroll(function (event) {
             var scroll = $(window).scrollTop();
             console.log(scroll);
@@ -60,6 +60,18 @@
             console.log("shots ends", shotsEnds);
             console.log("shots height", $(".shots").height());
             
+           
+
+            
+            if (scroll > lastScrollTop){
+                scrollOffset = -500;
+            } else {
+                scrollOffset = 0;
+            }
+            lastScrollTop = scroll;
+            
+
+
             if(scroll > 580){
                 $('.header').addClass("show");
             }
@@ -67,7 +79,7 @@
                 $('.header').removeClass("show");
             }
             //hero section
-            if(scroll > 0 && scroll < heroEnds){
+            if(scroll > 0 && scroll < (heroEnds + scrollOffset)){
                 $('body').removeClass("background-black");
                 $('body').removeClass("background-turq");
                 $('.header').css("background","#fff");
@@ -81,7 +93,7 @@
                 console.log("hero");
             }
             //bio section
-            else if(scroll > heroEnds && scroll < bioEnds){
+            else if(scroll > (heroEnds + scrollOffset) && scroll < (bioEnds + scrollOffset)){
                 $('body').removeClass("background-black");
                 $('body').addClass("background-turq");
                 $('.header').css("background","#1b1486");
@@ -96,7 +108,7 @@
                 console.log("bio");
             }
             //works section
-            else if(scroll > bioEnds && scroll < shotsEnds){
+            else if(scroll > (bioEnds + scrollOffset) && scroll < (shotsEnds + scrollOffset)){
                 $('body').removeClass("background-turq");
                 $('body').addClass("background-black");
                 $('.header').css("background","#000");
@@ -113,7 +125,7 @@
             }
             
             //blogs-section
-            else if(scroll > shotsEnds){
+            else if(scroll > (shotsEnds + scrollOffset)){
                 $('body').removeClass("background-black");
                 $('body').removeClass("background-turq");
                 $('.header').css("background","#fff");

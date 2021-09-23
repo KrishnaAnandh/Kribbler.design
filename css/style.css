@@ -264,6 +264,7 @@ a:hover::after{
 .hero-artwork .play-button{
     bottom: 0;
     left: 0;
+    
     position: absolute;
     margin: 20px 30px;
     color: #fff;
@@ -274,6 +275,8 @@ a:hover::after{
 .hero-artwork .play-button .play{
     background-color: #0000;
     margin-right: 10px;
+    width:20px;
+    height: 24px;
 }
 
 .hero-image-holder{
