@@ -48,25 +48,24 @@
         });
         
         var lastScrollTop = 0;
+     
+           
         $(window).scroll(function (event) {
             var scroll = $(window).scrollTop();
             console.log(scroll);
             var heroEnds = $(".hero").height(),
-            bioEnds = $(".bio").height()+heroEnds,
-            worksEnds = $(".works").height()+bioEnds,
-            shotsEnds = $(".shots").height()+worksEnds,
-            blogsEnds = $(".blogs").height()+shotsEnds;
-            console.log("work edns", worksEnds);
-            console.log("shots ends", shotsEnds);
-            console.log("shots height", $(".shots").height());
+                bioEnds = $(".bio").height()+heroEnds,
+                worksEnds = $(".works").height()+bioEnds,
+                shotsEnds = $(".shots").height()+worksEnds,
+                blogsEnds = $(".blogs").height()+shotsEnds;
             
            
 
             
             if (scroll > lastScrollTop){
-                scrollOffset = -500;
+                scrollOffset = -300;
             } else {
-                scrollOffset = 0;
+                scrollOffset = -100;
             }
             lastScrollTop = scroll;
             
@@ -79,7 +78,7 @@
                 $('.header').removeClass("show");
             }
             //hero section
-            if(scroll > 0 && scroll < (heroEnds + scrollOffset)){
+            if(scroll >= 0 && scroll < (heroEnds + scrollOffset)){
                 $('body').removeClass("background-black");
                 $('body').removeClass("background-turq");
                 $('.header').css("background","#fff");
