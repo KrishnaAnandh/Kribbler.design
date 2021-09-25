@@ -13,27 +13,40 @@ display: none;
 }
 h1{
     font-family: "Syncopate", "Arial", sans-serif;
-    font-size: 72px;
+    font-size: 68px;
     font-weight: 700;
 }
 h3, .heads p{
     font-size: 40px;
     line-height: 50px;
-    margin: 20px 0;
+    margin: 50px 40px;
     font-family: "Syncopate";
     font-weight: 700;
     width: 100%;
     text-transform: uppercase;
 }
+h4{
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: 500;
+}
+h5 {
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 500;
+}
 p{
     font-family: "Poppins", Arial, sans-serif;
-    font-size: 16px;
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 0.5;
 }
 a{
     color: #1b1486;
     font-size: 12px;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-decoration: none;
     transition: all .4s cubic-bezier(0.21, 0.05, 0, 1.01);
     
@@ -90,25 +103,29 @@ a:hover::after{
     left: -5%;
 }
 
-
-
 .header{
-/*    display: none;*/
-    display: inline-block;
     position: fixed;
-     display: flex;
-    flex-direction: row;
-    padding: 10px 0;
     z-index: 9999;
+    width: 100%;
     background: #fff;
     visibility: hidden;
     transition: all .4s cubic-bezier(0.21, 0.05, 0, 1.01);
+}
+
+.header-container{
+
+     display: flex;
+    flex-direction: row;
+    padding: 0;
+
+    font-size: 16px;
+    line-height: 24px;
     
 }
 .header .header-menu{
     display: flex;
     flex-direction: row;
-    width: calc(100% - 226px);
+    width: calc(100% - 186px);
     justify-content: space-between;
 }
 
@@ -194,7 +211,7 @@ a:hover::after{
     transform: translateY(-50%);
 }
 .hero-logo{
-    margin: 40px 0;
+    margin: 20px 0;
     display: flex;
     align-items: center;
 }
@@ -205,19 +222,20 @@ a:hover::after{
     top: 50%;
     transform: translate(0px, 20%);
     margin-left: 6px;
-    color: #0003;
+    color: #0006;
 }
 .hero-logo:last-child{
     color: #0008;
 }
 
 .hero-name h1, .hero-name-special{
-    line-height: 56px;
+    line-height: 42px;
     letter-spacing: -4px;
     font-size: 0;
-    margin: 20px 0;
+    margin: 10px 0;
     width: 150%;
     text-transform: uppercase;
+    transform: translateX(-6px);
 }
 .hero-name-special{
     font-family: "Syncopate", "Arial", sans-serif;
@@ -227,21 +245,22 @@ a:hover::after{
     margin: 0;
 }
 .hero-name h1 span, .hero-name-special span{
-    font-family: inherit;
-    font-size: 88px;
-    transition: all 0.2s ease-in;
+    font-family: 'Syncopate', sans-serif;
+    font-size: 72px;
     display: inline-block;
     transition: transform 2s .6s cubic-bezier(0.2, 0.0, 0, 1.0);
+    line-height: inherit;
 }
 .hero-desc h2{
     font-size: 22px;
     line-height: 29px;
     font-weight: 300;
-    margin: 20px 0;
+    margin: 10px 0;
     padding-right: 20px;
+    color: #000b;
 }
 .hero-cta{
-    margin-top: 40px;
+    margin-top: 30px;
 }
 .hero-cta a{
     margin-top: 40px;
@@ -343,12 +362,15 @@ a:hover::after{
 }
 
 .bio-summary{
-    font-family: 'Syncopate';
     font-size: 32px;
     line-height: 46px;
     text-align: center;
     color: #fff;
-    padding: 20px 0;
+    text-transform: none;
+    max-width: 860px;
+    left: 0;
+    right: 0;
+    margin: auto;
     margin-top: 60px;
 }
 .bio-figures{
@@ -398,9 +420,7 @@ a:hover::after{
     position: relative;
     padding: 100px 0;
 }
-.works-head{
-    margin: 60px 40px;
-}
+
 .work-row-2{
     width: 100%;
     display: flex;
@@ -447,9 +467,6 @@ a:hover::after{
 }
 
 .work-title{
-    font-size: 32px;
-    line-height: 40px;
-    font-weight: 500;
     margin: 10px 0;
 }
 .work-content{
@@ -537,9 +554,6 @@ a:hover::after{
     padding: 100px 0;
     height: fit-content;
 }
-.blogs-head{
-    margin: 60px 40px;
-}
 
 .blogs-box{
     position: relative;
@@ -592,9 +606,6 @@ a:hover::after{
 }
 
 .blog-desc .blog-title{
-    font-size: 24px;
-    line-height: 30px;
-    font-weight: 500;
 
 }
 .blog-2, .blog-3{
@@ -609,8 +620,8 @@ a:hover::after{
 
 .blog-2 .blog-title, .blog-3 .blog-title, .blog-4 .blog-title
 { 
-    font-size: 18px;
-    line-height: 20px;
+    font-size: 16px;
+    line-height: 24px;
     margin: 0 0 10px 20px;
 }
 .blog-2 .blog-cont, .blog-3 .blog-cont, .blog-4 .blog-cont
@@ -663,13 +674,13 @@ a:hover::after{
 }
 
 
-.container{
-    
+.container{  
     left: 0;
     right: 0;
     margin:auto;
     padding-left: 40px;
     padding-right: 40px;
+    max-width: 1100px;
 }
 .container-full{
     width: 100%;
@@ -772,73 +783,73 @@ a:hover::after{
 }
 
 .appear .char-1{
-    transform: translateY(0px);
+    transform: translateY(10px);
 }
 .appear .char-2{
-    transform: translateY(0px);
+    transform: translateY(10px);
 }
 .appear .char-3{
-    transform: translateY(0px);
+    transform:translateY(10px);
 }
 .appear .char-4{
-    transform: translateY(0px);
+    transform:translateY(10px);
 }
 .appear .char-5{
-    transform: translateY(0px);
+    transform: translateY(10px);
 }
 .appear .char-6{
-    transform: translateY(0px);
+    transform:translateY(10px);
 }
 .appear .char-7{
-    transform: translateY(0px);
+    transform: translateY(10px);
 }
 .appear .char-8{
-    transform: translateY(0px);
+    transform: translateY(10px);
 }
 .appear .char-9{
-    transform: translateY(0px);
+    transform: translateY(10px);
 }
 .appear .char-10{
-    transform: translateY(0px);
+    transform: translateY(10px);
 }
 .appear .char-11{
-    transform: translateY(0px);
+    transform: translateY(10px);
 }
 .appear .char-12{
-    transform: translateY(0px);
+    transform: translateY(10px);
 }
 .appear .char-13{
-    transform: translateY(0px);
+    transform:translateY(10px);
 }
 .appear .char-14{
-    transform: translateY(0px);
+    transform: translateY(10px);
 }
 .appear .char-15{
-    transform: translateY(0px);
+    transform: translateY(10px);
 }
 .appear .char-16{
-    transform: translateY(0px);
+    transform: translateY(10px);
 }
 .appear .char-17{
-    transform: translateY(0px);
+    transform: translateY(10px);
 }
 .appear .char-18{
-    transform: translateY(0px);
+    transform: translateY(10px);
 }
 .appear .char-19{
-    transform: translateY(0px);
+    transform:translateY(10px);
 }
 .appear .char-20{
-    transform: translateY(0px);
+    transform:translateY(10px);
 }
 .appear .char-21{
-    transform: translateY(0px);
+    transform: translateY(10px);
 }
 .appear .char-22{
-    transform: translateY(0px);
+    transform: translateY(10px);
 }
 .appear .char-23{
-    transform: translateY(0px);
+    transform: translateY(10px);
 }
 
 /*1024 - 1600*/
@@ -886,8 +897,9 @@ a:hover::after{
         padding-right: 20px;
         padding-bottom: 0;
     }
-    .header{
+    .header-container{
         justify-content: space-between;
+        padding: 0;
     }
     .header .header-menu-icon{
         display: block;

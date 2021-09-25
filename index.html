@@ -15,7 +15,9 @@
     <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap" rel="stylesheet">-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Syncopate:700" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,800;1,300&family=Stick+No+Bills:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51091796-4"></script>
@@ -148,7 +150,7 @@
             
             
             var row1_pos = -(scroll-2200);
-            var row2_pos = (scroll-2200)-1500;
+            var row2_pos = (scroll-2200)-2500;
             var row3_pos = -(scroll-2800);
             
             $('.shots-row-1').css("left",row1_pos);
@@ -171,16 +173,18 @@
     
 </head>
 <body>
-    <section class="header container-full">
-    <div class="header-logo"><img src="img/kribbler-logo.svg"/></div>
-    <div class="header-menu-icon" id="menu-icon"><div></div><div></div></div>
-    <div class="header-menu" id="menu-cont">
-        <ul>
-            <li>Works</li><li>Blogs</li><li>About</li><li>Contact</li>
-        </ul>
-        <div class="header-cta btn"><a href="#">Contact me</a></div>
-    </div>
-    
+    <section class="header">
+        <div class="header-container container">
+            <div class="header-logo"><img src="img/kribbler-logo.svg"/></div>
+            <div class="header-menu-icon" id="menu-icon"><div></div><div></div></div>
+            <div class="header-menu" id="menu-cont">
+                <ul>
+                    <li>Works</li><li>Blogs</li><li>About</li><li>Contact</li>
+                </ul>
+                <div class="header-cta btn"><a href="#">Contact me</a></div>
+            </div>
+        </div>
+            
     </section>
     
     <section class="hero">
@@ -232,7 +236,7 @@
     <section class="bio">
         <div class="bio-container container">
             <div class="bio-head"><p>short bio</p></div>
-            <div class="bio-summary">I am a computer engineer and an artist who is so much into making technologies easy to use, also beautiful.</div>
+            <h3 class="bio-summary">I am a computer engineer and an artist who is so much into making technologies easy to use, also beautiful.</h3>
             <div class="bio-figures">
                 <div class="bio-fig-item"><div class="bio-fignum">05+</div><div class="bio-figtxt">years of experience</div></div>
                 <div class="bio-fig-item"><div class="bio-fignum">25+</div><div class="bio-figtxt">digital products</div></div>
@@ -248,14 +252,14 @@
     
     <section class="works">
         <div class="works-container container">
-            <div class="works-head heads"><p>Featured Works</p></div>
+            <h3 class="works-head heads">Featured Works</h3>
 
             <div class="work-row-1">
                 <div class="work work-1">
                     
                     <div class="work-desc">
-                        <div class="work-title">Foodmates by bigbasket</div>
-                        <div class="work-content">Foodmates by bigbasket is Indian based mobile application for home cooking, meal planning and grocery planning. </div>
+                        <h4 class="work-title">Foodmates by bigbasket</h4>
+                        <p class="work-content">Foodmates by bigbasket is Indian based mobile application for home cooking, meal planning and grocery planning. </p>
                         <div class="work-link"><a href="#">view project</a></div>
                         <!-- <div class="work-link-mobile"><a href="#">view project</a></div> -->
                     </div>
@@ -267,9 +271,9 @@
                 <div class="work work-2">
                     
                     <div class="work-desc">
-                        <div class="work-title">Run small business with hassle-free</div>
-                        <div class="work-content">Small & medium business brought-in online
-                            and managed at one place</div>
+                        <h4 class="work-title">Run small business with hassle-free</h4>
+                        <p class="work-content">Small & medium business brought-in online
+                            and managed at one place</p>
                         <div class="work-link"><a href="#">view project</a></div>
                         <!-- <div class="work-link-mobile"><a href="#">view project</a></div> -->
                     </div>
@@ -278,8 +282,8 @@
                 <div class="work work-3">
                     
                     <div class="work-desc">
-                        <div class="work-title">Meaningful Flexible Jobs for Women</div>
-                        <div class="work-content">Women can work in roles matched with their experience and skills, with the flexibility that they need.</div>
+                        <h4 class="work-title">Meaningful Flexible Jobs for Women</h4>
+                        <p class="work-content">can wor in roles matched with their experience and skills, with the flexibility that they need.</p>
                         <div class="work-link"><a href="#">view project</a></div>
                         <!-- <div class="work-link-mobile"><a href="#">view project</a></div> -->
                     </div>
@@ -301,8 +305,20 @@
             <div class="shots-item"><img src="img/dribble_chase.gif"/> </div>
             <div class="shots-item"><img src="img/dribbble_pro_rider.png"/> </div>
             <div class="shots-item"><img src="img/dribbble_onboarding.gif"/> </div>
+            <div class="shots-item"><img src="img/dribbble_car.gif"/> </div>
+            <div class="shots-item"><img src="img/dribbble_landingpage.jpg"/> </div>
+            <div class="shots-item"><img src="img/dribbble_pro_rider.png"/> </div>
+            <div class="shots-item"><img src="img/dribble_chase.gif"/> </div>
+            <div class="shots-item"><img src="img/dribbble_pro_rider.png"/> </div>
+            <div class="shots-item"><img src="img/dribbble_onboarding.gif"/> </div>
         </div>
         <div class="shots-row shots-row-2">
+            <div class="shots-item"><img src="img/dribble_chase.gif"/> </div>
+            <div class="shots-item"><img src="img/dribbble_pro_rider.png"/> </div>
+            <div class="shots-item"><img src="img/dribbble_onboarding.gif"/> </div>
+            <div class="shots-item"><img src="img/dribbble_car.gif"/> </div>
+            <div class="shots-item"><img src="img/dribbble_landingpage.jpg"/> </div>
+            <div class="shots-item"><img src="img/dribbble_pro_rider.png"/> </div>
             <div class="shots-item"><img src="img/dribble_chase.gif"/> </div>
             <div class="shots-item"><img src="img/dribbble_pro_rider.png"/> </div>
             <div class="shots-item"><img src="img/dribbble_onboarding.gif"/> </div>
@@ -318,6 +334,12 @@
             <div class="shots-item"><img src="img/dribble_chase.gif"/> </div>
             <div class="shots-item"><img src="img/dribbble_pro_rider.png"/> </div>
             <div class="shots-item"><img src="img/dribbble_landingpage.jpg"/> </div>
+            <div class="shots-item"><img src="img/dribbble_onboarding.gif"/> </div>
+            <div class="shots-item"><img src="img/dribbble_car.gif"/> </div>
+            <div class="shots-item"><img src="img/dribbble_landingpage.jpg"/> </div>
+            <div class="shots-item"><img src="img/dribble_chase.gif"/> </div>
+            <div class="shots-item"><img src="img/dribbble_pro_rider.png"/> </div>
+            <div class="shots-item"><img src="img/dribbble_landingpage.jpg"/> </div>
         </div>  
         
     </div>
@@ -326,29 +348,29 @@
     
     <section class="blogs">
         <div class="blogs-container container">
-            <div class="blogs-head heads"><p>blogs</p></div>
+            <h3 class="blogs-head heads">blogs</h3>
             <div class="blogs-box">
                 <div class="blogs-left">
                     <div class="blog blog-1">
                         <div class="blog-image"><img src="img/blog_7_psychology_fundamentals_for_designers.png"/></div>
-                        <div class="blog-desc"><p class="blog-title">7 design psychologies every designers should know</p>
+                        <div class="blog-desc"><h5 class="blog-title">7 design psychologies every designers should know</h4>
                         <p class="blog-cont">Beyond an enriched interaction design, a designer role is to persuade an user/visitor</p></div>
                     </div>
                 </div>
                 <div class="blogs-right">
                     <div class="blog blog-2">
                         <div class="blog-image"></div>
-                        <div class="blog-desc"><p class="blog-title">7 design psychologies every designers should know</p>
+                        <div class="blog-desc"><h5 class="blog-title">7 design psychologies every designers should know</h4>
                         <p class="blog-cont">Beyond an enriched interaction design, a designer role is to persuade an user/visitor</p></div>
                     </div>
                     <div class="blog blog-3">
                         <div class="blog-image"></div>
-                        <div class="blog-desc"><p class="blog-title">7 design psychologies every designers should know</p>
+                        <div class="blog-desc"><h5 class="blog-title">7 design psychologies every designers should know</h4>
                         <p class="blog-cont">Beyond an enriched interaction design, a designer role is to persuade an user/visitor</p></div>
                     </div>
                     <div class="blog blog-4">
                         <div class="blog-image"></div>
-                        <div class="blog-desc"><p class="blog-title">7 design psychologies every designers should know</p>
+                        <div class="blog-desc"><h5 class="blog-title">7 design psychologies every designers should know</h5>
                         <p class="blog-cont">Beyond an enriched interaction design, a designer role is to persuade an user/visitor</p></div>
                     </div>
                 </div>
