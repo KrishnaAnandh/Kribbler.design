@@ -934,7 +934,7 @@ a:hover::after{
         height: calc(100vh - 140px);
         position: absolute;
         background: #000a;
-        padding: 120px 20px 0;
+        padding: 120px 20px 20px;
         width: calc(100% - 40px);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
