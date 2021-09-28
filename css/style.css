@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "Monument Extended";
+    src: url('fonts/MonumentExtended-Regular.otf');
+    font-weight: 700;
+  }
+
+
 *, body{
     margin: 0;
     padding: 0;
@@ -12,7 +19,7 @@
 display: none;
 }
 h1{
-    font-family: "Syncopate", "Arial", sans-serif;
+    font-family: 'Monument Extended', "Arial", sans-serif;
     font-size: 68px;
     font-weight: 700;
 }
@@ -20,7 +27,7 @@ h3, .heads p{
     font-size: 40px;
     line-height: 50px;
     margin: 50px 40px;
-    font-family: "Syncopate";
+    font-family: 'Monument Extended', "Arial", sans-serif;
     font-weight: 700;
     width: 100%;
     text-transform: uppercase;
@@ -28,18 +35,19 @@ h3, .heads p{
 h4{
     font-size: 28px;
     line-height: 32px;
-    font-weight: 500;
+    font-weight: 600;
 }
 h5 {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 28px;
-    font-weight: 500;
+    font-weight: 600;
 }
-p{
+p, li{
     font-family: "Poppins", Arial, sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 14px;
     letter-spacing: 0.5;
+    color: #000c;
 }
 a{
     color: #1b1486;
@@ -245,7 +253,7 @@ a:hover::after{
     margin: 0;
 }
 .hero-name h1 span, .hero-name-special span{
-    font-family: 'Syncopate', sans-serif;
+    font-family: inherit;
     
     display: inline-block;
     transition: transform 2s .6s cubic-bezier(0.2, 0.0, 0, 1.0);
@@ -1115,3 +1123,83 @@ a:hover::after{
     }
 }
 
+
+
+
+
+/*projects page*/
+.project-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+.project-row{
+    width:100%;
+    /* margin: 20px; */
+    /* padding: 20px; */
+    display: flex;
+    flex-direction: row;
+}
+
+.project-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+}
+.project-column div{
+    margin: 6px 0;
+}
+
+.project-column h4,.project-column h5,.project-column h6,.project-column p, .project-column a, .project-column b, .project-column li{
+    margin: 4px 0;
+}
+.project-column h4,.project-column h5{
+    margin-bottom:8px;
+}
+.project-column h6{
+    font-size: 16px;
+    font-weight: 500;
+}
+.project-column ul{
+    margin-left: 20px;
+}
+.project-column img{
+    width: 100%;
+}
+.w-full{
+    width:100%
+}
+.w-container{
+    max-width: 960px;
+}
+.w-30{
+    width:30%;
+}
+.w-50{
+    width:50%;
+}
+.w-100{
+    width:100%;
+}
+.flex-column{
+    flex-direction: column;
+}
+.justify-top{
+    justify-content: flex-start;
+}
+
+.project-cover{
+    margin-top:0;
+    max-height: 500px;
+    overflow: hidden;
+}
+.project-cover img{
+    width:100%
+}
+
+.project-cover .project-column{
+    margin:0;
+}
