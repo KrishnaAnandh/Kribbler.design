@@ -46,6 +46,8 @@
             $("#menu-icon").on('click', function(){
                 $("#menu-cont").toggleClass("open");
                 $(this).toggleClass("close");
+                $('body').toggleClass("scroll-stopped");
+                $('.header-container').toggleClass("open");
             });
         });
         
