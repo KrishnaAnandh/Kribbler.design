@@ -8,7 +8,8 @@
     
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script src="js/lucid.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
     
     <!--<link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
     
@@ -43,13 +44,100 @@
 
         });
         $(document).ready(function(){
+            $(".hero-name span").lettering();
+            
+
             $("#menu-icon").on('click', function(){
                 $("#menu-cont").toggleClass("open");
                 $(this).toggleClass("close");
                 $('body').toggleClass("scroll-stopped");
                 $('.header-container').toggleClass("open");
             });
+
+            $('.hero-cta').on('click', function() {
+            introAnimation();
+            });
+            
+            
+            
         });
+        $(document).ready(function() {
+            introAnimation();
+        }, 1000);
+
+        var introExecuted = false, i=1;
+        var action = function() {
+            console.log("function running")
+            if(introExecuted){
+                console.log("function executing")
+                loopAnimation(i);
+                i = (i<3)?i+1:1;
+                console.log("loop Animation", i)
+                setTimeout(action, 5000);
+            }
+        };
+ 
+        function introAnimation() {
+            var headerLetters=$('.general span'),
+            roleLetters=$('.role1 span'),
+            role2Letters=$('.role2 span'),
+            role3Letters=$('.role3 span'),
+            headerLettersArray=headerLetters.toArray();
+            roleLettersArray=roleLetters.toArray();
+            roleLettersArray=roleLetters.toArray();
+            
+            headerLettersArray.sort(function() {return 0.7-Math.random()});
+            roleLettersArray.sort(function() {return 0.7-Math.random()});
+
+            var headerAppear = new TimelineMax();
+            headerAppear.to([".hero-logo",".hero-desc",".hero-cta",".hero-artwork",".role1 span",".role2 span",".role3 span"], 0, { opacity: 0})
+            headerAppear.staggerFromTo(headerLettersArray, 1, 
+            {ease: Back.easeInOut.config(1.7), opacity: 0, top: -10},
+            {ease: Back.easeInOut.config(1.7), opacity: 1, top: 0}, 0.08);
+            headerAppear.staggerFromTo(roleLettersArray, 1, 
+            {ease: Back.easeInOut.config(0.7), opacity: 0, top: -10},
+            {ease: Back.easeInOut.config(0.7), opacity: 1, top: 0}, 0.08);
+            headerAppear.to(".hero-logo", 0.2, {visibility: 'visible' ,opacity: 1})
+            headerAppear.to(".hero-desc", 0.2, {visibility: 'visible' ,opacity: 1})
+            headerAppear.to(".hero-cta", 0.1, {visibility: 'visible' ,opacity: 1})
+            headerAppear.to(".hero-artwork", 0.9, {visibility: 'visible' ,opacity: 1})
+            
+            setTimeout(function(){introExecuted = true
+            action();
+            console.log(introExecuted);},5000)
+            // var i=0
+            // var loopAnimation = function() {
+                
+            //     i = (i<3)?i+1:1;
+            //     console.log("loop Animation", i)
+            //     setTimeout(action, 5000);
+            // };
+            // setInterval(loopAnimation(),3000);
+        }
+        function loopAnimation(i) {
+            var currentRoleEl = '.role' + i + ' span'
+            j = (i<3)?i+1:1
+            var nextRoleEl = '.role' + j + ' span'
+            // console.log($(currentRoleEl))
+            var currentRole=$(currentRoleEl),
+            currentRoleLetters=currentRole.toArray();
+            currentRoleLetters.sort(function() {return 0.7-Math.random()});
+
+            var nextRole=$(nextRoleEl),
+            nextRoleLetters=nextRole.toArray();
+            nextRoleLetters.sort(function() {return 0.7-Math.random()});
+
+            var headerRolesLoop = new TimelineMax();
+            // headerRolesLoop.to([], 0, { opacity: 0})
+            headerRolesLoop.staggerFromTo(currentRoleLetters, 1, 
+            {ease: Back.easeInOut.config(1.7), opacity: 1},
+            {ease: Back.easeInOut.config(1.7), opacity: 0}, 0.08);
+            headerRolesLoop.staggerFromTo(nextRoleLetters, 1, 
+            {ease: Back.easeInOut.config(1.7), opacity: 0},
+            {ease: Back.easeInOut.config(1.7), opacity: 1}, 0.08);
+          
+           
+        }
         
         var lastScrollTop = 0;
      
@@ -193,33 +281,16 @@
         <div class="hero-container container">
             <div class="hero-details">
                 <div class="hero-logo"><img src="img/kribbler-logo.svg"/><span>aka</span><span>Anandhakrishnan</span></div>
-                <div class="hero-name"><h1>
-                    <span class="char-1">D</span>
-                    <span class="char-2">i</span>
-                    <span class="char-3">g</span>
-                    <span class="char-4">i</span>
-                    <span class="char-5">t</span>
-                    <span class="char-6">a</span>
-                    <span class="char-7">l</span><br/>
-                    <span class="char-8">P</span>
-                    <span class="char-9">r</span>
-                    <span class="char-10">o</span>
-                    <span class="char-11">d</span>
-                    <span class="char-12">u</span>
-                    <span class="char-13">c</span>
-                    <span class="char-14">t</span><br/>
-                    <!-- <div class="hero-name-special"> -->
-                        <span class="char-15">D</span>
-                        <span class="char-16">e</span>
-                        <span class="char-17">s</span>
-                        <span class="char-18">i</span>
-                        <span class="char-19">g</span>
-                        <span class="char-20">n</span>
-                        <span class="char-21">e</span>
-                        <span class="char-22">r</span>
-                    <!-- </div> -->
-                    
-                </h1></div>
+                <h1 class="hero-name">
+                    <span class="general">Digital</span>
+                    <span class="general">Product</span>
+                    <div class="roles">
+                        <span class="role1">Designer</span>
+                        <span class="role2">Strategist</span>
+                        <span class="role3">Consultant</span>
+                    </div>
+                </h1>
+               
                 <div class="hero-desc"><h2>I'm a digital product designer specialised in interaction design</h2></div>
                 <div class="hero-cta btn"><a href="#">contact me</a></div>
             </div>

@@ -10,7 +10,7 @@
     padding: 0;
     position: relative;
     font-family: "Poppins", Arial, sans-serif;
-    transition: all 0.5s cubic-bezier(0.71, 0.01, 0.13, 1.03), color 0s ease;
+    /* transition: all 0.5s cubic-bezier(0.71, 0.01, 0.13, 1.03), color 0s ease; */
 /*    scroll-behavior: smooth;*/
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
@@ -222,16 +222,15 @@ body.scroll-stopped{
     display: flex;
     flex-direction: row;
     justify-content:space-between;
-    align-items: stretch;
+    align-items: center;
 }
 .hero-details{
     position: relative;
     left: 0;
     width: 45%;
-    height: fit-content;
     z-index: 10;
-    top: 50%;
-    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
 }
 .hero-logo{
     margin: 20px 0;
@@ -251,14 +250,21 @@ body.scroll-stopped{
     color: #0008;
 }
 
-.hero-name h1, .hero-name-special{
+h1.hero-name{
     line-height: 64px;
-    letter-spacing: -17px;
+    letter-spacing:0px;
     font-size: 72px;
     margin: 10px 0;
     width: 150%;
     text-transform: uppercase;
-    transform: translateX(-6px);
+    display: flex;
+    flex-direction: column;
+}
+h1.hero-name  span{
+    font-family:inherit;
+    font-size: inherit;
+    line-height: inherit;
+ 
 }
 .hero-name-special{
     font-family: "Syncopate", "Arial", sans-serif;
@@ -280,16 +286,25 @@ body.scroll-stopped{
     font-size: 22px;
     line-height: 29px;
     font-weight: 300;
-    margin: 20px 0;
+    margin: 10px 0;
     padding-right: 20px;
     color: #000b;
 }
 .hero-cta{
-    margin-top: 30px;
+    margin-top: 20px;
 }
 .hero-cta a{
     margin-top: 40px;
     text-decoration: none;
+}
+.roles{
+    position:relative;
+    height: 60px;
+    font-family: inherit;
+}
+.role1, .role2, .role3{
+    position: absolute;
+    font-family: inherit;
 }
 .hero-artwork{
     position: relative;
@@ -352,7 +367,9 @@ body.scroll-stopped{
 .hero-image-holder a{
     color: rgba(255,255,255,0.9);
 }
-
+h1.hero-name>span:first-child .char5{
+    letter-spacing: -0.2em;
+}
 
 .bio{
     position: relative;
@@ -745,145 +762,6 @@ body.scroll-stopped{
     opacity: 1;
     transition-delay: 0.2s;
 }
-.char-1{
-    transform: translateY(-30px);
-}
-.char-2{
-    transform: translateY(-50px);
-}
-.char-3{
-    transform: translateY(-36px);
-}
-.char-4{
-    transform: translateY(-60px);
-}
-.char-5{
-    transform: translateY(-44px);
-}
-.char-6{
-    transform: translateY(-70px);
-}
-.char-7{
-    transform: translateY(-52px);
-}
-.char-8{
-    transform: translateY(-40px);
-}
-.char-9{
-    transform: translateY(-36px);
-}
-.char-10{
-    transform: translateY(-55px);
-}
-.char-11{
-    transform: translateY(-35px);
-}
-.char-12{
-    transform: translateY(-70px);
-}
-.char-13{
-    transform: translateY(-35px);
-}
-.char-14{
-    transform: translateY(-50px);
-}
-.char-15{
-    transform: translateY(-40px);
-}
-.char-16{
-    transform: translateY(-20px);
-}
-.char-17{
-    transform: translateY(-36px);
-}
-.char-18{
-    transform: translateY(-60px);
-}
-.char-19{
-    transform: translateY(-44px);
-}
-.char-20{
-    transform: translateY(-70px);
-}
-.char-21{
-    transform: translateY(-52px);
-}
-.char-22{
-    transform: translateY(-40px);
-}
-.char-23{
-    transform: translateY(-36px);
-}
-
-.appear .char-1{
-    transform: translateY(10px);
-}
-.appear .char-2{
-    transform: translateY(10px);
-}
-.appear .char-3{
-    transform:translateY(10px);
-}
-.appear .char-4{
-    transform:translateY(10px);
-}
-.appear .char-5{
-    transform: translateY(10px);
-}
-.appear .char-6{
-    transform:translateY(10px);
-}
-.appear .char-7{
-    transform: translateY(10px);
-}
-.appear .char-8{
-    transform: translateY(10px);
-}
-.appear .char-9{
-    transform: translateY(10px);
-}
-.appear .char-10{
-    transform: translateY(10px);
-}
-.appear .char-11{
-    transform: translateY(10px);
-}
-.appear .char-12{
-    transform: translateY(10px);
-}
-.appear .char-13{
-    transform:translateY(10px);
-}
-.appear .char-14{
-    transform: translateY(10px);
-}
-.appear .char-15{
-    transform: translateY(10px);
-}
-.appear .char-16{
-    transform: translateY(10px);
-}
-.appear .char-17{
-    transform: translateY(10px);
-}
-.appear .char-18{
-    transform: translateY(10px);
-}
-.appear .char-19{
-    transform:translateY(10px);
-}
-.appear .char-20{
-    transform:translateY(10px);
-}
-.appear .char-21{
-    transform: translateY(10px);
-}
-.appear .char-22{
-    transform: translateY(10px);
-}
-.appear .char-23{
-    transform: translateY(10px);
-}
 
 /*1024 - 1600*/
 @media screen and (min-width:1024px) and (max-width:1600px){
@@ -1047,20 +925,34 @@ body.scroll-stopped{
     .hero-logo span{
         font-size: 14px;
     }
-    .hero-name h1{
+    h1.hero-name{
         width: 100%;
         margin: 14px 0;
-        font-size: 46px;
-        line-height: 44px;
-        letter-spacing: -11px;
+        font-family: 'Poppins', Arial, sans-serif;
+        font-size: 52px;
+    line-height: 48px;
+    letter-spacing: -1px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
     }
-    .hero-name h1 span{
+    h1.hero-name  span{
+        font-family:inherit;
         font-size: inherit;
         line-height: inherit;
+        /* display: block;
+        float:left; */
+    }
+    .roles{
+        height: 52px;
+    }
+    .role1, .role2, .role3{
+        left: 50%;
+    transform: translateX(-50%);
     }
     .hero-desc h2{
-        font-size: 18px;
-        line-height: 26px;
+        font-size: 16px;
+        line-height: 23px;
         padding: 0;
         width: 100%;
         left: 0;
