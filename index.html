@@ -1,5 +1,7 @@
-<head>
-
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
     <title>Anandhakrishnan - Digital Product Designer - Kribbler</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -10,7 +12,7 @@
     <script src="js/lucid.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
-    <script src="fake3d/js/app.js"></script>
+    
     <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
     <!--<link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
     
@@ -298,15 +300,17 @@
             <div class="hero-artwork">
 
                 <div class="hero-image-holder">
-                    <div class="frame">
-                        <div 
-                            id="gl" 
-                            data-imageOriginal="fake3d/img/lady.jpg" 
-                            data-imageDepth="fake3d/img/lady-map.jpg" 
-                            data-horizontalThreshold="35" 
-                            data-verticalThreshold="15">
+                    <main>
+                        <div class="frame">
+                            <div 
+                                id="gl" 
+                                data-imageOriginal="img/lady.jpg" 
+                                data-imageDepth="img/lady-map.jpg" 
+                                data-horizontalThreshold="35" 
+                                data-verticalThreshold="15">
+                            </div>
                         </div>
-                    </div>
+                    </main>
                     
                 <div class="hero-image-overlay"></div>
                 <div class="play-button"><img class="play" src="img/play-icon.svg"/><div>Watch my intro</div></div></div>
@@ -470,5 +474,5 @@
         <div class="copyrights">Copyrighted</div>
     
     </section>
-    
+    <script src="fake3d/js/app.js"></script>
 </body>
