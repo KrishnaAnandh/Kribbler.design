@@ -11,10 +11,10 @@ export default class Sketch {
     this.container.appendChild(this.canvas);
     this.gl = this.canvas.getContext('webgl');
     this.ratio = window.devicePixelRatio;
-    // this.windowWidth = window.innerWidth;
-    // this.windowHeight = window.innerHeight;
-    this.windowWidth = document.getElementById('hero-frame').innerWidth;
-    this.windowHeight = document.getElementById('hero-frame').innerHeight;
+    this.windowWidth = window.innerWidth;
+    this.windowHeight = window.innerHeight;
+    // this.windowWidth = document.getElementById('hero-frame').innerWidth;
+    // this.windowHeight = document.getElementById('hero-frame').innerHeight;
     this.mouseX = 0;
     this.mouseY = 0;
 
