@@ -94,12 +94,22 @@
 
             var headerAppear = new TimelineMax();
             headerAppear.to([".hero-logo",".hero-desc",".hero-cta",".hero-artwork",".role1 span",".role2 span",".role3 span"], 0, { opacity: 0})
-            headerAppear.staggerFromTo(headerLettersArray, 1, 
-            {ease: Back.easeInOut.config(1.7), opacity: 0, top: -10},
-            {ease: Back.easeInOut.config(1.7), opacity: 1, top: 0}, 0.08);
-            headerAppear.staggerFromTo(roleLettersArray, 1, 
-            {ease: Back.easeInOut.config(0.7), opacity: 0, top: -10},
-            {ease: Back.easeInOut.config(0.7), opacity: 1, top: 0}, 0.08);
+            
+            headerAppear.staggerFromTo(
+                {headerLettersArray,roleLettersArray}, 
+                1, 
+                {ease: Back.easeInOut.config(1.7), opacity: 0, top: -10},
+                {ease: Back.easeInOut.config(1.7), opacity: 1, top: 0}, 
+                0.08
+            )
+            // headerAppear.staggerFromTo(
+            //     roleLettersArray, 
+            //     1, 
+            //     {ease: Back.easeInOut.config(0.7), opacity: 0, top: -10},
+            //     {ease: Back.easeInOut.config(0.7), opacity: 1, top: 0}, 
+            //     0
+            // )
+
             headerAppear.to(".hero-logo", 0.2, {visibility: 'visible' ,opacity: 1})
             headerAppear.to(".hero-desc", 0.2, {visibility: 'visible' ,opacity: 1})
             headerAppear.to(".hero-cta", 0.1, {visibility: 'visible' ,opacity: 1})
@@ -132,12 +142,21 @@
 
             var headerRolesLoop = new TimelineMax();
             // headerRolesLoop.to([], 0, { opacity: 0})
-            headerRolesLoop.staggerFromTo(currentRoleLetters, 1, 
-            {ease: Back.easeInOut.config(1.7), opacity: 1},
-            {ease: Back.easeInOut.config(1.7), opacity: 0}, 0.08);
-            headerRolesLoop.staggerFromTo(nextRoleLetters, 1, 
-            {ease: Back.easeInOut.config(1.7), opacity: 0},
-            {ease: Back.easeInOut.config(1.7), opacity: 1}, 0.08);
+
+            headerRolesLoop.staggerFromTo(
+                currentRoleLetters, 
+                1,
+                {ease: Back.easeInOut.config(1.7),opacity: 1},
+                {ease: Back.easeInOut.config(1.7), opacity: 0}, 
+                0.08
+            )
+            headerRolesLoop.staggerFromTo(
+                nextRoleLetters, 
+                1,
+                {ease: Back.easeInOut.config(1.7), opacity: 0},
+                {ease: Back.easeInOut.config(1.7), opacity: 1}, 
+                0.08
+            )
           
            
         }
@@ -474,5 +493,5 @@
         <div class="copyrights">Copyrighted</div>
     
     </section>
-    <script src="fake3d/js/app.js"></script>
+    <!-- <script src="fake3d/js/app.js"></script> -->
 </body>
