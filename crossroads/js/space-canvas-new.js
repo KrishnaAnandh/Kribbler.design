@@ -99,7 +99,7 @@ class Line {
     ctx.a.strokeStyle = gradient
     ctx.a.lineWidth = this.width
     ctx.a.moveTo(this.x, canvas.a.height - this.height)
-    ctx.a.lineTo(this.x, canvas.a.height)
+    ctx.a.lineTo(this.x, canvas.a.height + 20)
     ctx.a.stroke()
     ctx.a.closePath()
     ctx.a.restore()
