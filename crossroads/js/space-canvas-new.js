@@ -91,7 +91,7 @@ class Line {
     let gradient
     gradient = ctx.a.createLinearGradient(this.x, this.y - this.height, this.x, this.y)
     gradient.addColorStop(0, `hsla(${this.hue}, 100%, 65%, 0)`)
-    gradient.addColorStop(0.5, `hsla(${this.hue}, 100%, 65%, ${fadeInOut(this.life, this.ttl)})`)
+    gradient.addColorStop(0.9, `hsla(${this.hue}, 100%, 65%, ${fadeInOut(this.life, this.ttl)})`)
     gradient.addColorStop(1, `hsla(${this.hue}, 100%, 65%, 0)`)
 
     ctx.a.save()
