@@ -87,13 +87,14 @@
             role3Letters=$('.role3 span'),
             headerLettersArray=headerLetters.toArray();
             roleLettersArray=roleLetters.toArray();
-            roleLettersArray=roleLetters.toArray();
             
             headerLettersArray.sort(function() {return 0.7-Math.random()});
             roleLettersArray.sort(function() {return 0.7-Math.random()});
 
             var headerAppear = new TimelineMax();
             headerAppear.to([".hero-logo",".hero-desc",".hero-cta",".hero-artwork",".role1 span",".role2 span",".role3 span"], 0, { opacity: 0})
+            headerAppear.to([".hero-logo"], 0, { y:100})
+            headerAppear.to([".hero-desc",".hero-cta",".hero-artwork"], 0, { y:-100})
             
             headerAppear.staggerFromTo(
                 headerLettersArray, 
@@ -107,13 +108,13 @@
                 1, 
                 {ease: Back.easeInOut.config(0.7), opacity: 0, top: -10},
                 {ease: Back.easeInOut.config(0.7), opacity: 1, top: 0}, 
-                0
+                0.08
             )
 
-            headerAppear.to(".hero-logo", 0.2, {visibility: 'visible' ,opacity: 1})
-            headerAppear.to(".hero-desc", 0.2, {visibility: 'visible' ,opacity: 1})
-            headerAppear.to(".hero-cta", 0.1, {visibility: 'visible' ,opacity: 1})
-            headerAppear.to(".hero-artwork", 0.9, {visibility: 'visible' ,opacity: 1})
+            headerAppear.to(".hero-logo", 0.5, {y:0, opacity: 1})
+            headerAppear.to(".hero-desc", 0.5, {y:0, opacity: 1})
+            headerAppear.to(".hero-cta", 0.2, {y:0, opacity: 1})
+            headerAppear.to(".hero-artwork", 0.5, {y:0, opacity: 1})
             
             setTimeout(function(){introExecuted = true
             action();

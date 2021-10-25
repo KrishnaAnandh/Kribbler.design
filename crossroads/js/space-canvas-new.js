@@ -1,9 +1,11 @@
-let container, canvas, ctx, lines = [], linesCount = 10
+let container, canvas, ctx, lines = [], linesCount = 10, stars = [], starsCount = 100
 
 const minWidth = 10,
   maxWidth = 30,
   minHeight = 1,
   maxHeight = 150,
+  starMinSize = 1,
+  starMaxSize = 3,
   minTTL = 500,
   maxTTL = 2000,
   backgroundColor = '#000000'
@@ -30,8 +32,10 @@ function setCanvas() {
   }
   canvas.b.style = "position: fixed; top:0; left:0; width:100%; height:100%"
   container.appendChild(canvas.b)
-  console.log("canvas height", canvas.b.height)
-
+  // console.log("a width", canvas.a.width)
+  // console.log("a height", canvas.a.height)
+  // console.log("b width", canvas.b.width)
+  // console.log("b height", canvas.b.height)
 }
 
 
@@ -46,8 +50,12 @@ function resizeReset() {
 
   for (let i = 0; i < linesCount; i++) {
     lines.push(new Line())
-    console.log("y",lines[i].y)
-    console.log("height",lines[i].height)
+  }
+
+  for (let j = 0; j < starsCount; j++) {
+    stars.push(new Star())
+    console.log("star width", stars[j].width)
+    console.log("star height", stars[j].height)
   }
 }
 
@@ -58,6 +66,10 @@ function animationLoop() {
   for (let i = 0; i < lines.length; i++) {
     lines[i].update()
 		lines[i].draw()
+  }
+  for (let j = 0; j < stars.length; j++) {
+    stars[j].update()
+		stars[j].draw()
   }
   ctx.b.save()
   ctx.b.filter = 'blur(10px)'
@@ -110,6 +122,35 @@ class Line {
     	this.life = 0
       this.x = getRandomInt(0, canvas.a.width)
       this.width = getRandomInt(minWidth, maxWidth)
+    }
+  }
+}
+
+class Star {
+  constructor() {
+    this.x = getRandomInt(0, canvas.a.width)
+    this.y = getRandomInt(0, canvas.a.width)
+    this.size = getRandomInt(starMinSize, starMaxSize)
+    this.width = this.size
+    this.height = this.size
+    this.hue = getRandomInt(120, 180)
+    this.ttl = getRandomInt(minTTL, maxTTL)
+    this.life = 0
+  }
+  draw() {
+    ctx.a.save()
+    ctx.a.fillStyle = '#fff';
+    ctx.a.fillRect(this.x, this.y, this.width, this.height)
+    ctx.a.restore()
+  }
+  update() {
+		this.life++
+    if(this.life > this.ttl){
+    	this.life = 0
+      this.x = getRandomInt(0, canvas.a.width)
+      this.y = getRandomInt(0, canvas.a.height)
+      this.width = getRandomInt(starMinSize, starMaxSize)
+      this.height = getRandomInt(starMinSize, starMaxSize)
     }
   }
 }
