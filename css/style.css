@@ -585,7 +585,7 @@ h1.hero-name>span:first-child .char5{
 .shots{
     position: relative;
     width: 100%;
-    opacity: 0;
+    /* opacity: 0; */
     transition: all .3s .5s ease;
 }
 .shots-container{
@@ -628,7 +628,7 @@ h1.hero-name>span:first-child .char5{
 .blogs{
     position: relative;
     width: 100%;
-    opacity: 0;
+    /* opacity: 0; */
     transition: all .3s .5s ease;
 }
 .blogs-container{

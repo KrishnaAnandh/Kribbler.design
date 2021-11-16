@@ -4,6 +4,7 @@ var tlHomeHeroIn= new TimelineMax()
 var tlHomeHeroOut= new TimelineMax()
 var tlHomeBioIn= new TimelineMax()
 var tlHomeWorksIn= new TimelineMax()
+var tlHomeBlogsIn= new TimelineMax()
 
 var headerRolesLoop = new TimelineMax()
 var headerAppear = new TimelineMax()
@@ -44,6 +45,15 @@ var scHomeWorksIn = ScrollTrigger.create({
     // markers: true,
 })
 
+var scHomeBlogsIn = ScrollTrigger.create({
+    animation: tlHomeBlogsIn,
+    trigger: ".blogs",
+    start: "top 70%",
+    end: "50px 40%",
+    scrub: true,
+    // markers: true,
+})
+
 tlHomeHeroIn.staggerFrom('.hero-name .general span', 1, {y:100}, 0.1)
 
 tlHomeHeroOut.to('.hero-details',1, {y:-100})
@@ -60,9 +70,11 @@ tlHomeBioIn.from('.bio-figures',1, {opacity:0}, "-=0.8")
 
 
 tlHomeWorksIn.to(['body', '.header'],0.1, {background:"#000"})
-tlHomeWorksIn.from('.works-head h3',0.1, {y:50, opacity:1})
+tlHomeWorksIn.from('.works-head h3',0.1, {y:100, opacity:1})
 tlHomeWorksIn.from('.work-row-1',0.1, {y:100, opacity:0}, "-=0.02")
 
+tlHomeBlogsIn.to('.shots',0.2, {opacity:0})
+tlHomeBlogsIn.to(['body', '.header'],0.2, {background:"#fff"})
 
 // gsap.to(
 //     ".img-1",
