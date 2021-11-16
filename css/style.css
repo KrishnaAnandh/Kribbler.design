@@ -7,6 +7,9 @@ html{
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
+body{
+    background: #e0f1ff;
+}
 
 *, body{
     margin: 0;
@@ -54,13 +57,16 @@ p, li{
     color: #000c;
 }
 a{
-    color: #1b1486;
+    color: inherit;
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
     text-decoration: none;
     transition: all .4s cubic-bezier(0.21, 0.05, 0, 1.01);
+    overflow: hidden;
+    width: auto;
+    padding: 7px 0;
     
 }
 a::after {
@@ -74,8 +80,32 @@ a::after {
     top: 120%;
     transition: all .2s ease;
 }
-a:hover{
-    letter-spacing: 4px;
+.work-link{
+    padding: 10px 0;
+    overflow: hidden;
+    width: fit-content;
+}
+
+.link-uline {
+    position: absolute;
+    right: 0;
+    pointer-events: none;
+    fill: none;
+    stroke: #fff;
+    stroke-width: 1px;
+    width: 300%;
+    height: 100%;
+    top: -3px;
+    transition: transform 0.7s;
+    transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+}
+
+.work-link:hover .link-uline{
+    transform: translate3d(66.6%, 0, 0);
+}
+
+.work-link:hover a{
+    letter-spacing: 2px;
 }
 /*
 a:hover::after{
@@ -223,6 +253,7 @@ body.scroll-stopped{
 .hero-container{
     position: relative;
     height: 100%;
+    max-width: 1100px;
     display: flex;
     flex-direction: row;
     justify-content:space-between;
@@ -313,7 +344,7 @@ h1.hero-name  span{
 .hero-artwork{
     position: relative;
     width: 55%;
-    height: 100%;
+    height: 80%;
     z-index: 5;
     text-align: center;
     display: flex;
@@ -628,6 +659,10 @@ h1.hero-name>span:first-child .char5{
 .blogs{
     position: relative;
     width: 100%;
+    max-width: 1100px;
+    left: 0;
+    right: 0;
+    margin: auto;
     /* opacity: 0; */
     transition: all .3s .5s ease;
 }

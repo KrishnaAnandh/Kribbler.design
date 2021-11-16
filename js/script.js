@@ -73,7 +73,7 @@ tlHomeBioIn.from('.bio-figures',1, {opacity:0},"-=0.8")
 // tlHomeBioIn.to('.bio-figures',1.7, {y:80}, "-=1.6")
 
 
-tlHomeWorksIn.to(['body', '.header'],0.1, {background:"#000"})
+tlHomeWorksIn.to(['body', '.header'],0.1, {background:"#112"})
 tlHomeWorksIn.from('.works-head h3',1, {y:100, opacity:1})
 tlHomeWorksIn.from('.work-row-1',1, {y:50, opacity:0})
 
