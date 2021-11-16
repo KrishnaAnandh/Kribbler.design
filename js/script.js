@@ -70,7 +70,7 @@ tlHomeBioIn.from('.bio-figures',1, {opacity:0}, "-=0.8")
 
 
 tlHomeWorksIn.to(['body', '.header'],0.1, {background:"#000"})
-tlHomeWorksIn.from('.works-head h3',0.1, {y:100, opacity:1})
+tlHomeWorksIn.from('.works-head h3',0.6, {y:100, opacity:1})
 tlHomeWorksIn.from('.work-row-1',0.1, {y:100, opacity:0}, "-=0.02")
 
 tlHomeBlogsIn.to('.shots',0.2, {opacity:0})
@@ -90,19 +90,19 @@ tlHomeBlogsIn.to(['body', '.header'],0.2, {background:"#fff"})
 //     }
     
 // )
-gsap.from(
-    ".bio-summary",
-    {
-        scrollTrigger:{
-        trigger: ".bio-summary",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-        // markers: true,
-        },
-        y:150,
-    },
-)
+// gsap.from(
+//     ".bio-summary",
+//     {
+//         scrollTrigger:{
+//         trigger: ".bio-summary",
+//         start: "top bottom",
+//         end: "bottom top",
+//         scrub: true,
+//         // markers: true,
+//         },
+//         y:150,
+//     },
+// )
 gsap.from(
     ".bio-summary span",
     {
@@ -169,6 +169,37 @@ gsap.to(
     
 )
 
+
+const layerTop = gsap.utils.toArray('.lyr-top');
+const layerMid = gsap.utils.toArray('.lyr-mid');
+
+layerTop.forEach((el) => {
+    gsap.set(el, {y:100})
+  gsap.to(el, {
+    scrollTrigger: {
+        trigger: el,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true,
+        // markers: true,
+    },
+    y:-100
+  });
+});
+
+layerMid.forEach((el) => {
+    gsap.set(el, {y:50})
+  gsap.to(el, {
+    scrollTrigger: {
+        trigger: el,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true,
+        // markers: true,
+    },
+    y:-50
+  });
+});
 
 
 $(window).on('load', function() {
@@ -315,9 +346,6 @@ $(window).scroll(function (event) {
         shotsEnds = $(".shots").height()+worksEnds,
         blogsEnds = $(".blogs").height()+shotsEnds;
     
-   
-
-    
     if (scroll > lastScrollTop){
         scrollOffset = -300;
     } else {
@@ -342,5 +370,5 @@ $(window).scroll(function (event) {
     $('.shots-row-2').css("left",row2_pos);
     $('.shots-row-3').css("left",row3_pos);
     
-    console.log(layer_top);
+    // console.log(layer_top);
 });

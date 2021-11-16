@@ -407,7 +407,7 @@ h1.hero-name>span:first-child .char5{
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #fff;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 .bio-head::after{
     position: absolute;
@@ -433,8 +433,7 @@ h1.hero-name>span:first-child .char5{
     max-width: 860px;
     left: 0;
     right: 0;
-    margin: auto;
-    margin-top: 60px;
+    margin: 180px auto 80px;
 }
 .bio-summary span{
     margin: 0;
@@ -451,7 +450,6 @@ h1.hero-name>span:first-child .char5{
     left: 0;
     right: 0;
     margin: auto;
-    margin-top: 120px;
     
 }
 .bio-fig-item{
