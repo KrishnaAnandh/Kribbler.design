@@ -333,75 +333,6 @@ $(window).scroll(function (event) {
     else{
         $('.header').removeClass("show");
     }
-    //hero section
-    // if(scroll >= 0 && scroll < (heroEnds + scrollOffset)){
-    //     $('body').removeClass("background-black");
-    //     $('body').removeClass("background-turq");
-    //     $('.header').css("background","#fff");
-    //     $('.header-logo').css("filter", "invert(0%)");
-        
-    //     $('.hero').addClass("appear");
-    //     $('.bio').removeClass("appear");
-    //     $('.works').removeClass("appear");
-    //     $('.shots').removeClass("appear");
-    //     $('.blogs').removeClass("appear");
-    //     console.log("hero");
-    // }
-    //bio section
-    // else if(scroll > (heroEnds + scrollOffset) && scroll < (bioEnds + scrollOffset)){
-    //     $('body').removeClass("background-black");
-    //     $('body').addClass("background-turq");
-    //     $('.header').css("background","#1b1486");
-    //     $('.header-logo').css("filter", "invert(100%)");
-    //     $('.header-menu-icon div').css("background", "#fff");
-        
-    //     $('.hero').removeClass("appear");
-    //     $('.bio').addClass("appear");
-    //     $('.works').removeClass("appear");
-    //     $('.shots').removeClass("appear");
-    //     $('.blogs').removeClass("appear");
-    //     console.log("bio");
-    // }
-    //works section
-    // else if(scroll > (bioEnds + scrollOffset) && scroll < (shotsEnds + scrollOffset)){
-    //     $('body').removeClass("background-turq");
-    //     $('body').addClass("background-black");
-    //     $('.header').css("background","#000");
-    //     $('.header-logo').css("filter", "invert(100%)");
-    //     $('.header-menu-icon div').css("background", "#fff");
-        
-    //     $('.hero').removeClass("appear");
-    //     $('.bio').removeClass("appear");
-    //     $('.works').addClass("appear");
-    //     $('.shots').addClass("appear");
-    //     $('.blogs').removeClass("appear");
-
-    //     console.log("works");
-    // }
-    
-    //blogs-section
-    // else if(scroll > (shotsEnds + scrollOffset)){
-    //     $('body').removeClass("background-black");
-    //     $('body').removeClass("background-turq");
-    //     $('.header').css("background","#fff");
-    //     $('.header-logo').css("filter", "invert(0%)");
-    //     $('.header-menu-icon div').css("background", "#000");
-        
-    //     $('.hero').removeClass("appear");
-    //     $('.bio').removeClass("appear");
-    //     $('.works').removeClass("appear");
-    //     $('.shots').removeClass("appear");
-    //     $('.blogs').addClass("appear");
-    //     console.log("blogs");
-    // }
-    // else{
-    //     $('body').removeClass("background-black");
-    //     $('body').removeClass("background-turq");
-    //     $('.header').css("background","#fff");
-    //     $('.header-logo').css("filter", "invert(0%)");
-    //     $('.header-menu-icon div').css("background", "#000");
-    // }
-    
     
     var row1_pos = -(scroll-2200);
     var row2_pos = (scroll-2200)-2500;
@@ -410,14 +341,6 @@ $(window).scroll(function (event) {
     $('.shots-row-1').css("left",row1_pos);
     $('.shots-row-2').css("left",row2_pos);
     $('.shots-row-3').css("left",row3_pos);
-    
-    
-    var layer_top = scroll*2;
-    var layer_middle = scroll*1.5;
-    var layer_bottom = scroll
-    
-//            $('.layer-top').css("transfom","translateY(" . layer_top . ")");
-    
     
     console.log(layer_top);
 });
