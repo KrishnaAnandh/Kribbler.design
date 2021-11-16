@@ -42,7 +42,7 @@ var scHomeWorksIn = ScrollTrigger.create({
     start: "top 60%",
     end: "50px 40%",
     scrub: true,
-    markers: true,
+    // markers: true,
 })
 
 var scHomeBlogsIn = ScrollTrigger.create({
