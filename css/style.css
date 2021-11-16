@@ -5,6 +5,7 @@
   }
 html{
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 *, body{
@@ -16,6 +17,7 @@ html{
 /*    scroll-behavior: smooth;*/
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
+    
 }
 *::-webkit-scrollbar {
 display: none;
@@ -405,7 +407,7 @@ h1.hero-name>span:first-child .char5{
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #fff;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
 }
 .bio-head::after{
     position: absolute;
@@ -449,7 +451,7 @@ h1.hero-name>span:first-child .char5{
     left: 0;
     right: 0;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 120px;
     
 }
 .bio-fig-item{
@@ -492,7 +494,13 @@ h1.hero-name>span:first-child .char5{
     position: relative;
     padding: 100px 0;
 }
-
+.works-head{
+    overflow: hidden;
+    margin: 50px 40px;
+}
+.works-head h3{
+    margin: 0;
+}
 .work-row-2{
     width: 100%;
     display: flex;

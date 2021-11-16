@@ -60,7 +60,7 @@ tlHomeBioIn.from('.bio-figures',1, {opacity:0}, "-=0.8")
 
 
 tlHomeWorksIn.to(['body', '.header'],0.1, {background:"#000"})
-tlHomeWorksIn.from('.works-head',0.1, {x:200, opacity:0})
+tlHomeWorksIn.from('.works-head h3',0.1, {y:50, opacity:1})
 tlHomeWorksIn.from('.work-row-1',0.1, {y:100, opacity:0}, "-=0.02")
 
 
@@ -88,7 +88,7 @@ gsap.from(
         scrub: true,
         // markers: true,
         },
-        y:200,
+        y:150,
     },
 )
 gsap.from(
@@ -96,10 +96,10 @@ gsap.from(
     {
         scrollTrigger:{
         trigger: ".bio-summary",
-        start: "top 60%",
-        end: "bottom 40%",
+        start: "top 80%",
+        end: "bottom 60%",
         scrub: true,
-        markers: true,
+        // markers: true,
         },
         stagger: {
             from: 0,
