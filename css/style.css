@@ -3,7 +3,9 @@
     src: url('fonts/MonumentExtended-Regular.otf');
     font-weight: 700;
   }
-
+html{
+    scroll-behavior: smooth;
+}
 
 *, body{
     margin: 0;
@@ -23,7 +25,7 @@ h1{
     font-size: 68px;
     font-weight: 700;
 }
-h3, .heads p{
+h3, h3 span, .heads p{
     font-size: 40px;
     line-height: 50px;
     margin: 50px 40px;
@@ -389,7 +391,7 @@ h1.hero-name>span:first-child .char5{
 .bio{
     position: relative;
     width: 100%;
-    opacity: 0;
+    opacity: 1;
     transition: all .3s .5s ease;
 }
 .bio-container{
@@ -403,6 +405,7 @@ h1.hero-name>span:first-child .char5{
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #fff;
+    margin-bottom: 100px;
 }
 .bio-head::after{
     position: absolute;
@@ -431,6 +434,13 @@ h1.hero-name>span:first-child .char5{
     margin: auto;
     margin-top: 60px;
 }
+.bio-summary span{
+    margin: 0;
+    display: inline-block;
+    white-space: pre;
+    width: auto;
+    text-transform: none;
+}
 .bio-figures{
     display: flex;
     flex-direction: row;
@@ -440,18 +450,21 @@ h1.hero-name>span:first-child .char5{
     right: 0;
     margin: auto;
     margin-top: 50px;
+    
 }
 .bio-fig-item{
     display: flex;
 }
 .bio-fignum{
     font-size: 32px;
+    color: #fff;
     
 }
 .bio-figtxt{
     font-size: 14px;
     padding: 12px 0;
     padding-left: 50px;
+    color: #fff;
 }
 .bio-figtxt::before{
     position: absolute;
@@ -471,8 +484,9 @@ h1.hero-name>span:first-child .char5{
 .works{
     position: relative;
     width: 100%;
-    opacity: 0;
+    /* opacity: 0; */
     transition: all .3s .5s ease;
+    color: #fff;
 }
 .works-container{
     position: relative;
@@ -740,7 +754,7 @@ h1.hero-name>span:first-child .char5{
     margin:auto;
     padding-left: 40px;
     padding-right: 40px;
-    max-width: 1100px;
+    /* max-width: 1100px; */
 }
 .container-full{
     width: 100%;
@@ -1078,11 +1092,10 @@ h1.hero-name>span:first-child .char5{
 /*projects page*/
 .project-container{
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    justify-content: center;
     margin: 0;
-    padding:40px 0;
+    padding:100px 0;
 }
 .project-row{
     width:100%;
@@ -1118,6 +1131,10 @@ h1.hero-name>span:first-child .char5{
 .project-column img{
     width: 100%;
 }
+.h-full{
+    padding-top: 0;
+    padding-bottom: 0;
+}
 .w-full{
     width:100%
 }
@@ -1149,6 +1166,13 @@ h1.hero-name>span:first-child .char5{
     align-items: center;
     text-align: center;
 }
+.al-self-c{
+    align-self: center;
+}
+.ml-20{
+    margin-left: 20px !important;
+}
+
 .no-bold{
     font-weight:400 !important;
 }
@@ -1156,17 +1180,53 @@ h1.hero-name>span:first-child .char5{
 .project-cover{
     margin-top:0;
     padding:0;
-    max-height: 500px;
+    height: 100vh;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 .project-cover img{
     width:100%
 }
-
+.project-cover .project-row{
+    justify-content: center;
+    height: 100%;
+}
 .project-cover .project-column{
     margin:0;
+    justify-content: center;
+    width: 100%;
+    
+}
+.project-cover h1{
+    color: #fff;
+    z-index: 1;
+}
+.project-cover .project-cover-bg{
+    position:absolute; 
+    height: 100%; 
+    width: 100%; 
 }
 
 .bg-bluegrey{
     background: #F1F7FD;
+}
+
+
+
+
+/* foodmates custom */
+.sec-time-saving {
+
+}
+
+
+@media screen and (max-width:480px){
+    .project-row{
+        flex-direction: column;
+    }
+    .project-row .project-column{
+        width: 100%;
+    }
 }

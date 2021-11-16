@@ -9,9 +9,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <script src="js/lucid.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+    
+    
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script> -->
     
     <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
     <!--<link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
@@ -32,257 +32,6 @@
 
         gtag('config', 'UA-51091796-4');
     </script>
-    
-    <script>
-        $(window).on('load', function() {
-            $('.hero').addClass("appear");
-//            $(this).impulse({
-//                range: 60,
-//                tempo: 1200,
-//                effect: 'easeOutBack',
-//                fluid: true
-//            });
-
-
-
-        });
-        $(document).ready(function(){
-            $(".hero-name span").lettering();
-            
-
-            $("#menu-icon").on('click', function(){
-                $("#menu-cont").toggleClass("open");
-                $(this).toggleClass("close");
-                $('body').toggleClass("scroll-stopped");
-                $('.header-container').toggleClass("open");
-            });
-
-            $('.hero-cta').on('click', function() {
-            introAnimation();
-            });
-            
-            
-            
-        });
-        $(document).ready(function() {
-            introAnimation();
-        }, 1000);
-
-        var introExecuted = false, i=1;
-        var action = function() {
-            console.log("function running")
-            if(introExecuted){
-                console.log("function executing")
-                loopAnimation(i);
-                i = (i<3)?i+1:1;
-                console.log("loop Animation", i)
-                setTimeout(action, 5000);
-            }
-        };
- 
-        function introAnimation() {
-            var headerLetters=$('.general span'),
-            roleLetters=$('.role1 span'),
-            role2Letters=$('.role2 span'),
-            role3Letters=$('.role3 span'),
-            headerLettersArray=headerLetters.toArray();
-            roleLettersArray=roleLetters.toArray();
-            
-            headerLettersArray.sort(function() {return 0.7-Math.random()});
-            roleLettersArray.sort(function() {return 0.7-Math.random()});
-
-            var headerAppear = new TimelineMax();
-            headerAppear.to([".hero-logo",".hero-desc",".hero-cta",".hero-artwork",".role1 span",".role2 span",".role3 span"], 0, { opacity: 0})
-            headerAppear.to([".hero-logo"], 0, { y:100})
-            headerAppear.to([".hero-desc",".hero-cta",".hero-artwork"], 0, { y:-100})
-            
-            headerAppear.staggerFromTo(
-                headerLettersArray, 
-                1, 
-                {ease: Back.easeInOut.config(1.7), opacity: 0, top: -10},
-                {ease: Back.easeInOut.config(1.7), opacity: 1, top: 0}, 
-                0.08
-            )
-            headerAppear.staggerFromTo(
-                roleLettersArray, 
-                1, 
-                {ease: Back.easeInOut.config(0.7), opacity: 0, top: -10},
-                {ease: Back.easeInOut.config(0.7), opacity: 1, top: 0}, 
-                0.08
-            )
-
-            headerAppear.to(".hero-logo", 0.5, {y:0, opacity: 1})
-            headerAppear.to(".hero-desc", 0.5, {y:0, opacity: 1})
-            headerAppear.to(".hero-cta", 0.2, {y:0, opacity: 1})
-            headerAppear.to(".hero-artwork", 0.5, {y:0, opacity: 1})
-            
-            setTimeout(function(){introExecuted = true
-            action();
-            console.log(introExecuted);},5000)
-            // var i=0
-            // var loopAnimation = function() {
-                
-            //     i = (i<3)?i+1:1;
-            //     console.log("loop Animation", i)
-            //     setTimeout(action, 5000);
-            // };
-            // setInterval(loopAnimation(),3000);
-        }
-        function loopAnimation(i) {
-            var currentRoleEl = '.role' + i + ' span'
-            j = (i<3)?i+1:1
-            var nextRoleEl = '.role' + j + ' span'
-            // console.log($(currentRoleEl))
-            var currentRole=$(currentRoleEl),
-            currentRoleLetters=currentRole.toArray();
-            currentRoleLetters.sort(function() {return 0.7-Math.random()});
-
-            var nextRole=$(nextRoleEl),
-            nextRoleLetters=nextRole.toArray();
-            nextRoleLetters.sort(function() {return 0.7-Math.random()});
-
-            var headerRolesLoop = new TimelineMax();
-            // headerRolesLoop.to([], 0, { opacity: 0})
-            
-            headerRolesLoop.staggerFromTo(
-                currentRoleLetters, 
-                1,
-                {ease: Back.easeInOut.config(1.7),opacity: 1},
-                {ease: Back.easeInOut.config(1.7), opacity: 0}, 
-                0.08
-            )
-            headerRolesLoop.staggerFromTo(
-                nextRoleLetters, 
-                1,
-                {ease: Back.easeInOut.config(1.7), opacity: 0},
-                {ease: Back.easeInOut.config(1.7), opacity: 1}, 
-                0.08
-            )
-          
-           
-        }
-        
-        var lastScrollTop = 0;
-     
-           
-        $(window).scroll(function (event) {
-            var scroll = $(window).scrollTop();
-            console.log(scroll);
-            var heroEnds = $(".hero").height(),
-                bioEnds = $(".bio").height()+heroEnds,
-                worksEnds = $(".works").height()+bioEnds,
-                shotsEnds = $(".shots").height()+worksEnds,
-                blogsEnds = $(".blogs").height()+shotsEnds;
-            
-           
-
-            
-            if (scroll > lastScrollTop){
-                scrollOffset = -300;
-            } else {
-                scrollOffset = -100;
-            }
-            lastScrollTop = scroll;
-            
-
-
-            if(scroll > 580){
-                $('.header').addClass("show");
-            }
-            else{
-                $('.header').removeClass("show");
-            }
-            //hero section
-            if(scroll >= 0 && scroll < (heroEnds + scrollOffset)){
-                $('body').removeClass("background-black");
-                $('body').removeClass("background-turq");
-                $('.header').css("background","#fff");
-                $('.header-logo').css("filter", "invert(0%)");
-                
-                $('.hero').addClass("appear");
-                $('.bio').removeClass("appear");
-                $('.works').removeClass("appear");
-                $('.shots').removeClass("appear");
-                $('.blogs').removeClass("appear");
-                console.log("hero");
-            }
-            //bio section
-            else if(scroll > (heroEnds + scrollOffset) && scroll < (bioEnds + scrollOffset)){
-                $('body').removeClass("background-black");
-                $('body').addClass("background-turq");
-                $('.header').css("background","#1b1486");
-                $('.header-logo').css("filter", "invert(100%)");
-                $('.header-menu-icon div').css("background", "#fff");
-                
-                $('.hero').removeClass("appear");
-                $('.bio').addClass("appear");
-                $('.works').removeClass("appear");
-                $('.shots').removeClass("appear");
-                $('.blogs').removeClass("appear");
-                console.log("bio");
-            }
-            //works section
-            else if(scroll > (bioEnds + scrollOffset) && scroll < (shotsEnds + scrollOffset)){
-                $('body').removeClass("background-turq");
-                $('body').addClass("background-black");
-                $('.header').css("background","#000");
-                $('.header-logo').css("filter", "invert(100%)");
-                $('.header-menu-icon div').css("background", "#fff");
-                
-                $('.hero').removeClass("appear");
-                $('.bio').removeClass("appear");
-                $('.works').addClass("appear");
-                $('.shots').addClass("appear");
-                $('.blogs').removeClass("appear");
-
-                console.log("works");
-            }
-            
-            //blogs-section
-            else if(scroll > (shotsEnds + scrollOffset)){
-                $('body').removeClass("background-black");
-                $('body').removeClass("background-turq");
-                $('.header').css("background","#fff");
-                $('.header-logo').css("filter", "invert(0%)");
-                $('.header-menu-icon div').css("background", "#000");
-                
-                $('.hero').removeClass("appear");
-                $('.bio').removeClass("appear");
-                $('.works').removeClass("appear");
-                $('.shots').removeClass("appear");
-                $('.blogs').addClass("appear");
-                console.log("blogs");
-            }
-            else{
-                $('body').removeClass("background-black");
-                $('body').removeClass("background-turq");
-                $('.header').css("background","#fff");
-                $('.header-logo').css("filter", "invert(0%)");
-                $('.header-menu-icon div').css("background", "#000");
-            }
-            
-            
-            var row1_pos = -(scroll-2200);
-            var row2_pos = (scroll-2200)-2500;
-            var row3_pos = -(scroll-2800);
-            
-            $('.shots-row-1').css("left",row1_pos);
-            $('.shots-row-2').css("left",row2_pos);
-            $('.shots-row-3').css("left",row3_pos);
-            
-            
-            var layer_top = scroll*2;
-            var layer_middle = scroll*1.5;
-            var layer_bottom = scroll
-            
-//            $('.layer-top').css("transfom","translateY(" . layer_top . ")");
-            
-            
-            console.log(layer_top);
-        });
-        
-    </script>
-    
     
 </head>
 <body>
@@ -344,7 +93,7 @@
     <section class="bio">
         <div class="bio-container container">
             <div class="bio-head"><p>short bio</p></div>
-            <h3 class="bio-summary">I am a computer engineer and an artist who is so much into making technologies easy to use, also beautiful.</h3>
+            <h3 class="bio-summary"><span>I</span><span> am</span><span> a</span><span> computer</span><span> engineer</span><span> and</span><span> an</span><span> artist</span><span> who</span><span> is</span><span> so</span><span> much</span><span> into</span><span> making</span><span> technologies</span><span> easy</span><span> to</span><span> use,</span><span> also</span><span> delightful.</h3>
             <div class="bio-figures">
                 <div class="bio-fig-item"><div class="bio-fignum">05+</div><div class="bio-figtxt">years of experience</div></div>
                 <div class="bio-fig-item"><div class="bio-fignum">25+</div><div class="bio-figtxt">digital products</div></div>
@@ -372,7 +121,7 @@
                         <div class="work-link"><a href="foodmates-bigbasket-ux-ui-interaction-product-design--project-case-study.html">view project</a></div>
                         <!-- <div class="work-link-mobile"><a href="#">view project</a></div> -->
                     </div>
-                    <div class="work-image-holder"><img src="img/foodmates-cover.png"/></div>
+                    <div class="work-image-holder work-1-image"><img src="img/foodmates-cover.png"/></div>
                 </div>
             </div>
 
@@ -386,7 +135,7 @@
                         <div class="work-link"><a href="#">view project</a></div>
                         <!-- <div class="work-link-mobile"><a href="#">view project</a></div> -->
                     </div>
-                    <div class="work-image-holder"><img src="img/unibook_cover.png"/></div>
+                    <div class="work-image-holder work-2-image"><img src="img/unibook_cover.png"/></div>
                 </div>
                 <div class="work work-3">
                     
@@ -396,7 +145,7 @@
                         <div class="work-link"><a href="#">view project</a></div>
                         <!-- <div class="work-link-mobile"><a href="#">view project</a></div> -->
                     </div>
-                        <div class="work-image-holder"><img src="img/flexibees_cover.png"/></div>
+                        <div class="work-image-holder work-3-image"><img src="img/flexibees_cover.png"/></div>
                 </div>
             </div>
         </div>
@@ -494,5 +243,13 @@
         <div class="copyrights">Copyrighted</div>
     
     </section>
-    <!-- <script src="fake3d/js/app.js"></script> -->
+    <script src="fake3d/js/app.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js" integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js" integrity="sha512-CPA5LMoJI/a5HkSIAKcBtFXe4gqGjPUL2ExF/3PmhrrHI17wod9xOqqF+0WZQRKIIq0KwF8oG5BaiWobtrke3A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="js/lucid.js"></script>
+    <script src="js/script.js"></script>
 </body>
