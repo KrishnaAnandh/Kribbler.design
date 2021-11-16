@@ -31,7 +31,7 @@ var scHomeBioIn = ScrollTrigger.create({
     animation: tlHomeBioIn,
     trigger: ".bio",
     start: "top 70%",
-    end: "40px 40%",
+    end: "bottom bottom",
     scrub: true,
     // markers: true,
 })
@@ -60,11 +60,15 @@ tlHomeHeroOut.to('.hero-details',1, {y:-100})
 tlHomeHeroOut.to('.hero-name',1, {y:-30},"-=1")
 // tlHomeHeroOut.to('body',0.1, {background:"#1b1486"},"-=0.5")
 
-tlHomeBioIn.to('.hero',0.1, {opacity:0})
-tlHomeBioIn.to(['body', '.header'],0.1, {background:"#1b1486"})
-// tlHomeBioIn.staggerFrom('.bio-summary span',0.5, {opacity:0}, 0.04)
-tlHomeBioIn.from('.bio-head',1, { opacity:0}, "-=0.8")
-tlHomeBioIn.from('.bio-figures',1, {opacity:0}, "-=0.8")
+tlHomeBioIn.to('.hero',0.5, {opacity:0})
+tlHomeBioIn.to(['body', '.header'],0.5, {background:"#1b1486"})
+
+tlHomeBioIn.from('.bio-head',1, { opacity:0},"+=0.5")
+tlHomeBioIn.from('.bio-head span',1, { width:0},"+=0.5")
+tlHomeBioIn.to('.bio-head span',1, { skewY:-20},"+=0.5")
+tlHomeBioIn.staggerFrom(".bio-summary span", 0.5, {y:40, opacity:0},"0.04")
+
+tlHomeBioIn.from('.bio-figures',1, {opacity:0},"-=0.8")
 // tlHomeBioIn.to('.bio-head',1.7, {y:80}, "-=1")
 // tlHomeBioIn.to('.bio-figures',1.7, {y:80}, "-=1.6")
 
@@ -103,25 +107,25 @@ tlHomeBlogsIn.to(['body', '.header'],0.2, {background:"#fff"})
 //         y:150,
 //     },
 // )
-gsap.from(
-    ".bio-summary span",
-    {
-        scrollTrigger:{
-        trigger: ".bio-summary",
-        start: "top 80%",
-        end: "bottom 60%",
-        scrub: true,
-        // markers: true,
-        },
-        stagger: {
-            from: 0,
-            amount: 1.5
-        },
-        y:10,
-        opacity:0
-    },
-    0.04
-)
+// gsap.from(
+//     ".bio-summary span",
+//     {
+//         scrollTrigger:{
+//         trigger: ".bio-summary",
+//         start: "top 80%",
+//         end: "bottom 60%",
+//         scrub: true,
+//         // markers: true,
+//         },
+//         stagger: {
+//             from: 0,
+//             amount: 1.5
+//         },
+//         y:10,
+//         opacity:0
+//     },
+//     0.04
+// )
 
 gsap.set(".work-1-image", {y:150, rotate: "4deg"})
 gsap.set(".work-2-image", {y:150})

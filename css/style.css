@@ -409,7 +409,7 @@ h1.hero-name>span:first-child .char5{
     color: #fff;
     margin-bottom: 60px;
 }
-.bio-head::after{
+.bio-head span{
     position: absolute;
     content: "";
     width: 30px;
@@ -417,7 +417,7 @@ h1.hero-name>span:first-child .char5{
     top: 200%;
     left: 50%;
     background: #30f9dd;
-    transform: translateX(-50%) skewY(-15deg);
+    transform: translateX(-50%) skewY(0deg);
 }
 .bio-head p{
     font-size: 12px;
@@ -425,15 +425,15 @@ h1.hero-name>span:first-child .char5{
 }
 
 .bio-summary{
-    font-size: 32px;
-    line-height: 46px;
+    font-size: 44px;
+    line-height: 50px;
     text-align: center;
     color: #fff;
     text-transform: none;
     max-width: 860px;
     left: 0;
     right: 0;
-    margin: 180px auto 80px;
+    margin: 120px auto 80px;
 }
 .bio-summary span{
     margin: 0;
@@ -441,6 +441,8 @@ h1.hero-name>span:first-child .char5{
     white-space: pre;
     width: auto;
     text-transform: none;
+    font-size: inherit;
+    line-height: inherit;
 }
 .bio-figures{
     display: flex;
@@ -840,9 +842,7 @@ h1.hero-name>span:first-child .char5{
     }
 
     .container{
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-bottom: 0;
+        padding: 100px 20px;
     }
     .header-container{
         justify-content: space-between;
