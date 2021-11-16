@@ -39,10 +39,10 @@ var scHomeBioIn = ScrollTrigger.create({
 var scHomeWorksIn = ScrollTrigger.create({
     animation: tlHomeWorksIn,
     trigger: ".works",
-    start: "top 70%",
+    start: "top 60%",
     end: "50px 40%",
     scrub: true,
-    // markers: true,
+    markers: true,
 })
 
 var scHomeBlogsIn = ScrollTrigger.create({
@@ -70,8 +70,8 @@ tlHomeBioIn.from('.bio-figures',1, {opacity:0}, "-=0.8")
 
 
 tlHomeWorksIn.to(['body', '.header'],0.1, {background:"#000"})
-tlHomeWorksIn.from('.works-head h3',0.6, {y:100, opacity:1})
-tlHomeWorksIn.from('.work-row-1',0.1, {y:100, opacity:0}, "-=0.02")
+tlHomeWorksIn.from('.works-head h3',1, {y:100, opacity:1})
+tlHomeWorksIn.from('.work-row-1',1, {y:50, opacity:0})
 
 tlHomeBlogsIn.to('.shots',0.2, {opacity:0})
 tlHomeBlogsIn.to(['body', '.header'],0.2, {background:"#fff"})
