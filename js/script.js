@@ -51,7 +51,7 @@ var scHomeExpertiseIn = ScrollTrigger.create({
     start: "top 70%",
     end: "50px 40%",
     scrub: true,
-    markers: true,
+    // markers: true,
 })
 
 var scHomeBlogsIn = ScrollTrigger.create({
@@ -73,21 +73,21 @@ tlHomeBioIn.to('.hero',0.5, {opacity:0})
 tlHomeBioIn.to(['body', '.header'],0.5, {background:"#1b1486"})
 
 tlHomeBioIn.from('.bio-head',1, { opacity:0},"+=0.5")
-tlHomeBioIn.from('.bio-head span',1, { width:0},"+=0.5")
-tlHomeBioIn.to('.bio-head span',1, { skewY:-20},"+=0.5")
-tlHomeBioIn.staggerFrom(".bio-summary span", 0.5, {y:40, opacity:0},"0.04")
+tlHomeBioIn.from('.bio-head span',1, { width:0},"-=0.8")
+tlHomeBioIn.to('.bio-head span',1, { skewY:-20},"-=0.2")
+tlHomeBioIn.staggerFrom(".bio-summary span", 0.5, {y:40, opacity:0},"0.04","-=1")
 
-tlHomeBioIn.from('.bio-figures',1, {opacity:0},"-=0.8")
+tlHomeBioIn.from('.bio-figures',1, {opacity:0},"+=2")
 // tlHomeBioIn.to('.bio-head',1.7, {y:80}, "-=1")
 // tlHomeBioIn.to('.bio-figures',1.7, {y:80}, "-=1.6")
 
 
 tlHomeWorksIn.to(['body', '.header'],0.1, {background:"#113"})
-tlHomeWorksIn.from('.works-head h3',1, {y:100, opacity:1})
+tlHomeWorksIn.from('.works-head h3',1, {y:200, opacity:1, skewY:10})
 tlHomeWorksIn.from('.work-row-1',1, {y:50, opacity:0})
 
 tlHomeExpertiseIn.to('.shots',1, {opacity:0})
-tlHomeExpertiseIn.to(['body', '.header'],1, {background:"#069cc9"})
+tlHomeExpertiseIn.to(['body', '.header'],1, {background:"#30f9dd"})
 
 tlHomeBlogsIn.to(['body', '.header'],0.2, {background:"#fff"})
 
