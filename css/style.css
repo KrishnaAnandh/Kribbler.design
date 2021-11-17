@@ -246,8 +246,7 @@ body.scroll-stopped{
     height: 100vh;
     left: 0;
     right: 0;
-    opacity: 0;
-    transition: all .3s .5s ease;
+    /* transition: all .3s .5s ease; */
 }
 
 .hero-container{
@@ -312,7 +311,7 @@ h1.hero-name  span{
     font-family: inherit;
     
     display: inline-block;
-    transition: transform 2s .6s cubic-bezier(0.2, 0.0, 0, 1.0);
+    /* transition: transform 2s .6s cubic-bezier(0.2, 0.0, 0, 1.0); */
     font-size: inherit;
     line-height: inherit;
     letter-spacing: inherit;
@@ -425,7 +424,7 @@ h1.hero-name>span:first-child .char5{
     position: relative;
     width: 100%;
     opacity: 1;
-    transition: all .3s .5s ease;
+    /* transition: all .3s .5s ease; */
 }
 .bio-container{
     position: relative;
@@ -518,7 +517,7 @@ h1.hero-name>span:first-child .char5{
     position: relative;
     width: 100%;
     /* opacity: 0; */
-    transition: all .3s .5s ease;
+    /* transition: all .3s .5s ease; */
     color: #fff;
 }
 .works-container{
@@ -617,7 +616,13 @@ h1.hero-name>span:first-child .char5{
     position: relative;
     width: 100%;
     /* opacity: 0; */
-    transition: all .3s .5s ease;
+    /* transition: all .3s .5s ease; */
+}
+.shots-head{
+    color: #fff;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 24px;
 }
 .shots-container{
     position: relative;
@@ -632,7 +637,7 @@ h1.hero-name>span:first-child .char5{
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    transition-timing-function: ease-out;
+    /* transition-timing-function: ease-out; */
 }
 .shots-item{
     position: relative;
@@ -647,9 +652,6 @@ h1.hero-name>span:first-child .char5{
     width: 100%;
     top: 50%;
     transform: translateY(-50%);
-}
-.shots-row-2{
-    left: -3000px;
 }
 
 .expertise{
@@ -667,7 +669,7 @@ h1.hero-name>span:first-child .char5{
     right: 0;
     margin: auto;
     /* opacity: 0; */
-    transition: all .3s .5s ease;
+    /* transition: all .3s .5s ease; */
 }
 .blogs-container{
     position: relative;
@@ -833,10 +835,10 @@ h1.hero-name>span:first-child .char5{
 .background-turq a:hover{
     color: #1b1486;
 }
-.appear{
+/* .appear{
     opacity: 1;
     transition-delay: 0.2s;
-}
+} */
 
 /*1024 - 1600*/
 @media screen and (min-width:1024px) and (max-width:1600px){

@@ -51,7 +51,7 @@ var scHomeExpertiseIn = ScrollTrigger.create({
     start: "top 70%",
     end: "50px 40%",
     scrub: true,
-    // markers: true,
+    markers: true,
 })
 
 var scHomeBlogsIn = ScrollTrigger.create({
@@ -82,12 +82,12 @@ tlHomeBioIn.from('.bio-figures',1, {opacity:0},"-=0.8")
 // tlHomeBioIn.to('.bio-figures',1.7, {y:80}, "-=1.6")
 
 
-tlHomeWorksIn.to(['body', '.header'],0.1, {background:"#112"})
+tlHomeWorksIn.to(['body', '.header'],0.1, {background:"#113"})
 tlHomeWorksIn.from('.works-head h3',1, {y:100, opacity:1})
 tlHomeWorksIn.from('.work-row-1',1, {y:50, opacity:0})
 
-tlHomeExpertiseIn.to('.shots',0.2, {opacity:0})
-tlHomeExpertiseIn.to(['body', '.header'],0.2, {background:"#069cc9"})
+tlHomeExpertiseIn.to('.shots',1, {opacity:0})
+tlHomeExpertiseIn.to(['body', '.header'],1, {background:"#069cc9"})
 
 tlHomeBlogsIn.to(['body', '.header'],0.2, {background:"#fff"})
 
@@ -180,8 +180,34 @@ gsap.to(
         // markers: true
         },
         y:-150
-    }
-    
+    }  
+)
+
+gsap.to(
+    ".shots-row-1",
+    {
+        scrollTrigger:{
+        trigger: ".shots",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+        // markers: true
+        },
+        x:-1000
+    }  
+)
+gsap.from(
+    ".shots-row-2",
+    {
+        scrollTrigger:{
+        trigger: ".shots",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+        // markers: true
+        },
+        x:-1000
+    }  
 )
 
 
@@ -376,14 +402,5 @@ $(window).scroll(function (event) {
     else{
         $('.header').removeClass("show");
     }
-    
-    var row1_pos = -(scroll-2200);
-    var row2_pos = (scroll-2200)-2500;
-    var row3_pos = -(scroll-2800);
-    
-    $('.shots-row-1').css("left",row1_pos);
-    $('.shots-row-2').css("left",row2_pos);
-    $('.shots-row-3').css("left",row3_pos);
-    
-    // console.log(layer_top);
+
 });
