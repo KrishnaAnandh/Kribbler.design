@@ -6,6 +6,7 @@ var tlHomeBioIn= new TimelineMax()
 var tlHomeWorksIn= new TimelineMax()
 var tlHomeExpertiseIn= new TimelineMax()
 var tlHomeBlogsIn= new TimelineMax()
+var tlHomeEnquiryIn= new TimelineMax()
 
 var headerRolesLoop = new TimelineMax()
 var headerAppear = new TimelineMax()
@@ -62,7 +63,14 @@ var scHomeBlogsIn = ScrollTrigger.create({
     scrub: true,
     // markers: true,
 })
-
+var scHomeEnquiryIn = ScrollTrigger.create({
+    animation: tlHomeEnquiryIn,
+    trigger: ".enquiry",
+    start: "top 70%",
+    end: "50px 40%",
+    scrub: true,
+    // markers: true,
+})
 tlHomeHeroIn.staggerFrom('.hero-name .general span', 1, {y:100}, 0.1)
 
 tlHomeHeroOut.to('.hero-details',1, {y:-100})
@@ -91,6 +99,7 @@ tlHomeExpertiseIn.to(['body', '.header'],1, {background:"#30f9dd"})
 
 tlHomeBlogsIn.to(['body', '.header'],0.2, {background:"#fff"})
 
+tlHomeEnquiryIn.to(['body', '.header'],0.1, {background:"#113"})
 // gsap.to(
 //     ".img-1",
 //     {
@@ -403,4 +412,17 @@ $(window).scroll(function (event) {
         $('.header').removeClass("show");
     }
 
+});
+
+
+
+//submit button glow
+const button = document.querySelector("button");
+
+button.addEventListener("mousemove", (e) => {
+  const { x, y, width, height} = button.getBoundingClientRect();
+  console.log(x, y, width, height)
+  if((e.clientX > x && e.clientX < x+width)&&(e.clientY > y && e.clientY < y+height)){
+      button.style.setProperty("--x", e.clientX - x);
+    }
 });
