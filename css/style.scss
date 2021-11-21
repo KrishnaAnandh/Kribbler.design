@@ -3,6 +3,12 @@
     src: url('fonts/MonumentExtended-Regular.otf');
     font-weight: 700;
   }
+
+  @font-face {
+    font-family: "Bebas";
+    src: url('fonts/BebasNeue-Bold.ttf');
+    font-weight: 700;
+  }
 html{
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -319,9 +325,9 @@ body.scroll-stopped{
                 @media screen and (max-width:480px){
                     width: 100%;
                     margin: 14px 0;
-                    font-family: 'Poppins', Arial, sans-serif;
-                    font-size: 52px;
-                    line-height: 48px;
+                    font-family: 'Bebas', Arial, sans-serif;
+                    font-size: 80px;
+                    line-height: 70px;
                     letter-spacing: -1px;
                     display: flex;
                     flex-direction: column;
@@ -423,6 +429,15 @@ body.scroll-stopped{
             }
         }
         
+        
+    }
+    .dot-pattern{
+        width: 60%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 0;
     }
 }
 
@@ -442,10 +457,6 @@ body.scroll-stopped{
         height: 100%;
     }
     
-}
-
-h1.hero-name>span:first-child .char5{
-    letter-spacing: -0.2em;
 }
 
 
@@ -494,8 +505,9 @@ h1.hero-name>span:first-child .char5{
             right: 0;
             margin: 120px auto 80px;
             @media screen and (max-width:480px){
-                font-size: 26px;
-                line-height: 36px;
+                font-family: 'Bebas', Arial, sans-serif;
+                font-size: 56px;
+                line-height: 50px;
             }
             span{
                 margin: 0;
@@ -503,6 +515,7 @@ h1.hero-name>span:first-child .char5{
                 white-space: pre;
                 width: auto;
                 text-transform: none;
+                font-family: inherit;
                 font-size: inherit;
                 line-height: inherit;
             }
@@ -539,7 +552,7 @@ h1.hero-name>span:first-child .char5{
                     content: "";
                     height: 1px;
                     width: 20px;
-                    background: #fff;
+                    background: #fff5;
                     left: 10%;
                     top: 50%;
                     transform: translateY(-50%);
@@ -583,7 +596,8 @@ h1.hero-name>span:first-child .char5{
 
             .work{
                 /* width: 100%; */
-                height: 520px;
+                height: fit-content;
+                min-height: 520px;
                 position: relative;
                 z-index: 0;
                 display: flex;
@@ -593,6 +607,7 @@ h1.hero-name>span:first-child .char5{
                     margin: 10px 0;
                     flex-direction: column;
                     justify-content: stretch;
+
                 }
 
                 .work-desc{
@@ -607,6 +622,7 @@ h1.hero-name>span:first-child .char5{
                     z-index: 2;
                     @media screen and (max-width:600px){
                         width: 100%;
+                        height: fit-content;
                     }
 
                     .work-client{
@@ -639,8 +655,10 @@ h1.hero-name>span:first-child .char5{
                         margin-top: 20px;
                         margin: 10px 0;
                         color: inherit;
-                        display: none;
-                        stroke: #fff;
+                        // display: none;
+                        .link-uline{
+                            stroke: #fff;
+                        }
                     }
                     .work-link-mobile{
                         display: none;
@@ -651,27 +669,36 @@ h1.hero-name>span:first-child .char5{
                 .work-image-holder{
                     width:50%;
                     height: 100%;
+                    
                     top: 0;
                     z-index: 1;
                     @media screen and (max-width:600px){
                         width: 100%;
+                        min-height: 400px;
+                        height: fit-content;
                     }
 
                     img{
         
                         width: 100%;
-                        top: 50%;
-                        transform: translateY(-50%);
+                        // top: 50%;
+                        // transform: translateY(-50%);
                         right: 0;
-                        position: absolute;
+                        position: relative;
+                        filter: url(#drop-shadow);
                     }
                 }
             }
             .work-1{
-                background-color: #2ab46f;
+                background-color: #23234c;
                 grid-area: featured;
+                img{
+                    position: absolute !important;
+                    height: 100% !important;
+                    width: auto !important;
+                }
                 @media screen and (min-width:840px){
-                    padding-top: 60px;
+                    padding: 0;
                     height: 680px;
                     .work-desc{
                         width: 40%;
@@ -683,7 +710,14 @@ h1.hero-name>span:first-child .char5{
                     }
                     .work-image-holder{
                         width: 60%;
+                        height: calc(100% - 160px);
+                        min-height: 500px;
+                        position: relative;
+                        
                     }
+                }
+                @media screen and (min-width:1024px){
+                    padding: 0 60px;
                 }
             }
             .work-2{
@@ -694,8 +728,11 @@ h1.hero-name>span:first-child .char5{
             .work-3{
                 grid-area: work3;
                 background-color: #F8B817;
-                .work-client, .work-title, .work-content, .work-link a{
+                .work-client, .work-title, .work-content, .work-link{
                     color: #333 !important;
+                    .link-uline{
+                        stroke: #333 !important;
+                    }
                 }
                 .work-client::before{
                     background-color: #000 !important;
@@ -889,8 +926,14 @@ h1.hero-name>span:first-child .char5{
             margin: 0 auto;
             
             @media screen and (max-width:768px){
+                
                 font-size: 40px;
                 line-height: 38px;
+            }
+            @media screen and (max-width:480px){
+                font-family: 'Bebas', Arial, sans-serif;
+                font-size: 70px;
+                line-height: 65px;
             }
         } 
     }

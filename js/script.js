@@ -85,7 +85,7 @@ tlHomeBioIn.from('.bio-head span',1, { width:0},"-=0.8")
 tlHomeBioIn.to('.bio-head span',1, { skewY:-20},"-=0.2")
 tlHomeBioIn.staggerFrom(".bio-summary span", 0.5, {y:40, opacity:0},"0.04","-=1")
 
-tlHomeBioIn.from('.bio-figures',1, {opacity:0},"+=2")
+tlHomeBioIn.from('.bio-figures',1, {opacity:0},"+=0.1")
 // tlHomeBioIn.to('.bio-head',1.7, {y:80}, "-=1")
 // tlHomeBioIn.to('.bio-figures',1.7, {y:80}, "-=1.6")
 
@@ -147,7 +147,7 @@ tlHomeEnquiryIn.to(['body', '.header'],0.1, {background:"#113"})
 //     0.04
 // )
 
-gsap.set(".work-1-image", {y:150, rotate: "4deg"})
+gsap.set(".work-1-image", {y:150})
 gsap.set(".work-2-image", {y:150})
 gsap.set(".work-3-image", {y:150})
 gsap.to(
@@ -160,7 +160,7 @@ gsap.to(
         scrub: true,
         // markers: true,
         },
-        y:-150,rotate: "-4deg"
+        y:-150
     }
     
 )
@@ -176,7 +176,6 @@ gsap.to(
         },
         y:-150
     }
-    
 )
 gsap.to(
     ".work-3-image",
@@ -217,6 +216,50 @@ gsap.from(
         },
         x:-1000
     }  
+)
+
+gsap.set(".work-1-image .img-1", {right:300})
+gsap.set(".work-1-image .img-2", {right:200})
+gsap.set(".work-1-image .img-3", {right:100})
+
+gsap.to(
+    ".work-1-image .img-1",
+    {
+        scrollTrigger:{
+        trigger: ".work-1-image",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+        },
+        right:300
+    }
+    
+)
+gsap.to(
+    ".work-1-image .img-2",
+    {
+        scrollTrigger:{
+        trigger: ".work-1-image",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+        },
+        right:150
+    }
+    
+)
+gsap.to(
+    ".work-1-image .img-3",
+    {
+        scrollTrigger:{
+        trigger: ".work-1-image",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+        },
+        right:0
+    }
+    
 )
 
 

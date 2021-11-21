@@ -22,6 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,800;1,300&family=Stick+No+Bills:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51091796-4"></script>
@@ -50,7 +51,9 @@
     </section>
     
     <section class="hero">
+        <div class="dot-pattern" id="dot-pattern"></div>
         <div class="hero-container container">
+            
             <div class="hero-details">
                 <div class="hero-logo"><img src="img/kribbler-logo.svg"/><span>aka</span><span>Anandhakrishnan</span></div>
                 <h1 class="hero-name">
@@ -128,7 +131,11 @@
                         </div>
                         <!-- <div class="work-link-mobile"><a href="#">view project</a></div> -->
                     </div>
-                    <div class="work-image-holder work-1-image"><img src="img/foodmates-cover.png"/></div>
+                    <div class="work-image-holder work-1-image">
+                        <img class="img-1" src="img/foodmates/foodmates-preview-1.png"/>
+                        <img class="img-2" src="img/foodmates/foodmates-preview-2.png"/>
+                        <img class="img-3" src="img/foodmates/foodmates-preview-3.png"/>
+                    </div>
                 </div>
                 <div class="work work-2">
                         
@@ -255,6 +262,23 @@
         <div class="copyrights">Copyrighted</div>
     
     </section>
+
+
+    <svg height="0" xmlns="http://www.w3.org/2000/svg">
+        <filter id="drop-shadow">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="15"/>
+            <feOffset dx="1" dy="12" result="offsetblur"/>
+            <feFlood flood-color="rgba(0,0,0,0.4)"/>
+            <feComposite in2="offsetblur" operator="in"/>
+            <feBlend in="SourceAlpha" in2="feFlood" mode="multiply"/>
+            <feMerge>
+                <feMergeNode/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </svg>
+
+
     <script src="fake3d/js/app.js"></script>
 
 
@@ -264,4 +288,5 @@
 
     <script src="js/lucid.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/dots-canvas.js"></script>
 </body>
