@@ -439,6 +439,18 @@ body.scroll-stopped{
         top: 0;
         z-index: 0;
     }
+    .scroll-indicator{
+        position: absolute;
+        transform: rotate(90deg);
+        bottom: 10px;
+        right: 10px;
+        p::after{
+            content: "";
+            width: 40px;
+            height: 1px;
+            background: #000;
+        }
+    }
 }
 
 
@@ -1587,7 +1599,13 @@ body.scroll-stopped{
             grid-gap: 20px;
         }
     }
-
+    .sec-flows{
+        img{
+            background: #eef7ff;
+            padding: 30px;
+            margin: 30px 0;
+        }
+    }
     .sec-ui{
         h4{
             margin-bottom: 80px;

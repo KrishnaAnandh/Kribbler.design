@@ -371,7 +371,7 @@ function introAnimation() {
     roleLettersArray.sort(function() {return 0.7-Math.random()});
     
     headerAppear.set([".role1 span",".role2 span",".role3 span"], {opacity: 0})
-    headerAppear.set(".hero-name", {width: "200%", textAlign: "center"})
+    // headerAppear.set(".hero-name", {width: "200%", textAlign: "center"})
 
     headerAppear.staggerFromTo(
         headerLettersArray, 

@@ -578,6 +578,21 @@ body.scroll-stopped {
   z-index: 0;
 }
 
+.hero .scroll-indicator {
+  position: absolute;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  bottom: 10px;
+  right: 10px;
+}
+
+.hero .scroll-indicator p::after {
+  content: "";
+  width: 40px;
+  height: 1px;
+  background: #000;
+}
+
 .hero-image-holder main {
   height: 100%;
   min-width: 450px;
@@ -2007,6 +2022,12 @@ body.scroll-stopped {
       grid-template-columns: 40px auto;
   margin-top: 40px;
   grid-gap: 20px;
+}
+
+.foodmates .sec-flows img {
+  background: #eef7ff;
+  padding: 30px;
+  margin: 30px 0;
 }
 
 .foodmates .sec-ui h4 {
