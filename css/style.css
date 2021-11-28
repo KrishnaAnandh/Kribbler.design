@@ -580,17 +580,22 @@ body.scroll-stopped {
 
 .hero .scroll-indicator {
   position: absolute;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  -webkit-transform: rotate(90deg) translate(-40px, -20px);
+          transform: rotate(90deg) translate(-40px, -20px);
   bottom: 10px;
   right: 10px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
-.hero .scroll-indicator p::after {
-  content: "";
-  width: 40px;
+.hero .scroll-indicator span {
+  width: 50px;
   height: 1px;
   background: #000;
+  position: relative;
+  top: 10px;
+  left: 10px;
 }
 
 .hero-image-holder main {
@@ -2063,6 +2068,13 @@ body.scroll-stopped {
   background: #0002;
 }
 
+.foodmates .sec-ui img {
+  width: 130%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
 .foodmates .sec-proccu h5 span {
   color: #fff;
   background: #FF8843;
@@ -2073,7 +2085,24 @@ body.scroll-stopped {
   margin-top: 40px;
 }
 
-.foodmates .sec-spfeat img {
+.foodmates .sec-uxe .desc {
+  padding: 0 60px;
+}
+
+.foodmates .sec-uxe .desc label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #2AB46F;
+}
+
+.foodmates .sec-kmr .w-container {
+  width: calc(((100% - 960px) / 2) + 960px);
+  margin-left: calc((100% - 960px) / 2);
+}
+
+.foodmates .sec-smrt img {
   margin: 40px 0 60px;
 }
 
@@ -2095,6 +2124,21 @@ body.scroll-stopped {
 .foodmates .sec-ds img {
   padding: 50px;
   background: #e0f1ff;
+}
+
+.foodmates .sec-icon label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #2AB46F;
+}
+
+.foodmates .sec-icon span {
+  width: 20px;
+  height: 2px;
+  background: #2AB46F;
+  margin: 20px 0;
 }
 
 .page-unibook {

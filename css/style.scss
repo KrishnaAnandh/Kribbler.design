@@ -441,14 +441,18 @@ body.scroll-stopped{
     }
     .scroll-indicator{
         position: absolute;
-        transform: rotate(90deg);
+        transform: rotate(90deg) translate(-40px, -20px);
         bottom: 10px;
         right: 10px;
-        p::after{
-            content: "";
-            width: 40px;
+        display: inline-flex;
+       
+        span{
+            width: 50px;
             height: 1px;
             background: #000;
+            position: relative;
+            top: 10px;
+            left: 10px;
         }
     }
 }
@@ -1633,6 +1637,11 @@ body.scroll-stopped{
             height: 30px;
             background: #0002;
         }
+        img{
+            width: 130%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
        
     }
     .sec-proccu{
@@ -1647,7 +1656,26 @@ body.scroll-stopped{
             margin-top: 40px;
         }
     }
-    .sec-spfeat{
+    .sec-uxe{
+        .desc{
+            padding: 0 60px;
+            label{
+                font-size: 12px;
+                font-weight: 600;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+                color: #2AB46F;
+            }
+            
+        }
+    }
+    .sec-kmr{
+        .w-container{
+            width: calc(((100% - 960px) / 2) + 960px);
+            margin-left: calc((100% - 960px) / 2);
+        }
+    }
+    .sec-smrt{
         img{
             margin: 40px 0 60px;
         }
@@ -1666,6 +1694,21 @@ body.scroll-stopped{
         img{
             padding: 50px;
             background: #e0f1ff;
+        }
+    }
+    .sec-icon{
+        label{
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: #2AB46F;
+        }
+        span{
+            width: 20px;
+            height: 2px;
+            background: #2AB46F;
+            margin: 20px 0;
         }
     }
 }
