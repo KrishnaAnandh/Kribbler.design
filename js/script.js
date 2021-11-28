@@ -83,7 +83,7 @@ tlHomeBioIn.to(['body', '.header'],0.5, {background:"#1b1486"})
 tlHomeBioIn.from('.bio-head',1, { opacity:0},"+=0.5")
 tlHomeBioIn.from('.bio-head span',1, { width:0},"-=0.8")
 tlHomeBioIn.to('.bio-head span',1, { skewY:-20},"-=0.2")
-tlHomeBioIn.staggerFrom(".bio-summary span", 0.5, {y:40, opacity:0},"0.04","-=1")
+tlHomeBioIn.staggerFrom(".bio-summary span", 0.5, {y:60, opacity:0},"0.04","-=1")
 
 tlHomeBioIn.from('.bio-figures',1, {opacity:0},"+=0.1")
 // tlHomeBioIn.to('.bio-head',1.7, {y:80}, "-=1")
@@ -96,10 +96,14 @@ tlHomeWorksIn.from('.work-row-1',1, {y:50, opacity:0})
 
 tlHomeExpertiseIn.to('.shots',1, {opacity:0})
 tlHomeExpertiseIn.to(['body', '.header'],1, {background:"#30f9dd"})
+tlHomeExpertiseIn.from('.expertise',1, {opacity:0})
 
 tlHomeBlogsIn.to(['body', '.header'],0.2, {background:"#fff"})
+tlHomeBlogsIn.from('.blogs',1, {opacity:0})
 
 tlHomeEnquiryIn.to(['body', '.header'],0.1, {background:"#113"})
+tlHomeEnquiryIn.to(['.blog'],1, {opacity:0})
+tlHomeEnquiryIn.from('.enquiry',1, {opacity:0, y:40})
 // gsap.to(
 //     ".img-1",
 //     {
@@ -367,6 +371,8 @@ function introAnimation() {
     roleLettersArray.sort(function() {return 0.7-Math.random()});
     
     headerAppear.set([".role1 span",".role2 span",".role3 span"], {opacity: 0})
+    headerAppear.set(".hero-name", {width: "200%", textAlign: "center"})
+
     headerAppear.staggerFromTo(
         headerLettersArray, 
         1, 

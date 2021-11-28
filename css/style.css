@@ -1070,6 +1070,19 @@ body.scroll-stopped {
   }
 }
 
+.blogs .blogs-container .blogs-list .blog .blog-image {
+  overflow: hidden;
+  background-color: #382fc5;
+}
+
+.blogs .blogs-container .blogs-list .blog .blog-image img {
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
 .blogs .blogs-container .blogs-list .blog-1 {
   -ms-grid-row: 1;
   -ms-grid-row-span: 3;
@@ -1106,20 +1119,7 @@ body.scroll-stopped {
 
 .blog-1 .blog-image {
   height: 260px;
-  background-color: #382fc5;
   overflow: hidden;
-}
-
-.blog .blog-image img {
-  position: absolute;
-  height: 100%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
-.blog-2 .blog-image, .blog-3 .blog-image, .blog-4 .blog-image {
-  background-color: #382fc5;
 }
 
 .blog-1 .blog-title {

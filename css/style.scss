@@ -836,6 +836,18 @@ body.scroll-stopped{
                 grid-template-areas:
                     'featured' 'blog1' 'blog2' 'blog3';
             }
+            .blog{
+                .blog-image{
+                    overflow: hidden;
+                    background-color: #382fc5;
+                    img{
+                        position: absolute;
+                        height: 100%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+            }
             .blog-1{
                 grid-area: featured;
             }
@@ -863,21 +875,9 @@ body.scroll-stopped{
 
 .blog-1 .blog-image{
     height: 260px;
-    background-color: #382fc5;
     overflow: hidden;
 }
 
-
-.blog .blog-image img{
-    position: absolute;
-    height: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.blog-2 .blog-image, .blog-3 .blog-image, .blog-4 .blog-image{
-    background-color: #382fc5;
-    
-}
 
 
 
