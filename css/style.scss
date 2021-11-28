@@ -1458,9 +1458,6 @@ body.scroll-stopped{
     justify-content: center;
     margin:0 20px;
 }
-.project-column div{
-    margin: 6px 0;
-}
 
 .project-column h3, .project-column h4,.project-column h5,.project-column h6,.project-column p, .project-column a, .project-column b, .project-column li{
     margin: 4px 0;
@@ -1491,8 +1488,14 @@ body.scroll-stopped{
 .w-30{
     width:30%;
 }
+.w-40{
+    width:40%;
+}
 .w-50{
     width:50%;
+}
+.w-60{
+    width:60%;
 }
 .w-70{
     width:70%;
@@ -1557,7 +1560,7 @@ body.scroll-stopped{
 }
 
 .bg-bluegrey{
-    background: #F1F7FD;
+    background: #e0f1ff;
 }
 
 
@@ -1574,3 +1577,113 @@ body.scroll-stopped{
 }
 
 
+.foodmates{
+    background: #fff;
+    .sec-what{
+        .list{
+            display: grid;
+            grid-template-columns: 40px auto;
+            margin-top: 40px;
+            grid-gap: 20px;
+        }
+    }
+
+    .sec-ui{
+        h4{
+            margin-bottom: 80px;
+        }
+        h6{
+            font-size: 18px;
+            font-weight: 600;
+        }
+        label{
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 600;
+            &.label-1{
+                color: #2AB46F;
+            }
+            &.label-2{
+                color: #FF8843;
+            }
+            &.label-3{
+                color: #54ACE8;
+            }
+        }
+        span{
+            width: 1px;
+            height: 30px;
+            background: #0002;
+        }
+       
+    }
+    .sec-proccu{
+        h5{
+            span{
+                color: #fff;
+                background: #FF8843;
+                padding: 2px 8px;
+            }
+        }
+        img{
+            margin-top: 40px;
+        }
+    }
+    .sec-spfeat{
+        img{
+            margin: 40px 0 60px;
+        }
+    }
+    .sec-ds{
+        .project-row{
+            align-items: start;
+            margin-bottom: 40px;
+        }
+        h2{
+            font-size: 40px;
+        }
+        p{
+            font-size: 18px;
+        }
+        img{
+            padding: 50px;
+            background: #e0f1ff;
+        }
+    }
+}
+
+
+.page-unibook{
+    background: #fff;
+
+    .sec-ds{
+        .project-row{
+            align-items: start;
+            margin-bottom: 40px;
+        }
+        h2{
+            font-size: 40px;
+        }
+        p{
+            font-size: 18px;
+        }
+        img{
+            padding: 50px;
+            background: #fffaee;
+        }
+    }
+}
+
+
+
+.page-works{
+    .works-list{
+        display: grid;
+        grid-template-columns: repeat(12,minmax(0,1fr));
+        .works{
+            grid-column: span 6/span 6;
+            grid-row: span 1/span 1;
+        }
+    }
+
+}
