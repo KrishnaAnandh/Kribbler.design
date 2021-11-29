@@ -55,14 +55,22 @@
     
 </head>
 <body class="page-unibook">
-    <section class="project-container project-cover">
+    <script>
+        var thisPage = 'works'
+    </script>
+
+    <section id="header" class="header"></section>
+    
+    <section class="project-container project-cover cover">
         <div class="project-row w-full">
             <div class="project-column">
                 <div class="project-title"><h1>Unibook</h1></div>
+                <div class="scroll-indicator"><p>scroll</p><span></span></div>
                <div class="project-cover-bg" style="background: #FF5757;"></div>
             </div>
         </div>
     </section>
+
     <section class="project-container sec-what">
         <div class="project-row w-container">
             <div class="project-column w-50">
@@ -172,8 +180,8 @@
     </section>
 
     <section class="project-container">
-        <div class="project-row w-container">
-            <div  class="project-column w-70 al-self-c">
+        <div class="project-row w-container align-center">
+            <div  class="project-column w-100 al-self-c align-center">
                 <div><h4>The built-in chat feature is more than you need</h4></div>
                 <div><p>More than just having conversations, the chat feature also lets the users to share menus, portfolios, quotation, contracts, invoices and even one-click payment links to their clients
                 </p></div>
@@ -244,8 +252,14 @@
         
     </section>
 
+    <section id="enquiry" class="enquiry"></section>
 
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js" integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js" integrity="sha512-CPA5LMoJI/a5HkSIAKcBtFXe4gqGjPUL2ExF/3PmhrrHI17wod9xOqqF+0WZQRKIIq0KwF8oG5BaiWobtrke3A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-            
+    <script src="../js/lucid.js"></script>
+    <script src="../js/base.js"></script>     
 </body>
+</html>
