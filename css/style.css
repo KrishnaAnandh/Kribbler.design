@@ -2229,6 +2229,13 @@ body.scroll-stopped {
   /* span でもセル何個か定義できる */
 }
 
+@media screen and (max-width: 480px) {
+  .page-works .works-list-1 {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .page-works .works-list-1 .work {
   width: 100%;
   height: 100%;
@@ -2238,16 +2245,39 @@ body.scroll-stopped {
           box-sizing: border-box;
   overflow: hidden;
   color: #fff;
+  text-transform: unset;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
-.page-works .works-list-1 .work h5 {
+.page-works .works-list-1 .work:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.page-works .works-list-1 .work:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.page-works .works-list-1 .work .work-details {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 20px;
+  padding: 30px;
   color: inherit;
   z-index: 2;
   text-shadow: 2px 2px 8px #0004;
+}
+
+.page-works .works-list-1 .work .work-details h5 {
+  color: inherit;
+  letter-spacing: 0px;
+}
+
+.page-works .works-list-1 .work .work-details p {
+  color: inherit;
+  letter-spacing: 0px;
 }
 
 .page-works .works-list-1 .work img {
@@ -2256,6 +2286,8 @@ body.scroll-stopped {
   left: 0;
   width: 100%;
   z-index: 1;
+  -webkit-transition: inherit;
+  transition: inherit;
 }
 
 .page-works .works-list-1 .work-1 {
@@ -2308,6 +2340,10 @@ body.scroll-stopped {
 }
 
 .page-works .works-list-1 .work-7 {
+  grid-column: span 2;
+}
+
+.page-works .works-list-1 .work-8 {
   grid-column: span 2;
 }
 
