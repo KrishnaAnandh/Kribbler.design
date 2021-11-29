@@ -48,23 +48,25 @@
 
 
         });
-        $(document).ready(function(){
-            $("#menu-icon").on('click', function(){
-                $("#menu-cont").toggleClass("open");
-                $(this).toggleClass("close");
-            });
-        });
+       
         
         var lastScrollTop = 0;
     </script>
     
     
 </head>
-<body class="foodmates">
-    <section class="project-container project-cover">
+<body class="page-foodmates">
+    <script>
+        var thisPage = 'works'
+    </script>
+
+    <section id="header" class="header"></section>
+    
+    <section class="project-container project-cover cover">
         <div class="project-row w-full">
             <div class="project-column">
                 <div class="project-title"><h1>Foodmates</h1></div>
+                <div class="scroll-indicator"><p>scroll</p><span></span></div>
                <div class="project-cover-bg" style="background: #2ab46f;"></div>
             </div>
         </div>
@@ -153,10 +155,10 @@
     <section class="project-container">
         <div class="project-row w-container">
             <div  class="project-column w-100">
-                <div><h4>User Persona</h4></div>
-                <div><p>We began our discovering process by interviewing a few potential users to learn about their goals and
+                <h4>User Persona</h4>
+                <p>We began our discovering process by interviewing a few potential users to learn about their goals and
                     pain points. Based on the key takeaways from the interviews, we created four user personas. The
-                    persona gave us insight into the problem they're having and the solutions they're looking for.</p></div>
+                    persona gave us insight into the problem they're having and the solutions they're looking for.</p>
             </div>
         </div>
         <div class="project-row w-container">
@@ -281,7 +283,7 @@
         </div>
     </section>
     <section class="project-container bg-bluegrey sec-kmr">
-        <div class="project-row w-container">
+        <div class="project-row container">
             <div class="project-column w-70">
                 <div><h4>Designing interface for Kitchen maids</h4></div>
                 <div><h6>Ergonomics of Kitchen maids</h6></div>
@@ -407,7 +409,14 @@
     </section>
 
 
-    
+    <section id="enquiry" class="enquiry"></section>
 
-            
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js" integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js" integrity="sha512-CPA5LMoJI/a5HkSIAKcBtFXe4gqGjPUL2ExF/3PmhrrHI17wod9xOqqF+0WZQRKIIq0KwF8oG5BaiWobtrke3A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="../js/lucid.js"></script>
+    <script src="../js/base.js"></script>     
 </body>
+</html>

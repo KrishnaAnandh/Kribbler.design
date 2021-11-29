@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
+<head>
+	<meta charset="UTF-8" />
     <title>Anandhakrishnan - Digital Product Designer - Kribbler</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    
-    
+
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script> -->
     
     <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
@@ -33,22 +29,12 @@
 
         gtag('config', 'UA-51091796-4');
     </script>
-    
 </head>
 <body>
-    <section class="header">
-        <div class="header-container container">
-            <div class="header-logo"><img src="img/logo.svg"/></div>
-            <div class="header-menu-icon" id="menu-icon"><div></div><div></div></div>
-            <div class="header-menu" id="menu-cont">
-                <ul>
-                    <li><a href="/works/">Works</a></li><li>Blogs</li><li>About</li>
-                </ul>
-                <div class="header-cta btn"><a href="#">Contact me</a></div>
-            </div>
-        </div>
-            
-    </section>
+    <script>
+        var thisPage = 'home'
+    </script>
+    <section id="header" class="header"></section>
     
     <section class="hero">
         <div class="dot-pattern" id="dot-pattern"></div>
@@ -215,10 +201,6 @@
             
             <h3 class="blogs-head heads">My musings</h3>
 
-            <div id="medium-widget"></div>
-    <script src="https://medium-widget.pixelpoint.io/widget.js"></script>
-    <script>MediumWidget.Init({renderTo: '#medium-widget', params: {"resource":"https://medium.com/@Kribbler","postsPerLine":2,"limit":4,"picture":"big","fields":["description","author","claps","publishAt"],"ratio":"landscape"}})</script>
-
             <div class="blogs-list">
                 <div class="blog blog-1">
                     <div class="blog-image">
@@ -228,13 +210,27 @@
                         <h5 class="blog-title">7 design psychologies every designers should know</h4>
                     <p class="blog-cont">Beyond an enriched interaction design, a designer role is to persuade an user/visitor</p></div>
                     <div class="work-link">
-                        <a href="blogs/how-frustrating-or-delighting-is-your-design-lets-understand-friction-before-all.html">Read blog</a>
+                        <a href="#">Read blog</a>
                         <svg class="link-uline" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                             <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
                         </svg>
                     </div>
                 </div>
-                <div class="blog blog-2">
+                <div class="blog blog-1">
+                    <div class="blog-image">
+                        <img src="img/blog_lets_understand_friction_before_all.png"/>
+                    </div>
+                    <div class="blog-desc">
+                        <h5 class="blog-title">7 design psychologies every designers should know</h4>
+                    <p class="blog-cont">Beyond an enriched interaction design, a designer role is to persuade an user/visitor</p></div>
+                    <div class="work-link">
+                        <a href="#">Read blog</a>
+                        <svg class="link-uline" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                            <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
+                        </svg>
+                    </div>
+                </div>
+                <!-- <div class="blog blog-2">
                     <div class="blog-image"><img src="img/blog_lets_understand_friction_before_all.png"/></div>
                     <div class="blog-desc"><h5 class="blog-title">How frustrating or delighting is your design? Let's understand friction before all</h4>
                     <p class="blog-cont">Have you ever asked yourself what makes an experience frustrating or delightful?</p></div>
@@ -248,31 +244,12 @@
                     <div class="blog-image"></div>
                     <div class="blog-desc"><h5 class="blog-title">7 design psychologies every designers should know</h5>
                     <p class="blog-cont">Beyond an enriched interaction design, a designer role is to persuade an user/visitor</p></div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
 
-    <section class="enquiry">
-        <div class="enquiry-head heads"><h3>Greetings,<br/>voyager.</h3></div>
-        <div class="section-desc"><h4>It’s time to stop scrolling & create something. <br/>Get in touch here:</h4></div>
-        <div class="enquiry-form">
-            <form action="" method="">		    
-                <input type="text" placeholder="Your name"/>
-                <input type="text" placeholder="Your email address"/>
-                <input type="text" placeholder="Your message"/>		    	
-                <button>Let’s Do this</button>
-            </form>
-        </div>
-    </section>
-    
-    
-    <section class="footer container">
-        <div class="socials"><a href="#">dribbble</a><a href="#">linkedIn</a></div>
-        <div class="copyrights">Copyrighted</div>
-    
-    </section>
-
+    <section id="enquiry" class="enquiry"></section>
 
     <svg height="0" xmlns="http://www.w3.org/2000/svg">
         <filter id="drop-shadow">
@@ -291,12 +268,15 @@
 
     <script src="fake3d/js/app.js"></script>
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js" integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js" integrity="sha512-CPA5LMoJI/a5HkSIAKcBtFXe4gqGjPUL2ExF/3PmhrrHI17wod9xOqqF+0WZQRKIIq0KwF8oG5BaiWobtrke3A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="js/lucid.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/dots-canvas.js"></script>
+    <script src="../js/lucid.js"></script>
+    <script src="../js/base.js"></script>
+    <script src="../js/dots-canvas.js"></script>
+    <script src="../js/script.js"></script>
 </body>
+
+</html>

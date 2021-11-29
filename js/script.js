@@ -267,36 +267,7 @@ gsap.to(
 )
 
 
-const layerTop = gsap.utils.toArray('.lyr-top');
-const layerMid = gsap.utils.toArray('.lyr-mid');
 
-layerTop.forEach((el) => {
-    gsap.set(el, {y:100})
-  gsap.to(el, {
-    scrollTrigger: {
-        trigger: el,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true,
-        // markers: true,
-    },
-    y:-100
-  });
-});
-
-layerMid.forEach((el) => {
-    gsap.set(el, {y:50})
-  gsap.to(el, {
-    scrollTrigger: {
-        trigger: el,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true,
-        // markers: true,
-    },
-    y:-50
-  });
-});
 
 
 $(window).on('load', function() {
@@ -311,19 +282,14 @@ $(window).on('load', function() {
 
 
 });
+
 $(document).ready(function(){
     $(".hero-name span").lettering();
     
 
-    $("#menu-icon").on('click', function(){
-        $("#menu-cont").toggleClass("open");
-        $(this).toggleClass("close");
-        $('body').toggleClass("scroll-stopped");
-        $('.header-container').toggleClass("open");
-    });
-
     $('.hero-cta').on('click', function() {
-    introAnimation();
+        console.log('cta click')
+    // introAnimation();
     });
     
     
@@ -439,21 +405,6 @@ var lastScrollTop = 0;
 $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
     console.log(scroll);
-    var heroEnds = $(".hero").height(),
-        bioEnds = $(".bio").height()+heroEnds,
-        worksEnds = $(".works").height()+bioEnds,
-        shotsEnds = $(".shots").height()+worksEnds,
-        blogsEnds = $(".blogs").height()+shotsEnds;
-    
-    if (scroll > lastScrollTop){
-        scrollOffset = -300;
-    } else {
-        scrollOffset = -100;
-    }
-    lastScrollTop = scroll;
-    
-
-
     if(scroll > 580){
         $('.header').addClass("show");
     }
@@ -465,13 +416,5 @@ $(window).scroll(function (event) {
 
 
 
-//submit button glow
-const button = document.querySelector("button");
 
-button.addEventListener("mousemove", (e) => {
-  const { x, y, width, height} = button.getBoundingClientRect();
-  console.log(x, y, width, height)
-  if((e.clientX > x && e.clientX < x+width)&&(e.clientY > y && e.clientY < y+height)){
-      button.style.setProperty("--x", e.clientX - x);
-    }
-});
+
