@@ -1,4 +1,4 @@
-$("#header").load("../header.html", function() {
+$("#header").load("/header.html", function() {
     $('#menu-icon').on('click', function(){
         console.log("click detected")
         $("#menu-cont").toggleClass("open");
@@ -8,7 +8,7 @@ $("#header").load("../header.html", function() {
     });
 }); 
 
-$("#enquiry").load("../enquiry.html", function(){
+$("#enquiry").load("/enquiry.html", function(){
     //submit button glow
     const button = document.querySelector('button');
     console.log(button)
