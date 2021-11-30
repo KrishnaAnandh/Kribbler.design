@@ -228,6 +228,10 @@ body.scroll-stopped {
           filter: invert(100%);
 }
 
+.header.dark .header-menu-icon div {
+  background: #fff;
+}
+
 .header .header-container {
   display: -webkit-box;
   display: -ms-flexbox;
