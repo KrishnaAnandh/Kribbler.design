@@ -207,7 +207,7 @@ body.scroll-stopped {
   z-index: 9999;
   width: 100%;
   background: #fff;
-  padding: 10px 20px;
+  padding: 10px 0;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
   -webkit-transition: all 0.4s cubic-bezier(0.21, 0.05, 0, 1.01);
@@ -262,7 +262,6 @@ body.scroll-stopped {
 @media screen and (max-width: 760px) {
   .header .header-container .header-logo {
     width: 200px;
-    padding: 8px 0;
   }
 }
 
@@ -403,6 +402,7 @@ body.scroll-stopped {
 
 .header .header-container .header-menu .header-cta {
   padding: 10px 16px;
+  margin-right: 10px;
 }
 
 .header.show {
@@ -1218,8 +1218,8 @@ body.scroll-stopped {
   display: -ms-grid;
   display: grid;
   grid-gap: 40px;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
 }
 
 @media screen and (max-width: 480px) {
