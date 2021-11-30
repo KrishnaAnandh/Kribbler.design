@@ -229,7 +229,7 @@ body.scroll-stopped {
 }
 
 .header.dark .header-menu-icon div {
-  background: #fff;
+  background: #fff !important;
 }
 
 .header .header-container {
@@ -286,7 +286,7 @@ body.scroll-stopped {
 }
 
 .header .header-container .header-menu-icon div {
-  background: #fff;
+  background: #000;
   width: 20px;
   height: 1px;
   margin: 8px 0;
