@@ -91,8 +91,11 @@ gsap.to(
 if(thisPage != 'home'){
     $('.header').addClass("show");
     const header = $('.header');
-
+    if(thisPage == 'works-detail'){
         header.addClass('dark')
+    }
+
+        
         header.css("background", "#fff0")
 // gsap.set('.header', {background:"#fff0", color:"#fff"})
 // gsap.set('.header-logo', {"filter":"invert(100%) !important"})
