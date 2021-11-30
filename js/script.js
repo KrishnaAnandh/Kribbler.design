@@ -78,7 +78,8 @@ tlHomeHeroOut.to('.hero-name',1, {y:-30},"-=1")
 // tlHomeHeroOut.to('body',0.1, {background:"#1b1486"},"-=0.5")
 
 tlHomeBioIn.to('.hero',0.5, {opacity:0})
-tlHomeBioIn.to(['body', '.header'],0.5, {background:"#1b1486", color:"#fff"})
+tlHomeBioIn.to(['body', '.header'],0.5, {background:"#1b1486"})
+tlHomeBioIn.call(function() {$('.header').addClass("dark")}, null, null, 2);
 
 tlHomeBioIn.from('.bio-head',1, { opacity:0},"+=0.5")
 tlHomeBioIn.from('.bio-head span',1, { width:0},"-=0.8")
@@ -90,19 +91,22 @@ tlHomeBioIn.from('.bio-figures',1, {opacity:0},"+=0.1")
 // tlHomeBioIn.to('.bio-figures',1.7, {y:80}, "-=1.6")
 
 
-tlHomeWorksIn.to(['body', '.header'],0.1, {background:"#113", color:"#fff"})
+tlHomeWorksIn.to(['body', '.header'],0.1, {background:"#113"})
 tlHomeWorksIn.from('.works-head h3',1, {y:200, opacity:1, skewY:10})
 tlHomeWorksIn.from('.work-row-1',1, {y:50, opacity:0})
 
-tlHomeExpertiseIn.to('.shots',1, {opacity:0})
-tlHomeExpertiseIn.to(['body', '.header'],1, {background:"#30f9dd", color:"#000"})
-tlHomeExpertiseIn.from('.expertise',1, {opacity:0})
+// tlHomeExpertiseIn.to('.shots',1, {opacity:0})
+// tlHomeExpertiseIn.to(['body', '.header'],1, {background:"#30f9dd"})
+// tlHomeExpertiseIn.from('.expertise',1, {opacity:0})
 
-tlHomeBlogsIn.to(['body', '.header'],0.2, {background:"#fff", color:"#000"})
+tlHomeBlogsIn.to('.shots',1, {opacity:0})
+tlHomeBlogsIn.to(['body', '.header'],0.2, {background:"#fff"})
+tlHomeBlogsIn.call(function() {$('.header').removeClass("dark")}, null, null, 2);
 tlHomeBlogsIn.from('.blogs',1, {opacity:0})
 
-tlHomeEnquiryIn.to(['body', '.header'],0.1, {background:"#113", color:"#fff"})
 tlHomeEnquiryIn.to(['.blog'],1, {opacity:0})
+tlHomeEnquiryIn.to(['body', '.header'],0.1, {background:"#113"})
+tlHomeEnquiryIn.call(function() {$('.header').addClass("dark")}, null, null, 2);
 tlHomeEnquiryIn.from('.enquiry',1, {opacity:0, y:40})
 // gsap.to(
 //     ".img-1",
@@ -285,14 +289,6 @@ $(window).on('load', function() {
 
 $(document).ready(function(){
     $(".hero-name span").lettering();
-    
-
-    $('.hero-cta').on('click', function() {
-        console.log('cta click')
-    // introAnimation();
-    });
-    
-    
     
 });
 $(document).ready(function() {

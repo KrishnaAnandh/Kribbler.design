@@ -1,28 +1,36 @@
-<section class="enquiry">
+<section class="enquiry" id="enquiry">
     <div class="enquiry-now">
         <div class="enquiry-head heads"><h3>Greetings,<br/>voyager.</h3></div>
         <div class="section-desc"><h4>It’s time to stop scrolling & create something. <br/>Get in touch here:</h4></div>
         <div class="enquiry-form">
-            <form action="" method="">		    
-                <input type="text" placeholder="Your name"/>
-                <input type="text" placeholder="Your email address"/>
-                <input type="text" placeholder="Your message"/>		    	
-                <button>Let’s Do this</button>
+            <form action="" method="" id="enquiry-form-form">		    
+                <input type="text" name="name" placeholder="Your name"/>
+                <input type="text" name="email" placeholder="Your email address"/>
+                <input type="text" name="message" placeholder="Your message"/>		    	
+                <button type="submit" form="enquiry-form-form" id="enquiry-submit">Let’s Do this</submit>
             </form>
         </div>
     </div>
-    <div class="enquiry-submitting">
-        <img src=""/>
-        <p>submitting...</p>
+    <div class="enquiry-submit">
+        <div class="enquiry-loading"><span></span><span></span><span></span></div>
+        <div class="enquiry-submitting">
+            <p>submitting...</p>
+        </div>
+        <div class="enquiry-submitted">
+            <p>Thank you!</p>
+            <h3>You'll hear from me soon</h3>
+            <div class="work-link">
+                <p id="another-enquiry">Make another enquiry</p>
+                <svg class="link-uline" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
+                </svg>
+            </div>
+        </div>
     </div>
-    <div class="enquiry-submitted">
-        <img src=""/>
-        <p>Thanks</p>
-        <h3>You'll hear from me soon</h3>
-    </div>
+    
 </section>
 
-<section class="footer container">
+<section class="footer">
     <div class="socials"><a href="#">dribbble</a><a href="#">linkedIn</a></div>
     <div class="copyrights">Copyrighted</div>
 </section>

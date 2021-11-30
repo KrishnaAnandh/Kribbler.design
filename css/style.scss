@@ -52,22 +52,32 @@ h4{
     font-size: 28px;
     line-height: 32px;
     font-weight: 600;
+    @media screen and (max-width:480px){
+        font-size: 20px;
+        line-height: 22px;
+    }
 }
 h5 {
     font-size: 20px;
     line-height: 28px;
     font-weight: 600;
+    @media screen and (max-width:480px){
+        font-size: 16px;
+        line-height: 18px;
+    }
 }
-p, li{
+p, li, a{
     font-family: "Poppins", Arial, sans-serif;
     font-weight: 400;
     font-size: 14px;
     letter-spacing: 0.5;
     color: #000c;
+    @media screen and (max-width:480px){
+        font-size: 12px;
+    }
 }
 a{
     color: inherit;
-    font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -76,7 +86,6 @@ a{
     overflow: hidden;
     width: auto;
     padding: 7px 0;
-    
 }
 // a::after {
 //     content: "";
@@ -173,8 +182,22 @@ body.scroll-stopped{
     width: 100%;
     background: #fff;
     padding: 10px 20px;
+    transform: translateY(-100%);
     // visibility: visible;
     transition: all .4s cubic-bezier(0.21, 0.05, 0, 1.01);
+    &.show{
+        transform: translateY(0);
+    }
+    &.dark{
+        // background: #fff0;
+        a, li, p{
+            color: #fff;
+        }
+        .header-logo{
+            filter: invert(100%);
+        }
+
+    }
 
     .header-container{
         display: flex;
@@ -997,9 +1020,14 @@ body.scroll-stopped{
 }
 
 .enquiry{
-    padding: 60px 100px;
+    padding: 60px 0;
+    padding-bottom: 0;
     height: auto;
+    min-height: 800px;
     scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     h3, h4, p{
         color: #fff;
@@ -1008,6 +1036,10 @@ body.scroll-stopped{
         display: flex;
         flex-direction: column;
         align-items:center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
 
         .enquiry-head{
             h3{
@@ -1069,7 +1101,7 @@ body.scroll-stopped{
                 margin: 10px;
                 padding: 15px 20px;
                 text-shadow: 0 -1px 0 #000;
-                width: calc(100% - 60px);
+                width: 100%;
                 
             }
             input::placeholder{
@@ -1166,13 +1198,61 @@ body.scroll-stopped{
             padding: 30px;
         }
     }
+    .enquiry-submit{
+        width: 100%;
+        max-width: 600px;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        left: 0;
+        right: 0;
+        margin: auto;
+        
+
+        .enquiry-submitting{
+            opacity: 0;
+            width: 100%;
+            
+        }
+        .enquiry-submitted{
+            opacity: 0;
+            width: 100%;
+
+            h3{
+                margin: 20px 0;
+            }
+            .work-link{
+                left: 0;
+                right: 0;
+                margin: auto;
+                .link-uline{
+                    stroke: #fff;
+                }
+            }
+            
+        }
+        .enquiry-loading{
+            margin: 20px 0;
+            display: flex;
+            opacity: 0;
+            span{
+                width: 8px;
+                height: 8px;
+                background: #fff;
+                margin: 3px;
+                border-radius: 50%;
+            }
+        }
+    }
 }
 
 
 
 .footer{
     position: relative;
-    padding: 40px 0;
+    padding: 40px 20px;
     display: flex;
     flex-direction: row;
     justify-content:space-between;
@@ -1483,11 +1563,14 @@ body.scroll-stopped{
     padding:100px 0;
 }
 .project-row{
-    width:100%;
+    width:calc(100% - 40px);;
     /* margin: 20px; */
     /* padding: 20px; */
     display: flex;
     flex-direction: row;
+    @media screen and (max-width:760px){
+        flex-direction: column;
+    }
 }
 
 .project-column {
@@ -1495,6 +1578,7 @@ body.scroll-stopped{
     flex-direction: column;
     justify-content: center;
     margin:0 20px;
+    
 }
 
 .project-column h3, .project-column h4,.project-column h5,.project-column h6,.project-column p, .project-column a, .project-column b, .project-column li{
@@ -1506,10 +1590,16 @@ body.scroll-stopped{
 .project-column p, .project-column li, .project-column a{
     font-size: 14px;
     opacity: 0.8;
+    @media screen and (max-width:480px){
+        font-size: 12px;
+    }
 } 
 .project-column h6{
     font-size: 16px;
     font-weight: 500;
+    @media screen and (max-width:480px){
+        font-size: 14px;
+    }
 }
 .project-column ul{
     margin-left: 20px;
@@ -1529,18 +1619,33 @@ body.scroll-stopped{
 }
 .w-30{
     width:30%;
+    @media screen and (max-width:760px){
+        width: 100%;
+    }
 }
 .w-40{
     width:40%;
+    @media screen and (max-width:760px){
+        width: 100%;
+    }
 }
 .w-50{
     width:50%;
+    @media screen and (max-width:760px){
+        width: 100%;
+    }
 }
 .w-60{
     width:60%;
+    @media screen and (max-width:760px){
+        width: 100%;
+    }
 }
 .w-70{
     width:70%;
+    @media screen and (max-width:760px){
+        width: 100%;
+    }
 }
 .w-100{
     width:100%;
@@ -1550,6 +1655,9 @@ body.scroll-stopped{
 }
 .flex-reverse{
     flex-direction: row-reverse;
+    @media screen and (max-width:760px){
+        flex-direction: column;
+    }
 }
 .justify-top{
     justify-content: flex-start;
@@ -1588,6 +1696,8 @@ body.scroll-stopped{
         margin:0;
         justify-content: center;
         width: 100%;
+        height: 100vh;
+        
         
     }
     h1{
@@ -1650,6 +1760,12 @@ body.scroll-stopped{
                 margin: 8px 0;
             }
         }
+        img{
+            @media screen and (max-width:760px){
+                max-width: 420px;
+                align-self: center;
+            }
+        }
     }
     .sec-flows{
         img{
@@ -1689,6 +1805,12 @@ body.scroll-stopped{
             width: 130%;
             left: 50%;
             transform: translateX(-50%);
+            
+            @media screen and (max-width:760px){
+                max-width: 420px;
+                align-self: center;
+            }
+            
         }
        
     }
@@ -1707,6 +1829,9 @@ body.scroll-stopped{
     .sec-uxe{
         .desc{
             padding: 0 60px;
+            @media screen and (max-width:760px){
+                padding: 40px 0;
+            }
             label{
                 font-size: 12px;
                 font-weight: 600;
@@ -1715,6 +1840,12 @@ body.scroll-stopped{
                 color: #2AB46F;
             }
             
+        }
+        img{
+            @media screen and (max-width:760px){
+                max-width: 420px;
+                align-self: center;
+            }
         }
     }
     .sec-kmr{
@@ -1769,6 +1900,21 @@ body.scroll-stopped{
 .page-unibook{
     background: #fff;
 
+    .sec-docs{
+        span{
+            padding: 3px 15px;
+            border-radius: 20px;
+            color: #fff;
+            width: 40px;
+            height: 20px;
+        }
+        .project-column:first-child span{
+            background: #FC746F;
+        }
+        .project-column:last-child span{
+            background: #FFC95D;
+        }
+    }
     .sec-ds{
         .project-row{
             align-items: start;
