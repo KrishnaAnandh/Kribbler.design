@@ -230,7 +230,7 @@ body.scroll-stopped{
             width: calc(100% - 186px);
             justify-content: space-between;
             align-items: center;
-            transition: all .3s ease-in-out;
+            // transition: all .3s ease-in-out;
             @media screen and (max-width:760px){
                 top: 0;
                 right: 0;
@@ -516,6 +516,16 @@ body.scroll-stopped{
             position: relative;
             top: 10px;
             left: 10px;
+        }
+    }
+    .social-icons{
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        display: inline-flex;
+       
+        a{
+            padding: 0;            
         }
     }
 }

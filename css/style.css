@@ -284,8 +284,6 @@ body.scroll-stopped {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
 }
 
 @media screen and (max-width: 760px) {
@@ -691,6 +689,19 @@ body.scroll-stopped {
   position: relative;
   top: 10px;
   left: 10px;
+}
+
+.hero .social-icons {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.hero .social-icons a {
+  padding: 0;
 }
 
 .hero-image-holder main {
