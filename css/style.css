@@ -2293,8 +2293,8 @@ body.scroll-stopped {
   background: #e0f1ff;
 }
 
-.page-foodmates .project-column img {
-  background-color: #FFF8F1;
+.page-foodmates .img-shade {
+  background-color: #f1fbff;
 }
 
 .page-foodmates .sec-what .list {
