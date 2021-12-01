@@ -1,8 +1,13 @@
 @font-face {
-    font-family: "Monument Extended";
-    src: url('fonts/MonumentExtended-Regular.otf');
+    font-family: "Space Grotesk";
+    src: url('fonts/SpaceGrotesk-Regular.ttf');
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Space Grotesk";
+    src: url('fonts/SpaceGrotesk-Bold.ttf');
     font-weight: 700;
-  }
+}
 
   @font-face {
     font-family: "Bebas";
@@ -35,21 +40,21 @@ body{
 }
 
 h1{
-    font-family: 'Monument Extended', "Arial", sans-serif;
+    font-family: 'Space Grotesk', "Arial", sans-serif;
     font-size: 68px;
     font-weight: 700;
 }
 h3, h3 span, .heads p{
-    font-size: 40px;
+    font-size: 44px;
     line-height: 50px;
     margin: 50px 40px;
-    font-family: 'Monument Extended', "Arial", sans-serif;
+    font-family: 'Space Grotesk', "Arial", sans-serif;
     font-weight: 700;
     width: 100%;
     text-transform: uppercase;
 }
 h4{
-    font-size: 28px;
+    font-size: 38px;
     line-height: 32px;
     font-weight: 600;
     @media screen and (max-width:480px){
@@ -58,7 +63,7 @@ h4{
     }
 }
 h5 {
-    font-size: 20px;
+    font-size: 28px;
     line-height: 28px;
     font-weight: 600;
     @media screen and (max-width:480px){
@@ -66,7 +71,25 @@ h5 {
         line-height: 18px;
     }
 }
-p, li, a{
+h6 {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 600;
+    @media screen and (max-width:480px){
+        font-size: 16px;
+        line-height: 18px;
+    }
+}
+h7 {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 600;
+    @media screen and (max-width:480px){
+        font-size: 16px;
+        line-height: 18px;
+    }
+}
+p, li{
     font-family: "Poppins", Arial, sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -75,8 +98,17 @@ p, li, a{
     @media screen and (max-width:480px){
         font-size: 12px;
     }
+    
+}
+b{
+    font-weight: 600;
+}
+blockquote{
+    font-size: 18px;
 }
 a{
+    font-family: "Space Grotesk", Arial, sans-serif;
+    font-size: 12px;
     color: inherit;
     font-weight: 600;
     text-transform: uppercase;
@@ -86,6 +118,10 @@ a{
     overflow: hidden;
     width: auto;
     padding: 7px 0;
+}
+button{
+    font-family: "Space Grotesk", Arial, sans-serif;
+    font-size: 12px;
 }
 // a::after {
 //     content: "";
@@ -182,9 +218,12 @@ body.scroll-stopped{
     width: 100%;
     background: #fff;
     padding: 10px 0;
-    transform: translateY(-100%);
     // visibility: visible;
+    transform: translateY(-100%);
     transition: all .4s cubic-bezier(0.21, 0.05, 0, 1.01);
+    &.hide{
+        background: #0000!important;
+    }
     &.show{
         transform: translateY(0);
     }
@@ -210,15 +249,15 @@ body.scroll-stopped{
         padding: 0;
         font-size: 16px;
         line-height: 24px;
-        align-items: self-end;
+        align-items: center;
         @media screen and (max-width:760px){
             justify-content: space-between;
         }
 
         .header-logo{
-            opacity: 0;
             transition: all .4s cubic-bezier(0.21, 0.05, 0, 1.01);
             z-index: 2;
+            margin: 0 20px;
             @media screen and (max-width:760px){
                 width: 200px;
                 // padding: 8px 0;
@@ -349,6 +388,10 @@ body.scroll-stopped{
             flex-direction: column;
             height: auto;
             padding-top: 0;
+            
+        }
+        @media screen and (max-width:1024px){
+            max-width: 900px;
         }
     
         .hero-details{
@@ -361,11 +404,15 @@ body.scroll-stopped{
             @media screen and (max-width:760px){
                 top: 0;
                 margin:0;
+                margin-top: 80px;
                 margin-bottom: 40px;
                 transform: translateY(0);
                 width: 100%;
                 text-align: center;
                 align-content: center;
+            }
+            @media screen and (min-width:1024px){
+                width: 50%;
             }
         
             .hero-logo{
@@ -396,7 +443,7 @@ body.scroll-stopped{
             .hero-logo:last-child{
                 color: #0008;
             }
-            h1.hero-name{
+            .hero-name{
                 line-height: 64px;
                 letter-spacing:0px;
                 font-size: 72px;
@@ -416,9 +463,9 @@ body.scroll-stopped{
                     text-align: center;
                 }
                 @media screen and (max-width:480px){
-                    font-family: 'Bebas', Arial, sans-serif;
-                    font-size: 80px;
-                    line-height: 70px;
+                    // font-family: 'Bebas', Arial, sans-serif;
+                    font-size: 50px;
+                    line-height: 40px;
                 }
 
                 span{
@@ -432,7 +479,7 @@ body.scroll-stopped{
                     height: 60px;
                     font-family: inherit;
                     @media screen and (max-width:760px){
-                        height: 52px;
+                        height: 30px;
                     }
                 }
 
@@ -447,12 +494,15 @@ body.scroll-stopped{
             }
             
             .hero-desc h2{
-                font-size: 22px;
-                line-height: 29px;
-                font-weight: 300;
-                margin: 10px 0;
+                font-size: 20px;
+                line-height: 24px;
+                font-weight: 400;
+                margin: 20px 0;
                 padding-right: 20px;
                 color: #000b;
+                @media screen and (max-width:1024px){
+                    font-size: 18px;
+                }
                 @media screen and (max-width:760px){
                     font-size: 16px;
                     line-height: 23px;
@@ -464,7 +514,7 @@ body.scroll-stopped{
                 @media screen and (max-width:760px){
                     left: 0;
                     right: 0;
-                    margin: 24px auto;
+                    margin: 0 auto;
                 }
                 a{
                     margin-top: 40px;
@@ -486,10 +536,15 @@ body.scroll-stopped{
                 width: 100%;
                 height: 500px;
             }
+            @media screen and (max-width:1024px){
+                width: 50%;
+            }
 
             .hero-image-holder{
-                width: auto;
+                width: 100%;
                 height: 100%;
+                min-width: 350px;
+                max-width: 450px;
                 font-weight: 300;
                 overflow: hidden;
             }
@@ -531,32 +586,42 @@ body.scroll-stopped{
         top: 0;
         z-index: 0;
     }
-    .scroll-indicator{
+    .hero-overlay{
         position: absolute;
-        transform: rotate(90deg) translate(-40px, -20px);
-        bottom: 10px;
-        right: 10px;
-        display: inline-flex;
-       
-        span{
-            width: 50px;
-            height: 1px;
-            background: #000;
-            position: relative;
-            top: 10px;
+        width: 100%;
+        height: 100vh;
+        z-index: 99;
+        .hero-logo-1{
+            padding: 20px;
+        }
+        .scroll-indicator{
+            position: absolute;
+            transform: rotate(90deg) translate(-40px, -20px);
+            bottom: 10px;
+            right: 10px;
+            display: inline-flex;
+           
+            span{
+                width: 50px;
+                height: 1px;
+                background: #000;
+                position: relative;
+                top: 10px;
+                left: 10px;
+            }
+        }
+        .social-icons{
+            position: absolute;
+            bottom: 10px;
             left: 10px;
+            display: inline-flex;
+           
+            a{
+                padding: 0;            
+            }
         }
     }
-    .social-icons{
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-        display: inline-flex;
-       
-        a{
-            padding: 0;            
-        }
-    }
+    
 }
 
 
@@ -564,7 +629,7 @@ body.scroll-stopped{
 
 .hero-image-holder main{
     height:100%;
-    min-width: 450px;
+    width: 100%;
     #hero-frame{
         height: 100%;
         left: 50%;
@@ -623,9 +688,9 @@ body.scroll-stopped{
             right: 0;
             margin: 120px auto 80px;
             @media screen and (max-width:480px){
-                font-family: 'Bebas', Arial, sans-serif;
-                font-size: 56px;
-                line-height: 50px;
+                // font-family: 'Bebas', Arial, sans-serif;
+                font-size: 40px;
+                line-height: 35px;
             }
             span{
                 margin: 0;
@@ -810,16 +875,28 @@ body.scroll-stopped{
             .work-1{
                 background-color: #23234c;
                 grid-area: featured;
-                img{
-                    position: absolute !important;
-                    height: 100% !important;
-                    width: auto !important;
+                .work-image-holder{
+                    width: 50%;
+                    height: calc(100% - 160px);
+                    min-height: 500px;
+                    position: relative;
+                    text-align: center;
+                    img{
+                        position: absolute !important;
+                        height: 100% !important;
+                        width: auto !important;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                    }
+                    
                 }
-                @media screen and (min-width:840px){
+                
+                @media screen and (min-width:1025px){
                     padding: 0;
                     height: 680px;
                     .work-desc{
-                        width: 40%;
+                        width: 50%;
                     }
 
                     .work-title{
@@ -827,14 +904,14 @@ body.scroll-stopped{
                         line-height: 40px;
                     }
                     .work-image-holder{
-                        width: 60%;
+                        width: 50%;
                         height: calc(100% - 160px);
                         min-height: 500px;
                         position: relative;
                         
                     }
                 }
-                @media screen and (min-width:1024px){
+                @media screen and (min-width:1025px){
                     padding: 0 60px;
                 }
             }
@@ -891,7 +968,7 @@ body.scroll-stopped{
             flex-direction: row;
             align-items: stretch;
             @media screen and (max-width:480px){
-                height: 160px;
+                height: 200px;
             }
         
             .shots-item{
@@ -966,6 +1043,28 @@ body.scroll-stopped{
                         transform: translateX(-50%);
                     }
                 }
+                .blog-desc{
+                    .blog-title{ 
+                        font-size: 16px;
+                        font-size: 16px;
+                        line-height: 24px;
+                        margin: 20px 0 6px;
+                        @media screen and (max-width:480px){
+                            font-size: 14px;
+                            line-height: 20px;
+                            font-weight: 400;
+                        }
+                    }
+                    .blog-cont{ 
+                        font-size: 14px;
+                        margin: 6px 0;
+                        font-weight: 300;
+                        @media screen and (max-width:768px){
+                            display: none;
+                        }
+                    }
+
+                }
             }
             // .blog-1{
             //     grid-area: featured;
@@ -997,33 +1096,11 @@ body.scroll-stopped{
     overflow: hidden;
 }
 
-
-
-
 .blog-1 .blog-title
 { margin: 30px 0 6px;}
 
-.blog-2 .blog-title, .blog-3 .blog-title, .blog-4 .blog-title
-{ 
-    
-    font-size: 16px;
-    line-height: 24px;
-    margin: 0 0 6px 20px;
-    @media screen and (max-width:480px){
-        font-size: 14px;
-        line-height: 20px;
-        font-weight: 400;
-    }
-}
-.blog-2 .blog-cont, .blog-3 .blog-cont, .blog-4 .blog-cont
-{ 
-    font-size: 14px;
-    margin: 6px 0 0 20px;
-    font-weight: 300;
-    @media screen and (max-width:768px){
-        display: none;
-    }
-}
+
+
 
 .enquiry{
     padding: 60px 0;
@@ -1055,38 +1132,33 @@ body.scroll-stopped{
                 margin: 0 auto;
                 
                 @media screen and (max-width:768px){
-                    
-                    font-size: 40px;
-                    line-height: 38px;
+                    font-size: 60px;
+                    line-height: 65px;
                 }
                 @media screen and (max-width:480px){
-                    font-family: 'Bebas', Arial, sans-serif;
-                    font-size: 70px;
-                    line-height: 65px;
+                    // font-family: 'Bebas', Arial, sans-serif;
+                    font-size: 40px;
+                    line-height: 45px;
                 }
             } 
         }
         .section-desc{
-            h4{
-                font-size: 1.2rem;
+            p{
                 font-weight: 300;
                 text-align: center;
                 margin: 20px;
                 opacity: 0.7;
-                @media screen and (max-width:768px){
-                    font-size: 18px;
-                }
             }
 
         }
         .enquiry-form{
             width: 100%;
-            max-width: 460px;
+            max-width: 420px;
             z-index: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 40px 0;
+            margin: 20px 0;
             @media screen and (max-width:600px){
                 max-width: 600px;
             }
@@ -1097,15 +1169,15 @@ body.scroll-stopped{
                 width: 100%;
             }
             input{
-                background: #000;	
+                background: #0005;	
                 border: 1px solid #000;
                 border-radius: 5px;
-                box-shadow: 0 2px 0 #000;
-                font-size: 16px;
+                // box-shadow: 0 2px 0 #000;
+                font-size: 14px;
                 color: #fff;
                 display: block;
                 margin: 10px;
-                padding: 15px 20px;
+                padding: 12px 20px;
                 text-shadow: 0 -1px 0 #000;
                 width: 100%;
                 
@@ -1422,43 +1494,43 @@ body.scroll-stopped{
     // .hero-logo img {
     //     width: 120px;
     // }
-    .hero-logo span{
-        font-size: 14px;
-    }
-    h1.hero-name{
-        width: 100%;
-        margin: 14px 0;
-        font-family: 'Poppins', Arial, sans-serif;
-        font-size: 52px;
-    line-height: 48px;
-    letter-spacing: -1px;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-    h1.hero-name  span{
-        font-family:inherit;
-        font-size: inherit;
-        line-height: inherit;
-        /* display: block;
-        float:left; */
-    }
-    .roles{
-        height: 52px;
-    }
-    .role1, .role2, .role3{
-        left: 50%;
-    transform: translateX(-50%);
-    }
-    .hero-desc h2{
-        font-size: 16px;
-        line-height: 23px;
-        padding: 0;
-        width: 100%;
-        left: 0;
-        right: 0;
-        margin: auto;
-    }
+    // .hero-logo span{
+    //     font-size: 14px;
+    // }
+    // h1.hero-name{
+    //     width: 100%;
+    //     margin: 14px 0;
+    //     font-family: 'Poppins', Arial, sans-serif;
+    //     font-size: 52px;
+    // line-height: 48px;
+    // letter-spacing: -1px;
+    //     display: flex;
+    //     flex-direction: column;
+    //     text-align: center;
+    // }
+    // h1.hero-name  span{
+    //     font-family:inherit;
+    //     font-size: inherit;
+    //     line-height: inherit;
+    //     /* display: block;
+    //     float:left; */
+    // }
+    // .roles{
+    //     height: 52px;
+    // }
+    // .role1, .role2, .role3{
+    //     left: 50%;
+    // transform: translateX(-50%);
+    // }
+    // .hero-desc h2{
+    //     font-size: 16px;
+    //     line-height: 23px;
+    //     padding: 0;
+    //     width: 100%;
+    //     left: 0;
+    //     right: 0;
+    //     margin: auto;
+    // }
 
     .hero-artwork{
         width: 100%;
@@ -1566,7 +1638,7 @@ body.scroll-stopped{
     display: grid;
     justify-content: center;
     margin: 0;
-    padding:100px 0;
+    padding:60px 0;
 }
 .project-row{
     width:calc(100% - 40px);;
@@ -1576,6 +1648,9 @@ body.scroll-stopped{
     flex-direction: row;
     @media screen and (max-width:760px){
         flex-direction: column;
+    }
+    .align-center{
+        justify-content: center;
     }
 }
 
@@ -1600,18 +1675,16 @@ body.scroll-stopped{
         font-size: 12px;
     }
 } 
-.project-column h6{
-    font-size: 16px;
-    font-weight: 500;
-    @media screen and (max-width:480px){
-        font-size: 14px;
-    }
-}
 .project-column ul{
     margin-left: 20px;
 }
 .project-column img{
     width: 100%;
+    margin: 40px 0 60px;
+    &.img-full{
+        width: calc(100% + 100px);
+        margin: 40px -50px 60px;
+    }
 }
 .h-full{
     padding-top: 0;
@@ -1736,9 +1809,7 @@ body.scroll-stopped{
         }
     }
 }
-.bg-bluegrey{
-    background: #e0f1ff;
-}
+
 
 
 /* foodmates custom */
@@ -1756,6 +1827,14 @@ body.scroll-stopped{
 
 .page-foodmates{
     background: #fff;
+    .bg-shade{
+        background: #e0f1ff;
+    }
+    .project-column{
+        img{
+            background-color: #FFF8F1;
+        }
+    }
     .sec-what{
         .list{
             display: grid;
@@ -1777,7 +1856,7 @@ body.scroll-stopped{
         img{
             background: #eef7ff;
             padding: 30px;
-            margin: 30px 0;
+            
         }
     }
     .sec-ui{
@@ -1803,15 +1882,16 @@ body.scroll-stopped{
             }
         }
         span{
-            width: 1px;
-            height: 30px;
+            width: 2px;
+            height: 20px;
             background: #0002;
         }
         img{
             width: 130%;
             left: 50%;
             transform: translateX(-50%);
-            
+            margin: 0;
+
             @media screen and (max-width:760px){
                 max-width: 420px;
                 align-self: center;
@@ -1821,16 +1901,21 @@ body.scroll-stopped{
        
     }
     .sec-proccu{
-        h5{
+        h6{
             span{
-                color: #fff;
-                background: #FF8843;
-                padding: 2px 8px;
+                &::after{
+                    content: "";
+                    background: #FF8843;
+                    width: 100%;
+                    height: 1px;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0px;
+                }
             }
+
         }
-        img{
-            margin-top: 40px;
-        }
+        
     }
     .sec-uxe{
         .desc{
@@ -1864,11 +1949,6 @@ body.scroll-stopped{
             left: 0;
         }
     }
-    .sec-smrt{
-        img{
-            margin: 40px 0 60px;
-        }
-    }
     .sec-ds{
         .project-row{
             align-items: start;
@@ -1886,10 +1966,7 @@ body.scroll-stopped{
         }
     }
     .sec-icon{
-        label{
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
+        h7{
             margin-bottom: 10px;
             color: #2AB46F;
         }
@@ -1906,19 +1983,40 @@ body.scroll-stopped{
 .page-unibook{
     background: #fff;
 
+    .bg-shade{
+        background: #FFF8F1;
+    }
+
+    .img-shade{
+        background-color: #FFF8F1;
+    }
+    
+
     .sec-docs{
+        h6{
+            margin-bottom: 80px;
+            max-width: 500px;
+        }
         span{
             padding: 3px 15px;
             border-radius: 20px;
             color: #fff;
             width: 40px;
-            height: 20px;
+            height: 30px;
+            font-weight: 600;
+            text-align: center;
         }
         .project-column:first-child span{
             background: #FC746F;
         }
         .project-column:last-child span{
             background: #FFC95D;
+        }
+        p{
+            b{
+                font-size: 16px;
+                color: #000;
+            }
         }
     }
     .sec-ds{

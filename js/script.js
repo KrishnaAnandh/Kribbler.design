@@ -226,9 +226,9 @@ gsap.from(
     }  
 )
 
-gsap.set(".work-1-image .img-1", {right:300})
-gsap.set(".work-1-image .img-2", {right:200})
-gsap.set(".work-1-image .img-3", {right:100})
+// gsap.set(".work-1-image .img-1", {right:300})
+// gsap.set(".work-1-image .img-2", {right:200})
+// gsap.set(".work-1-image .img-3", {right:100})
 
 gsap.to(
     ".work-1-image .img-1",
@@ -239,23 +239,23 @@ gsap.to(
         end: "bottom top",
         scrub: true,
         },
-        right:300
+        x:-200
     }
     
 )
-gsap.to(
-    ".work-1-image .img-2",
-    {
-        scrollTrigger:{
-        trigger: ".work-1-image",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-        },
-        right:150
-    }
+// gsap.to(
+//     ".work-1-image .img-2",
+//     {
+//         scrollTrigger:{
+//         trigger: ".work-1-image",
+//         start: "top bottom",
+//         end: "bottom top",
+//         scrub: true,
+//         },
+//         right:150
+//     }
     
-)
+// )
 gsap.to(
     ".work-1-image .img-3",
     {
@@ -265,7 +265,7 @@ gsap.to(
         end: "bottom top",
         scrub: true,
         },
-        right:0
+        x:200
     }
     
 )
@@ -293,7 +293,7 @@ $(document).ready(function(){
 });
 $(document).ready(function() {
     introAnimation();
-}, 1000);
+}, 3000);
 
 $(window).focus(function() {
     console.log('Focus')
