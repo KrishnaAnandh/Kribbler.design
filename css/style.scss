@@ -1203,7 +1203,7 @@ body.scroll-stopped{
                 
             }
             input::placeholder{
-                color: #fff4;
+                color: #fff8;
             }
             input:focus {
                 animation: glow 1.5s ease-out infinite alternate;
@@ -1682,6 +1682,7 @@ body.scroll-stopped{
         }
     }
 }
+
 .h-full{
     padding-top: 0;
     padding-bottom: 0;
@@ -1750,6 +1751,12 @@ body.scroll-stopped{
 
 .no-bold{
     font-weight:400 !important;
+}
+.img-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: 10px;
 }
 
 .project-cover{

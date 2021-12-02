@@ -1542,19 +1542,19 @@ body.scroll-stopped {
 }
 
 .enquiry .enquiry-now .enquiry-form input::-webkit-input-placeholder {
-  color: #fff4;
+  color: #fff8;
 }
 
 .enquiry .enquiry-now .enquiry-form input:-ms-input-placeholder {
-  color: #fff4;
+  color: #fff8;
 }
 
 .enquiry .enquiry-now .enquiry-form input::-ms-input-placeholder {
-  color: #fff4;
+  color: #fff8;
 }
 
 .enquiry .enquiry-now .enquiry-form input::placeholder {
-  color: #fff4;
+  color: #fff8;
 }
 
 .enquiry .enquiry-now .enquiry-form input:focus {
@@ -2200,6 +2200,16 @@ body.scroll-stopped {
 
 .no-bold {
   font-weight: 400 !important;
+}
+
+.img-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  grid-gap: 10px;
 }
 
 .project-cover {
