@@ -561,6 +561,7 @@ body.scroll-stopped{
             }
             @media screen and (max-width:1024px){
                 width: 50%;
+                
             }
 
             .hero-image-holder{
@@ -575,7 +576,11 @@ body.scroll-stopped{
                 position: absolute;
                 right: 0;
                 bottom: 0;
-                height: 100%;
+                height: 90%;
+
+                @media screen and (max-width:480px){
+                    height: 105%;
+                }
             }
             .hero-image-overlay{
                 position: absolute;
