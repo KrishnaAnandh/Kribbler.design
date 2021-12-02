@@ -276,7 +276,7 @@ gsap.to(
 
 $(window).on('load', function() {
     $('.hero').addClass("appear");
-    $('body').css("background", "#1D1D1F");
+    
 //            $(this).impulse({
 //                range: 60,
 //                tempo: 1200,
@@ -293,6 +293,7 @@ $(document).ready(function(){
     
 });
 $(document).ready(function() {
+    $('body').css("background", "#1D1D1F");
     introAnimation();
 }, 3000);
 
