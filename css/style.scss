@@ -1361,6 +1361,9 @@ body.scroll-stopped{
         padding: 5px 10px;
         font-size: 14px;
             color: #fff;
+            img{
+                filter:invert(100%)
+            }
     }
     a::after {
         content: "";
@@ -1755,8 +1758,15 @@ body.scroll-stopped{
 .img-grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
+    // grid-template-rows: auto auto;
     grid-gap: 10px;
+    @media screen and (max-width:768px){
+        grid-template-columns: 1fr;
+    }
+    img{
+        margin: 0;
+    }
+
 }
 
 .project-cover{

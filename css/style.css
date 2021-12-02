@@ -1768,6 +1768,11 @@ body.scroll-stopped {
   color: #fff;
 }
 
+.footer a img {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
 .footer a::after {
   content: "";
   position: absolute;
@@ -2207,9 +2212,18 @@ body.scroll-stopped {
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: auto auto;
-      grid-template-rows: auto auto;
   grid-gap: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .img-grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.img-grid img {
+  margin: 0;
 }
 
 .project-cover {
