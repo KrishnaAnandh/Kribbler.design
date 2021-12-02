@@ -276,6 +276,7 @@ gsap.to(
 
 $(window).on('load', function() {
     $('.hero').addClass("appear");
+    $('body').css("background", "#1D1D1F");
 //            $(this).impulse({
 //                range: 60,
 //                tempo: 1200,
@@ -314,7 +315,7 @@ var action = function() {
     if(introExecuted && !document.hidden){
         loopAnimation(i)
         i = (i < 3) ? i+1 : 1
-        setTimeout(action, 5000)
+        setTimeout(action, 10000)
     }
     if(document.hidden){
         console.log("paused")

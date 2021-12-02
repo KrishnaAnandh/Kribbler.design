@@ -419,6 +419,8 @@ body.scroll-stopped{
             z-index: 10;
             display: flex;
             flex-direction: column;
+            color: #fff;
+
             @media screen and (max-width:760px){
                 top: 0;
                 margin:0;
@@ -470,6 +472,7 @@ body.scroll-stopped{
                 text-transform: uppercase;
                 display: flex;
                 flex-direction: column;
+                color: inherit;
                 @media screen and (max-width:760px){
                     width: 100%;
                     margin: 14px 0;
@@ -517,7 +520,9 @@ body.scroll-stopped{
                 font-weight: 400;
                 margin: 20px 0;
                 padding-right: 20px;
-                color: #000b;
+                color: inherit;
+                opacity: 0.8;
+
                 @media screen and (max-width:1024px){
                     font-size: 18px;
                 }
@@ -544,7 +549,7 @@ body.scroll-stopped{
         .hero-artwork{
             position: relative;
             width: 55%;
-            height: 80%;
+            height: 100%;
             z-index: 5;
             text-align: center;
             display: flex;
@@ -564,10 +569,13 @@ body.scroll-stopped{
                 min-width: 350px;
                 max-width: 450px;
                 font-weight: 300;
-                overflow: hidden;
+                overflow: visible;
             }
             img{
-                height:700px;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                height: 100%;
             }
             .hero-image-overlay{
                 position: absolute;
@@ -612,6 +620,7 @@ body.scroll-stopped{
         pointer-events:none;
         .hero-logo-1{
             padding: 20px;
+            filter: invert(100%)
         }
         .scroll-indicator{
             position: absolute;
@@ -619,11 +628,13 @@ body.scroll-stopped{
             bottom: 10px;
             right: 10px;
             display: inline-flex;
-           
+            p{
+                color: #fff;
+            }
             span{
                 width: 50px;
                 height: 1px;
-                background: #000;
+                background: #fff;
                 position: relative;
                 top: 10px;
                 left: 10px;
@@ -635,9 +646,10 @@ body.scroll-stopped{
             left: 10px;
             display: inline-flex;
             pointer-events: all;
+            filter: invert(100%);
            
             a{
-                padding: 0;            
+                padding: 0;          
             }
         }
     }

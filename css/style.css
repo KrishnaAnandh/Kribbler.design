@@ -554,6 +554,7 @@ body.scroll-stopped {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  color: #fff;
 }
 
 @media screen and (max-width: 760px) {
@@ -630,6 +631,7 @@ body.scroll-stopped {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  color: inherit;
 }
 
 @media screen and (max-width: 760px) {
@@ -694,7 +696,8 @@ body.scroll-stopped {
   font-weight: 400;
   margin: 20px 0;
   padding-right: 20px;
-  color: #000b;
+  color: inherit;
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 1024px) {
@@ -730,7 +733,7 @@ body.scroll-stopped {
 .hero .hero-container .hero-artwork {
   position: relative;
   width: 55%;
-  height: 80%;
+  height: 100%;
   z-index: 5;
   text-align: center;
   display: -webkit-box;
@@ -764,11 +767,14 @@ body.scroll-stopped {
   min-width: 350px;
   max-width: 450px;
   font-weight: 300;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero .hero-container .hero-artwork img {
-  height: 700px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
 }
 
 .hero .hero-container .hero-artwork .hero-image-overlay {
@@ -821,6 +827,8 @@ body.scroll-stopped {
 
 .hero .hero-overlay .hero-logo-1 {
   padding: 20px;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
 }
 
 .hero .hero-overlay .scroll-indicator {
@@ -834,10 +842,14 @@ body.scroll-stopped {
   display: inline-flex;
 }
 
+.hero .hero-overlay .scroll-indicator p {
+  color: #fff;
+}
+
 .hero .hero-overlay .scroll-indicator span {
   width: 50px;
   height: 1px;
-  background: #000;
+  background: #fff;
   position: relative;
   top: 10px;
   left: 10px;
@@ -851,6 +863,8 @@ body.scroll-stopped {
   display: -ms-inline-flexbox;
   display: inline-flex;
   pointer-events: all;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
 }
 
 .hero .hero-overlay .social-icons a {
