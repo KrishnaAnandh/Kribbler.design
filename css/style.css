@@ -45,68 +45,89 @@ body {
 h1 {
   font-family: 'Space Grotesk', "Arial", sans-serif;
   font-size: 68px;
+  line-height: 68px;
   font-weight: 700;
+  margin: 20px 0;
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 38px;
+    line-height: 38px;
+  }
+}
+
+h2 {
+  font-family: 'Poppins', "Arial", sans-serif;
+  font-size: 52px;
+  line-height: 52px;
+  font-weight: 500;
+  margin: 20px 0;
+}
+
+@media screen and (max-width: 480px) {
+  h2 {
+    font-size: 32px;
+    line-height: 32px;
+  }
 }
 
 h3, h3 span, .heads p {
   font-size: 44px;
   line-height: 50px;
-  margin: 50px 40px;
+  margin: 20px 0;
   font-family: 'Space Grotesk', "Arial", sans-serif;
   font-weight: 700;
   width: 100%;
   text-transform: uppercase;
 }
 
+@media screen and (max-width: 480px) {
+  h3, h3 span, .heads p {
+    font-size: 28px;
+    line-height: 28px;
+  }
+}
+
 h4 {
   font-size: 38px;
-  line-height: 32px;
+  line-height: 40px;
   font-weight: 600;
+  margin: 20px 0;
 }
 
 @media screen and (max-width: 480px) {
   h4 {
-    font-size: 20px;
+    font-size: 24px;
     line-height: 22px;
   }
 }
 
 h5 {
-  font-size: 28px;
+  font-size: 24px;
   line-height: 28px;
   font-weight: 600;
+  margin: 20px 0;
 }
 
 @media screen and (max-width: 480px) {
   h5 {
-    font-size: 16px;
-    line-height: 18px;
+    font-size: 20px;
+    line-height: 24px;
   }
 }
 
 h6 {
-  font-size: 24px;
-  line-height: 28px;
+  font-size: 18px;
+  line-height: 22px;
   font-weight: 600;
+  margin: 20px 0;
 }
 
 @media screen and (max-width: 480px) {
   h6 {
     font-size: 16px;
-    line-height: 18px;
-  }
-}
-
-h7 {
-  font-size: 18px;
-  line-height: 20px;
-  font-weight: 600;
-}
-
-@media screen and (max-width: 480px) {
-  h7 {
-    font-size: 16px;
-    line-height: 18px;
+    line-height: 16px;
   }
 }
 
@@ -116,11 +137,12 @@ p, li {
   font-size: 14px;
   letter-spacing: 0.5;
   color: #000c;
+  margin: 10px 0;
 }
 
 @media screen and (max-width: 480px) {
   p, li {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
@@ -202,6 +224,8 @@ a:hover::after{
   border-radius: 15px;
   -webkit-box-shadow: 0px 0px 0px #0001;
           box-shadow: 0px 0px 0px #0001;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
   z-index: -3;
 }
 
@@ -254,7 +278,6 @@ body.scroll-stopped {
   z-index: 9999;
   width: 100%;
   background: #fff;
-  padding: 10px 0;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
   -webkit-transition: all 0.4s cubic-bezier(0.21, 0.05, 0, 1.01);
@@ -425,6 +448,7 @@ body.scroll-stopped {
 .header .header-container .header-menu ul li {
   color: inherit;
   display: inline-block;
+  margin: 0;
   padding: 18px 10px;
   -webkit-transform: translateY(-60px);
           transform: translateY(-60px);
@@ -792,6 +816,7 @@ body.scroll-stopped {
   width: 100%;
   height: 100vh;
   z-index: 99;
+  pointer-events: none;
 }
 
 .hero .hero-overlay .hero-logo-1 {
@@ -825,6 +850,7 @@ body.scroll-stopped {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  pointer-events: all;
 }
 
 .hero .hero-overlay .social-icons a {
@@ -1799,28 +1825,8 @@ body.scroll-stopped {
 }
 
 /*481-768*/
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  h1 {
-    font-size: 52px;
-  }
-  .hero-desc h2 {
-    font-size: 18px;
-    line-height: 29px;
-  }
-}
-
 /*0-480*/
 @media screen and (max-width: 480px) {
-  h1 {
-    font-size: 52px;
-    line-height: 20px;
-  }
-  h3, .heads p {
-    font-size: 32px;
-    line-height: 40px;
-    margin: 20px 0;
-    text-align: center;
-  }
   .container {
     padding: 100px 20px;
   }
@@ -1989,12 +1995,6 @@ body.scroll-stopped {
   }
 }
 
-@media screen and (min-width: 321px) and (max-width: 479px) {
-  h1 {
-    font-size: 48px;
-  }
-}
-
 /*projects page*/
 .project-container {
   width: 100%;
@@ -2076,6 +2076,13 @@ body.scroll-stopped {
 .project-column img.img-full {
   width: calc(100% + 100px);
   margin: 40px -50px 60px;
+}
+
+@media screen and (max-width: 960px) {
+  .project-column img.img-full {
+    width: calc(100% + 40px);
+    margin: 40px -20px 60px;
+  }
 }
 
 .h-full {
@@ -2440,7 +2447,7 @@ body.scroll-stopped {
   background: #e0f1ff;
 }
 
-.page-foodmates .sec-icon h7 {
+.page-foodmates .sec-icon h6 {
   margin-bottom: 10px;
   color: #2AB46F;
 }

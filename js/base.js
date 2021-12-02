@@ -56,35 +56,37 @@ $("#enquiry").load("./enquiry.html", function(){
             enquirySubmit.to('.enquiry-submitted', 0.5, {opacity:1})
         });
       });
+      
+      gsap.to(
+        ['body', '.header'],
+        {
+            scrollTrigger:{
+            trigger: ".enquiry",
+            start: "top 70%",
+            end: "50px 40%",
+            scrub: true,
+            // markers: true,
+            onEnter() {
+                $('.header').addClass('dark');
+                
+            },
+            onLeave() {
+                // $('.header').removeClass('dark');
+            },
+            onEnterBack() {
+                // $('.header').addClass('dark');
+                
+            },
+            onLeaveBack() {
+                $('.header').removeClass('dark');
+            }
+            },
+            background:"#113"
+        }
+    )
 }); 
 
-gsap.to(
-    ['body', '.header'],
-    {
-        scrollTrigger:{
-        trigger: ".enquiry",
-        start: "top 70%",
-        end: "50px 40%",
-        scrub: true,
-        // markers: true,
-        onEnter() {
-            $('.header').addClass('dark');
-            
-        },
-        onLeave() {
-            // $('.header').removeClass('dark');
-        },
-        onEnterBack() {
-            // $('.header').addClass('dark');
-            
-        },
-        onLeaveBack() {
-            $('.header').removeClass('dark');
-        }
-        },
-        background:"#113"
-    }
-)
+
 
 
 
