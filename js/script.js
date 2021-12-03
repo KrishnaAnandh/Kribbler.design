@@ -8,8 +8,9 @@ var tlHomeExpertiseIn= new TimelineMax()
 var tlHomeBlogsIn= new TimelineMax()
 var tlHomeEnquiryIn= new TimelineMax()
 
-var headerRolesLoop = new TimelineMax()
+
 var headerAppear = new TimelineMax()
+var headerLoop = new TimelineMax({repeat: -1})
 
 var scHomeHeroIn = ScrollTrigger.create({
     animation: tlHomeHeroIn,
@@ -290,66 +291,54 @@ $(window).on('load', function() {
 
 $(document).ready(function(){
     $(".hero-name span").lettering();
+    $('body').css("background", "#1e1e1f");
+    introAnimation();
     
 });
-$(document).ready(function() {
-    $('body').css("background", "#1D1D1F");
-    introAnimation();
-}, 3000);
 
-$(window).focus(function() {
-    console.log('Focus')
-    if(introExecuted){ 
-        // headerRolesLoop.restart()
-        action()
-    }
-})
-$(window).blur(function() {
-    if(introExecuted){
-        headerRolesLoop.set(['.role1 span','.role2 span','.role3 span'], {opacity:0})
-    }
-})
-
-var introExecuted = false, i=1;
-
-var action = function() {
-    if(introExecuted && !document.hidden){
-        loopAnimation(i)
-        i = (i < 3) ? i+1 : 1
-        setTimeout(action, 10000)
-    }
-    if(document.hidden){
-        console.log("paused")
-    }
-};
+// $(window).focus(function() {
+//     console.log('Focus')
+//     if(introExecuted){ 
+//         // headerRolesLoop.restart()
+//         action()
+//     }
+// })
+// $(window).blur(function() {
+//     if(introExecuted){
+//         headerRolesLoop.set(['.role1 span','.role2 span','.role3 span'], {opacity:0})
+//     }
+// })
 
 function introAnimation() {
-    var headerLetters=$('.general span'),
-    roleLetters=$('.role1 span'),
-    role2Letters=$('.role2 span'),
-    role3Letters=$('.role3 span'),
-    headerLettersArray=headerLetters.toArray();
-    roleLettersArray=roleLetters.toArray();
+
     
-    headerLettersArray.sort(function() {return 0.7-Math.random()});
-    roleLettersArray.sort(function() {return 0.7-Math.random()});
-    
-    headerAppear.set([".role1 span",".role2 span",".role3 span"], {opacity: 0})
+    headerLoop.set([".role2 span",".role3 span"], {opacity: 0})
     // headerAppear.set(".hero-name", {width: "200%", textAlign: "center"})
 
-    headerAppear.staggerFromTo(
-        headerLettersArray, 
+    headerAppear.from(
+        ".general span", 
         1, 
-        {ease: Back.easeInOut.config(1.7), opacity: 0, top: -10},
-        {ease: Back.easeInOut.config(1.7), opacity: 1, top: 0}, 
-        0.08
+        {ease: Back.easeInOut.config(1.7), 
+         opacity: 0, 
+         y: -10,
+         stagger: {
+            amount: 0.3, 
+            from: "random",
+         }
+        },
     )
-    headerAppear.staggerFromTo(
-        roleLettersArray, 
+    headerAppear.from(
+        ".role1 span", 
         1, 
-        {ease: Back.easeInOut.config(0.7), opacity: 0, top: -10},
-        {ease: Back.easeInOut.config(0.7), opacity: 1, top: 0}, 
-        "0.08", '-=1.5'
+        {ease: Back.easeInOut.config(1.7), 
+         opacity: 0, 
+         y: -10,
+         stagger: {
+            amount: 0.3, 
+            from: "random",
+         }
+        },
+        "-=1"
     )
 
     headerAppear.from(".hero-logo", 0.5, {ease: Power4.easeOut, y:20, opacity: 0})
@@ -357,45 +346,80 @@ function introAnimation() {
     headerAppear.from(".hero-cta", 0.2, {ease: Power4.easeOut, y:-20, opacity: 0}, "-=0.2")
     headerAppear.from(".hero-artwork", 0.5, {ease: Power4.easeOut, y:20, opacity: 0}, "-=0.6")
     
-    setTimeout(function(){introExecuted = true
-    action();
-    console.log(introExecuted);},5000)
-}
 
-function loopAnimation(i) {
-    var currentRoleEl = '.role' + i + ' span'
-    j = (i<3)?i+1:1
-    var nextRoleEl = '.role' + j + ' span'
-    
-    var currentRole=$(currentRoleEl),
-    currentRoleLetters=currentRole.toArray();
-    currentRoleLetters.sort(function() {return 0.7-Math.random()});
-
-    var nextRole=$(nextRoleEl),
-    nextRoleLetters=nextRole.toArray();
-    nextRoleLetters.sort(function() {return 0.7-Math.random()});
-    
-    // headerRolesLoop.to([], 0, { opacity: 0})
-    
-    headerRolesLoop.staggerFromTo(
-        currentRoleLetters, 
-        1,
-        {ease: Back.easeInOut.config(1.7),opacity: 1},
-        {ease: Back.easeInOut.config(1.7), opacity: 0}, 
-        0.08
+    headerLoop.to(
+        ".role1 span", 
+        1, 
+        {
+            ease: Back.easeInOut.config(1.7), 
+            opacity: 0, 
+            stagger: {
+                amount: 0.4, 
+                from: "random",
+            }
+        },
+        "+=4"
+      )
+    headerLoop.to(
+        ".role2 span", 
+        1,{
+            ease: Back.easeInOut.config(1.7), 
+            opacity: 1, 
+            stagger: {
+                amount: 0.4, 
+                from: "random",
+            }
+        },
+      )
+    headerLoop.to(
+        ".role2 span", 
+        1,{
+            ease: Back.easeInOut.config(1.7), 
+            opacity: 0, 
+            stagger: {
+                amount: 0.4, 
+                from: "random",
+            }
+        },
+        "+=4"
+      )
+    headerLoop.to(
+        ".role3 span", 
+        1, 
+        {ease: Back.easeInOut.config(1.7), 
+         opacity: 1, 
+         stagger: {
+            amount: 0.4, 
+            from: "random",
+         }
+        },
+      )
+    headerLoop.to(
+        ".role3 span", 
+        1, 
+        {ease: Back.easeInOut.config(1.7), 
+         opacity: 0, 
+         stagger: {
+            amount: 0.4, 
+            from: "random",
+         }
+        },
+        "+=4"
+      )
+    headerLoop.to(
+        ".role1 span", 
+        1, 
+        {ease: Back.easeInOut.config(1.7), 
+         opacity: 1, 
+         stagger: {
+            amount: 0.4, 
+            from: "random",
+         }
+        },
     )
     
-    console.log("current:", j)
-    headerRolesLoop.staggerFromTo(
-        nextRoleLetters, 
-        1,
-        {ease: Back.easeInOut.config(1.7), opacity: 0},
-        {ease: Back.easeInOut.config(1.7), opacity: 1}, 
-        0.08
-    )
-  
-   
 }
+
 
 var lastScrollTop = 0;
 
