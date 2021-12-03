@@ -879,14 +879,17 @@ body.scroll-stopped {
 
 .hero-image-holder main {
   height: 100%;
-  width: 100%;
+  width: 120%;
 }
 
 .hero-image-holder main #hero-frame {
   height: 100%;
+  width: 100%;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  position: absolute;
+  bottom: 0;
 }
 
 .hero-image-holder main #gl {

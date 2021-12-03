@@ -666,11 +666,14 @@ body.scroll-stopped{
 
 .hero-image-holder main{
     height:100%;
-    width: 100%;
+    width: 120%;
     #hero-frame{
         height: 100%;
+        width: 100%;
         left: 50%;
         transform: translateX(-50%);
+        position: absolute;
+        bottom: 0;
     }
     #gl{
         width: 100%;
