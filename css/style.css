@@ -396,6 +396,8 @@ body.scroll-stopped {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: none;
+  transition: none;
 }
 
 @media screen and (max-width: 760px) {
@@ -452,31 +454,23 @@ body.scroll-stopped {
   padding: 18px 10px;
   -webkit-transform: translateY(-60px);
           transform: translateY(-60px);
-  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.2, 0, 0, 1);
-  transition: -webkit-transform 0.4s cubic-bezier(0.2, 0, 0, 1);
-  transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1);
-  transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1), -webkit-transform 0.4s cubic-bezier(0.2, 0, 0, 1);
 }
 
-.header .header-container .header-menu ul li:nth-child(1) {
-  -webkit-transition-delay: 0s;
-          transition-delay: 0s;
+@media screen and (max-width: 760px) {
+  .header .header-container .header-menu ul li {
+    font-size: 32px;
+    color: #fff;
+    padding: 24px 10px;
+    overflow: hidden;
+  }
 }
 
-.header .header-container .header-menu ul li:nth-child(2) {
-  letter-spacing: 2px;
-  -webkit-transition-delay: 0.3s;
-          transition-delay: 0.3s;
-}
-
-.header .header-container .header-menu ul li:nth-child(3) {
-  -webkit-transition-delay: 0.6s;
-          transition-delay: 0.6s;
-}
-
-.header .header-container .header-menu ul li:nth-child(4) {
-  -webkit-transition-delay: 0.9s;
-          transition-delay: 0.9s;
+.header .header-container .header-menu ul li a {
+  display: inline-block;
+  font-size: inherit;
+  color: inherit;
+  -webkit-transition: none;
+  transition: none;
 }
 
 .header .header-container .header-menu .header-cta {
@@ -2585,8 +2579,10 @@ body.scroll-stopped {
 
 @media screen and (max-width: 480px) {
   .page-works .works-list-1 {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-auto-rows: 400px;
+    grid-column-gap: 0;
   }
 }
 
@@ -2679,6 +2675,13 @@ body.scroll-stopped {
 .page-works .works-list-1 .work-1 {
   grid-row: span 2;
   grid-column: span 2;
+}
+
+@media screen and (max-width: 480px) {
+  .page-works .works-list-1 .work-1 {
+    grid-row: span 1;
+    grid-column: span 1;
+  }
 }
 
 .page-works .works-list-1 .work-2 {

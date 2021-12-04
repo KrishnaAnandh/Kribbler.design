@@ -1,10 +1,19 @@
 $("#header").load("./header.html", function() {
     $('#menu-icon').on('click', function(){
-        console.log("click detected")
+        
+        // gsap.set(".header-menu li a", {y:"60px", opacity:"0"})
         $("#menu-cont").toggleClass("open");
         $(this).toggleClass("close");
         $('body').toggleClass("scroll-stopped");
         $('.header-container').toggleClass("open");
+        gsap.from(".header-menu li a", 0.8 ,{
+            y:"60px",
+            opacity:"0",
+            skewY:"10",
+            stagger:{
+            amount: 0.3, 
+            from: "0",
+        }})
     });
 }); 
 
