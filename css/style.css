@@ -26,6 +26,10 @@ body {
   background: #e0f1ff;
 }
 
+body.scroll-stopped {
+  overflow: hidden;
+}
+
 *, body {
   margin: 0;
   padding: 0;
@@ -269,10 +273,6 @@ a:hover::after{
   left: -5%;
 }
 
-body.scroll-stopped {
-  overflow: hidden;
-}
-
 .header {
   position: fixed;
   z-index: 9999;
@@ -294,7 +294,7 @@ body.scroll-stopped {
 }
 
 .header.dark a, .header.dark li, .header.dark p {
-  color: #fff;
+  color: #fff !important;
 }
 
 .header.dark .header-logo {
@@ -2457,15 +2457,6 @@ body.scroll-stopped {
         -ms-grid-row-align: center;
         align-self: center;
   }
-}
-
-.page-foodmates .sec-kmr .container {
-  justify-self: flex-start;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  width: calc(((100% - 960px) / 2) + 960px);
-  margin: 0;
-  left: 0;
 }
 
 .page-foodmates .sec-ds .project-row {

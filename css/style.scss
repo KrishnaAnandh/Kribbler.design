@@ -20,6 +20,10 @@ html{
 }
 body{
     background: #e0f1ff;
+    // overflow:scroll;
+    &.scroll-stopped{
+        overflow: hidden;
+    }
 }
 
 *, body{
@@ -226,9 +230,6 @@ a:hover::after{
     left: -5%;
 }
 
-body.scroll-stopped{
-    overflow: hidden;
-}
 
 .header{
     position: fixed;
@@ -247,7 +248,7 @@ body.scroll-stopped{
     &.dark{
         // background: #fff0;
         a, li, p{
-            color: #fff;
+            color: #fff !important;
         }
         .header-logo{
             filter: invert(100%);
@@ -1971,13 +1972,11 @@ body.scroll-stopped{
         }
     }
     .sec-kmr{
-        .container{
-            justify-self: flex-start;
-            align-self: flex-start;
-            width: calc(((100% - 960px) / 2) + 960px);
-            margin: 0;
-            // margin-left: calc((100% - 960px) / 2);
-            left: 0;
+        
+        img{
+            // @media screen and (min-width:760px){
+            //     width: 200%;
+            // }
         }
     }
     .sec-ds{

@@ -1,19 +1,39 @@
 $("#header").load("./header.html", function() {
+    var menuOpened = false
     $('#menu-icon').on('click', function(){
         
         // gsap.set(".header-menu li a", {y:"60px", opacity:"0"})
-        $("#menu-cont").toggleClass("open");
+        // $("#menu-cont").toggleClass("open");
         $(this).toggleClass("close");
         $('body').toggleClass("scroll-stopped");
         $('.header-container').toggleClass("open");
-        gsap.from(".header-menu li a", 0.8 ,{
-            y:"60px",
-            opacity:"0",
-            skewY:"10",
-            stagger:{
-            amount: 0.3, 
-            from: "0",
-        }})
+        var menuOpen = new TimelineMax()
+        
+        if(!menuOpened){
+            menuOpen.to(".header-menu", 0.3, {right: "100%"})
+            menuOpen.from(".header-menu li a", 0.4 ,{
+                y:"80px",
+                opacity:"0",
+                skewY:"30",
+                stagger:{
+                amount: 0.3, 
+                from: "0",
+            }})
+            menuOpened = true
+        }
+        else{
+            menuOpen.to(".header-menu li a", 0.4 ,{
+                y:"80px",
+                opacity:"0",
+                skewY:"30",
+                stagger:{
+                amount: 0.3, 
+                from: "2",
+            }})
+            menuOpen.to(".header-menu", 0.3, {right: "0"})
+            menuOpen.reset()
+            menuOpened = false
+        }
     });
 }); 
 
@@ -141,19 +161,25 @@ if(thisPage != 'home'){
 
 
 $(document).ready(function(){
-    console.log("click detected")
-    //menu-icon
+    //smooth scroll
+    // let height
+    // function setHeight() {
+    // height = container.clientHeight
+    // document.body.style.height = height + "px"
+    // }
+    // ScrollTrigger.addEventListener("refreshInit", setHeight)
 
-    
-    // $('#enquiry-submit').on('submit', function(event){
-    //     event.preventDefault();
-    //     console.log("click detected")
-    //     gsap.to('.enquiry-now', 1, {opacity:0})
-    //     gsap.to('.enquiry-submit', 1, {opacity:1})
-    // });
-    // $("#enquiry-form-form").submit(function(e){
-    //     return false;
-    // });
+    // gsap.to('body', {
+    //     y: () => -(height - document.documentElement.clientHeight),
+    //     ease: "none",
+    //     scrollTrigger: {
+    //       trigger: document.body,
+    //       start: "top top",
+    //       end: "bottom bottom",
+    //       scrub: 0.5,
+    //       invalidateOnRefresh: true
+    //     }
+    //   })
 });
 
 

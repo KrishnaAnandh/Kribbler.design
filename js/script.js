@@ -1,5 +1,6 @@
 gsap.registerPlugin(ScrollTrigger)
 
+
 var tlHomeHeroIn= new TimelineMax()
 var tlHomeHeroOut= new TimelineMax()
 var tlHomeBioIn= new TimelineMax()
@@ -314,7 +315,7 @@ function introAnimation() {
     
     headerLoop.set([".role2 span",".role3 span"], {opacity: 0})
     // headerAppear.set(".hero-name", {width: "200%", textAlign: "center"})
-
+    headerAppear.set("body",{background:"#1e1e1f"})
     headerAppear.from(
         ".general span", 
         1, 
