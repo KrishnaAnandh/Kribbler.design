@@ -1844,6 +1844,11 @@ a:hover::after{
     }
 }
 
+.project-short-cover{
+    min-height: 50vh;
+    text-align: center;
+}
+
 
 
 /* foodmates custom */
@@ -1971,14 +1976,7 @@ a:hover::after{
             }
         }
     }
-    .sec-kmr{
-        
-        img{
-            // @media screen and (min-width:760px){
-            //     width: 200%;
-            // }
-        }
-    }
+
     .sec-ds{
         .project-row{
             align-items: start;
@@ -2088,99 +2086,107 @@ a:hover::after{
         }
         
         .work{
-            width: 100%;
-            height: 100%;
-            font-size: 60px;
-            padding: 20px 30px;
-            box-sizing: border-box;
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
             overflow: hidden;
             color: #fff;
             text-transform: unset;
             transition: all .5s ease-in-out;
             &:hover{
-                transform: scale(0.95);
+                transform: scale(0.98);
             }
             &:hover img{
-                transform: scale(1.1);
+                transform: translateX(-50%) scale(1.1) rotate(2deg);
             }
             
             .work-details{
                 position: absolute;
                 top: 0;
                 left: 0;
-                padding: 30px;
+                padding: 40px 40px;
                 color: inherit;
                 z-index: 2;
-                text-shadow: 2px 2px 8px #0004;
-                h5{
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                text-shadow: 2px 2px 20px #0004;
+                .work-name{
                     color: inherit;
+                    margin-bottom: 5px;
                     letter-spacing: 0px;
+
                 }
                 p{
                     color: inherit;
                     letter-spacing: 0px;
                 }
+                .work-type{
+                    font-family: 'Space Grotesk';
+                    font-size: 12px;
+                    margin: 0;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
             }
             img{
                 position: absolute;
-                top: 0;
-                left: 0;
+                flex-shrink: 0;
                 width: 100%;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                align-self: center;
+                // min-width: 100%;
+                // min-height: 100%;
+            
                 z-index: 1;
                 transition: inherit;
             }
         }
-        .work-1 {
-            
-            background: #09b0d4;
-        }
-        .work-2 {
-            
-            background: #c1cc70;
-        }
-        .work-3 {
-        
-            background: #f35e7b;
-        }
-        .work-4 {
-            
-            background: #f7c05b;
-        }
-        .work-5 {
-            background: #fc96a3;
-        }
-        .work-6 {
-            background: #e8c257;
-        }
-        .work-7 {
-            background: #f2eecb;
-        }
-        .work-8 {
-            background: #6bb383;
-        }
         
         /* span でもセル何個か定義できる */
         .work-1 {
+            background: #09b0d4;
             grid-row: span 2;
             grid-column: span 2;
+
             @media screen and (max-width:480px){
                 grid-row: span 1;
                 grid-column: span 1;
             }
+            
+            img{
+                height: 100%;
+                width: auto;
+            }
         }
         .work-2 {
+            background: #c1cc70;
             grid-column: span 2;
         }
         .work-3 {
+            background: #f35e7b;
             grid-column: span 2;
+        }
+        .work-4 {
+            background: #f7c05b;
         }
         .work-5 {
+            background: #fc96a3;
             grid-column: span 2;
+        }
+        .work-6 {
+            background: #FF6382;
         }
         .work-7 {
+            background: #F5EB9B;
             grid-column: span 2;
+            color: #000;
         }
         .work-8 {
+            background: #6bb383;
             grid-column: span 2;
         }
         
