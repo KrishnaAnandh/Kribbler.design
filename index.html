@@ -40,14 +40,22 @@
         var thisPage = 'home'
     </script>
     <section id="header" class="header"></section>
-    <main>
-    <div data-scroll>
+
+    <section class="revealer">
+        <svg class="tea" width="37" height="48" viewbox="0 0 37 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M27.0819 17H3.02508C1.91076 17 1.01376 17.9059 1.0485 19.0197C1.15761 22.5177 1.49703 29.7374 2.5 34C4.07125 40.6778 7.18553 44.8868 8.44856 46.3845C8.79051 46.79 9.29799 47 9.82843 47H20.0218C20.639 47 21.2193 46.7159 21.5659 46.2052C22.6765 44.5687 25.2312 40.4282 27.5 34C28.9757 29.8188 29.084 22.4043 29.0441 18.9156C29.0319 17.8436 28.1539 17 27.0819 17Z" stroke="var(--secondary)" stroke-width="2"></path>
+            <path d="M29 23.5C29 23.5 34.5 20.5 35.5 25.4999C36.0986 28.4926 34.2033 31.5383 32 32.8713C29.4555 34.4108 28 34 28 34" stroke="var(--secondary)" stroke-width="2"></path>
+            <path id="teabag" fill="var(--secondary)" fill-rule="evenodd" clip-rule="evenodd" d="M16 25V17H14V25H12C10.3431 25 9 26.3431 9 28V34C9 35.6569 10.3431 37 12 37H18C19.6569 37 21 35.6569 21 34V28C21 26.3431 19.6569 25 18 25H16ZM11 28C11 27.4477 11.4477 27 12 27H18C18.5523 27 19 27.4477 19 28V34C19 34.5523 18.5523 35 18 35H12C11.4477 35 11 34.5523 11 34V28Z"></path>
+            <path id="steamL" d="M17 1C17 1 17 4.5 14 6.5C11 8.5 11 12 11 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="var(--secondary)"></path>
+            <path id="steamR" d="M21 6C21 6 21 8.22727 19 9.5C17 10.7727 17 13 17 13" stroke="var(--secondary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+    </section>
     <section class="hero">
-        <div class="dot-pattern" id="dot-pattern"></div>
+        <!-- <div class="dot-pattern" id="dot-pattern"></div> -->
         <div class="hero-overlay">
             <div class="hero-logo-1"><img src="img/logo-short.svg"/></div>
             <div class="scroll-indicator"><p>scroll</p><span></span></div>
-        <div class="social-icons"><a target="blank" href="https://dribbble.com/Kribbler" target="blank"><img src="img/dribbble-logo.svg"/></a><a href="https://www.linkedin.com/in/kribbler/" target="blank"><img src="img/linkedin-logo.svg"/></a></div>
+            <div class="social-icons"><a target="blank" href="https://dribbble.com/Kribbler" target="blank"><img src="img/dribbble-logo.svg"/></a><a href="https://www.linkedin.com/in/kribbler/" target="blank"><img src="img/linkedin-logo.svg"/></a></div>
         </div>
         
         <div class="hero-container container">
@@ -161,13 +169,13 @@
                         <label class="work-client">Flexibees</label>
                         <h5 class="work-title">Meaningful Flexible Jobs for Women</h5>
                         <p class="work-content">can wor in roles matched with their experience and skills, with the flexibility that they need.</p>
-                        <div class="work-link">
+                        <!-- <div class="work-link">
                             <a href="#">view project</a>
                             <svg class="link-uline" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                                 <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
                             </svg>
-                        </div>
-                        <!-- <div class="work-link-mobile"><a href="#">view project</a></div> -->
+                        </div> -->
+                        
                     </div>
                         <div class="work-image-holder work-3-image"><img src="img/flexibees_cover.png"/></div>
                 </div>
@@ -200,7 +208,14 @@
             <div class="shots-item"><img src="img/dribbble_fintechAPP.webp"/> </div>
             <div class="shots-item"><img src="img/dribbble-onboarding-medications.png"/> </div>
         </div>
-        
+        <div class="works-link">
+            <div class="work-link">
+                <a href="works.html">View all works</a>
+                <svg class="link-uline" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
+                </svg>
+            </div>
+        </div>
     </div>
     </section>
     <!-- <section class="expertise">
@@ -213,7 +228,7 @@
     <section class="blogs">
         <div class="blogs-container container">
             
-            <h3 class="blogs-head heads">My musings</h3>
+            <h3 class="blogs-head heads">My Thoughts</h3>
 
             <div class="blogs-list">
                 <div class="blog blog-1">
@@ -224,7 +239,7 @@
                         <p class="blog-title"><b>7 design psychologies every designers should know</b></p>
                         <p class="blog-cont">Being an expert in interaction designing won't be enough for a product designer.</p></div>
                         <div class="work-link">
-                        <a href="https://uxdesign.cc/7-design-psychologies-every-designer-should-know-d01a1becd961">Read blog</a>
+                        <a target="blank" href="https://uxdesign.cc/7-design-psychologies-every-designer-should-know-d01a1becd961">Read blog</a>
                         <svg class="link-uline" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                             <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
                         </svg>
@@ -238,7 +253,7 @@
                         <p class="blog-title"><b>How frustrating or delighting is your design? Let’s understand friction before all</b></p>
                         <p class="blog-cont">Identifying and reducing friction improves the user experience. The less friction, the better the design.</p></div>
                         <div class="work-link">
-                        <a href="https://medium.com/@Kribbler/how-frustrating-or-delighting-is-your-design-lets-understand-friction-before-all-8d08b6ba71f4">Read blog</a>
+                        <a target="blank" href="https://medium.com/@Kribbler/how-frustrating-or-delighting-is-your-design-lets-understand-friction-before-all-8d08b6ba71f4">Read blog</a>
                         <svg class="link-uline" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                             <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
                         </svg>
@@ -265,8 +280,7 @@
 
     <section id="enquiry" class="enquiry"></section>
 
-</div>
-</main>
+
 
     <svg height="0" xmlns="http://www.w3.org/2000/svg">
         <filter id="drop-shadow">

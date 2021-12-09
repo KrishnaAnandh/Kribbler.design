@@ -34,6 +34,11 @@ $("#header").load("./header.html", function() {
             menuOpen.reset()
             menuOpened = false
         }
+
+
+
+
+        
     });
 }); 
 
@@ -190,7 +195,7 @@ const layerTop = gsap.utils.toArray('.lyr-top');
 const layerMid = gsap.utils.toArray('.lyr-mid');
 
 layerTop.forEach((el) => {
-    gsap.set(el, {y:100})
+    gsap.set(el, {y:120})
   gsap.to(el, {
     scrollTrigger: {
         trigger: el,
@@ -199,7 +204,7 @@ layerTop.forEach((el) => {
         scrub: true,
         // markers: true,
     },
-    y:-100
+    y:-80
   });
 });
 
@@ -213,7 +218,19 @@ layerMid.forEach((el) => {
         scrub: true,
         // markers: true,
     },
-    y:-50
+    y:-40
   });
 });
+
+
+var scrollIndication = new TimelineMax({repeat:-1})
+scrollIndication.set([".project-cover", ".scroll-indicator p"], {y:0})
+scrollIndication.fromTo(".project-cover", {y:0}, {duration:0.2, y:-100}, "+=6")
+scrollIndication.fromTo(".project-cover", {y:-100}, {duration:0.3, y:0})
+scrollIndication.fromTo(".project-cover", {y:0}, {duration:0.2, y:-100})
+scrollIndication.fromTo(".project-cover", {y:-100}, {duration:0.5, y:0})
+scrollIndication.fromTo(".scroll-indicator p", {y:0}, {duration:0.2, y:-40})
+scrollIndication.fromTo(".scroll-indicator p", {y:-40}, {duration:0.3, y:0})
+scrollIndication.fromTo(".scroll-indicator p", {y:0}, {duration:0.2, y:-40})
+scrollIndication.fromTo(".scroll-indicator p", {y:-40}, {duration:0.6, y:0})
 

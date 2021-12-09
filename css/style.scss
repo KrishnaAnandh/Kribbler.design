@@ -233,7 +233,7 @@ a:hover::after{
 
 .header{
     position: fixed;
-    z-index: 9999;
+    z-index: 999;
     width: 100%;
     background: #fff;
     // visibility: visible;
@@ -683,6 +683,63 @@ a:hover::after{
     
 }
 
+.revealer{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #eff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg.tea {
+        --secondary: #33406f;
+      }
+      svg.tea #teabag {
+        transform-origin: top center;
+        transform: rotate(3deg);
+        animation: swing 2s infinite;
+      }
+      svg.tea #steamL {
+        stroke-dasharray: 13;
+        stroke-dashoffset: 13;
+        animation: steamLarge 2s infinite;
+      }
+      svg.tea #steamR {
+        stroke-dasharray: 9;
+        stroke-dashoffset: 9;
+        animation: steamSmall 2s infinite;
+      }
+      @keyframes swing {
+        50% {
+          transform: rotate(-3deg);
+        }
+      }
+      @keyframes steamLarge {
+        0% {
+          stroke-dashoffset: 13;
+          opacity: 0.6;
+        }
+        100% {
+          stroke-dashoffset: 39;
+          opacity: 0;
+        }
+      }
+      @keyframes steamSmall {
+        10% {
+          stroke-dashoffset: 9;
+          opacity: 0.6;
+        }
+        80% {
+          stroke-dashoffset: 27;
+          opacity: 0;
+        }
+        100% {
+          stroke-dashoffset: 27;
+          opacity: 0;
+        }
+      }
+}
 
 .bio{
     position: relative;
@@ -1028,6 +1085,19 @@ a:hover::after{
                     top: 50%;
                     transform: translateY(-50%);
                 }
+            }
+        }
+        .works-link{
+
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+            a{
+                font-size: 16px;
+            }
+            path{
+                stroke: #fff;
             }
         }
     }
@@ -2097,7 +2167,7 @@ a:hover::after{
                 transform: scale(0.98);
             }
             &:hover img{
-                transform: translateX(-50%) scale(1.1) rotate(2deg);
+                transform: translate(-50%, -50%) scale(1.1) rotate(1deg);
             }
             
             .work-details{
@@ -2134,9 +2204,9 @@ a:hover::after{
                 position: absolute;
                 flex-shrink: 0;
                 width: 100%;
-                top: 0;
+                top: 50%;
                 left: 50%;
-                transform: translateX(-50%);
+                transform: translate(-50%, -50%);
                 align-self: center;
                 // min-width: 100%;
                 // min-height: 100%;

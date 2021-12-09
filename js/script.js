@@ -73,14 +73,15 @@ var scHomeEnquiryIn = ScrollTrigger.create({
     scrub: true,
     // markers: true,
 })
-tlHomeHeroIn.staggerFrom('.hero-name .general span', 1, {y:100}, 0.1)
+// tlHomeHeroIn.staggerFrom('.hero-name .general span', 1, {y:100}, 0.1)
 
 tlHomeHeroOut.to('.hero-details',1, {y:-100})
 tlHomeHeroOut.to('.hero-name',1, {y:-30},"-=1")
 // tlHomeHeroOut.to('body',0.1, {background:"#1b1486"},"-=0.5")
 
 tlHomeBioIn.to('.hero',0.5, {opacity:0})
-tlHomeBioIn.to(['body', '.header'],0.5, {background:"#1b1486"})
+tlHomeBioIn.fromTo(['body', '.header'],{background:"#1e1e1f"},{duration:0.2, background:"#1b1486"})
+// tlHomeBioIn.to(['body', '.header'],0.5, {background:"#1b1486"})
 tlHomeBioIn.call(function() {$('.header').addClass("dark")}, null, null, 2);
 
 tlHomeBioIn.from('.bio-head',1, { opacity:0},"+=0.5")
@@ -93,7 +94,7 @@ tlHomeBioIn.from('.bio-figures',1, {opacity:0},"+=0.1")
 // tlHomeBioIn.to('.bio-figures',1.7, {y:80}, "-=1.6")
 
 
-tlHomeWorksIn.to(['body', '.header'],0.1, {background:"#113"})
+tlHomeWorksIn.fromTo(['body', '.header'],{background:"#1b1486"},{duration:0.2, background:"#113"})
 tlHomeWorksIn.from('.works-head h3',1, {y:200, opacity:1, skewY:10})
 tlHomeWorksIn.from('.work-row-1',1, {y:50, opacity:0})
 
@@ -102,12 +103,13 @@ tlHomeWorksIn.from('.work-row-1',1, {y:50, opacity:0})
 // tlHomeExpertiseIn.from('.expertise',1, {opacity:0})
 
 tlHomeBlogsIn.to('.shots',1, {opacity:0})
-tlHomeBlogsIn.to(['body', '.header'],0.2, {background:"#fff"})
-tlHomeBlogsIn.call(function() {$('.header').removeClass("dark")}, null, null, 2);
+tlHomeBlogsIn.fromTo(['body', '.header'],{background:"#113"},{duration:0.2, background:"#eef"})
+// tlHomeBlogsIn.call(function() {$('.header').removeClass("dark")}, null, null, 2);
 tlHomeBlogsIn.from('.blogs',1, {opacity:0})
 
 tlHomeEnquiryIn.to(['.blog'],1, {opacity:0})
-tlHomeEnquiryIn.to(['body', '.header'],0.1, {background:"#113"})
+tlHomeEnquiryIn.fromTo(['body', '.header'],{background:"#eef"},{duration:0.2, background:"#113"})
+// tlHomeEnquiryIn.to(['body', '.header'],0.1, {background:"#113"})
 tlHomeEnquiryIn.call(function() {$('.header').addClass("dark")}, null, null, 2);
 tlHomeEnquiryIn.from('.enquiry',1, {opacity:0, y:40})
 // gsap.to(
@@ -292,7 +294,7 @@ $(window).on('load', function() {
 
 $(document).ready(function(){
     $(".hero-name span").lettering();
-    $('body').css("background", "#1e1e1f");
+    // $('body').css("background", "#1e1e1f");
     introAnimation();
     
 });
@@ -312,10 +314,11 @@ $(document).ready(function(){
 
 function introAnimation() {
 
-    
+    window.scrollTo(0, 0);
     headerLoop.set([".role2 span",".role3 span"], {opacity: 0})
     // headerAppear.set(".hero-name", {width: "200%", textAlign: "center"})
-    headerAppear.set("body",{background:"#1e1e1f"})
+    headerAppear.to("body",0.2,{background:"#1e1e1f"})
+    headerAppear.to(".revealer",1, {ease: Power2.easeOut, y:"-100%"}, "+=2")
     headerAppear.from(
         ".general span", 
         1, 
@@ -326,7 +329,7 @@ function introAnimation() {
             amount: 0.3, 
             from: "random",
          }
-        },
+        }, "-=1"
     )
     headerAppear.from(
         ".role1 span", 
