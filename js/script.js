@@ -104,14 +104,12 @@ tlHomeWorksIn.from('.work-row-1',1, {y:50, opacity:0})
 
 tlHomeBlogsIn.to('.shots',1, {opacity:0})
 tlHomeBlogsIn.fromTo(['body', '.header'],{background:"#113"},{duration:0.2, background:"#eef"})
-// tlHomeBlogsIn.call(function() {$('.header').removeClass("dark")}, null, null, 2);
 tlHomeBlogsIn.from('.blogs',1, {opacity:0})
 
-tlHomeEnquiryIn.to(['.blog'],1, {opacity:0})
+tlHomeEnquiryIn.to('.blog',1, {opacity:0})
 tlHomeEnquiryIn.fromTo(['body', '.header'],{background:"#eef"},{duration:0.2, background:"#113"})
 // tlHomeEnquiryIn.to(['body', '.header'],0.1, {background:"#113"})
-tlHomeEnquiryIn.call(function() {$('.header').addClass("dark")}, null, null, 2);
-tlHomeEnquiryIn.from('.enquiry',1, {opacity:0, y:40})
+tlHomeEnquiryIn.from('.enquiry',1, {opacity:0})
 // gsap.to(
 //     ".img-1",
 //     {

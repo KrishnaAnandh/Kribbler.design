@@ -1294,6 +1294,7 @@ a:hover::after{
 .works .works-container .works-list .work .work-desc .work-content {
   margin: 10px 0;
   color: inherit;
+  opacity: 0.6;
 }
 
 .works .works-container .works-list .work .work-desc .link-arrow {
