@@ -145,6 +145,60 @@ $("#enquiry").load("./enquiry.html", function(){
             background:"#113"
         }
     )
+
+
+    //home-page-header
+    // gsap.to(
+    //     '.header',
+    //     {
+    //         scrollTrigger:{
+    //             trigger: ".bio",
+    //             start: "top 100px",
+    //             end: "bottom top",
+    //             onEnter() {
+    //                 console.log("onEnter")
+    //                 $('.header').addClass('dark');
+                    
+    //             },
+    //             onEnterBack() {
+    //                 console.log("onEnterBack")
+    //                 $('.header').addClass('dark');
+    //             },
+    //         },
+    //         background:"#113"
+    //     }
+    // )
+
+    gsap.to(
+        'body',
+        {
+            scrollTrigger:{
+                trigger: ".blogs",
+                start: "top 60%",
+                end: "bottom 40%",
+                // scrub: true,
+                // markers: true,
+                onEnter() {
+                    console.log("onEnter")
+                    $('.header').removeClass('dark');
+                    
+                },
+                onEnterBack() {
+                    console.log("onEnterBack")
+                    $('.header').removeClass('dark');
+                },
+                onLeave() {
+                    console.log("onEnterBack")
+                    $('.header').addClass('dark');
+                },
+                onLeaveBack() {
+                    console.log("onEnterBack")
+                    $('.header').addClass('dark');
+                },
+            },
+            background:"#fff"
+        }
+    )
 }); 
 
 

@@ -30,7 +30,7 @@ body{
     margin: 0;
     padding: 0;
     position: relative;
-    font-family: "Poppins", Arial, sans-serif;
+    font-family: "Rubik", Arial, sans-serif;
     box-sizing: border-box;
     // transition: all 0.5s cubic-bezier(0.71, 0.01, 0.13, 1.03), color 0s ease;
     scroll-behavior: smooth;
@@ -55,7 +55,7 @@ h1{
     }
 }
 h2{
-    font-family: 'Poppins', "Arial", sans-serif;
+    font-family: 'Rubik', "Arial", sans-serif;
     font-size: 52px;
     line-height: 52px;
     font-weight: 500;
@@ -110,9 +110,10 @@ h6 {
 }
 
 p, li{
-    font-family: "Poppins", Arial, sans-serif;
+    font-family: "Rubik", Arial, sans-serif;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 20px;
     letter-spacing: 0.5;
     color: #000c;
     margin: 10px 0;
@@ -904,6 +905,7 @@ a:hover::after{
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                padding: 40px;
                 transition: all 0.3s ease-in-out;
 
                 @media screen and (max-width:600px){
@@ -925,13 +927,13 @@ a:hover::after{
 
                 .work-desc{
                     position: relative;
-                    width: 50%;
+                    width: 40%;
                     min-width: 200px;
                     display: flex;
                     flex-direction: column;
                     justify-content:space-between;
                     align-items: stretch;
-                    padding: 50px;
+                    padding-right: 50px;
                     z-index: 2;
                     @media screen and (max-width:600px){
                         width: 100%;
@@ -998,9 +1000,12 @@ a:hover::after{
                 }
 
                 .work-image-holder{
-                    width:50%;
+                    width:60%;
                     height: 100%;
-                    
+                    display: flex;
+                    justify-content: center;                
+                    flex-direction: column;
+                    align-items: center;
                     top: 0;
                     z-index: 1;
                     @media screen and (max-width:600px){
@@ -1011,7 +1016,7 @@ a:hover::after{
 
                     img{
         
-                        width: 100%;
+                        width: 120%;
                         // top: 50%;
                         // transform: translateY(-50%);
                         right: 0;
@@ -1056,6 +1061,7 @@ a:hover::after{
                     height: 680px;
                     .work-desc{
                         width: 50%;
+                        padding: 0 60px;
                     }
 
                     .work-title{

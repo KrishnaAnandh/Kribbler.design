@@ -34,7 +34,7 @@ body.scroll-stopped {
   margin: 0;
   padding: 0;
   position: relative;
-  font-family: "Poppins", Arial, sans-serif;
+  font-family: "Rubik", Arial, sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   scroll-behavior: smooth;
@@ -62,7 +62,7 @@ h1 {
 }
 
 h2 {
-  font-family: 'Poppins', "Arial", sans-serif;
+  font-family: 'Rubik', "Arial", sans-serif;
   font-size: 52px;
   line-height: 52px;
   font-weight: 500;
@@ -136,9 +136,10 @@ h6 {
 }
 
 p, li {
-  font-family: "Poppins", Arial, sans-serif;
+  font-family: "Rubik", Arial, sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 20px;
   letter-spacing: 0.5;
   color: #000c;
   margin: 10px 0;
@@ -1206,6 +1207,7 @@ a:hover::after{
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 40px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -1235,7 +1237,7 @@ a:hover::after{
 
 .works .works-container .works-list .work .work-desc {
   position: relative;
-  width: 50%;
+  width: 40%;
   min-width: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1250,7 +1252,7 @@ a:hover::after{
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  padding: 50px;
+  padding-right: 50px;
   z-index: 2;
 }
 
@@ -1334,8 +1336,21 @@ a:hover::after{
 }
 
 .works .works-container .works-list .work .work-image-holder {
-  width: 50%;
+  width: 60%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   top: 0;
   z-index: 1;
 }
@@ -1351,7 +1366,7 @@ a:hover::after{
 }
 
 .works .works-container .works-list .work .work-image-holder img {
-  width: 100%;
+  width: 120%;
   right: 0;
   position: relative;
   -webkit-filter: url(#drop-shadow);
@@ -1403,6 +1418,7 @@ a:hover::after{
   }
   .works .works-container .works-list .work-1 .work-desc {
     width: 50%;
+    padding: 0 60px;
   }
   .works .works-container .works-list .work-1 .work-title {
     font-size: 38px;
