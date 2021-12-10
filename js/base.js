@@ -67,13 +67,16 @@ $("#enquiry").load("./enquiry.html", function(){
         event.preventDefault();
        
         console.log("submitting")
+        $('.enquiry-loading svg').addClass('loading')
+
         var enquirySubmit= new TimelineMax()
         
         enquirySubmit.to('.enquiry-now', 0.5, {opacity:0})
         enquirySubmit.to('.enquiry-loading', 0.5, {opacity:1})
         enquirySubmit.to('.enquiry-submitting', 0.5, {opacity:1}, "-=0.5")
-        enquirySubmit.to('.enquiry-submitting', 0.5, {opacity:0}, "+=3")
-        enquirySubmit.to('.enquiry-submitted', 0.5, {opacity:1})
+        
+
+        
         // Get some values from elements on the page:
         var $form = $( this ),
           name = $form.find( "input[name='name']" ).val(),
@@ -86,34 +89,58 @@ $("#enquiry").load("./enquiry.html", function(){
        
         // Put the results in a div
         posting.done(function( data ) {
-            enquirySubmit.to('.enquiry-submitting', 0.5, {opacity:0})
-            enquirySubmit.to('.enquiry-submitted', 0.5, {opacity:1})
+            console.log(data)
+            setTimeout(function(){ 
+                $('.enquiry-loading svg').removeClass('loading')
+                $('.enquiry-loading svg').addClass('loaded')
+                enquirySubmit.to('.enquiry-submitting', 0.5, {opacity:0})
+                enquirySubmit.to('.enquiry-submitted', 0.5, {opacity:1})
+            
+            }, 1000);
+            
+            
         });
       });
-      
+      gsap.to('.fade-enquiry', 
+        {
+            scrollTrigger:{
+                trigger: ".enquiry",
+                start: "top 70%",
+                end: "50px 40%",
+                scrub: true,
+                // markers: true,
+            },
+        opacity : 0,
+        }
+    )
       gsap.to(
         ['body', '.header'],
         {
             scrollTrigger:{
-            trigger: ".enquiry",
-            start: "top 70%",
-            end: "50px 40%",
-            scrub: true,
-            // markers: true,
-            onEnter() {
-                $('.header').addClass('dark');
-                
-            },
-            onLeave() {
-                // $('.header').removeClass('dark');
-            },
-            onEnterBack() {
-                // $('.header').addClass('dark');
-                
-            },
-            onLeaveBack() {
-                $('.header').removeClass('dark');
-            }
+                trigger: ".enquiry",
+                start: "top 70%",
+                end: "50px 40%",
+                scrub: true,
+                // markers: true,
+                onEnter() {
+                    console.log("onEnter")
+                    $('.header').addClass('dark');
+                    
+                },
+                onLeave() {
+                    console.log("onLeave")
+                    // $('.header').removeClass('dark');
+                },
+                onEnterBack() {
+                    console.log("onEnterBack")
+                    // $('.header').addClass('dark');
+                    
+                },
+                onLeaveBack() {
+                    console.log("onLeaveBack")
+                    $('.header').removeClass('dark');
+                    if(thisPage != 'home') $('.header').css("background", "#fff")
+                }
             },
             background:"#113"
         }
@@ -140,23 +167,29 @@ if(thisPage != 'home'){
             {
                 scrollTrigger:{
                 trigger: ".cover",
-                start: "bottom 10px",
-                // end: "bottom bottom",
+                start: "95% bottom",
+                end: "95% top",
                 scrub: true,
                 // markers: true,
                 onEnter() {
-                    header.removeClass('dark');
-                    header.css("background", "#fff")
+                    console.log("onEnter")
+                    if(thisPage == 'works-detail') header.addClass('dark');
+                    header.css("background", "#fff0")
                 },
                 onLeave() {
-                    // header.addClass('dark');
-                },
-                onEnterBack() {
+                    console.log("onLeave")
                     header.removeClass('dark');
                     header.css("background", "#fff")
                 },
+                onEnterBack() {
+                    console.log("onEnterBack")
+                    if(thisPage == 'works-detail') header.addClass('dark');
+                    header.css("background", "#fff0")
+                },
                 onLeaveBack() {
-                    header.addClass('dark');
+                    console.log("onLeaveBack")
+                    header.removeClass('dark');
+                    header.css("background", "#fff")
                 }
                 },
                 // background:"#fff"
@@ -239,11 +272,11 @@ layerLow.forEach((el) => {
 
 
 var scrollIndication = new TimelineMax({repeat:-1})
-scrollIndication.set([".project-cover", ".scroll-indicator p"], {y:0})
-scrollIndication.fromTo(".project-cover", {y:0}, {duration:0.2, y:-100}, "+=6")
-scrollIndication.fromTo(".project-cover", {y:-100}, {duration:0.3, y:0})
-scrollIndication.fromTo(".project-cover", {y:0}, {duration:0.2, y:-100})
-scrollIndication.fromTo(".project-cover", {y:-100}, {duration:0.5, y:0})
+scrollIndication.set([".scroll-jump", ".scroll-indicator p"], {y:0})
+scrollIndication.fromTo(".scroll-jump", {y:0}, {duration:0.2, y:-100}, "+=6")
+scrollIndication.fromTo(".scroll-jump", {y:-100}, {duration:0.3, y:0})
+scrollIndication.fromTo(".scroll-jump", {y:0}, {duration:0.2, y:-100})
+scrollIndication.fromTo(".scroll-jump", {y:-100}, {duration:0.5, y:0})
 // scrollIndication.fromTo(".scroll-indicator p", {y:0}, {duration:0.2, y:-40})
 // scrollIndication.fromTo(".scroll-indicator p", {y:-40}, {duration:0.3, y:0})
 // scrollIndication.fromTo(".scroll-indicator p", {y:0}, {duration:0.2, y:-40})

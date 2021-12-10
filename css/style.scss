@@ -708,7 +708,7 @@ a:hover::after{
     justify-content: center;
     align-items: center;
     svg.tea {
-        --secondary: #33406f;
+        // --secondary: #33406f;
       }
       svg.tea #teabag {
         transform-origin: top center;
@@ -1441,15 +1441,52 @@ a:hover::after{
             margin: 20px 0;
             display: flex;
             opacity: 0;
-            span{
-                width: 8px;
-                height: 8px;
-                background: #fff;
-                margin: 3px;
-                border-radius: 50%;
+            svg{
+                transition: all .3s ease-in-out;
+                .circle, .smile-down, .smile-up{
+                    transition: all .3s ease-in-out;
+                }
+                &.loading{
+                    fill: #000;
+                    .circle{
+                        animation: loading 1s ease-in-out infinite;
+                        
+                        &.circle-middle{
+                            animation-delay: .2s;
+                        }
+                        &.circle-right{
+                            animation-delay: .4s;
+                        }
+                    }
+                }
+                &.loaded{
+                    .circle{
+                        animation: none;
+                        .smile-up{
+                            opacity: 0;
+                        }
+                        .smile-down{
+                            transform: translate(-18px, -3px) scale(2);
+                            stroke-width: 1px;
+                        }
+                    }
+                }
             }
         }
     }
+}
+
+@keyframes loading {
+    0%{
+        transform: translateY(-3px);
+    }
+    50%{
+        transform: translateY(3px);
+    }
+    100%{
+        transform: translateY(-3px);
+    }
+    
 }
 
 
@@ -1772,6 +1809,9 @@ a:hover::after{
     .align-center{
         justify-content: center;
     }
+    &.align-center{
+        justify-content: center;
+    }
 }
 
 .project-column {
@@ -1982,6 +2022,10 @@ a:hover::after{
 
 .page-foodmates{
     background: #fff;
+    .project-cover{
+        // background: #2ab46f;
+        background: #2ab46f url("/img/pattern-foodmates.svg") repeat right top;
+    }
     .bg-shade{
         background: #e0f1ff;
     }
@@ -2127,6 +2171,11 @@ a:hover::after{
 .page-unibook{
     background: #fff;
 
+    .project-cover{
+        // background: #2ab46f;
+        background: #FF5757 url("/img/pattern-unibook.svg") repeat right top;
+    }
+
     .bg-shade{
         background: #FFF8F1;
     }
@@ -2178,6 +2227,22 @@ a:hover::after{
             padding: 50px;
             background: #fffaee;
         }
+    }
+}
+
+.page-knoit{
+    .fun-fact{
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 30px;
+        text-align: left;
+        margin-top: 30px;
+        img{
+            margin: 10px;
+        }
+        
     }
 }
 
@@ -2325,17 +2390,27 @@ a:hover::after{
 }
 
 .page-about{
-    .about{
-        padding: 100px 0;
+    .sec-about{
+        padding: 0;
         max-width: 960px;
         left: 0;
         right: 0;
         margin: auto;
-        min-height: 100vh;
+        // min-height: 100vh;
         display: flex;
         flex-direction: row;
+        img{
+            margin: 0;
+        }
         .about-cont{
-            margin: 80px;
+            @media screen and (min-width:760px){
+                margin: 0 80px;
+            }
+            
+            h1{
+                font-size: 48px;
+                margin: 0px 0;
+            }
             .about-phonetic{
                 display: flex;
                 align-items: center;
@@ -2345,9 +2420,12 @@ a:hover::after{
                     border-radius: 50%;
                     width: 30px;
                     height: 30px;
+                    img{
+                        margin: 0;
+                    }
                 }
                 .about-ipa{
-                    margin-left: 30px;
+                    margin-left: 10px;
                 }
             }
             .about-interests{
@@ -2356,20 +2434,80 @@ a:hover::after{
             }
         }
     }
-    .principles{
+    .sec-principles{
         padding: 80px 0;
         display: flex;
         justify-content: center;
 
-        .principles-container{
-            max-width: 960px;
-            
+            h3{
+                margin: 70px 0;
+            }
             .principles-list{
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
                 grid-column-gap: 60px;
                 grid-row-gap: 20px;
+                @media screen and (max-width:760px){
+                    grid-template-columns: 1fr;
+                }
 
+            }
+        
+    }
+    .sec-adplist{
+        .adp-container{
+            padding: 30px;
+            border: 1px solid #0002;
+            border-radius: 20px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            align-items: center;
+            @media screen and (max-width:760px){
+                grid-template-columns: auto;
+                margin: 0 30px;
+                width: calc(100% - 60px);
+            }
+        }
+        img{
+            margin: 0;
+            max-height: 300px;
+            border-radius: 10px;
+            @media screen and (max-width:760px){
+                width: 200px;
+            }
+        }
+        .adp-text{
+            @media screen and (min-width:760px){
+                margin-left: 30px;
+            }
+        }
+        .adp-buttons{
+            align-items: flex-end;
+            text-align: right;
+            
+            @media screen and (max-width:760px){
+                margin: 0;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                p{
+                    margin-left: 20px;
+                }
+            }
+            
+        }
+        h3{
+            text-transform: none;
+            span{
+                text-transform: none;
+                color: lightseagreen;
+            }
+        }
+        .btn{
+            // color: #fff;
+            z-index: 1;
+            a{
+                font-size: 12px;
             }
         }
     }
