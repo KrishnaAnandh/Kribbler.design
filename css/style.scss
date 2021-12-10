@@ -557,8 +557,9 @@ a:hover::after{
             @media screen and (max-width:760px){
                 width: 100%;
                 height: 500px;
+                margin-top: -50px;
             }
-            @media screen and (max-width:1024px){
+            @media screen and (max-width:1024px) and (min-width:760px){
                 width: 50%;
                 
             }
