@@ -1205,6 +1205,8 @@ a:hover::after{
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 @media screen and (max-width: 600px) {
@@ -1218,6 +1220,16 @@ a:hover::after{
         -ms-flex-pack: stretch;
             justify-content: stretch;
   }
+}
+
+.works .works-container .works-list .work a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-transform: none;
+  z-index: 10;
+  top: 0;
+  left: 0;
 }
 
 .works .works-container .works-list .work .work-desc {
@@ -1281,13 +1293,38 @@ a:hover::after{
   color: inherit;
 }
 
-.works .works-container .works-list .work .work-desc .work-link {
+.works .works-container .works-list .work .work-desc .link-arrow {
   margin-top: 20px;
   margin: 10px 0;
   color: inherit;
+  border: 1px solid #fff3;
+  border-radius: 20px;
+  padding: 6px 12px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-.works .works-container .works-list .work .work-desc .work-link .link-uline {
+.works .works-container .works-list .work .work-desc .link-arrow div {
+  width: 12px;
+  overflow: hidden;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.works .works-container .works-list .work .work-desc .link-arrow svg {
+  left: -8px;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.works .works-container .works-list .work .work-desc .link-arrow svg path {
+  stroke: #fff;
+}
+
+.works .works-container .works-list .work .work-desc .link-arrow .link-uline {
   stroke: #fff;
 }
 
@@ -1318,6 +1355,19 @@ a:hover::after{
   position: relative;
   -webkit-filter: url(#drop-shadow);
           filter: url(#drop-shadow);
+}
+
+.works .works-container .works-list .work:hover {
+  -webkit-transform: scale(0.96);
+          transform: scale(0.96);
+}
+
+.works .works-container .works-list .work:hover .link-arrow div {
+  width: 20px;
+}
+
+.works .works-container .works-list .work:hover .link-arrow div svg {
+  left: 0;
 }
 
 .works .works-container .works-list .work-1 {
@@ -1375,26 +1425,30 @@ a:hover::after{
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: work2;
-  background-color: #FF5757;
+  background-color: #F8B817;
+}
+
+.works .works-container .works-list .work-2 .work-client, .works .works-container .works-list .work-2 .work-title, .works .works-container .works-list .work-2 .work-content, .works .works-container .works-list .work-2 .work-link {
+  color: #333 !important;
+}
+
+.works .works-container .works-list .work-2 .link-arrow {
+  border-color: #3333 !important;
+}
+
+.works .works-container .works-list .work-2 .link-arrow svg path {
+  stroke: #333 !important;
+}
+
+.works .works-container .works-list .work-2 .work-client::before {
+  background-color: #000 !important;
 }
 
 .works .works-container .works-list .work-3 {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: work3;
-  background-color: #F8B817;
-}
-
-.works .works-container .works-list .work-3 .work-client, .works .works-container .works-list .work-3 .work-title, .works .works-container .works-list .work-3 .work-content, .works .works-container .works-list .work-3 .work-link {
-  color: #333 !important;
-}
-
-.works .works-container .works-list .work-3 .work-client .link-uline, .works .works-container .works-list .work-3 .work-title .link-uline, .works .works-container .works-list .work-3 .work-content .link-uline, .works .works-container .works-list .work-3 .work-link .link-uline {
-  stroke: #333 !important;
-}
-
-.works .works-container .works-list .work-3 .work-client::before {
-  background-color: #000 !important;
+  background-color: #FF5757;
 }
 
 .shots {
