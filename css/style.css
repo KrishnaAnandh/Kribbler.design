@@ -932,6 +932,10 @@ a:hover::after{
           align-items: center;
 }
 
+.revealer svg.tea {
+  --secondary: #33406f;
+}
+
 .revealer svg.tea #teabag {
   -webkit-transform-origin: top center;
           transform-origin: top center;
