@@ -34,7 +34,7 @@ body.scroll-stopped {
   margin: 0;
   padding: 0;
   position: relative;
-  font-family: "Rubik", Arial, sans-serif;
+  font-family: "Manrope", Arial, sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   scroll-behavior: smooth;
@@ -57,14 +57,14 @@ h1 {
 @media screen and (max-width: 480px) {
   h1 {
     font-size: 38px;
-    line-height: 38px;
+    line-height: 42px;
   }
 }
 
 h2 {
-  font-family: 'Rubik', "Arial", sans-serif;
+  font-family: 'Manrope', "Arial", sans-serif;
   font-size: 52px;
-  line-height: 52px;
+  line-height: 54px;
   font-weight: 500;
   margin: 20px 0;
 }
@@ -72,7 +72,7 @@ h2 {
 @media screen and (max-width: 480px) {
   h2 {
     font-size: 32px;
-    line-height: 32px;
+    line-height: 36px;
   }
 }
 
@@ -89,7 +89,7 @@ h3, h3 span, .heads p {
 @media screen and (max-width: 480px) {
   h3, h3 span, .heads p {
     font-size: 28px;
-    line-height: 28px;
+    line-height: 30px;
   }
 }
 
@@ -103,7 +103,7 @@ h4 {
 @media screen and (max-width: 480px) {
   h4 {
     font-size: 24px;
-    line-height: 22px;
+    line-height: 26px;
   }
 }
 
@@ -131,16 +131,16 @@ h6 {
 @media screen and (max-width: 480px) {
   h6 {
     font-size: 16px;
-    line-height: 16px;
+    line-height: 18px;
   }
 }
 
 p, li {
-  font-family: "Rubik", Arial, sans-serif;
+  font-family: "Manrope", Arial, sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-  letter-spacing: 0.5;
+  letter-spacing: 0.3px;
   color: #000c;
   margin: 10px 0;
 }
@@ -152,7 +152,7 @@ p, li {
 }
 
 b {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 blockquote {
@@ -449,6 +449,7 @@ a:hover::after{
 }
 
 .header .header-container .header-menu ul li {
+  font-size: inherit;
   color: inherit;
   display: inline-block;
   margin: 0;
@@ -687,7 +688,7 @@ a:hover::after{
 
 .hero .hero-container .hero-details .hero-desc h2 {
   font-size: 20px;
-  line-height: 24px;
+  line-height: 26px;
   font-weight: 400;
   margin: 20px 0;
   padding-right: 20px;
@@ -1080,7 +1081,7 @@ a:hover::after{
 @media screen and (max-width: 480px) {
   .bio .bio-container .bio-summary {
     font-size: 40px;
-    line-height: 35px;
+    line-height: 42px;
   }
 }
 
@@ -1412,6 +1413,24 @@ a:hover::after{
   margin: auto;
 }
 
+@media screen and (max-width: 760px) {
+  .works .works-container .works-list .work-1 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0;
+  }
+  .works .works-container .works-list .work-1 .work-desc {
+    width: 100%;
+    padding: 40px;
+  }
+  .works .works-container .works-list .work-1 .work-image-holder {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
 @media screen and (min-width: 1025px) {
   .works .works-container .works-list .work-1 {
     padding: 0;
@@ -1423,7 +1442,7 @@ a:hover::after{
   }
   .works .works-container .works-list .work-1 .work-title {
     font-size: 38px;
-    line-height: 40px;
+    line-height: 42px;
   }
   .works .works-container .works-list .work-1 .work-image-holder {
     width: 50%;
@@ -1578,7 +1597,7 @@ a:hover::after{
 
 .blogs .blogs-container {
   position: relative;
-  padding: 100px 10px;
+  padding: 100px 20px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;

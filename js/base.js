@@ -100,8 +100,9 @@ $("#enquiry").load("./enquiry.html", function(){
             
             
         });
-      });
-      gsap.to('.fade-enquiry', 
+    });
+
+    gsap.to('.fade-enquiry', 
         {
             scrollTrigger:{
                 trigger: ".enquiry",
@@ -113,38 +114,30 @@ $("#enquiry").load("./enquiry.html", function(){
         opacity : 0,
         }
     )
-      gsap.to(
-        ['body', '.header'],
-        {
-            scrollTrigger:{
-                trigger: ".enquiry",
-                start: "top 70%",
-                end: "50px 40%",
-                scrub: true,
-                // markers: true,
-                onEnter() {
-                    console.log("onEnter")
-                    $('.header').addClass('dark');
+
+    // gsap.to(
+    //     ['body', '.header'],
+    //     {
+    //         scrollTrigger:{
+    //             trigger: ".enquiry",
+    //             start: "top 70%",
+    //             end: "50px 40%",
+    //             scrub: true,
+    //             markers: true,
+    //             onEnter() {
+    //                 console.log("onEnter")
+    //                 $('.header').addClass('dark');
                     
-                },
-                onLeave() {
-                    console.log("onLeave")
-                    // $('.header').removeClass('dark');
-                },
-                onEnterBack() {
-                    console.log("onEnterBack")
-                    // $('.header').addClass('dark');
-                    
-                },
-                onLeaveBack() {
-                    console.log("onLeaveBack")
-                    $('.header').removeClass('dark');
-                    if(thisPage != 'home') $('.header').css("background", "#fff")
-                }
-            },
-            background:"#113"
-        }
-    )
+    //             },
+    //             onLeaveBack() {
+    //                 console.log("onLeaveBack")
+    //                 $('.header').removeClass('dark');
+    //                 // if(thisPage != 'home') $('.header').css("background", "#fff")
+    //             }
+    //         },
+    //         background:"#113"
+    //     }
+    // )
 
 
     //home-page-header
