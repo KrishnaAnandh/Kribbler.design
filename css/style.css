@@ -1803,19 +1803,23 @@ a:hover::after{
 }
 
 .enquiry .enquiry-now .enquiry-form input::-webkit-input-placeholder {
-  color: #fff8;
+  color: #fffa;
+  text-shadow: none;
 }
 
 .enquiry .enquiry-now .enquiry-form input:-ms-input-placeholder {
-  color: #fff8;
+  color: #fffa;
+  text-shadow: none;
 }
 
 .enquiry .enquiry-now .enquiry-form input::-ms-input-placeholder {
-  color: #fff8;
+  color: #fffa;
+  text-shadow: none;
 }
 
 .enquiry .enquiry-now .enquiry-form input::placeholder {
-  color: #fff8;
+  color: #fffa;
+  text-shadow: none;
 }
 
 .enquiry .enquiry-now .enquiry-form input:focus {
@@ -1825,33 +1829,33 @@ a:hover::after{
   border-color: #a932ff;
   -webkit-box-shadow: 0 0 5px rgba(0, 255, 0, 0.2), inset 0 0 5px rgba(0, 255, 0, 0.1), 0 2px 0 #000;
           box-shadow: 0 0 5px rgba(0, 255, 0, 0.2), inset 0 0 5px rgba(0, 255, 0, 0.1), 0 2px 0 #000;
-  color: #efe;
+  color: #fff;
   outline: none;
 }
 
 @-webkit-keyframes glow {
   0% {
-    border-color: #70Ca;
+    border-color: #691b81;
     -webkit-box-shadow: 0 0 5px #70c4, inset 0 0 5px #70c4;
             box-shadow: 0 0 5px #70c4, inset 0 0 5px #70c4;
   }
   100% {
-    border-color: #70Cf;
-    -webkit-box-shadow: 0 0 40px #70Cf, inset 0 0 20px #70Cf;
-            box-shadow: 0 0 40px #70Cf, inset 0 0 20px #70Cf;
+    border-color: #691b81;
+    -webkit-box-shadow: 0 0 40px #691b81, inset 0 0 20px #691b81;
+            box-shadow: 0 0 40px #691b81, inset 0 0 20px #691b81;
   }
 }
 
 @keyframes glow {
   0% {
-    border-color: #70Ca;
+    border-color: #691b81;
     -webkit-box-shadow: 0 0 5px #70c4, inset 0 0 5px #70c4;
             box-shadow: 0 0 5px #70c4, inset 0 0 5px #70c4;
   }
   100% {
-    border-color: #70Cf;
-    -webkit-box-shadow: 0 0 40px #70Cf, inset 0 0 20px #70Cf;
-            box-shadow: 0 0 40px #70Cf, inset 0 0 20px #70Cf;
+    border-color: #691b81;
+    -webkit-box-shadow: 0 0 40px #691b81, inset 0 0 20px #691b81;
+            box-shadow: 0 0 40px #691b81, inset 0 0 20px #691b81;
   }
 }
 
@@ -1861,7 +1865,7 @@ a:hover::after{
   position: relative;
   border: none;
   padding: 15px 15px;
-  background: #39185c;
+  background: #691b81;
   border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
