@@ -65,14 +65,14 @@ var scHomeBlogsIn = ScrollTrigger.create({
     scrub: true,
     // markers: true,
 })
-var scHomeEnquiryIn = ScrollTrigger.create({
-    animation: tlHomeEnquiryIn,
-    trigger: ".enquiry",
-    start: "top 70%",
-    end: "50px 40%",
-    scrub: true,
-    // markers: true,
-})
+// var scHomeEnquiryIn = ScrollTrigger.create({
+//     animation: tlHomeEnquiryIn,
+//     trigger: ".enquiry",
+//     start: "top 70%",
+//     end: "50px 40%",
+//     scrub: true,
+//     // markers: true,
+// })
 // tlHomeHeroIn.staggerFrom('.hero-name .general span', 1, {y:100}, 0.1)
 
 tlHomeHeroOut.to('.hero-details',1, {y:-100})
@@ -106,10 +106,11 @@ tlHomeBlogsIn.to('.shots',1, {opacity:0})
 tlHomeBlogsIn.fromTo(['body', '.header'],{background:"#113"},{duration:0.2, background:"#eef"})
 tlHomeBlogsIn.from('.blogs',1, {opacity:0})
 
-tlHomeEnquiryIn.to('.blog',1, {opacity:0})
-tlHomeEnquiryIn.fromTo(['body', '.header'],{background:"#eef"},{duration:0.2, background:"#113"})
-// tlHomeEnquiryIn.to(['body', '.header'],0.1, {background:"#113"})
-tlHomeEnquiryIn.from('.enquiry',1, {opacity:0})
+// tlHomeEnquiryIn.to('.blogs',1, {opacity:0})
+// tlHomeEnquiryIn.fromTo(['body', '.header'],{background:"#eef"},{duration:0.2, background:"#113"})
+// // tlHomeEnquiryIn.to(['body', '.header'],0.1, {background:"#113"})
+// tlHomeEnquiryIn.from('.enquiry',1, {opacity:0})
+
 // gsap.to(
 //     ".img-1",
 //     {
@@ -437,6 +438,38 @@ $(window).scroll(function (event) {
     }
 
 });
+
+
+gsap.to(
+    'body',
+    {
+        scrollTrigger:{
+            trigger: ".blogs",
+            start: "top 60%",
+            end: "bottom 40%",
+            // scrub: true,
+            // markers: true,
+            onEnter() {
+                console.log("onEnter")
+                $('.header').removeClass('dark');
+                
+            },
+            onEnterBack() {
+                console.log("onEnterBack")
+                $('.header').removeClass('dark');
+            },
+            onLeave() {
+                console.log("onEnterBack")
+                $('.header').addClass('dark');
+            },
+            onLeaveBack() {
+                console.log("onEnterBack")
+                $('.header').addClass('dark');
+            },
+        },
+        background:"#fff"
+    }
+)
 
 
 

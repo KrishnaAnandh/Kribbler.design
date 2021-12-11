@@ -2945,19 +2945,8 @@ a:hover::after{
   padding: 0 20px;
 }
 
-.page-about .sec-about {
-  padding: 0;
-  max-width: 960px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+.page-about .cover {
+  padding: 40px;
 }
 
 .page-about .sec-about img {
@@ -2972,7 +2961,14 @@ a:hover::after{
 
 .page-about .sec-about .about-cont h1 {
   font-size: 48px;
+  line-height: 52px;
   margin: 0px 0;
+}
+
+@media screen and (min-width: 760px) {
+  .page-about .sec-about .about-cont h1 {
+    white-space: nowrap;
+  }
 }
 
 .page-about .sec-about .about-cont .about-phonetic {
@@ -3004,14 +3000,10 @@ a:hover::after{
   margin-top: 80px;
 }
 
-.page-about .sec-principles {
-  padding: 80px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+@media screen and (max-width: 760px) {
+  .page-about .sec-about .about-cont .about-interests {
+    margin-top: 40px;
+  }
 }
 
 .page-about .sec-principles h3 {

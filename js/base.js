@@ -1,3 +1,4 @@
+$(document).ready(function(){
 $("#header").load("./header.html", function() {
     var menuOpened = false
     $('#menu-icon').on('click', function(){
@@ -100,8 +101,11 @@ $("#enquiry").load("./enquiry.html", function(){
             
             
         });
-    });
 
+        
+        
+
+    });
     gsap.to('.fade-enquiry', 
         {
             scrollTrigger:{
@@ -110,34 +114,38 @@ $("#enquiry").load("./enquiry.html", function(){
                 end: "50px 40%",
                 scrub: true,
                 // markers: true,
+                },
+            opacity : 0,
+            }
+        )
+
+    gsap.to(
+        ['body', '.header'],
+        {
+            scrollTrigger:{
+                trigger: ".enquiry",
+                start: "top 70%",
+                end: "50px 40%",
+                scrub: true,
+                // markers: true,
+                onEnter() {
+                    console.log("onEnter")
+                    $('.header').addClass('dark');
+                    
+                },
+                onLeaveBack() {
+                    console.log("onLeaveBack")
+                    $('.header').removeClass('dark');
+                    if(thisPage != 'home') $('.header').css("background", "#fff")
+                }
             },
-        opacity : 0,
+            background:"#113"
         }
     )
 
-    // gsap.to(
-    //     ['body', '.header'],
-    //     {
-    //         scrollTrigger:{
-    //             trigger: ".enquiry",
-    //             start: "top 70%",
-    //             end: "50px 40%",
-    //             scrub: true,
-    //             markers: true,
-    //             onEnter() {
-    //                 console.log("onEnter")
-    //                 $('.header').addClass('dark');
-                    
-    //             },
-    //             onLeaveBack() {
-    //                 console.log("onLeaveBack")
-    //                 $('.header').removeClass('dark');
-    //                 // if(thisPage != 'home') $('.header').css("background", "#fff")
-    //             }
-    //         },
-    //         background:"#113"
-    //     }
-    // )
+ 
+
+
 
 
     //home-page-header
@@ -162,37 +170,9 @@ $("#enquiry").load("./enquiry.html", function(){
     //     }
     // )
 
-    gsap.to(
-        'body',
-        {
-            scrollTrigger:{
-                trigger: ".blogs",
-                start: "top 60%",
-                end: "bottom 40%",
-                // scrub: true,
-                // markers: true,
-                onEnter() {
-                    console.log("onEnter")
-                    $('.header').removeClass('dark');
-                    
-                },
-                onEnterBack() {
-                    console.log("onEnterBack")
-                    $('.header').removeClass('dark');
-                },
-                onLeave() {
-                    console.log("onEnterBack")
-                    $('.header').addClass('dark');
-                },
-                onLeaveBack() {
-                    console.log("onEnterBack")
-                    $('.header').addClass('dark');
-                },
-            },
-            background:"#fff"
-        }
-    )
+    
 }); 
+})
 
 
 

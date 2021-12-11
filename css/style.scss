@@ -2461,15 +2461,11 @@ a:hover::after{
 }
 
 .page-about{
+    .cover{
+        padding: 40px;
+    }
     .sec-about{
-        padding: 0;
-        max-width: 960px;
-        left: 0;
-        right: 0;
-        margin: auto;
-        // min-height: 100vh;
-        display: flex;
-        flex-direction: row;
+        
         img{
             margin: 0;
         }
@@ -2480,7 +2476,13 @@ a:hover::after{
             
             h1{
                 font-size: 48px;
+                line-height: 52px;
                 margin: 0px 0;
+                
+                @media screen and (min-width:760px){
+                    white-space: nowrap;
+                }
+
             }
             .about-phonetic{
                 display: flex;
@@ -2502,14 +2504,13 @@ a:hover::after{
             .about-interests{
                 font-size: 16px;
                 margin-top: 80px;
+                @media screen and (max-width:760px) {
+                    margin-top: 40px;  
+                }
             }
         }
     }
     .sec-principles{
-        padding: 80px 0;
-        display: flex;
-        justify-content: center;
-
             h3{
                 margin: 70px 0;
             }
