@@ -18,6 +18,8 @@ $(document).ready(function(){
 
         $('#another-enquiry').on('click', function(event){
             var enquirySubmit= new TimelineMax()
+            $('input').val("");
+            $('textarea').val("");
             enquirySubmit.to('.enquiry-submitted', 0.5, {opacity:0})
             enquirySubmit.to('.enquiry-loading', 0.5, {opacity:0}, "-=1")
             enquirySubmit.to('.enquiry-now', 0.5, {opacity:1})
@@ -42,7 +44,7 @@ $(document).ready(function(){
             var $form = $( this ),
             name = $form.find( "input[name='name']" ).val(),
             email = $form.find( "input[name='email']" ).val(),
-            message = $form.find( "input[name='message']" ).val(),
+            message = $form.find( "textarea[name='message']" ).val(),
             url = "https://enpaq89531mi6oi.m.pipedream.net";
         
             // Send the data using post
