@@ -1414,6 +1414,9 @@ a:hover::after{
                     outline: none;
     
                 }
+                &.invalid{
+                    border-color: #f35e7b;
+                }
                 
             }
             @keyframes glow {

@@ -1864,6 +1864,10 @@ a:hover::after{
   outline: none;
 }
 
+.enquiry .enquiry-now .enquiry-form input.invalid, .enquiry .enquiry-now .enquiry-form textarea.invalid {
+  border-color: #f35e7b;
+}
+
 @-webkit-keyframes glow {
   0% {
     border-color: #691b81;

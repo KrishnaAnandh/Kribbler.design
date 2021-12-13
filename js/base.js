@@ -34,9 +34,7 @@ $(document).ready(function(){
 
             var enquirySubmit= new TimelineMax()
             
-            enquirySubmit.to('.enquiry-now', 0.5, {opacity:0})
-            enquirySubmit.to('.enquiry-loading', 0.5, {opacity:1})
-            enquirySubmit.to('.enquiry-submitting', 0.5, {opacity:1}, "-=0.5")
+           
             
 
             
@@ -46,9 +44,22 @@ $(document).ready(function(){
             email = $form.find( "input[name='email']" ).val(),
             message = $form.find( "textarea[name='message']" ).val(),
             url = "https://enpaq89531mi6oi.m.pipedream.net";
+
+
+    
+
+            if( /(.+)@(.+){2,}\.(.+){2,}/.test(email) ){
+                $("input[name='email']").removeClass('invalid');
+                var posting = $.post( url, { name: name,email: email,message: message } );
+                enquirySubmit.to('.enquiry-now', 0.5, {opacity:0})
+                enquirySubmit.to('.enquiry-loading', 0.5, {opacity:1})
+                enquirySubmit.to('.enquiry-submitting', 0.5, {opacity:1}, "-=0.5")
+            } else {
+                $("input[name='email']").addClass('invalid');
+            }
         
             // Send the data using post
-            var posting = $.post( url, { name: name,email: email,message: message } );
+            
         
             // Put the results in a div
             posting.done(function( data ) {
