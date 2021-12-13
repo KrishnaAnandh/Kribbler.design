@@ -59,7 +59,7 @@ var scHomeExpertiseIn = ScrollTrigger.create({
 
 var scHomeBlogsIn = ScrollTrigger.create({
     animation: tlHomeBlogsIn,
-    trigger: ".blogs",
+    trigger: ".home-blogs",
     start: "top 70%",
     end: "50px 40%",
     scrub: true,
@@ -104,7 +104,7 @@ tlHomeWorksIn.from('.work-row-1',1, {y:50, opacity:0})
 
 tlHomeBlogsIn.to('.shots',1, {opacity:0})
 tlHomeBlogsIn.fromTo(['body', '.header'],{background:"#113"},{duration:0.2, background:"#eef"})
-tlHomeBlogsIn.from('.blogs',1, {opacity:0})
+tlHomeBlogsIn.from('.home-blogs',1, {opacity:0})
 
 // tlHomeEnquiryIn.to('.blogs',1, {opacity:0})
 // tlHomeEnquiryIn.fromTo(['body', '.header'],{background:"#eef"},{duration:0.2, background:"#113"})
@@ -444,7 +444,7 @@ gsap.to(
     'body',
     {
         scrollTrigger:{
-            trigger: ".blogs",
+            trigger: ".home-blogs",
             start: "top 60%",
             end: "bottom 40%",
             // scrub: true,

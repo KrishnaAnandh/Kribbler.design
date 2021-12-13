@@ -824,10 +824,25 @@ a:hover::after{
   pointer-events: none;
 }
 
-.hero .hero-overlay .hero-logo-1 {
+.hero .hero-overlay .hidden-header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  pointer-events: all;
+}
+
+.hero .hero-overlay .hidden-header .hero-logo-1 {
   padding: 20px;
   -webkit-filter: invert(100%);
           filter: invert(100%);
+}
+
+.hero .hero-overlay .hidden-header .open-menu {
+  padding: 20px;
 }
 
 .hero .hero-overlay .scroll-indicator {
@@ -1295,7 +1310,7 @@ a:hover::after{
 .works .works-container .works-list .work .work-desc .work-content {
   margin: 10px 0;
   color: inherit;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .works .works-container .works-list .work .work-desc .link-arrow {
@@ -1584,7 +1599,7 @@ a:hover::after{
   display: grid;
 }
 
-.blogs {
+.home-blogs {
   position: relative;
   width: 100%;
   max-width: 1100px;
@@ -1595,7 +1610,7 @@ a:hover::after{
   /* transition: all .3s .5s ease; */
 }
 
-.blogs .blogs-container {
+.home-blogs .blogs-container {
   position: relative;
   padding: 100px 20px;
   height: -webkit-fit-content;
@@ -1603,7 +1618,7 @@ a:hover::after{
   height: fit-content;
 }
 
-.blogs .blogs-container .blogs-list {
+.home-blogs .blogs-container .blogs-list {
   display: -ms-grid;
   display: grid;
   grid-gap: 40px;
@@ -1612,19 +1627,19 @@ a:hover::after{
 }
 
 @media screen and (max-width: 480px) {
-  .blogs .blogs-container .blogs-list {
+  .home-blogs .blogs-container .blogs-list {
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
         grid-template-areas: 'featured' 'blog1' 'blog2' 'blog3';
   }
 }
 
-.blogs .blogs-container .blogs-list .blog .blog-image {
+.home-blogs .blogs-container .blogs-list .blog .blog-image {
   overflow: hidden;
   background-color: #382fc5;
 }
 
-.blogs .blogs-container .blogs-list .blog .blog-image img {
+.home-blogs .blogs-container .blogs-list .blog .blog-image img {
   position: absolute;
   height: 100%;
   left: 50%;
@@ -1632,7 +1647,7 @@ a:hover::after{
           transform: translateX(-50%);
 }
 
-.blogs .blogs-container .blogs-list .blog .blog-desc .blog-title {
+.home-blogs .blogs-container .blogs-list .blog .blog-desc .blog-title {
   font-size: 16px;
   font-size: 16px;
   line-height: 24px;
@@ -1640,30 +1655,30 @@ a:hover::after{
 }
 
 @media screen and (max-width: 480px) {
-  .blogs .blogs-container .blogs-list .blog .blog-desc .blog-title {
+  .home-blogs .blogs-container .blogs-list .blog .blog-desc .blog-title {
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
   }
 }
 
-.blogs .blogs-container .blogs-list .blog .blog-desc .blog-cont {
+.home-blogs .blogs-container .blogs-list .blog .blog-desc .blog-cont {
   font-size: 14px;
   margin: 6px 0;
   font-weight: 300;
 }
 
 @media screen and (max-width: 768px) {
-  .blogs .blogs-container .blogs-list .blog .blog-desc .blog-cont {
+  .home-blogs .blogs-container .blogs-list .blog .blog-desc .blog-cont {
     display: none;
   }
 }
 
-.blogs .blogs-container .blogs-list .blog-3 {
+.home-blogs .blogs-container .blogs-list .blog-3 {
   grid-area: blog2;
 }
 
-.blogs .blogs-container .blogs-list .blog-4 {
+.home-blogs .blogs-container .blogs-list .blog-4 {
   grid-area: blog3;
 }
 
@@ -1790,40 +1805,55 @@ a:hover::after{
   width: 100%;
 }
 
-.enquiry .enquiry-now .enquiry-form input {
+.enquiry .enquiry-now .enquiry-form input, .enquiry .enquiry-now .enquiry-form textarea {
   background: #0005;
-  border: 1px solid #000;
-  border-radius: 5px;
+  border: 1px solid #2a2a5e;
+  border-radius: 0px;
   font-size: 14px;
   color: #fff;
   display: block;
-  margin: 10px;
-  padding: 12px 20px;
+  margin: -1px;
+  padding: 18px 20px;
   text-shadow: 0 -1px 0 #000;
   width: 100%;
 }
 
-.enquiry .enquiry-now .enquiry-form input::-webkit-input-placeholder {
+.enquiry .enquiry-now .enquiry-form input[name="name"], .enquiry .enquiry-now .enquiry-form textarea[name="name"] {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.enquiry .enquiry-now .enquiry-form input[name="message"], .enquiry .enquiry-now .enquiry-form textarea[name="message"] {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 110px;
+}
+
+.enquiry .enquiry-now .enquiry-form input::-webkit-resizer, .enquiry .enquiry-now .enquiry-form textarea::-webkit-resizer {
+  display: none;
+}
+
+.enquiry .enquiry-now .enquiry-form input::-webkit-input-placeholder, .enquiry .enquiry-now .enquiry-form textarea::-webkit-input-placeholder {
   color: #fffa;
   text-shadow: none;
 }
 
-.enquiry .enquiry-now .enquiry-form input:-ms-input-placeholder {
+.enquiry .enquiry-now .enquiry-form input:-ms-input-placeholder, .enquiry .enquiry-now .enquiry-form textarea:-ms-input-placeholder {
   color: #fffa;
   text-shadow: none;
 }
 
-.enquiry .enquiry-now .enquiry-form input::-ms-input-placeholder {
+.enquiry .enquiry-now .enquiry-form input::-ms-input-placeholder, .enquiry .enquiry-now .enquiry-form textarea::-ms-input-placeholder {
   color: #fffa;
   text-shadow: none;
 }
 
-.enquiry .enquiry-now .enquiry-form input::placeholder {
+.enquiry .enquiry-now .enquiry-form input::placeholder, .enquiry .enquiry-now .enquiry-form textarea::placeholder {
   color: #fffa;
   text-shadow: none;
 }
 
-.enquiry .enquiry-now .enquiry-form input:focus {
+.enquiry .enquiry-now .enquiry-form input:focus, .enquiry .enquiry-now .enquiry-form textarea:focus {
   -webkit-animation: glow 1.5s ease-out infinite alternate;
           animation: glow 1.5s ease-out infinite alternate;
   border-width: 1px;

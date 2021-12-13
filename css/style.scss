@@ -632,10 +632,22 @@ a:hover::after{
         height: 100vh;
         z-index: 99;
         pointer-events:none;
-        .hero-logo-1{
-            padding: 20px;
-            filter: invert(100%)
+
+        .hidden-header{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: all;
+
+            .hero-logo-1{
+                padding: 20px;
+                filter: invert(100%)
+            }
+            .open-menu{
+                padding: 20px;
+            }
         }
+        
         .scroll-indicator{
             position: absolute;
             transform: rotate(90deg) translate(-40px, -20px);
@@ -966,7 +978,7 @@ a:hover::after{
                     .work-content{
                         margin: 10px 0;
                         color: inherit;
-                        opacity: 0.6;
+                        opacity: 0.8;
                     }
                     .link-arrow{
                         margin-top: 20px;
@@ -1202,7 +1214,7 @@ a:hover::after{
 
 
 
-.blogs{
+.home-blogs{
     position: relative;
     width: 100%;
     max-width: 1100px;
@@ -1366,32 +1378,43 @@ a:hover::after{
                 align-items: center;
                 width: 100%;
             }
-            input{
-                background: #0005;	
-                border: 1px solid #000;
-                border-radius: 5px;
-                // box-shadow: 0 2px 0 #000;
+            input, textarea{
+                background: #0005;
+                border: 1px solid #2a2a5e;
+                border-radius: 0px;
                 font-size: 14px;
                 color: #fff;
                 display: block;
-                margin: 10px;
-                padding: 12px 20px;
+                margin: -1px;
+                padding: 18px 20px;
                 text-shadow: 0 -1px 0 #000;
                 width: 100%;
+                &[name="name"] {
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                }
+                &[name="message"] {
+                    border-bottom-left-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                    height: 110px;
+                }
+                &::-webkit-resizer {
+                    display: none;
+                  }
+                &::placeholder{
+                    color: #fffa;
+                    text-shadow: none;
+                }
+                &:focus {
+                    animation: glow 1.5s ease-out infinite alternate;
+                    border-width: 1px;
+                    border-color: rgb(169, 50, 255);
+                    box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+                    color: #fff;
+                    outline: none;
+    
+                }
                 
-            }
-            input::placeholder{
-                color: #fffa;
-                text-shadow: none;
-            }
-            input:focus {
-                animation: glow 1.5s ease-out infinite alternate;
-                border-width: 1px;
-                border-color: rgb(169, 50, 255);
-                box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
-                color: #fff;
-                outline: none;
-
             }
             @keyframes glow {
                 0% {

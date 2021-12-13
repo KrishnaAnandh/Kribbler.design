@@ -1,191 +1,122 @@
+gsap.registerPlugin(ScrollTrigger)
+
 $(document).ready(function(){
-$("#header").load("./header.html", function() {
-    var menuOpened = false
-    $('#menu-icon').on('click', function(){
-        
-        // gsap.set(".header-menu li a", {y:"60px", opacity:"0"})
-        // $("#menu-cont").toggleClass("open");
-        $(this).toggleClass("close");
-        $('body').toggleClass("scroll-stopped");
-        $('.header-container').toggleClass("open");
-        var menuOpen = new TimelineMax()
-        
-        if(!menuOpened){
-            menuOpen.to(".header-menu", 0.3, {right: "100%"})
-            menuOpen.from(".header-menu li a", 0.4 ,{
-                y:"80px",
-                opacity:"0",
-                skewY:"30",
-                stagger:{
-                amount: 0.3, 
-                from: "0",
-            }})
-            menuOpened = true
-        }
-        else{
-            menuOpen.to(".header-menu li a", 0.4 ,{
-                y:"80px",
-                opacity:"0",
-                skewY:"30",
-                stagger:{
-                amount: 0.3, 
-                from: "2",
-            }})
-            menuOpen.to(".header-menu", 0.3, {right: "0"})
-            menuOpen.reset()
-            menuOpened = false
-        }
+    $("#header").load("./header.html")
 
+    $("#enquiry").load("./enquiry.html", function(){
+        //submit button glow
+        const button = document.querySelector('button');
+        console.log(button)
 
-
-
-        
-    });
-}); 
-
-$("#enquiry").load("./enquiry.html", function(){
-    //submit button glow
-    const button = document.querySelector('button');
-    console.log(button)
-
-    button.addEventListener("mousemove", (e) => {
-    const { x, y, width, height} = button.getBoundingClientRect();
-    console.log(x, y, width, height)
-    if((e.clientX > x && e.clientX < x+width)&&(e.clientY > y && e.clientY < y+height)){
-        button.style.setProperty("--x", e.clientX - x);
-        }
-    });
-
-    $('#another-enquiry').on('click', function(event){
-        var enquirySubmit= new TimelineMax()
-        enquirySubmit.to('.enquiry-submitted', 0.5, {opacity:0})
-        enquirySubmit.to('.enquiry-loading', 0.5, {opacity:0}, "-=1")
-        enquirySubmit.to('.enquiry-now', 0.5, {opacity:1})
-    });
-
-    $("#enquiry-form-form").submit(function( event ) {
- 
-        event.preventDefault();
-       
-        console.log("submitting")
-        $('.enquiry-loading svg').addClass('loading')
-
-        var enquirySubmit= new TimelineMax()
-        
-        enquirySubmit.to('.enquiry-now', 0.5, {opacity:0})
-        enquirySubmit.to('.enquiry-loading', 0.5, {opacity:1})
-        enquirySubmit.to('.enquiry-submitting', 0.5, {opacity:1}, "-=0.5")
-        
-
-        
-        // Get some values from elements on the page:
-        var $form = $( this ),
-          name = $form.find( "input[name='name']" ).val(),
-          email = $form.find( "input[name='email']" ).val(),
-          message = $form.find( "input[name='message']" ).val(),
-          url = "https://hooks.zapier.com/hooks/catch/9198386/bm6q71s/";
-       
-        // Send the data using post
-        var posting = $.post( url, { name: name,email: email,message: message } );
-       
-        // Put the results in a div
-        posting.done(function( data ) {
-            console.log(data)
-            setTimeout(function(){ 
-                $('.enquiry-loading svg').removeClass('loading')
-                $('.enquiry-loading svg').addClass('loaded')
-                enquirySubmit.to('.enquiry-submitting', 0.5, {opacity:0})
-                enquirySubmit.to('.enquiry-submitted', 0.5, {opacity:1})
-            
-            }, 1000);
-            
-            
+        button.addEventListener("mousemove", (e) => {
+        const { x, y, width, height} = button.getBoundingClientRect();
+        console.log(x, y, width, height)
+        if((e.clientX > x && e.clientX < x+width)&&(e.clientY > y && e.clientY < y+height)){
+            button.style.setProperty("--x", e.clientX - x);
+            }
         });
 
-        
-        
+        $('#another-enquiry').on('click', function(event){
+            var enquirySubmit= new TimelineMax()
+            enquirySubmit.to('.enquiry-submitted', 0.5, {opacity:0})
+            enquirySubmit.to('.enquiry-loading', 0.5, {opacity:0}, "-=1")
+            enquirySubmit.to('.enquiry-now', 0.5, {opacity:1})
+        });
 
-    });
-    gsap.to('.fade-enquiry', 
-        {
-            scrollTrigger:{
-                trigger: ".enquiry",
-                start: "top 70%",
-                end: "50px 40%",
-                scrub: true,
-                // markers: true,
-                },
-            opacity : 0,
-            }
-        )
-
-    gsap.to(
-        ['body', '.header'],
-        {
-            scrollTrigger:{
-                trigger: ".enquiry",
-                start: "top 70%",
-                end: "50px 40%",
-                scrub: true,
-                // markers: true,
-                onEnter() {
-                    console.log("onEnter")
-                    $('.header').addClass('dark');
-                    
-                },
-                onLeaveBack() {
-                    console.log("onLeaveBack")
-                    $('.header').removeClass('dark');
-                    if(thisPage != 'home') $('.header').css("background", "#fff")
-                }
-            },
-            background:"#113"
-        }
-    )
-
- 
-
-
-
-
-    //home-page-header
-    // gsap.to(
-    //     '.header',
-    //     {
-    //         scrollTrigger:{
-    //             trigger: ".bio",
-    //             start: "top 100px",
-    //             end: "bottom top",
-    //             onEnter() {
-    //                 console.log("onEnter")
-    //                 $('.header').addClass('dark');
-                    
-    //             },
-    //             onEnterBack() {
-    //                 console.log("onEnterBack")
-    //                 $('.header').addClass('dark');
-    //             },
-    //         },
-    //         background:"#113"
-    //     }
-    // )
-
+        $("#enquiry-form-form").submit(function( event ) {
     
-}); 
+            event.preventDefault();
+        
+            console.log("submitting")
+            $('.enquiry-loading svg').addClass('loading')
+
+            var enquirySubmit= new TimelineMax()
+            
+            enquirySubmit.to('.enquiry-now', 0.5, {opacity:0})
+            enquirySubmit.to('.enquiry-loading', 0.5, {opacity:1})
+            enquirySubmit.to('.enquiry-submitting', 0.5, {opacity:1}, "-=0.5")
+            
+
+            
+            // Get some values from elements on the page:
+            var $form = $( this ),
+            name = $form.find( "input[name='name']" ).val(),
+            email = $form.find( "input[name='email']" ).val(),
+            message = $form.find( "input[name='message']" ).val(),
+            url = "https://enpaq89531mi6oi.m.pipedream.net";
+        
+            // Send the data using post
+            var posting = $.post( url, { name: name,email: email,message: message } );
+        
+            // Put the results in a div
+            posting.done(function( data ) {
+                console.log(data)
+                setTimeout(function(){ 
+                    $('.enquiry-loading svg').removeClass('loading')
+                    $('.enquiry-loading svg').addClass('loaded')
+                    enquirySubmit.to('.enquiry-submitting', 0.5, {opacity:0})
+                    enquirySubmit.to('.enquiry-submitted', 0.5, {opacity:1})
+                
+                }, 1000);
+                
+                
+            });
+
+            
+            
+
+        });
+        gsap.to('.fade-enquiry', 
+            {
+                scrollTrigger:{
+                    trigger: ".enquiry",
+                    start: "top 70%",
+                    end: "50px 40%",
+                    scrub: true,
+                    // markers: true,
+                    },
+                opacity : 0,
+                }
+            )
+
+        var tlEnquiryIn= new TimelineMax()
+        ScrollTrigger.create({
+            animation: tlEnquiryIn,
+            trigger: ".enquiry",
+            start: "top 70%",
+            end: "50px 40%",
+            scrub: true,
+            // markers: true,
+            onEnter() {
+                console.log("onEnter")
+                $('.header').addClass('dark');
+                
+            },
+            onLeaveBack() {
+                console.log("onLeaveBack")
+                $('.header').removeClass('dark');
+                if(thisPage != 'home') $('.header').css("background", "#fff")
+            }
+        })
+        if(thisPage == 'home'){
+            tlEnquiryIn.fromTo(['body', '.header'],{background:"#eef"},{delay:1, background:"#113"})}
+        else{
+            tlEnquiryIn.to(['body', '.header'],1,{delay:1, background:"#113"})} 
+        
+    }); 
 })
 
 
 
 
-
+$(document).ready(function(){
 if(thisPage != 'home'){
     $('.header').addClass("show");
     const header = $('.header');
     if(thisPage == 'works-detail'){
+        console.log("applied dark")
         header.addClass('dark')
     }
-
-        
         header.css("background", "#fff0")
 // gsap.set('.header', {background:"#fff0", color:"#fff"})
 // gsap.set('.header-logo', {"filter":"invert(100%) !important"})
@@ -223,6 +154,7 @@ if(thisPage != 'home'){
             }
         )
 }
+})
 
 
 $(document).ready(function(){

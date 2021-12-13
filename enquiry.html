@@ -6,7 +6,7 @@
             <form action="" method="" id="enquiry-form-form">		    
                 <input type="text" name="name" placeholder="Your name"/>
                 <input type="text" name="email" placeholder="Your email address"/>
-                <input type="text" name="message" placeholder="Your message"/>		    	
+                <textarea type="text" name="message" placeholder="Your message"></textarea>		    	
                 <button type="submit" form="enquiry-form-form" id="enquiry-submit">Let’s Do this 🤟🏻</submit>
             </form>
         </div>
@@ -45,3 +45,70 @@
     <div class="socials"><div class="social-icons"><a target="blank" href="https://dribbble.com/Kribbler" target="blank"><img src="img/dribbble-logo.svg"/></a><a href="https://www.linkedin.com/in/kribbler/" target="blank"><img src="img/linkedin-logo.svg"/></a></div></div>
     <div class="copyrights">Designed & Developed by Myself  -  ©2021</div>
 </section>
+
+
+
+<script>
+// $(document).ready(function(){
+//         //submit button glow
+//         const button = document.querySelector('button');
+//     console.log(button)
+
+//     button.addEventListener("mousemove", (e) => {
+//     const { x, y, width, height} = button.getBoundingClientRect();
+//     console.log(x, y, width, height)
+//     if((e.clientX > x && e.clientX < x+width)&&(e.clientY > y && e.clientY < y+height)){
+//         button.style.setProperty("--x", e.clientX - x);
+//         }
+//     });
+
+//     $('#another-enquiry').on('click', function(event){
+//         var enquirySubmit= new TimelineMax()
+//         enquirySubmit.to('.enquiry-submitted', 0.5, {opacity:0})
+//         enquirySubmit.to('.enquiry-loading', 0.5, {opacity:0}, "-=1")
+//         enquirySubmit.to('.enquiry-now', 0.5, {opacity:1})
+//     });
+
+//     $("#enquiry-form-form").submit(function( event ) {
+ 
+//         event.preventDefault();
+       
+//         console.log("submitting")
+//         $('.enquiry-loading svg').addClass('loading')
+
+//         var enquirySubmit= new TimelineMax()
+        
+//         enquirySubmit.to('.enquiry-now', 0.5, {opacity:0})
+//         enquirySubmit.to('.enquiry-loading', 0.5, {opacity:1})
+//         enquirySubmit.to('.enquiry-submitting', 0.5, {opacity:1}, "-=0.5")
+        
+
+        
+//         // Get some values from elements on the page:
+//         var $form = $( this ),
+//           name = $form.find( "input[name='name']" ).val(),
+//           email = $form.find( "input[name='email']" ).val(),
+//           message = $form.find( "input[name='message']" ).val(),
+//           url = "https://hooks.zapier.com/hooks/catch/9198386/bm6q71s/";
+       
+//         // Send the data using post
+//         var posting = $.post( url, { name: name,email: email,message: message } );
+       
+//         // Put the results in a div
+//         posting.done(function( data ) {
+//             console.log(data)
+//             setTimeout(function(){ 
+//                 $('.enquiry-loading svg').removeClass('loading')
+//                 $('.enquiry-loading svg').addClass('loaded')
+//                 enquirySubmit.to('.enquiry-submitting', 0.5, {opacity:0})
+//                 enquirySubmit.to('.enquiry-submitted', 0.5, {opacity:1})
+            
+//             }, 1000);
+             
+//         });
+//     });
+// })
+
+</script>
+
+
