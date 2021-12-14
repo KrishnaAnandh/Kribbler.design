@@ -2841,6 +2841,14 @@ a:hover::after{
   /* span でもセル何個か定義できる */
 }
 
+@media screen and (min-width: 480px) and (max-width: 760px) {
+  .page-works .works-list-1 {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 400px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .page-works .works-list-1 {
     -ms-grid-columns: 1fr;
@@ -2866,6 +2874,16 @@ a:hover::after{
 .page-works .works-list-1 .work:hover img {
   -webkit-transform: translate(-50%, -50%) scale(1.1) rotate(1deg);
           transform: translate(-50%, -50%) scale(1.1) rotate(1deg);
+}
+
+.page-works .works-list-1 .work::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 130px;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
 .page-works .works-list-1 .work .work-details {
@@ -2898,6 +2916,7 @@ a:hover::after{
 .page-works .works-list-1 .work .work-details p {
   color: inherit;
   letter-spacing: 0px;
+  margin: 0;
 }
 
 .page-works .works-list-1 .work .work-details .work-type {
@@ -2925,16 +2944,21 @@ a:hover::after{
   transition: inherit;
 }
 
-.page-works .works-list-1 .work-1 {
-  background: #09b0d4;
-  grid-row: span 2;
-  grid-column: span 2;
-}
-
-@media screen and (max-width: 480px) {
-  .page-works .works-list-1 .work-1 {
+@media screen and (max-width: 760px) and (min-width: 480px) {
+  .page-works .works-list-1 .work {
     grid-row: span 1;
     grid-column: span 1;
+  }
+}
+
+.page-works .works-list-1 .work-1 {
+  background: #09b0d4;
+}
+
+@media screen and (min-width: 760px) {
+  .page-works .works-list-1 .work-1 {
+    grid-row: span 2;
+    grid-column: span 2;
   }
 }
 
@@ -2944,22 +2968,43 @@ a:hover::after{
 }
 
 .page-works .works-list-1 .work-2 {
-  background: #c1cc70;
-  grid-column: span 2;
+  background: linear-gradient(-45deg, #43c587, #6ad2b3);
+}
+
+@media screen and (min-width: 760px) {
+  .page-works .works-list-1 .work-2 {
+    grid-column: span 2;
+  }
+}
+
+.page-works .works-list-1 .work-2::after {
+  background: -webkit-gradient(linear, left bottom, left top, from(#0000), to(#55c7a3));
+  background: linear-gradient(0deg, #0000, #55c7a3);
 }
 
 .page-works .works-list-1 .work-3 {
-  background: #f35e7b;
-  grid-column: span 2;
+  background: #a897f3;
+}
+
+@media screen and (min-width: 760px) {
+  .page-works .works-list-1 .work-3 {
+    grid-column: span 2;
+  }
 }
 
 .page-works .works-list-1 .work-4 {
-  background: #f7c05b;
+  background: #69c1d7;
 }
 
 .page-works .works-list-1 .work-5 {
-  background: #fc96a3;
-  grid-column: span 2;
+  background: #c8f0fe;
+  color: #000e;
+}
+
+@media screen and (min-width: 760px) {
+  .page-works .works-list-1 .work-5 {
+    grid-column: span 2;
+  }
 }
 
 .page-works .works-list-1 .work-6 {
@@ -2968,13 +3013,23 @@ a:hover::after{
 
 .page-works .works-list-1 .work-7 {
   background: #F5EB9B;
-  grid-column: span 2;
   color: #000;
 }
 
+@media screen and (min-width: 760px) {
+  .page-works .works-list-1 .work-7 {
+    grid-column: span 2;
+  }
+}
+
 .page-works .works-list-1 .work-8 {
-  background: #6bb383;
-  grid-column: span 2;
+  background: #44a4e4;
+}
+
+@media screen and (min-width: 760px) {
+  .page-works .works-list-1 .work-8 {
+    grid-column: span 2;
+  }
 }
 
 .page-blogs .cover {
