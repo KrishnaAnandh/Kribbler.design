@@ -34,9 +34,6 @@ $(document).ready(function(){
 
             var enquirySubmit= new TimelineMax()
             
-           
-            
-
             
             // Get some values from elements on the page:
             var $form = $( this ),
@@ -44,9 +41,6 @@ $(document).ready(function(){
             email = $form.find( "input[name='email']" ).val(),
             message = $form.find( "textarea[name='message']" ).val(),
             url = "https://enpaq89531mi6oi.m.pipedream.net";
-
-
-    
 
             if( /(.+)@(.+){2,}\.(.+){2,}/.test(email) ){
                 $("input[name='email']").removeClass('invalid');

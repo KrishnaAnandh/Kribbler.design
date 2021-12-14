@@ -3045,6 +3045,11 @@ a:hover::after{
   }
 }
 
+.page-about .sec-about .about-cont .about-endless {
+  font-family: 'Space Grotesk', Arial, Helvetica, sans-serif;
+  opacity: 0.7;
+}
+
 .page-about .sec-principles h3 {
   margin: 70px 0;
 }
