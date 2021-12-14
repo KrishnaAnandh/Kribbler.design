@@ -2523,6 +2523,59 @@ a:hover::after{
         max-width: 100%;
         padding: 0 20px;
     }
+    .blogs-list{
+        display: grid; 
+        grid-gap: 40px;
+        grid-template-columns: 1fr 1fr;
+        
+        @media screen and (max-width:480px){
+            grid-template-columns: 100%;
+            grid-template-areas:
+                'featured' 'blog1' 'blog2' 'blog3';
+        }
+        .blog{
+            .blog-image{
+                overflow: hidden;
+                background-color: #382fc5;
+                img{
+                    position: absolute;
+                    height: 100%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+            .blog-desc{
+                .blog-title{ 
+                    font-size: 16px;
+                    font-size: 16px;
+                    line-height: 24px;
+                    margin: 20px 0 6px;
+                    @media screen and (max-width:480px){
+                        font-size: 14px;
+                        line-height: 20px;
+                        font-weight: 400;
+                    }
+                }
+                .blog-cont{ 
+                    font-size: 14px;
+                    margin: 6px 0;
+                    font-weight: 300;
+                    @media screen and (max-width:768px){
+                        display: none;
+                    }
+                }
+
+            }
+        }
+
+        .blog-3{
+            grid-area: blog2;
+        }
+        .blog-4{
+            grid-area: blog3;
+        }
+
+    }
 }
 
 .page-about{
