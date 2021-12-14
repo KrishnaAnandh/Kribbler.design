@@ -478,6 +478,11 @@ a:hover::after{
 .header .header-container .header-menu .header-cta {
   padding: 10px 16px;
   margin-right: 10px;
+  z-index: 10;
+}
+
+.header .header-container .header-menu .header-cta:hover a {
+  color: #000 !important;
 }
 
 .header.show {

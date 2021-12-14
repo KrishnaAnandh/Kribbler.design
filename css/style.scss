@@ -373,6 +373,10 @@ a:hover::after{
             .header-cta{
                 padding: 10px 16px;
                 margin-right: 10px;
+                z-index: 10;
+                &:hover a{
+                    color: #000 !important;
+                }
             }
         }
        
