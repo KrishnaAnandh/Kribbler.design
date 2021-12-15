@@ -105,8 +105,9 @@ $(document).ready(function(){
                 if(thisPage != 'home') $('.header').css("background", "#fff")
             }
         })
-        if(thisPage == 'home'){
-            tlEnquiryIn.fromTo(['body', '.header'],{background:"#eef"},{delay:1, background:"#113"})}
+        if(thisPage == 'home1'){
+            // tlEnquiryIn.to('body',1, {background: "#000"})
+            tlEnquiryIn.fromTo(['body', '.header'],{background:"#eef"},{duration:1, delay:1, background:"#113"})}
         else{
             tlEnquiryIn.to(['body', '.header'],1,{delay:1, background:"#113"})} 
         

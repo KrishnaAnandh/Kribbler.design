@@ -323,11 +323,12 @@ $(document).ready(function(){
 // })
 
 function introAnimation() {
-
+    
     window.scrollTo(0, 0);
     headerLoop.set([".role2 span",".role3 span"], {opacity: 0})
     // headerAppear.set(".hero-name", {width: "200%", textAlign: "center"})
     headerAppear.to("body",0.2,{background:"#1e1e1f"})
+    console.log("intro Animation")
     headerAppear.to(".revealer",1, {ease: Power2.easeOut, y:"-100%"}, "+=2")
     headerAppear.from(
         ".general span", 
@@ -440,7 +441,7 @@ var lastScrollTop = 0;
    
 $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
-    console.log(scroll);
+    // console.log(scroll);
     if(scroll > 580){
         $('.header').addClass("show");
     }
@@ -485,62 +486,62 @@ gsap.to(
 
 
 
-var requestId = null;
+// var requestId = null;
 
-TweenLite.set(scroller.target, {
-  rotation: 0.01,
-  force3D: true
-});
+// TweenLite.set(scroller.target, {
+//   rotation: 0.01,
+//   force3D: true
+// });
 
-window.addEventListener("load", onLoad);
+// window.addEventListener("load", onLoad);
 
-function onLoad() {    
-  updateScroller();  
-  window.focus();
-  window.addEventListener("resize", onResize);
-  document.addEventListener("scroll", onScroll); 
-}
+// function onLoad() {    
+//   updateScroller();  
+//   window.focus();
+//   window.addEventListener("resize", onResize);
+//   document.addEventListener("scroll", onScroll); 
+// }
 
-function updateScroller() {
+// function updateScroller() {
   
-  var resized = scroller.resizeRequest > 0;
+//   var resized = scroller.resizeRequest > 0;
     
-  if (resized) {    
-    var height = scroller.target.clientHeight;
-    body.style.height = height + "px";
-    scroller.resizeRequest = 0;
-  }
+//   if (resized) {    
+//     var height = scroller.target.clientHeight;
+//     body.style.height = height + "px";
+//     scroller.resizeRequest = 0;
+//   }
       
-  var scrollY = window.pageYOffset || html.scrollTop || body.scrollTop || 0;
+//   var scrollY = window.pageYOffset || html.scrollTop || body.scrollTop || 0;
 
-  scroller.endY = scrollY;
-  scroller.y += (scrollY - scroller.y) * scroller.ease;
+//   scroller.endY = scrollY;
+//   scroller.y += (scrollY - scroller.y) * scroller.ease;
 
-  if (Math.abs(scrollY - scroller.y) < 0.05 || resized) {
-    scroller.y = scrollY;
-    scroller.scrollRequest = 0;
-  }
+//   if (Math.abs(scrollY - scroller.y) < 0.05 || resized) {
+//     scroller.y = scrollY;
+//     scroller.scrollRequest = 0;
+//   }
   
-  TweenLite.set(scroller.target, { 
-    y: -scroller.y 
-  });
+//   TweenLite.set(scroller.target, { 
+//     y: -scroller.y 
+//   });
   
-  requestId = scroller.scrollRequest > 0 ? requestAnimationFrame(updateScroller) : null;
-}
+//   requestId = scroller.scrollRequest > 0 ? requestAnimationFrame(updateScroller) : null;
+// }
 
-function onScroll() {
-  scroller.scrollRequest++;
-  if (!requestId) {
-    requestId = requestAnimationFrame(updateScroller);
-  }
-}
+// function onScroll() {
+//   scroller.scrollRequest++;
+//   if (!requestId) {
+//     requestId = requestAnimationFrame(updateScroller);
+//   }
+// }
 
-function onResize() {
-  scroller.resizeRequest++;
-  if (!requestId) {
-    requestId = requestAnimationFrame(updateScroller);
-  }
-}
+// function onResize() {
+//   scroller.resizeRequest++;
+//   if (!requestId) {
+//     requestId = requestAnimationFrame(updateScroller);
+//   }
+// }
 
 
 
