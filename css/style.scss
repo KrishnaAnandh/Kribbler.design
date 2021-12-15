@@ -21,6 +21,8 @@ html{
 body{
     background: #e0f1ff;
     // overflow:scroll;
+    overflow-x: hidden;
+  overflow-y: scroll;
     &.scroll-stopped{
         overflow: hidden;
     }
@@ -42,6 +44,38 @@ body{
     }
     
 }
+.viewport {
+    overflow: hidden;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .scroll-container {  
+    position: absolute;  
+    overflow: hidden;
+
+    z-index: 10;
+
+
+
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
+  
+  .img-container {
+    margin: 0 0 50px;
+    
+    img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+    }
+  }
 
 h1{
     font-family: 'Space Grotesk', "Arial", sans-serif;
@@ -399,7 +433,7 @@ a:hover::after{
 
 .hero{
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     left: 0;
     right: 0;
@@ -781,7 +815,7 @@ a:hover::after{
 
 .bio{
     position: relative;
-    width: 100%;
+    width: 100vw;
     opacity: 1;
     /* transition: all .3s .5s ease; */
 
@@ -887,7 +921,7 @@ a:hover::after{
 
 .works{
     position: relative;
-    width: 100%;
+    width: 100vw;
     /* opacity: 0; */
     /* transition: all .3s .5s ease; */
     color: #fff;
@@ -1143,7 +1177,7 @@ a:hover::after{
 
 .shots{
     position: relative;
-    width: 100%;
+    width: 100vw;
     /* opacity: 0; */
     /* transition: all .3s .5s ease; */
     
@@ -1220,7 +1254,7 @@ a:hover::after{
 
 .home-blogs{
     position: relative;
-    width: 100%;
+    width: 100vw;
     max-width: 1100px;
     left: 0;
     right: 0;
@@ -2527,7 +2561,7 @@ a:hover::after{
         display: grid; 
         grid-gap: 40px;
         grid-template-columns: 1fr 1fr;
-        
+
         @media screen and (max-width:480px){
             grid-template-columns: 100%;
             grid-template-areas:

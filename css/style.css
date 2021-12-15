@@ -24,6 +24,8 @@ html {
 
 body {
   background: #e0f1ff;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 body.scroll-stopped {
@@ -44,6 +46,37 @@ body.scroll-stopped {
 
 *::-webkit-scrollbar, body::-webkit-scrollbar {
   display: none;
+}
+
+.viewport {
+  overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.scroll-container {
+  position: absolute;
+  overflow: hidden;
+  z-index: 10;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.img-container {
+  margin: 0 0 50px;
+}
+
+.img-container img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
 }
 
 h1 {
@@ -500,7 +533,7 @@ a:hover::after{
 
 .hero {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   left: 0;
   right: 0;
@@ -1050,7 +1083,7 @@ a:hover::after{
 
 .bio {
   position: relative;
-  width: 100%;
+  width: 100vw;
   opacity: 1;
   /* transition: all .3s .5s ease; */
 }
@@ -1177,7 +1210,7 @@ a:hover::after{
 
 .works {
   position: relative;
-  width: 100%;
+  width: 100vw;
   /* opacity: 0; */
   /* transition: all .3s .5s ease; */
   color: #fff;
@@ -1510,7 +1543,7 @@ a:hover::after{
 
 .shots {
   position: relative;
-  width: 100%;
+  width: 100vw;
   /* opacity: 0; */
   /* transition: all .3s .5s ease; */
 }
@@ -1606,7 +1639,7 @@ a:hover::after{
 
 .home-blogs {
   position: relative;
-  width: 100%;
+  width: 100vw;
   max-width: 1100px;
   left: 0;
   right: 0;
