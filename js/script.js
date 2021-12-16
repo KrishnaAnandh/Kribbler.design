@@ -55,7 +55,7 @@ var scHomeWorksIn = ScrollTrigger.create({
     animation: tlHomeWorksIn,
     trigger: ".works",
     start: "top 60%",
-    end: "50px 40%",
+    end: "50px 20%",
     scrub: true,
     // markers: true,
 })
@@ -63,7 +63,7 @@ var scHomeExpertiseIn = ScrollTrigger.create({
     animation: tlHomeExpertiseIn,
     trigger: ".expertise",
     start: "top 70%",
-    end: "50px 40%",
+    end: "50px 20%",
     scrub: true,
     // markers: true,
 })
@@ -72,7 +72,7 @@ var scHomeBlogsIn = ScrollTrigger.create({
     animation: tlHomeBlogsIn,
     trigger: ".home-blogs",
     start: "top 70%",
-    end: "50px 40%",
+    end: "50px 20%",
     scrub: true,
     // markers: true,
 })
@@ -116,6 +116,8 @@ tlHomeWorksIn.from('.work-row-1',1, {y:50, opacity:0})
 tlHomeBlogsIn.to('.shots',1, {opacity:0})
 tlHomeBlogsIn.fromTo(['body', '.header'],{background:"#113"},{duration:0.2, background:"#eef"})
 tlHomeBlogsIn.from('.home-blogs',1, {opacity:0})
+tlHomeBlogsIn.staggerFrom('.blog',1, {opacity:0, y:300},"0.6","-=1")
+
 
 // tlHomeEnquiryIn.to('.blogs',1, {opacity:0})
 // tlHomeEnquiryIn.fromTo(['body', '.header'],{background:"#eef"},{duration:0.2, background:"#113"})

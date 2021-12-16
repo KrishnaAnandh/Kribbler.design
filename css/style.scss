@@ -1388,6 +1388,14 @@ a:hover::after{
                     font-size: 40px;
                     line-height: 45px;
                 }
+                span{
+                    font-size: inherit;
+                    font-weight: inherit;
+                    line-height: inherit;
+                    display: inline-block;
+                    /* white-space: nowrap; */
+                    width: auto;
+                }
             } 
         }
         .section-desc{

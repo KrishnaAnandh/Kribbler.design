@@ -1799,6 +1799,15 @@ a:hover::after{
   }
 }
 
+.enquiry .enquiry-now .enquiry-head h3 span {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  display: inline-block;
+  /* white-space: nowrap; */
+  width: auto;
+}
+
 .enquiry .enquiry-now .section-desc p {
   font-weight: 300;
   text-align: center;

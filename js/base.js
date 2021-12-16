@@ -73,25 +73,16 @@ $(document).ready(function(){
             
 
         });
-        gsap.to('.fade-enquiry', 
-            {
-                scrollTrigger:{
-                    trigger: ".enquiry",
-                    start: "top 70%",
-                    end: "50px 40%",
-                    scrub: true,
-                    // markers: true,
-                    },
-                opacity : 0,
-                }
-            )
+        
+        // $(".enquiry-head h3").lettering();
 
         var tlEnquiryIn= new TimelineMax()
+        
         ScrollTrigger.create({
             animation: tlEnquiryIn,
             trigger: ".enquiry",
             start: "top 70%",
-            end: "50px 40%",
+            end: "50px 25%",
             scrub: true,
             // markers: true,
             onEnter() {
@@ -105,12 +96,27 @@ $(document).ready(function(){
                 if(thisPage != 'home') $('.header').css("background", "#fff")
             }
         })
+        tlEnquiryIn.to('.fade-enquiry', 1, {opacity : 0,})
+
         if(thisPage == 'home1'){
             // tlEnquiryIn.to('body',1, {background: "#000"})
             tlEnquiryIn.fromTo(['body', '.header'],{background:"#eef"},{duration:1, delay:1, background:"#113"})}
         else{
             tlEnquiryIn.to(['body', '.header'],1,{delay:1, background:"#113"})} 
         
+        tlEnquiryIn.from(
+            ".enquiry-head h3 span", 
+            1, 
+            {ease: Back.easeInOut.config(1.7), 
+                opacity: 0, 
+                y: 30,
+                stagger: {
+                amount: 0.3, 
+                from: "random",
+                }
+            }
+        )
+        tlEnquiryIn.staggerFrom(['.section-desc','.enquiry-form'],1,{opacity:0, y:40},0.8)
     }); 
 })
 
