@@ -62,7 +62,7 @@ var scHomeWorksIn = ScrollTrigger.create({
 var scHomeExpertiseIn = ScrollTrigger.create({
     animation: tlHomeExpertiseIn,
     trigger: ".expertise",
-    start: "top 70%",
+    start: "top 80%",
     end: "50px 20%",
     scrub: true,
     // markers: true,
@@ -71,7 +71,7 @@ var scHomeExpertiseIn = ScrollTrigger.create({
 var scHomeBlogsIn = ScrollTrigger.create({
     animation: tlHomeBlogsIn,
     trigger: ".home-blogs",
-    start: "top 70%",
+    start: "top 80%",
     end: "50px 20%",
     scrub: true,
     // markers: true,
@@ -107,8 +107,8 @@ tlHomeBioIn.from('.bio-figures',1, {opacity:0},"+=0.1")
 
 
 tlHomeWorksIn.fromTo(['body', '.header'],{background:"#1b1486"},{duration:0.2, background:"#113"})
-tlHomeWorksIn.from('.works-head h3',1, {y:200, opacity:1, skewY:10})
-tlHomeWorksIn.from('.work-row-1',1, {y:50, opacity:0})
+tlHomeWorksIn.from('.works-head h3',2, {y:200, opacity:1, skewY:10})
+tlHomeWorksIn.from('.work-1',1, {y:100, opacity:0})
 
 // tlHomeExpertiseIn.to('.shots',1, {opacity:0})
 // tlHomeExpertiseIn.to(['body', '.header'],1, {background:"#30f9dd"})

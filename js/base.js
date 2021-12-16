@@ -81,8 +81,8 @@ $(document).ready(function(){
         ScrollTrigger.create({
             animation: tlEnquiryIn,
             trigger: ".enquiry",
-            start: "top 70%",
-            end: "50px 25%",
+            start: "top 80%",
+            end: "50px 20%",
             scrub: true,
             // markers: true,
             onEnter() {
@@ -111,7 +111,7 @@ $(document).ready(function(){
                 opacity: 0, 
                 y: 30,
                 stagger: {
-                amount: 0.3, 
+                amount: 0.9, 
                 from: "random",
                 }
             }
@@ -288,9 +288,9 @@ const updateProperties = (elem, state) => {
   
         computedState.x = left + width / 2
         computedState.y = top + height / 2
-        computedState.width = width
-        computedState.height = height
-        computedState.radius = radius
+        computedState.width = 100
+        computedState.height = 100
+        computedState.radius = '50%'
       }
   
       return {
@@ -304,7 +304,7 @@ const updateProperties = (elem, state) => {
       updateProperties(cursor, state)
     })
   
-    document.querySelectorAll('a, button').forEach(elem => {
+    document.querySelectorAll('.cursor-link').forEach(elem => {
       elem.addEventListener('mouseenter', () => (onElement = elem))
       elem.addEventListener('mouseleave', () => (onElement = undefined))
     })

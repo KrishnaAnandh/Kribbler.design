@@ -1450,6 +1450,11 @@ a:hover::after{
   grid-area: featured;
 }
 
+.works .works-container .works-list .work-1 .work-content {
+  max-width: 300px;
+  line-height: 22px;
+}
+
 .works .works-container .works-list .work-1 .work-image-holder {
   width: 50%;
   height: calc(100% - 160px);

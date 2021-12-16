@@ -1094,6 +1094,10 @@ a:hover::after{
                 background-color: #23234c;
                 grid-area: featured;
                 // padding: 0;
+                .work-content{
+                    max-width: 300px;
+                    line-height: 22px;
+                }
                 .work-image-holder{
                     width: 50%;
                     height: calc(100% - 160px);
