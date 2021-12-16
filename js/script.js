@@ -87,7 +87,8 @@ var scHomeBlogsIn = ScrollTrigger.create({
 // tlHomeHeroIn.staggerFrom('.hero-name .general span', 1, {y:100}, 0.1)
 
 tlHomeHeroOut.to('.hero-details',1, {y:-100})
-tlHomeHeroOut.to('.hero-name',1, {y:-30},"-=1")
+tlHomeHeroOut.to('.hero-name',1, {y:-50},"-=1")
+tlHomeHeroOut.to('.hero-image-holder',1, {y:100},"-=1")
 // tlHomeHeroOut.to('body',0.1, {background:"#1b1486"},"-=0.5")
 
 tlHomeBioIn.to('.hero',0.5, {opacity:0})

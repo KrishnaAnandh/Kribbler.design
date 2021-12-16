@@ -1128,7 +1128,7 @@ a:hover::after{
   max-width: 860px;
   left: 0;
   right: 0;
-  margin: 120px auto 80px;
+  margin: 100px auto 150px;
 }
 
 @media screen and (max-width: 480px) {

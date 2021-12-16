@@ -202,7 +202,7 @@ const layerMid = gsap.utils.toArray('.lyr-mid');
 const layerLow = gsap.utils.toArray('.lyr-low');
 
 layerTop.forEach((el) => {
-    gsap.set(el, {y:120})
+    gsap.set(el, {y:180})
   gsap.to(el, {
     scrollTrigger: {
         trigger: el,
@@ -211,7 +211,7 @@ layerTop.forEach((el) => {
         scrub: true,
         // markers: true,
     },
-    y:-80
+    y:-20
   });
 });
 
@@ -230,8 +230,8 @@ layerMid.forEach((el) => {
 });
 
 layerLow.forEach((el) => {
-    gsap.set(el, {y:0})
-  gsap.to(el, {
+gsap.set(el, {y:0})
+  gsap.to(el, 1, {
     scrollTrigger: {
         trigger: el,
         start: 'top bottom',
@@ -239,7 +239,7 @@ layerLow.forEach((el) => {
         scrub: true,
         // markers: true,
     },
-    y:80
+    y:100
   });
 });
 
