@@ -359,10 +359,9 @@ function introAnimation() {
         "-=1"
     )
 
-    headerAppear.from(".hero-logo", 0.5, {ease: Power4.easeOut, y:20, opacity: 0})
-    headerAppear.from(".hero-desc", 0.5, {ease: Power4.easeOut, y:-20, opacity: 0}, "-=0.2")
-    headerAppear.from(".hero-cta", 0.2, {ease: Power4.easeOut, y:-20, opacity: 0}, "-=0.2")
-    headerAppear.from(".hero-artwork", 0.5, {ease: Power4.easeOut, y:20, opacity: 0}, "-=0.6")
+    headerAppear.from(".hero-desc", 0.5, {ease: Power4.easeOut, y:20, opacity: 0}, "-=1")
+    headerAppear.from(".hero-cta", 0.2, {ease: Power4.easeOut, y:20, opacity: 0}, "-=0.5")
+    headerAppear.from(".hero-artwork", 0.5, {ease: Power4.easeOut, y:50, opacity: 0}, "-=0.19")
     
 
     headerLoop.to(

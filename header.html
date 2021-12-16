@@ -31,28 +31,29 @@
         var menuOpen = new TimelineMax()
         
         if(!menuOpened){
-            menuOpen.to(".header-menu", 0.3, {right: "100%"})
-            menuOpen.from(".header-menu li a", 0.4 ,{
+            menuOpen.to(".header-menu", 0.4, {right: "100%"})
+            menuOpen.from(".header-menu li a", 0.6 ,{
+                ease: Power2.easeOut,
                 y:"80px",
                 opacity:"0",
                 skewY:"30",
                 stagger:{
-                amount: 0.3, 
+                amount: 0.5, 
                 from: "0",
             }})
             $(".header").addClass('dark');
             menuOpened = true
         }
         else{
-            menuOpen.to(".header-menu li a", 0.4 ,{
+            menuOpen.to(".header-menu li a", 0.2 ,{
                 y:"80px",
                 opacity:"0",
                 skewY:"30",
                 stagger:{
-                amount: 0.3, 
+                amount: 0.1, 
                 from: "2",
             }})
-            menuOpen.to(".header-menu", 0.3, {right: "0"})
+            menuOpen.to(".header-menu", 0.2, {ease: Power2.easeOut, right: "0"})
             menuOpen.set([".header-menu",".header-menu li a"], {clearProps:'all'})
             // $(".header").addClass('dark');
             // menuOpen.reset()
