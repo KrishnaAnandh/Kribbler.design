@@ -107,7 +107,7 @@ $(document).ready(function(){
         tlEnquiryIn.from(
             ".enquiry-head h3 span", 
             1, 
-            {ease: Back.easeInOut.config(1.7), 
+            {   ease: Power1.easeOut, 
                 opacity: 0, 
                 y: 30,
                 stagger: {
