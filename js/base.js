@@ -308,4 +308,5 @@ const updateProperties = (elem, state) => {
       elem.addEventListener('mouseenter', () => (onElement = elem))
       elem.addEventListener('mouseleave', () => (onElement = undefined))
     })
+
   })
