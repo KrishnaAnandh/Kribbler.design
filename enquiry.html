@@ -1,0 +1,115 @@
+<section class="enquiry">
+    <div class="enquiry-now">
+        <div class="enquiry-head heads"><h3><span>G</span><span>r</span><span>e</span><span>e</span><span>t</span><span>i</span><span>n</span><span>g</span><span>s,</span><br/><span>P</span><span>r</span><span>🔮</span><span>s</span><span>p</span><span>e</span><span>c</span><span>t</span><span>o</span><span>r.</span></h3></div>
+        <div class="section-desc"><p>It may be the beginning of something fantastic. Let's get this party started</p></div>
+        <div class="enquiry-form">
+            <form action="" method="" id="enquiry-form-form">		    
+                <input type="text" name="name" placeholder="Your name"/>
+                <input type="text" name="email" placeholder="Your email address"/>
+                <textarea type="text" name="message" placeholder="Your message"></textarea>		    	
+                <button type="submit" form="enquiry-form-form" id="enquiry-submit">Let’s Do this 🤟🏻</submit>
+            </form>
+        </div>
+    </div>
+    <div class="enquiry-submit">
+        <div class="enquiry-loading">
+            
+            <svg width="37" height="24" viewBox="0 0 37 24" fill="transparent" xmlns="http://www.w3.org/2000/svg">
+                <circle class="circle circle-left" cx="9.5" cy="8.5" r="1.5" stroke="white" stroke-width="3"/>
+                <circle class="circle circle-right" cx="28.5" cy="8.5" r="1.5" stroke="white" stroke-width="3"></circle>
+                <g class="circle circle-middle">
+                    <path class="smile-down" d="M20 8.5C20 9.32843 19.3284 10 18.5 10C17.6716 10 17 9.32843 17 8.5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                    <path class="smile-up" d="M17 8C17 7.17157 17.6716 6.5 18.5 6.5C19.3284 6.5 20 7.17157 20 8" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                </g>
+            </svg>
+
+        </div>
+        <div class="enquiry-submitting">
+            <p>submitting...</p>
+        </div>
+        <div class="enquiry-submitted">
+            <p>Thank you!</p>
+            <h3>You'll hear from me soon</h3>
+            <div class="work-link">
+                <p id="another-enquiry">Make another enquiry</p>
+                <svg class="link-uline" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+<section class="footer">
+    <div class="socials"><div class="social-icons"><a target="blank" href="https://dribbble.com/Kribbler" target="blank"><img src="img/dribbble-logo.svg"/></a><a href="https://www.linkedin.com/in/kribbler/" target="blank"><img src="img/linkedin-logo.svg"/></a></div></div>
+    <div class="copyrights">Designed & Developed by Myself  -  ©2021</div>
+</section>
+
+
+
+
+<script>
+// $(document).ready(function(){
+//         //submit button glow
+//         const button = document.querySelector('button');
+//     console.log(button)
+
+//     button.addEventListener("mousemove", (e) => {
+//     const { x, y, width, height} = button.getBoundingClientRect();
+//     console.log(x, y, width, height)
+//     if((e.clientX > x && e.clientX < x+width)&&(e.clientY > y && e.clientY < y+height)){
+//         button.style.setProperty("--x", e.clientX - x);
+//         }
+//     });
+
+//     $('#another-enquiry').on('click', function(event){
+//         var enquirySubmit= new TimelineMax()
+//         enquirySubmit.to('.enquiry-submitted', 0.5, {opacity:0})
+//         enquirySubmit.to('.enquiry-loading', 0.5, {opacity:0}, "-=1")
+//         enquirySubmit.to('.enquiry-now', 0.5, {opacity:1})
+//     });
+
+//     $("#enquiry-form-form").submit(function( event ) {
+ 
+//         event.preventDefault();
+       
+//         console.log("submitting")
+//         $('.enquiry-loading svg').addClass('loading')
+
+//         var enquirySubmit= new TimelineMax()
+        
+//         enquirySubmit.to('.enquiry-now', 0.5, {opacity:0})
+//         enquirySubmit.to('.enquiry-loading', 0.5, {opacity:1})
+//         enquirySubmit.to('.enquiry-submitting', 0.5, {opacity:1}, "-=0.5")
+        
+
+        
+//         // Get some values from elements on the page:
+//         var $form = $( this ),
+//           name = $form.find( "input[name='name']" ).val(),
+//           email = $form.find( "input[name='email']" ).val(),
+//           message = $form.find( "input[name='message']" ).val(),
+//           url = "https://hooks.zapier.com/hooks/catch/9198386/bm6q71s/";
+       
+//         // Send the data using post
+//         var posting = $.post( url, { name: name,email: email,message: message } );
+       
+//         // Put the results in a div
+//         posting.done(function( data ) {
+//             console.log(data)
+//             setTimeout(function(){ 
+//                 $('.enquiry-loading svg').removeClass('loading')
+//                 $('.enquiry-loading svg').addClass('loaded')
+//                 enquirySubmit.to('.enquiry-submitting', 0.5, {opacity:0})
+//                 enquirySubmit.to('.enquiry-submitted', 0.5, {opacity:1})
+            
+//             }, 1000);
+             
+//         });
+//     });
+// })
+
+</script>
+
+
