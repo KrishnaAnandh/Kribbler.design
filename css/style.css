@@ -2175,22 +2175,39 @@ a:hover::after{
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-top: 1px solid #fff2;
   color: #fff;
 }
 
 .footer a {
-  padding: 5px 10px;
   font-size: 14px;
   color: #fff;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .footer a img {
+  padding: 5px;
   -webkit-filter: invert(100%);
           filter: invert(100%);
+}
+
+.footer a p {
+  font-family: inherit;
+  text-transform: none;
+}
+
+@media screen and (max-width: 760px) {
+  .footer a p {
+    display: none;
+  }
 }
 
 .footer a::after {
@@ -3209,6 +3226,7 @@ a:hover::after{
 
 .page-about .sec-about .about-cont .about-interests {
   font-size: 16px;
+  line-height: 24px;
   margin-top: 80px;
 }
 
@@ -3241,6 +3259,43 @@ a:hover::after{
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
+}
+
+.page-about .sec-alt-univ {
+  text-align: center;
+}
+
+.page-about .sec-alt-univ .alt-univ {
+  font-family: 'Space Grotesk';
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+.page-about .sec-alt-univ .about-interests {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.page-about .sec-alt-univ .about-interests p {
+  padding: 12px 22px;
+  margin: 5px;
+  background-color: #fff;
+  border-radius: 24px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .page-about .sec-adplist .adp-container {
