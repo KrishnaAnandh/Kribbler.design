@@ -1230,22 +1230,72 @@ a:hover::after{
                 }
             }
         }
-        .works-link{
-
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            margin: 40px 0;
-            a{
-                font-size: 16px;
-            }
-            path{
-                stroke: #fff;
-            }
-        }
     }
 }
 
+.side-hustles{
+    width: 100vw;
+    padding-bottom: 100px;
+    .hustle-container{
+        padding: 0 20px;
+        .hustle-head{
+            h3{
+                color: #fff;
+                font-size: 24px;
+            }
+        }
+        .hustle-list{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            // grid-auto-rows: 300px;
+            grid-gap: 20px;
+            .hustle{
+                background-color: transparent;
+                border: 1px solid #23234c;
+                color: #fff;
+                text-align: left;
+                padding: 30px;
+                text-transform: none;
+                display: flex;
+                &:hover{
+                    transform: scale(0.95);
+                }
+                img{
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 5px;
+                }
+                div{
+                    margin-left: 20px;
+                }
+                h6{
+                    color: inherit;
+                    margin: 10px 0;
+                    margin-top: 6px;
+                }
+                p{
+                    color: inherit;
+                    opacity: 0.6;
+                }
+            }
+        }
+    
+    }
+}
+
+.works-link{
+
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+    a{
+        font-size: 16px;
+    }
+    path{
+        stroke: #fff;
+    }
+}
 
 
 .expertise{
@@ -1666,6 +1716,7 @@ a:hover::after{
         p{
             font-family: inherit;
             text-transform: none;
+            color: inherit;
             @media screen and (max-width:760px){
                 display: none;
             }
@@ -2567,6 +2618,26 @@ a:hover::after{
         }
         
   
+    }
+    .shots-grid{
+        width: 100%;
+        padding: 20px 0;
+        .shots-container{
+            width: 100%;
+            padding: 0 20px;
+            .shots-row{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-auto-rows: 300px;
+                grid-gap: 10px;
+                .shots-item{
+                    overflow: hidden;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
     }
 
 }

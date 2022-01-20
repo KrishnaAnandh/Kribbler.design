@@ -1615,7 +1615,67 @@ a:hover::after{
           transform: translateY(-50%);
 }
 
-.shots .shots-container .works-link {
+.side-hustles {
+  width: 100vw;
+  padding-bottom: 100px;
+}
+
+.side-hustles .hustle-container {
+  padding: 0 20px;
+}
+
+.side-hustles .hustle-container .hustle-head h3 {
+  color: #fff;
+  font-size: 24px;
+}
+
+.side-hustles .hustle-container .hustle-list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.side-hustles .hustle-container .hustle-list .hustle {
+  background-color: transparent;
+  border: 1px solid #23234c;
+  color: #fff;
+  text-align: left;
+  padding: 30px;
+  text-transform: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.side-hustles .hustle-container .hustle-list .hustle:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.side-hustles .hustle-container .hustle-list .hustle img {
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
+}
+
+.side-hustles .hustle-container .hustle-list .hustle div {
+  margin-left: 20px;
+}
+
+.side-hustles .hustle-container .hustle-list .hustle h6 {
+  color: inherit;
+  margin: 10px 0;
+  margin-top: 6px;
+}
+
+.side-hustles .hustle-container .hustle-list .hustle p {
+  color: inherit;
+  opacity: 0.6;
+}
+
+.works-link {
   color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1626,11 +1686,11 @@ a:hover::after{
   margin: 40px 0;
 }
 
-.shots .shots-container .works-link a {
+.works-link a {
   font-size: 16px;
 }
 
-.shots .shots-container .works-link path {
+.works-link path {
   stroke: #fff;
 }
 
@@ -2202,6 +2262,7 @@ a:hover::after{
 .footer a p {
   font-family: inherit;
   text-transform: none;
+  color: inherit;
 }
 
 @media screen and (max-width: 760px) {
@@ -3096,6 +3157,33 @@ a:hover::after{
   .page-works .works-list-1 .work-8 {
     grid-column: span 2;
   }
+}
+
+.page-works .shots-grid {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.page-works .shots-grid .shots-container {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.page-works .shots-grid .shots-container .shots-row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 300px;
+  grid-gap: 10px;
+}
+
+.page-works .shots-grid .shots-container .shots-row .shots-item {
+  overflow: hidden;
+}
+
+.page-works .shots-grid .shots-container .shots-row .shots-item img {
+  width: 100%;
 }
 
 .page-blogs .cover {
