@@ -12,6 +12,18 @@
 }
 
 @font-face {
+  font-family: "Space Grotesk";
+  src: url("fonts/SpaceGrotesk-Medium.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Lexend Deca";
+  src: url("fonts/LexendDeca-Light.ttf");
+  font-weight: 400;
+}
+
+@font-face {
   font-family: "Bebas";
   src: url("fonts/BebasNeue-Bold.ttf");
   font-weight: 700;
@@ -84,7 +96,7 @@ h1 {
   font-family: 'Space Grotesk', "Arial", sans-serif;
   font-size: 68px;
   line-height: 68px;
-  font-weight: 700;
+  font-weight: 600;
   margin: 20px 0;
 }
 
@@ -172,9 +184,9 @@ h6 {
 p, li {
   font-family: "Manrope", Arial, sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 20px;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.5px;
   color: #000c;
   margin: 10px 0;
 }
@@ -194,8 +206,8 @@ blockquote {
 }
 
 a {
-  font-family: "Space Grotesk", Arial, sans-serif;
-  font-size: 12px;
+  font-family: "Lexend Deca", Arial, sans-serif;
+  font-size: 11px;
   color: inherit;
   font-weight: 600;
   text-transform: uppercase;
@@ -210,8 +222,8 @@ a {
 }
 
 button {
-  font-family: "Space Grotesk", Arial, sans-serif;
-  font-size: 12px;
+  font-family: "Lexend Deca", Arial, sans-serif;
+  font-size: 11px;
 }
 
 .work-link {
@@ -255,7 +267,6 @@ a:hover::after{
 }
 */
 .btn {
-  background: #000;
   padding: 15px 20px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -293,14 +304,36 @@ a:hover::after{
   position: absolute;
   -webkit-transform: skewX(20deg);
           transform: skewX(20deg);
-  top: 0%;
+  top: -2px;
   bottom: 0;
   left: -125%;
-  height: 100%;
+  height: 110%;
   width: 115%;
   z-index: -2;
   -webkit-transition: all 0.8s cubic-bezier(0.2, 0, 0, 1);
   transition: all 0.8s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.btn::before {
+  background-color: #000;
+  content: "";
+  position: absolute;
+  -webkit-transform: skewX(20deg);
+          transform: skewX(20deg);
+  top: 0%;
+  bottom: 0;
+  left: -5%;
+  height: 100%;
+  width: 115%;
+  z-index: -4;
+  -webkit-transition: all 0.8s cubic-bezier(0.2, 0, 0, 1);
+  transition: all 0.8s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.btn:hover::before, .btn a:hover::before {
+  -webkit-transform: skewX(-20deg);
+          transform: skewX(-20deg);
+  left: 115%;
 }
 
 .btn:hover::after, .btn a:hover::after {
@@ -353,6 +386,7 @@ a:hover::after{
   padding: 0;
   font-size: 16px;
   line-height: 24px;
+  padding: 10px 20px 0px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -462,7 +496,7 @@ a:hover::after{
 .header .header-container .header-menu ul {
   list-style-type: none;
   margin-left: 20px;
-  font-size: 12px;
+  font-size: 10px;
   text-transform: uppercase;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -545,7 +579,7 @@ a:hover::after{
 .hero .hero-container {
   position: relative;
   height: 100%;
-  max-width: 1100px;
+  max-width: 1020px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -581,7 +615,7 @@ a:hover::after{
 .hero .hero-container .hero-details {
   position: relative;
   left: 0;
-  width: 40%;
+  width: 30%;
   z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -610,7 +644,7 @@ a:hover::after{
 
 @media screen and (min-width: 1024px) {
   .hero .hero-container .hero-details {
-    width: 50%;
+    width: 30%;
   }
 }
 
@@ -654,10 +688,10 @@ a:hover::after{
 }
 
 .hero .hero-container .hero-details .hero-name {
-  line-height: 64px;
+  line-height: 50px;
   letter-spacing: 0px;
-  font-size: 72px;
-  margin: 10px 0;
+  font-size: 56px;
+  margin: 0;
   width: 150%;
   text-transform: uppercase;
   display: -webkit-box;
@@ -727,13 +761,13 @@ a:hover::after{
 }
 
 .hero .hero-container .hero-details .hero-desc h2 {
-  font-size: 20px;
-  line-height: 26px;
+  font-size: 16px;
+  line-height: 20px;
   font-weight: 400;
-  margin: 20px 0;
+  margin: 10px 0;
   padding-right: 20px;
   color: inherit;
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 @media screen and (max-width: 1024px) {
@@ -876,19 +910,20 @@ a:hover::after{
 }
 
 .hero .hero-overlay .hidden-header .hero-logo-1 {
-  padding: 20px;
+  padding: 30px 40px;
   -webkit-filter: invert(100%);
           filter: invert(100%);
 }
 
 .hero .hero-overlay .hidden-header .open-menu {
-  padding: 20px;
+  padding: 30px 40px;
 }
 
 .hero .hero-overlay .scroll-indicator {
   position: absolute;
   -webkit-transform: rotate(90deg) translate(-40px, -20px);
           transform: rotate(90deg) translate(-40px, -20px);
+  padding: 10px 20px;
   bottom: 10px;
   right: 10px;
   display: -webkit-inline-box;
@@ -905,7 +940,7 @@ a:hover::after{
 
 .hero .hero-overlay .scroll-indicator span {
   width: 50px;
-  height: 1px;
+  height: 0.5px;
   background: #fff5;
   position: relative;
   left: 10px;
@@ -923,6 +958,7 @@ a:hover::after{
 
 .hero .hero-overlay .social-icons {
   position: absolute;
+  padding: 10px 20px;
   bottom: 10px;
   left: 10px;
   display: -webkit-inline-box;
@@ -1098,14 +1134,13 @@ a:hover::after{
 
 .bio .bio-container .bio-head {
   position: relative;
-  text-transform: uppercase;
-  letter-spacing: 2px;
   color: #fff;
-  margin-bottom: 60px;
 }
 
 .bio .bio-container .bio-head p {
   font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   color: inherit;
 }
 
@@ -1122,15 +1157,15 @@ a:hover::after{
 }
 
 .bio .bio-container .bio-summary {
-  font-size: 44px;
-  line-height: 50px;
+  font-size: 40px;
+  line-height: 44px;
   text-align: center;
   color: #fff;
   text-transform: none;
-  max-width: 860px;
+  max-width: 720px;
   left: 0;
   right: 0;
-  margin: 100px auto 150px;
+  margin: 40px auto 120px;
 }
 
 @media screen and (max-width: 480px) {
@@ -1187,13 +1222,13 @@ a:hover::after{
 }
 
 .bio .bio-container .bio-figures .bio-fig-item .bio-fignum {
-  font-size: 32px;
+  font-size: 24px;
   color: #fff;
 }
 
 .bio .bio-container .bio-figures .bio-fig-item .bio-figtxt {
   font-size: 14px;
-  padding: 12px 0;
+  padding: 8px 0;
   padding-left: 50px;
   color: #fff;
 }
@@ -1642,7 +1677,7 @@ a:hover::after{
   border: 1px solid #23234c;
   color: #fff;
   text-align: left;
-  padding: 30px;
+  padding: 20px;
   text-transform: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1655,8 +1690,8 @@ a:hover::after{
 }
 
 .side-hustles .hustle-container .hustle-list .hustle img {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border-radius: 5px;
 }
 
@@ -1666,12 +1701,13 @@ a:hover::after{
 
 .side-hustles .hustle-container .hustle-list .hustle h6 {
   color: inherit;
-  margin: 10px 0;
+  margin: 4px 0;
   margin-top: 6px;
 }
 
 .side-hustles .hustle-container .hustle-list .hustle p {
   color: inherit;
+  margin: 4px 0;
   opacity: 0.6;
 }
 
@@ -1713,6 +1749,7 @@ a:hover::after{
   margin: auto;
   /* opacity: 0; */
   /* transition: all .3s .5s ease; */
+  color: #000;
 }
 
 .home-blogs .blogs-container {
@@ -1739,9 +1776,36 @@ a:hover::after{
   }
 }
 
+.home-blogs .blogs-container .blogs-list .blog {
+  text-transform: none;
+  padding: 0;
+  background: #fff0;
+  -webkit-box-shadow: 0 0px 0px #0001;
+          box-shadow: 0 0px 0px #0001;
+  height: 380px;
+  overflow: hidden;
+  -webkit-transition: background 0.5s ease-in, height 0.2s ease-in, -webkit-box-shadow 0.3s ease-out;
+  transition: background 0.5s ease-in, height 0.2s ease-in, -webkit-box-shadow 0.3s ease-out;
+  transition: background 0.5s ease-in, height 0.2s ease-in, box-shadow 0.3s ease-out;
+  transition: background 0.5s ease-in, height 0.2s ease-in, box-shadow 0.3s ease-out, -webkit-box-shadow 0.3s ease-out;
+}
+
+.home-blogs .blogs-container .blogs-list .blog:hover {
+  -webkit-box-shadow: 0 20px 20px #0001;
+          box-shadow: 0 20px 20px #0001;
+  background: #fff;
+  height: 380px;
+}
+
+.home-blogs .blogs-container .blogs-list .blog:hover .blog-image {
+  height: 180px;
+}
+
 .home-blogs .blogs-container .blogs-list .blog .blog-image {
   overflow: hidden;
   background-color: #382fc5;
+  -webkit-transition: height 0.5s cubic-bezier(0.39, 0.01, 0, 1);
+  transition: height 0.5s cubic-bezier(0.39, 0.01, 0, 1);
 }
 
 .home-blogs .blogs-container .blogs-list .blog .blog-image img {
@@ -1752,11 +1816,16 @@ a:hover::after{
           transform: translateX(-50%);
 }
 
+.home-blogs .blogs-container .blogs-list .blog .blog-desc {
+  padding: 15px 20px;
+}
+
 .home-blogs .blogs-container .blogs-list .blog .blog-desc .blog-title {
-  font-size: 16px;
-  font-size: 16px;
+  font-size: 18px;
+  letter-spacing: 0px;
   line-height: 24px;
-  margin: 20px 0 6px;
+  margin: 6px 0;
+  color: inherit;
 }
 
 @media screen and (max-width: 480px) {
@@ -1767,10 +1836,18 @@ a:hover::after{
   }
 }
 
+.home-blogs .blogs-container .blogs-list .blog .blog-desc .blog-meta {
+  font-size: 12px;
+  opacity: 0.5;
+}
+
 .home-blogs .blogs-container .blogs-list .blog .blog-desc .blog-cont {
   font-size: 14px;
-  margin: 6px 0;
+  line-height: 24px;
+  margin: 15px 0;
   font-weight: 300;
+  color: inherit;
+  opacity: 1;
 }
 
 @media screen and (max-width: 768px) {
@@ -1847,7 +1924,7 @@ a:hover::after{
 .enquiry .enquiry-now .enquiry-head h3 {
   font-size: 72px;
   text-align: center;
-  line-height: 4.6rem;
+  line-height: 2.6rem;
   margin: 0 auto;
   white-space: nowrap;
 }
@@ -2010,15 +2087,15 @@ a:hover::after{
 
 .enquiry .enquiry-now .enquiry-form button {
   color: #fff;
-  font-size: 14px;
+  font-size: 11px;
   position: relative;
   border: none;
-  padding: 15px 15px;
+  padding: 14px 16px;
   background: #691b81;
   border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
-  margin: 10px;
+  margin: 16px;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   text-transform: uppercase;
@@ -2224,7 +2301,7 @@ a:hover::after{
 
 .footer {
   position: relative;
-  padding: 40px 20px;
+  padding: 30px 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2238,7 +2315,7 @@ a:hover::after{
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-top: 1px solid #fff2;
+  border-top: 1px solid #fff1;
   color: #fff;
 }
 
@@ -2301,6 +2378,8 @@ a:hover::after{
 
 .footer .copyrights {
   font-size: 12px;
+  letter-spacing: 0.5px;
+  opacity: 0.7;
 }
 
 @-webkit-keyframes scroll {
@@ -2952,7 +3031,7 @@ a:hover::after{
 }
 
 .page-works .cover {
-  padding: 200px 0;
+  padding: 140px 0;
   padding-bottom: 20px;
   padding-left: 40px;
 }
@@ -3187,7 +3266,7 @@ a:hover::after{
 }
 
 .page-blogs .cover {
-  padding: 200px 0;
+  padding: 140px 0;
   padding-bottom: 20px;
   padding-left: 40px;
 }
