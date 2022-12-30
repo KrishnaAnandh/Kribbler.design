@@ -541,9 +541,9 @@ a:hover::after{
                 color: #0008;
             }
             .hero-name{
-                line-height: 50px;
+                font-size: 60px;
+                line-height: 54px;
                 letter-spacing:0px;
-                font-size: 56px;
                 margin: 0;
                 width: 150%;
                 text-transform: uppercase;
@@ -553,8 +553,8 @@ a:hover::after{
                 @media screen and (max-width:760px){
                     width: 100%;
                     margin: 14px 0;
-                    font-size: 60px;
-                    line-height: 50px;
+                    font-size: 52px;
+                    line-height: 44px;
                     letter-spacing: -1px;
                     display: flex;
                     flex-direction: column;
@@ -562,7 +562,7 @@ a:hover::after{
                 }
                 @media screen and (max-width:480px){
                     // font-family: 'Bebas', Arial, sans-serif;
-                    font-size: 50px;
+                    font-size: 44px;
                     line-height: 40px;
                 }
 
