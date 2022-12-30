@@ -82,7 +82,7 @@ $(document).ready(function(){
             animation: tlEnquiryIn,
             trigger: ".enquiry",
             start: "top 80%",
-            end: "50px 20%",
+            end: "20px 10%",
             scrub: true,
             // markers: true,
             onEnter() {
@@ -106,7 +106,7 @@ $(document).ready(function(){
         
         tlEnquiryIn.from(
             ".enquiry-head h3 span", 
-            1, 
+            0.5, 
             {   ease: Power1.easeOut, 
                 opacity: 0, 
                 y: 30,

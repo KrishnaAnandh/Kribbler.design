@@ -8,6 +8,18 @@
     src: url('fonts/SpaceGrotesk-Bold.ttf');
     font-weight: 700;
 }
+@font-face {
+    font-family: "Space Grotesk";
+    src: url('fonts/SpaceGrotesk-Medium.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Lexend Deca";
+    src: url('fonts/LexendDeca-Light.ttf');
+    font-weight: 400;
+}
+
 
   @font-face {
     font-family: "Bebas";
@@ -83,7 +95,7 @@ h1{
     font-family: 'Space Grotesk', "Arial", sans-serif;
     font-size: 68px;
     line-height: 68px;
-    font-weight: 700;
+    font-weight: 600;
     margin: 20px 0;
     @media screen and (max-width:480px){
         font-size: 38px;
@@ -148,9 +160,9 @@ h6 {
 p, li{
     font-family: "Manrope", Arial, sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 20px;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.5px;
     color: #000c;
     margin: 10px 0;
     @media screen and (max-width:480px){
@@ -165,8 +177,8 @@ blockquote{
     font-size: 18px;
 }
 a{
-    font-family: "Space Grotesk", Arial, sans-serif;
-    font-size: 12px;
+    font-family: "Lexend Deca", Arial, sans-serif;
+    font-size: 11px;
     color: inherit;
     font-weight: 600;
     text-transform: uppercase;
@@ -179,8 +191,8 @@ a{
     cursor: url("../img/cursor-open.svg") 20 20, auto;
 }
 button{
-    font-family: "Space Grotesk", Arial, sans-serif;
-    font-size: 12px;
+    font-family: "Lexend Deca", Arial, sans-serif;
+    font-size: 11px;
 }
 // a::after {
 //     content: "";
@@ -309,6 +321,7 @@ a:hover::after{
         padding: 0;
         font-size: 16px;
         line-height: 24px;
+        padding: 10px 20px 0px;
         align-items: center;
         @media screen and (max-width:760px){
             justify-content: space-between;
@@ -376,7 +389,7 @@ a:hover::after{
             ul{
                 list-style-type: none;
                 margin-left: 20px;
-                font-size: 12px;
+                font-size: 10px;
                 text-transform: uppercase;
                 display: flex;
                 flex-direction: row;
@@ -445,7 +458,7 @@ a:hover::after{
     .hero-container{
         position: relative;
         height: 100%;
-        max-width: 1100px;
+        max-width: 1020px;
         display: flex;
         flex-direction: row;
         justify-content:space-between;
@@ -463,7 +476,7 @@ a:hover::after{
         .hero-details{
             position: relative;
             left: 0;
-            width: 40%;
+            width: 30%;
             z-index: 10;
             display: flex;
             flex-direction: column;
@@ -480,7 +493,7 @@ a:hover::after{
                 align-content: center;
             }
             @media screen and (min-width:1024px){
-                width: 50%;
+                width: 30%;
             }
         
             .hero-logo{
@@ -512,10 +525,10 @@ a:hover::after{
                 color: #0008;
             }
             .hero-name{
-                line-height: 64px;
+                line-height: 50px;
                 letter-spacing:0px;
-                font-size: 72px;
-                margin: 10px 0;
+                font-size: 56px;
+                margin: 0;
                 width: 150%;
                 text-transform: uppercase;
                 display: flex;
@@ -563,13 +576,13 @@ a:hover::after{
             }
             
             .hero-desc h2{
-                font-size: 20px;
-                line-height: 26px;
+                font-size: 16px;
+                line-height: 20px;
                 font-weight: 400;
-                margin: 20px 0;
+                margin: 10px 0;
                 padding-right: 20px;
                 color: inherit;
-                opacity: 0.8;
+                opacity: 0.6;
 
                 @media screen and (max-width:1024px){
                     font-size: 18px;
@@ -681,17 +694,18 @@ a:hover::after{
             pointer-events: all;
 
             .hero-logo-1{
-                padding: 20px;
+                padding: 30px 40px;
                 filter: invert(100%)
             }
             .open-menu{
-                padding: 20px;
+                padding: 30px 40px;
             }
         }
         
         .scroll-indicator{
             position: absolute;
             transform: rotate(90deg) translate(-40px, -20px);
+            padding: 10px 20px;
             bottom: 10px;
             right: 10px;
             display: inline-flex;
@@ -701,7 +715,7 @@ a:hover::after{
             }
             span{
                 width: 50px;
-                height: 1px;
+                height: 0.5px;
                 background: #fff5;
                 position: relative;
                 left: 10px;
@@ -717,6 +731,7 @@ a:hover::after{
         }
         .social-icons{
             position: absolute;
+            padding: 10px 20px;
             bottom: 10px;
             left: 10px;
             display: inline-flex;
@@ -829,12 +844,11 @@ a:hover::after{
 
         .bio-head{
             position: relative;
-            text-transform: uppercase;
-            letter-spacing: 2px;
             color: #fff;
-            margin-bottom: 60px;
             p{
                 font-size: 12px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
                 color: inherit;
             }
             span{
@@ -851,15 +865,15 @@ a:hover::after{
         }
 
         .bio-summary{
-            font-size: 44px;
-            line-height: 50px;
+            font-size: 40px;
+            line-height: 44px;
             text-align: center;
             color: #fff;
             text-transform: none;
-            max-width: 860px;
+            max-width: 720px;
             left: 0;
             right: 0;
-            margin: 100px auto 150px;
+            margin: 40px auto 120px;
             @media screen and (max-width:480px){
                 // font-family: 'Bebas', Arial, sans-serif;
                 font-size: 40px;
@@ -893,13 +907,13 @@ a:hover::after{
                 display: flex;
                 
                 .bio-fignum{
-                    font-size: 32px;
+                    font-size: 24px;
                     color: #fff;
                     
                 }
                 .bio-figtxt{
                     font-size: 14px;
-                    padding: 12px 0;
+                    padding: 8px 0;
                     padding-left: 50px;
                     color: #fff;
                 }
@@ -1254,15 +1268,15 @@ a:hover::after{
                 border: 1px solid #23234c;
                 color: #fff;
                 text-align: left;
-                padding: 30px;
+                padding: 20px;
                 text-transform: none;
                 display: flex;
                 &:hover{
                     transform: scale(0.95);
                 }
                 img{
-                    width: 70px;
-                    height: 70px;
+                    width: 60px;
+                    height: 60px;
                     border-radius: 5px;
                 }
                 div{
@@ -1270,11 +1284,12 @@ a:hover::after{
                 }
                 h6{
                     color: inherit;
-                    margin: 10px 0;
+                    margin: 4px 0;
                     margin-top: 6px;
                 }
                 p{
                     color: inherit;
+                    margin: 4px 0;
                     opacity: 0.6;
                 }
             }
@@ -1318,6 +1333,7 @@ a:hover::after{
     margin: auto;
     /* opacity: 0; */
     /* transition: all .3s .5s ease; */
+    color: #000;
     .blogs-container{
         position: relative;
         padding: 100px 20px;
@@ -1331,15 +1347,36 @@ a:hover::after{
             //     'featured blog1'
             //     'featured blog2'
             //     'featured blog3';
+            
             @media screen and (max-width:480px){
                 grid-template-columns: 100%;
                 grid-template-areas:
                     'featured' 'blog1' 'blog2' 'blog3';
             }
             .blog{
+                text-transform: none;
+                padding: 0;
+                background: #fff0;
+                box-shadow: 0 0px 0px #0001;
+                height: 380px;
+                overflow: hidden;
+
+                transition: background 0.5s ease-in, height 0.2s ease-in, box-shadow 0.3s ease-out;
+                // transition-duration: 0.5s;
+                // transition-timing-function: ease-out;
+
+                &:hover{
+                    box-shadow: 0 20px 20px #0001;
+                    background: #fff;
+                    height: 380px;
+                    .blog-image{
+                        height: 180px;
+                    }
+                }
                 .blog-image{
                     overflow: hidden;
                     background-color: #382fc5;
+                    transition: height 0.5s cubic-bezier(0.39, 0.01, 0, 1);
                     img{
                         position: absolute;
                         height: 100%;
@@ -1348,21 +1385,30 @@ a:hover::after{
                     }
                 }
                 .blog-desc{
+                    padding: 15px 20px;
                     .blog-title{ 
-                        font-size: 16px;
-                        font-size: 16px;
-                        line-height: 24px;
-                        margin: 20px 0 6px;
+                        font-size: 20px;
+                        letter-spacing: 0px;
+                        line-height: 28px;
+                        margin: 6px 0;
+                        color: inherit;
                         @media screen and (max-width:480px){
                             font-size: 14px;
                             line-height: 20px;
                             font-weight: 400;
                         }
                     }
+                    .blog-meta{
+                        font-size: 12px;
+                        opacity: 0.5;
+                    }
                     .blog-cont{ 
-                        font-size: 14px;
-                        margin: 6px 0;
+                        font-size: 16px;
+                        line-height: 24px;
+                        margin: 15px 0;
                         font-weight: 300;
+                        color: inherit;
+                        opacity: 1;
                         @media screen and (max-width:768px){
                             display: none;
                         }
@@ -1432,7 +1478,7 @@ a:hover::after{
             h3{
                 font-size: 72px;
                 text-align: center;
-                line-height: 4.6rem;
+                line-height: 2.6rem;
                 margin: 0 auto;
                 white-space: nowrap;
                 
@@ -1534,15 +1580,15 @@ a:hover::after{
             }
             button {
                 color: #fff;
-                font-size: 14px;
+                font-size: 11px;
                 position: relative;
                 border: none;
-                padding: 15px 15px;
+                padding: 14px 16px;
                 background: #691b81;
                 border-radius: 10px;
                 font-weight: bold;
                 cursor: pointer;
-                margin: 10px;
+                margin: 16px;
                 transition: all 0.5s ease-in-out;
                 text-transform: uppercase;
                 letter-spacing: 1px;
@@ -1696,12 +1742,12 @@ a:hover::after{
 
 .footer{
     position: relative;
-    padding: 40px 20px;
+    padding: 30px 40px;
     display: flex;
     flex-direction: row;
     justify-content:space-between;
     align-items: center;
-    border-top: 1px solid #fff2;
+    border-top: 1px solid #fff1;
     color: #fff;
     a{
         
@@ -1747,6 +1793,8 @@ a:hover::after{
     }
     .copyrights{
         font-size: 12px;
+        letter-spacing: 0.5px;
+        opacity: 0.7;
     }
 }
 
@@ -2397,7 +2445,13 @@ a:hover::after{
     .img-shade{
         background-color: #FFF8F1;
     }
-    
+    // .sec-who{
+    //     justify-content: stretch;
+    //     div{
+    //         justify-content: stretch;
+    //     }
+        
+    // }
 
     .sec-docs{
         h6{

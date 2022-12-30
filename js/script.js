@@ -55,7 +55,7 @@ var scHomeBioIn = ScrollTrigger.create({
 var scHomeWorksIn = ScrollTrigger.create({
     animation: tlHomeWorksIn,
     trigger: ".works",
-    start: "top 60%",
+    start: "top 80%",
     end: "50px 20%",
     scrub: true,
     // markers: true,
@@ -63,7 +63,7 @@ var scHomeWorksIn = ScrollTrigger.create({
 var scHomeExpertiseIn = ScrollTrigger.create({
     animation: tlHomeExpertiseIn,
     trigger: ".expertise",
-    start: "top 80%",
+    start: "top 70%",
     end: "50px 20%",
     scrub: true,
     // markers: true,
@@ -72,10 +72,17 @@ var scHomeExpertiseIn = ScrollTrigger.create({
 var scHomeBlogsIn = ScrollTrigger.create({
     animation: tlHomeBlogsIn,
     trigger: ".home-blogs",
-    start: "top 80%",
+    start: "top 70%",
     end: "50px 20%",
     scrub: true,
     // markers: true,
+    onEnter() {
+        $('.header').removeClass('dark');
+    },
+    onLeaveBack() {
+        console.log("onLeaveBack")
+        $('.header').addClass('dark');
+    }
 })
 // var scHomeEnquiryIn = ScrollTrigger.create({
 //     animation: tlHomeEnquiryIn,
@@ -108,17 +115,17 @@ tlHomeBioIn.from('.bio-figures',1, {opacity:0},"+=0.1")
 // tlHomeBioIn.to('.bio-head',1.7, {y:80}, "-=1")
 // tlHomeBioIn.to('.bio-figures',1.7, {y:80}, "-=1.6")
 
-
+tlHomeWorksIn.to('.bio',0.5, {opacity:0})
 tlHomeWorksIn.fromTo(['body', '.header'],{background:"#1b1486"},{duration:0.2, background:"#113"})
 tlHomeWorksIn.from('.works-head h3',2, {y:200, opacity:1, skewY:10})
-// tlHomeWorksIn.from('.work-1',1, {top:100, opacity:0})
+tlHomeWorksIn.from('.works-list',1, {top:100, opacity:0})
 
 // tlHomeExpertiseIn.to('.shots',1, {opacity:0})
 // tlHomeExpertiseIn.to(['body', '.header'],1, {background:"#30f9dd"})
 // tlHomeExpertiseIn.from('.expertise',1, {opacity:0})
 
 tlHomeBlogsIn.to(['.shots','.side-hustles', '.works-link'],1, {opacity:0})
-tlHomeBlogsIn.fromTo(['body', '.header'],{background:"#113"},{duration:0.2, background:"#eef"})
+tlHomeBlogsIn.fromTo(['body', '.header'],{background:"#113"},{duration:0.2, background:"#eff"})
 tlHomeBlogsIn.from('.home-blogs',1, {opacity:0})
 tlHomeBlogsIn.staggerFrom('.blog',1, {opacity:0, y:300},"0.6","-=1")
 
@@ -457,36 +464,36 @@ $(window).scroll(function (event) {
 });
 
 
-gsap.to(
-    'body',
-    {
-        scrollTrigger:{
-            trigger: ".home-blogs",
-            start: "top 60%",
-            end: "bottom 40%",
-            // scrub: true,
-            // markers: true,
-            onEnter() {
-                console.log("onEnter")
-                $('.header').removeClass('dark');
+// gsap.to(
+//     'body',
+//     {
+//         scrollTrigger:{
+//             trigger: ".home-blogs",
+//             start: "top 60%",
+//             end: "bottom 40%",
+//             // scrub: true,
+//             // markers: true,
+//             onEnter() {
+//                 console.log("onEnter")
+//                 $('.header').removeClass('dark');
                 
-            },
-            onEnterBack() {
-                console.log("onEnterBack")
-                $('.header').removeClass('dark');
-            },
-            onLeave() {
-                console.log("onEnterBack")
-                $('.header').addClass('dark');
-            },
-            onLeaveBack() {
-                console.log("onEnterBack")
-                $('.header').addClass('dark');
-            },
-        },
-        background:"#fff"
-    }
-)
+//             },
+//             onEnterBack() {
+//                 console.log("onEnterBack")
+//                 $('.header').removeClass('dark');
+//             },
+//             onLeave() {
+//                 console.log("onEnterBack")
+//                 $('.header').addClass('dark');
+//             },
+//             onLeaveBack() {
+//                 console.log("onEnterBack")
+//                 $('.header').addClass('dark');
+//             },
+//         },
+//         background:"#fff"
+//     }
+// )
 
 
 

@@ -1,0 +1,253 @@
+<html lang="en"><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title></title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+      
+  
+  
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+  <script src="https://www.amcharts.com/lib/4/core.js"></script>
+  <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+  <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+  <script>
+  
+  am4core.useTheme(am4themes_animated);
+  
+  var chart = am4core.create("chartdiv", am4charts.GaugeChart);
+  chart.innerRadius = am4core.percent(80);
+  chart.startAngle = -210;
+  chart.endAngle = 30;
+  
+  // var axis = chart.xAxes.push(new am4charts.ValueAxis());
+  // axis.min = 0;
+  // axis.max = 40;
+  // axis.strictMinMax = true;
+  // axis.renderer.radius = am4core.percent(100);
+  // axis.renderer.line.strokeOpacity = 0;
+  // axis.disabled = true;
+  
+  var axis2 = chart.xAxes.push(new am4charts.ValueAxis());
+  axis2.min = 0;
+  axis2.max = 40;
+  axis2.renderer.radius = am4core.percent(80);
+  axis2.renderer.innerRadius = am4core.percent(75);
+  axis2.renderer.minGridDistance = 100;
+  axis2.strictMinMax = true;
+  axis2.renderer.line.strokeOpacity = 0;
+  axis2.zIndex = -100;
+  axis2.valueInterval= 2;
+  axis2.fontSize = 0;
+  
+  
+  var range0 = axis2.axisRanges.create();
+  range0.value = 0;
+  range0.endValue = 100;
+  range0.axisFill.radius = am4core.percent(110);
+  range0.axisFill.innerRadius = am4core.percent(110);
+  range0.axisFill.stroke = am4core.color("#32C26A");
+  range0.axisFill.strokeOpacity = 1;
+  range0.axisFill.strokeWidth = 12;
+  range0.axisFill.strokeLinejoin = "round";
+  range0.axisFill.strokeLinecap = "round";
+  
+  var range1 = axis2.axisRanges.create();
+  range1.value = 50;
+  range1.endValue = 100;
+  range1.axisFill.radius = am4core.percent(110);
+  range1.axisFill.innerRadius = am4core.percent(110);
+  range1.axisFill.stroke = am4core.color("#B7E8CB");
+  range1.axisFill.strokeOpacity = 1;
+  range1.axisFill.strokeWidth = 12;
+  range1.axisFill.strokeLinejoin = "round";
+  range1.axisFill.strokeLinecap = "round";
+  range1.axisFill.zIndex = -1;
+  
+  var label = chart.radarContainer.createChild(am4core.Label);
+  label.isMeasured = true;
+  label.fontSize = 45;
+  label.horizontalCenter = "middle";
+  label.text = "-";
+  label.y = 60;
+  
+  // var unit = chart.radarContainer.createChild(am4core.Label);
+  // label.isMeasured = true;
+  // label.fontSize = 15;
+  // label.horizontalCenter = "middle";
+  // label.text = "MBps";
+  
+  var hand = chart.hands.push(new am4charts.ClockHand());
+  hand.axis = axis2;
+  hand.value = 10;
+  hand.radius = am4core.percent(85);
+  hand.innerRadius = am4core.percent(0);
+  hand.fill = am4core.color("#F29224");
+  hand.stroke = am4core.color("#F29224");
+  hand.strokeOpacity = 1;
+  hand.strokeWidth = 3;
+  hand.strokeLinejoin = "round";
+  hand.startWidth = 18;
+  hand.endWidth = 1;
+  hand.pin.radius = 8;
+  hand.pin.fill = am4core.color("#fff");
+  hand.pin.stroke = am4core.color("#F29224");
+  hand.pin.strokeWidth = 5;
+  hand.pin.strokeLinejoin = "round";
+  hand.pin.zIndex = 2;
+  
+  
+  
+  hand.events.on("propertychanged", function(ev) {
+    range0.endValue = ev.target.value;
+    range1.value = ev.target.value;
+    axis2.invalidate();
+  });
+  
+  setInterval(() => {
+  
+  var imageAddr = "https://anandhkrishnan.com/img/works-thumbnail-cuppa.png"; 
+  var downloadSize = 173056;
+    
+    
+  var startTime, endTime;
+      var download = new Image();
+      download.onload = function () {
+          endTime = (new Date()).getTime();
+          showResults();
+      }
+      
+      download.onerror = function (err, msg) {
+          console.log("Invalid image, or error downloading");
+      }
+      
+      startTime = (new Date()).getTime();
+      var cacheBuster = "?nnn=" + startTime;
+      download.src = imageAddr + cacheBuster;
+      
+      function showResults() {
+          var duration = (endTime - startTime) / 1000;
+          var bitsLoaded = downloadSize * 8;
+          var speedBps = (bitsLoaded / duration).toFixed(2);
+          var speedKbps = (speedBps / 1024).toFixed(2);
+          var speedMbps = (speedKbps / 1024).toFixed(2);
+          console.log(
+              "Your connection speed is:", 
+              speedBps + " bps", 
+              speedKbps + " kbps", 
+              speedMbps + " Mbps"
+          )
+          speed = parseFloat(speedMbps)
+          var animation = new am4core.Animation(hand, {
+            property: "value",
+            to: speed
+          }, 1000, am4core.ease.cubicOut).start();
+  
+          label.text = speed;
+      }
+    
+    
+    
+  //     var file_size = 127,
+  //         start = performance.now(),
+  //         end = 0,
+  //         time = 0,
+  //         xmlhttp = new XMLHttpRequest(),
+  //         result,
+  //         speed;
+    
+  
+  //         xmlhttp.onreadystatechange = function(){
+  //             if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+  //                end = performance.now();
+  //                time =  (end - start)/1000;
+  //               console.log('time',time)
+  //                result = (file_size/time/1000*8).toFixed(2);
+  //                speed = parseFloat(result)
+  //                var animation = new am4core.Animation(hand, {
+  //                   property: "value",
+  //                   to: speed
+  //                 }, 1000, am4core.ease.cubicOut).start();
+                
+  //               label.text = speed;
+  //               // hand.value = speed;
+  //               console.log(speed);
+                  
+  //             }
+  //         }  
+    
+  //         xmlhttp.open('GET', 'https://codepen.io/infomiho/pen/CuGJI.html', true);
+  //         xmlhttp.send();
+  }, 5000);
+  </script>
+  
+  <style>
+      body {
+    font-family: "Helvetica", sans-serif;
+  
+  }
+  #chartdiv {
+    width: 400px;
+    height: 400px;
+    font-weight: bold;
+  }
+  </style>
+  
+  
+      <div id="chartdiv"></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <script type="text/javascript">//<![CDATA[
+  
+  
+  
+  
+  
+    //]]></script>
+  
+    <script>
+      // tell the embed parent frame the height of the content
+      if (window.parent && window.parent.parent){
+        window.parent.parent.postMessage(["resultsFrame", {
+          height: document.body.getBoundingClientRect().height,
+          slug: ""
+        }], "*")
+      }
+  
+      // always overwrite window.name, in case users try to set it manually
+      window.name = "result"
+    </script>
+  
+      <script>
+        let allLines = []
+  
+        window.addEventListener("message", (message) => {
+          if (message.data.console){
+            let insert = document.querySelector("#insert")
+            allLines.push(message.data.console.payload)
+            insert.innerHTML = allLines.join(";\r")
+  
+            let result = eval.call(null, message.data.console.payload)
+            if (result !== undefined){
+              console.log(result)
+            }
+          }
+        })
+      </script>
+  
+  
+  
+  </body></html>
