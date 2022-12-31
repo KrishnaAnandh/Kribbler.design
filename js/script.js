@@ -58,6 +58,7 @@ var scHomeWorksIn = ScrollTrigger.create({
     start: "top 80%",
     end: "50px 20%",
     scrub: true,
+    // pin: true,
     // markers: true,
 })
 var scHomeExpertiseIn = ScrollTrigger.create({
@@ -97,12 +98,12 @@ var scHomeBlogsIn = ScrollTrigger.create({
 tlHomeHeroOut.to('.hero-details',1, {y:-100})
 tlHomeHeroOut.to('.hero-name',1, {y:-50},"-=1")
 tlHomeHeroOut.to('.hero-image-holder',1, {y:100},"-=1")
-tlHomeHeroOut.to('body',0.1, {background:"#1b1486"},"-=0.5")
+// tlHomeHeroOut.to('body',0.1, {background:"#15262b"},"-=0.5")
 
 // tlHomeHeroOut.to('.bio',1, {y:-1000})
 
 tlHomeBioIn.to('.hero',0.5, {opacity:0})
-tlHomeBioIn.fromTo(['body', '.header'],{background:"#1e1e1f"},{duration:0.2, background:"#1b1486"})
+tlHomeBioIn.fromTo(['body', '.header'],{background:"#15262b"},{duration:0.2, background:"#1a152b"})
 // tlHomeBioIn.to(['body', '.header'],0.5, {background:"#1b1486"})
 tlHomeBioIn.call(function() {$('.header').addClass("dark")}, null, null, 2);
 
@@ -116,7 +117,7 @@ tlHomeBioIn.from('.bio-figures',1, {opacity:0},"+=0.1")
 // tlHomeBioIn.to('.bio-figures',1.7, {y:80}, "-=1.6")
 
 tlHomeWorksIn.to('.bio',0.5, {opacity:0})
-tlHomeWorksIn.fromTo(['body', '.header'],{background:"#1b1486"},{duration:0.2, background:"#113"})
+tlHomeWorksIn.fromTo(['body', '.header'],{background:"#1a152b"},{duration:0.2, background:"#113"})
 tlHomeWorksIn.from('.works-head h3',2, {y:200, opacity:1, skewY:10})
 tlHomeWorksIn.from('.works-list',1, {top:100, opacity:0})
 
@@ -125,7 +126,7 @@ tlHomeWorksIn.from('.works-list',1, {top:100, opacity:0})
 // tlHomeExpertiseIn.from('.expertise',1, {opacity:0})
 
 tlHomeBlogsIn.to(['.shots','.side-hustles', '.works-link'],1, {opacity:0})
-tlHomeBlogsIn.fromTo(['body', '.header'],{background:"#113"},{duration:0.2, background:"#eff"})
+tlHomeBlogsIn.fromTo(['body', '.header'],{background:"#113"},{duration:0.2, background:"#f9f8f4"})
 tlHomeBlogsIn.from('.home-blogs',1, {opacity:0})
 tlHomeBlogsIn.staggerFrom('.blog',1, {opacity:0, y:300},"0.6","-=1")
 
@@ -340,7 +341,7 @@ function introAnimation() {
     window.scrollTo(0, 0);
     headerLoop.set([".role2 span",".role3 span"], {opacity: 0})
     // headerAppear.set(".hero-name", {width: "200%", textAlign: "center"})
-    headerAppear.to("body",0.2,{background:"#1e1e1f"})
+    headerAppear.to("body",0.2,{background:"#15262b"})
     console.log("intro Animation")
     headerAppear.to(".revealer",1, {ease: Power2.easeOut, y:"-100%"}, "+=2")
     headerAppear.from(

@@ -15,7 +15,7 @@ $(function() {
 
     var prms = {
       fps: 5, // speed
-      objectDistance: 20, // distance between each dot
+      objectDistance: 30, // distance between each dot
       objectWidth: bigDotSize, // radius/size of the dots
       objectRotationV: Math.PI * .09,
       objectRadius: 1 // spiral level; keep 0 to get a circle
@@ -122,7 +122,7 @@ $(function() {
       //context.fillStyle = 'rgba(0,0,0,.2)';
       //context.fillRect(0, 0, stageWidth, stageHeight);
       context.clearRect(0, 0, stageWidth, stageHeight);
-      context.fillStyle = '#000';
+      context.fillStyle = '#2898';
       len = objectList.length;
       while(len > 0){
         len -= 1;
